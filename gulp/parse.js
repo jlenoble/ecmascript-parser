@@ -18,8 +18,7 @@ export const makeParser = () => {
     // Remove parser files from Babel cache
     Object.keys(require.cache).filter(key => {
       return key.includes(parserDir) ||
-        key.includes(listenerDir) ||
-        key.includes(visitorDir);
+        key.includes(listenerDir);
     }).forEach(key => {
       delete require.cache[key];
     });
