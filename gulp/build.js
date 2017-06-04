@@ -5,8 +5,10 @@ import sourcemaps from 'gulp-sourcemaps';
 
 const buildDir = 'build';
 const allSrcGlob = [
-  'src/**/*.js',
-  'test/**/*.js'
+  'src/*.js',
+  'src/static/antlr4/Translator.js',
+  'test/**/*.js',
+  'gulp/**/*.js'
 ];
 
 export const build = () => {

@@ -1,10 +1,10 @@
 import gulp from 'gulp';
 import mocha from 'gulp-mocha';
 import './build';
-import './parse';
+import {makeParser, fixParser} from './parse';
 
 const testGlob = [
-  'build/test/**/*.test.js'
+  'build/test/**/*.test.js',
 ];
 
 export const test = () => {
@@ -12,4 +12,5 @@ export const test = () => {
     .pipe(mocha());
 };
 
-gulp.task('test', gulp.series(gulp.parallel('parse', 'build'), test));
+gulp.task('test', gulp.series(gulp.series(makeParser, fixParser, 'build'),
+  test));

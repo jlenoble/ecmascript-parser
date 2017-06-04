@@ -6,11 +6,11 @@ const {TestudocListener} = require(path.join(base, rel,
   'TestudocListener'));
 
 export class Translator extends TestudocListener {
-  enterExpr () {
+  enterBlock () {
     process.stdout.write('hello');
   }
 
-  exitExpr () {
+  exitBlock () {
     process.stdout.write('bye');
   }
 }

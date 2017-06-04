@@ -1,12 +1,10 @@
-import Muter, {captured} from 'muter';
 import {expect} from 'chai';
-import Testudoc from '../src/testudoc';
+import {translate} from '../gulp/parse';
 
 describe('Testing Testudoc', function () {
-  const muter = Muter(console, 'log'); // eslint-disable-line new-cap
-
-  it(`Class Testudoc says 'Hello world!'`, captured(muter, function () {
-    new Testudoc();
-    expect(muter.getLogs()).to.equal('Hello world!\n');
-  }));
+  it(``, function () {
+    return new Promise((resolve, reject) => {
+      translate().on('error', reject).on('finish', resolve);
+    });
+  });
 });
