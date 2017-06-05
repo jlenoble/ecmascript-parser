@@ -75,7 +75,7 @@ COMMENT
 
 // ref. Section 11.4
 // MultiLineComment::
-//     '/*' MultiLineCommentCharsopt' */'
+//     '/*' MultiLineCommentChars[opt] '*/'
 // MultiLineCommentChars::
 //     MultiLineNotAsteriskChar MultiLineCommentChars[opt]
 //     '*' PostAsteriskCommentChars[opt]
@@ -103,6 +103,21 @@ MULTI_LINE_COMMENT
 fragment
 SINGLE_LINE_COMMENT
 : '//' ~[\n\r\u2028\u2029]*
+;
+
+// ref. Section 11.6 + Section 10.1
+// IdentifierPart::
+//     UnicodeIDContinue
+//     '$'
+//     '_'
+//     '\' UnicodeEscapeSequence
+//     <ZWNJ>   U+200C   ZERO WIDTH NON-JOINER	  IdentifierPart
+//     <ZWJ>    U+200D   ZERO WIDTH JOINER	      IdentifierPart
+fragment
+IDENTIFIER_PART
+: UNICODE_ID_CONTINUE
+| [$_\u200C\u200D]
+| '\\' UNICODE_ESCAPE_SEQUENCE
 ;
 
 // ref. Section 11.6
@@ -179,4 +194,39 @@ UNICODE_ID_CONTINUE
 | [\uD873][\uDC00-\uDEA1]
 | [\uD87E][\uDC00-\uDE1D]
 | [\uDB40][\uDD00-\uDDEF]
+;
+
+// ref. section 11.8.4
+// UnicodeEscapeSequence::
+//     'u' Hex4Digits
+//     'u{' HexDigits '}'
+fragment
+UNICODE_ESCAPE_SEQUENCE
+: 'u' HEX_4_DIGITS
+| 'u{' HEX_DIGITS '}'
+;
+
+// ref. Section 11.8.3
+// HexDigits::
+//     HexDigit
+//     HexDigits HexDigit
+fragment
+HEX_DIGITS
+: HEX_DIGIT+
+;
+
+// ref. Section 11.8.3
+// HexDigit::one of
+//     0123456789abcdefABCDEF
+fragment
+HEX_DIGIT
+: [0-9a-fA-F]
+;
+
+// ref. section 11.8.4
+// Hex4Digits::
+//   HexDigit HexDigit HexDigit HexDigit
+fragment
+HEX_4_DIGITS
+: HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
 ;
