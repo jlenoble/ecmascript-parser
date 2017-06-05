@@ -2,8 +2,9 @@
 lexer grammar LexicalGrammar;
 
 // Any unicode character from U+0000 to U+10ffff
-// Don't know how to write a pattern for that, so wild guess: Use wild card
-fragment SOURCE_CHARACTER
+// Don't know how to write a pattern for that, so wild guess: Use wildcard
+fragment
+SOURCE_CHARACTER
 : .
 ;
 
@@ -34,7 +35,8 @@ fragment SOURCE_CHARACTER
 //                U+202F    NARROW NO-BREAK SPACE
 //     <MMSP>     U+205F    MEDIUM MATHEMATICAL SPACE     &MediumSpace;
 //                U+3000    IDEOGRAPHIC SPACE
-fragment WHITE_SPACE
+fragment
+WHITE_SPACE
 : [\t\u000b\u000c\u0020\u00a0\ufeff\u0085\u1680\u2000-\u200a\u202f\u205f\u3000]
 ;
 
@@ -44,7 +46,8 @@ fragment WHITE_SPACE
 //     <CR>     U+000D    CARRIAGE RETURN
 //     <LS>     U+2028    LINE SEPARATOR
 //     <PS>     U+2029    PARAGRAPH SEPARATOR
-fragment LINE_TERMINATOR
+fragment
+LINE_TERMINATOR
 : [\n\r\u2028\u2029]
 ;
 
@@ -55,9 +58,38 @@ fragment LINE_TERMINATOR
 //     <LS>
 //     <PS>
 //     <CR><LF>
+fragment
 LINE_TERMINATOR_SEQUENCE
 : '\r\n'
 | LINE_TERMINATOR
+;
+
+// ref. Section 11.4
+// Comment::
+//     MultiLineComment
+//     SingleLineComment
+fragment
+COMMENT
+: MULTI_LINE_COMMENT
+| SINGLE_LINE_COMMENT
+;
+
+// ref. Section 11.4
+// MultiLineComment::
+//     '/*' MultiLineCommentCharsopt' */'
+// MultiLineCommentChars::
+//     MultiLineNotAsteriskChar MultiLineCommentChars[opt]
+//     '*' PostAsteriskCommentChars[opt]
+// PostAsteriskCommentChars::
+//     MultiLineNotForwardSlashOrAsteriskChar MultiLineCommentChars[opt]
+//     '*' PostAsteriskCommentChars[opt]
+// MultiLineNotAsteriskChar::
+//     SourceCharacter but not '*'
+// MultiLineNotForwardSlashOrAsteriskChar::
+//     SourceCharacter but not one of '/' or '*'
+fragment
+MULTI_LINE_COMMENT
+: '/*' .*? '*/'
 ;
 
 // ref. Section 11.4
@@ -69,6 +101,7 @@ LINE_TERMINATOR_SEQUENCE
 //     SourceCharacter but not LineTerminator
 // Must be consistent with LINE_TERMINATOR, alas ~(LINE_TERMINATOR) syntax
 // is not supported by ANTLR4
-fragment SINGLE_LINE_COMMENT
+fragment
+SINGLE_LINE_COMMENT
 : '//' ~[\n\r\u2028\u2029]*
 ;
