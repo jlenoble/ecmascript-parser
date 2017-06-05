@@ -105,6 +105,28 @@ SINGLE_LINE_COMMENT
 : '//' ~[\n\r\u2028\u2029]*
 ;
 
+// ref. Section 11.6
+// IdentifierName::
+//     IdentifierStart
+//     IdentifierName IdentifierPart
+fragment
+IDENTIFIER_NAME
+: IDENTIFIER_START IDENTIFIER_PART*
+;
+
+// ref. Section 11.6
+// IdentifierStart::
+//     UnicodeIDStart
+//     '$'
+//     '_'
+//     '\' UnicodeEscapeSequence
+fragment
+IDENTIFIER_START
+: UNICODE_ID_START
+| [$_]
+| '\\' UNICODE_ESCAPE_SEQUENCE
+;
+
 // ref. Section 11.6 + Section 10.1
 // IdentifierPart::
 //     UnicodeIDContinue
