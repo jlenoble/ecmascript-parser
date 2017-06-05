@@ -26,7 +26,7 @@ export const makeParser = () => {
     });
   }
 
-  return gulp.src(grammarGlob, {since: gulp.lastRun(makeParser)})
+  return gulp.src(grammarGlob)
     .pipe(antlr4({
       'listener': true,
       'parserDir': 'src/static/antlr4/parsers',
