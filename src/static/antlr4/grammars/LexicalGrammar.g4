@@ -37,3 +37,25 @@ fragment SOURCE_CHARACTER
 fragment WHITE_SPACE
 : [\t\u000b\u000c\u0020\u00a0\ufeff\u0085\u1680\u2000-\u200a\u202f\u205f\u3000]
 ;
+
+// ref. Section 11.3
+// LineTerminator::
+// <LF>     U+000A    LINE FEED             &NewLine;
+// <CR>     U+000D    CARRIAGE RETURN
+// <LS>     U+2028    LINE SEPARATOR
+// <PS>     U+2029    PARAGRAPH SEPARATOR
+fragment LINE_TERMINATOR
+: [\n\r\u2028\u2029]
+;
+
+// ref. Section 11.3
+// LineTerminatorSequence::
+// <LF>
+// <CR>[lookahead ≠ <LF>]
+// <LS>
+// <PS>
+// <CR><LF>
+fragment lineTerminatorSequence
+: '\r\n'
+| LINE_TERMINATOR
+;
