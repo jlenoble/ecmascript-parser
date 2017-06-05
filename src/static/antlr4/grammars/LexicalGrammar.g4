@@ -55,7 +55,7 @@ fragment LINE_TERMINATOR
 // <LS>
 // <PS>
 // <CR><LF>
-fragment lineTerminatorSequence
+LINE_TERMINATOR_SEQUENCE
 : '\r\n'
 | LINE_TERMINATOR
 ;
