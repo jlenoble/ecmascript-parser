@@ -2,7 +2,6 @@
 lexer grammar LexicalGrammar;
 
 // Any unicode character from U+0000 to U+10ffff
-fragment
 SOURCE_CHARACTER
 : [\u0000-\u{10ffff}]
 ;
@@ -34,7 +33,6 @@ SOURCE_CHARACTER
 //                U+202F    NARROW NO-BREAK SPACE
 //     <MMSP>     U+205F    MEDIUM MATHEMATICAL SPACE     &MediumSpace;
 //                U+3000    IDEOGRAPHIC SPACE
-fragment
 WHITE_SPACE
 : [\t\u000b\u000c\u0020\u00a0\ufeff\u0085\u1680\u2000-\u200a\u202f\u205f\u3000]
 ;
@@ -45,7 +43,6 @@ WHITE_SPACE
 //     <CR>     U+000D    CARRIAGE RETURN
 //     <LS>     U+2028    LINE SEPARATOR
 //     <PS>     U+2029    PARAGRAPH SEPARATOR
-fragment
 LINE_TERMINATOR
 : [\n\r\u2028\u2029]
 ;
@@ -57,7 +54,6 @@ LINE_TERMINATOR
 //     <LS>
 //     <PS>
 //     <CR><LF>
-fragment
 LINE_TERMINATOR_SEQUENCE
 : '\r\n'
 | LINE_TERMINATOR
@@ -67,7 +63,6 @@ LINE_TERMINATOR_SEQUENCE
 // Comment::
 //     MultiLineComment
 //     SingleLineComment
-fragment
 COMMENT
 : MULTI_LINE_COMMENT
 | SINGLE_LINE_COMMENT
@@ -86,7 +81,6 @@ COMMENT
 //     SourceCharacter but not '*'
 // MultiLineNotForwardSlashOrAsteriskChar::
 //     SourceCharacter but not one of '/' or '*'
-fragment
 MULTI_LINE_COMMENT
 : '/*' .*? '*/'
 ;
@@ -100,7 +94,6 @@ MULTI_LINE_COMMENT
 //     SourceCharacter but not LineTerminator
 // Must be consistent with LINE_TERMINATOR, alas ~(LINE_TERMINATOR) syntax
 // is not supported by ANTLR4
-fragment
 SINGLE_LINE_COMMENT
 : '//' ~[\n\r\u2028\u2029]*
 ;
@@ -109,7 +102,6 @@ SINGLE_LINE_COMMENT
 // IdentifierName::
 //     IdentifierStart
 //     IdentifierName IdentifierPart
-fragment
 IDENTIFIER_NAME
 : IDENTIFIER_START IDENTIFIER_PART*
 ;
