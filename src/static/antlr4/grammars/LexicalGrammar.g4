@@ -210,6 +210,57 @@ UNICODE_ID_CONTINUE
 | [\uDB40][\uDD00-\uDDEF]
 ;
 
+// ref. Section 11.6.2.1
+// Keyword::
+//     await
+//     break
+//     case catch class const continue
+//     debugger default delete do
+//     else export extends
+//     finally for function
+//     if import in instanceof
+//     new
+//     return
+//     super switch
+//     this throw try typeof
+//     var void
+//     while with
+//     yield
+AWAIT:      'await' ;
+BREAK:      'break' ;
+CASE:       'case' ;
+CATCH:      'catch' ;
+CLASS:      'class' ;
+CONST:      'const' ;
+CONTINUE:   'continue' ;
+DEBUGGER:   'debugger' ;
+DEFAULT:    'default' ;
+DELETE:     'delete' ;
+DO:         'do' ;
+ELSE:       'else' ;
+EXPORT:     'export' ;
+EXTENDS:    'extends' ;
+FINALLY:    'finally' ;
+FOR:        'for' ;
+FUNCTION:   'function' ;
+IF:         'if' ;
+IMPORT:     'import' ;
+IN:         'in';
+INSTANCEOF: 'instanceof' ;
+NEW:        'new' ;
+RETURN:     'return' ;
+SUPER:      'super' ;
+SWITCH:     'switch' ;
+THIS:       'this' ;
+THROW:      'throw' ;
+TRY:        'try' ;
+TYPEOF:     'typeof' ;
+VAR:        'var' ;
+VOID:       'void' ;
+WHILE:      'while' ;
+WITH:       'with' ;
+YIELD:      'yield' ;
+
 // ref. section 11.8.4
 // UnicodeEscapeSequence::
 //     'u' Hex4Digits
