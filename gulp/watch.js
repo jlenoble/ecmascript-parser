@@ -18,6 +18,7 @@ const grammarGlob = [
 ];
 const dataGlob = [
   'src/static/data/**/*.*',
+  'src/static/antlr4/parsers/TestudocParser.js',
 ];
 
 export const watch = done => {
