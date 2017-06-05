@@ -2,10 +2,9 @@
 lexer grammar LexicalGrammar;
 
 // Any unicode character from U+0000 to U+10ffff
-// Don't know how to write a pattern for that, so wild guess: Use wildcard
 fragment
 SOURCE_CHARACTER
-: .
+: [\u0000-\u{10ffff}]
 ;
 
 // ref. Section 11.2
