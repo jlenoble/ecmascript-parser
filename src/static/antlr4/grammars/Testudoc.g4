@@ -1,6 +1,5 @@
 grammar Testudoc;
-import ECMAScript;
+import RegularExpressionLiteral;
 
-file
-: program
+file:
 ;
