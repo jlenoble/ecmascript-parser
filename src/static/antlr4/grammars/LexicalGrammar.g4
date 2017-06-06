@@ -445,6 +445,152 @@ BOOLEAN_LITERAL
 | 'false'
 ;
 
+// ref. section 11.8.3
+// NumericLiteral::
+//     DecimalLiteral
+//     BinaryIntegerLiteral
+//     OctalIntegerLiteral
+//     HexIntegerLiteral
+NUMERIC_LITERAL
+: DECIMAL_LITERAL
+| BINARY_INTEGER_LITERAL
+| OCTAL_INTEGER_LITERAL
+| HEX_INTEGER_LITERAL
+;
+
+// ref. section 11.8.3
+// DecimalLiteral::
+//     DecimalIntegerLiteral . DecimalDigits[opt] ExponentPart[opt]
+//     . DecimalDigits ExponentPart[opt]
+//     DecimalIntegerLiteral ExponentPart[opt]
+fragment
+DECIMAL_LITERAL
+: DECIMAL_INTEGER_LITERAL '.' DECIMAL_DIGITS? EXPONENT_PART?
+| '.' DECIMAL_DIGITS EXPONENT_PART?
+| DECIMAL_INTEGER_LITERAL EXPONENT_PART?
+;
+
+// ref. section 11.8.3
+// DecimalIntegerLiteral::
+//     0
+//     NonZeroDigit DecimalDigits[opt]
+fragment
+DECIMAL_INTEGER_LITERAL
+: '0'
+| NON_ZERO_DIGIT DECIMAL_DIGITS?
+;
+
+// ref. section 11.8.3
+// DecimalDigits::
+//     DecimalDigit
+//     DecimalDigitsDecimalDigit
+fragment
+DECIMAL_DIGITS
+: DECIMAL_DIGIT+
+;
+
+// ref. section 11.8.3
+// DecimalDigit::one of
+//     0123456789
+fragment
+DECIMAL_DIGIT
+: [0-9]
+;
+
+// ref. section 11.8.3
+// NonZeroDigit::one of
+//     123456789
+fragment
+NON_ZERO_DIGIT
+: [1-9]
+;
+
+// ref. section 11.8.3
+// ExponentPart::
+//     ExponentIndicator SignedInteger
+fragment
+EXPONENT_PART
+: EXPONENT_INDICATOR SIGNED_INTEGER
+;
+
+// ref. section 11.8.3
+// ExponentIndicator::one of
+//     eE
+fragment
+EXPONENT_INDICATOR
+: [eE]
+;
+
+// ref. section 11.8.3
+// SignedInteger::
+//     DecimalDigits
+//     + DecimalDigits
+//     - DecimalDigits
+fragment
+SIGNED_INTEGER
+: [-+] DECIMAL_DIGITS
+;
+
+// ref. section 11.8.3
+// BinaryIntegerLiteral::
+//     0b BinaryDigits
+//     0B BinaryDigits
+fragment
+BINARY_INTEGER_LITERAL
+: [0][bB] BINARY_DIGITS
+;
+
+// ref. section 11.8.3
+// BinaryDigits::
+//     BinaryDigit
+//     BinaryDigitsBinaryDigit
+fragment
+BINARY_DIGITS
+: BINARY_DIGIT+
+;
+
+// ref. section 11.8.3
+// BinaryDigit::one of
+//     0 1
+fragment
+BINARY_DIGIT
+: [01]
+;
+
+// ref. section 11.8.3
+// OctalIntegerLiteral::
+//     0o OctalDigits
+//     0O OctalDigits
+fragment
+OCTAL_INTEGER_LITERAL
+: [0][oO] OCTAL_DIGITS
+;
+
+// ref. section 11.8.3
+// OctalDigits::
+//     OctalDigit
+//     OctalDigits OctalDigit
+fragment
+OCTAL_DIGITS
+: OCTAL_DIGIT+
+;
+
+// ref. section 11.8.3
+// OctalDigit::one of
+//     01234567
+fragment
+OCTAL_DIGIT
+: [0-7]
+;
+
+// ref. Section 11.8.3
+// HexIntegerLiteral::
+//     '0x' HexDigits
+//     '0X' HexDigits
+HEX_INTEGER_LITERAL
+: [0][xX] HEX_DIGITS
+;
+
 // ref. section 11.8.4
 // UnicodeEscapeSequence::
 //     'u' Hex4Digits
