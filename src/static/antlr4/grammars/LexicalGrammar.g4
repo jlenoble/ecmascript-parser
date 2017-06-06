@@ -210,6 +210,19 @@ UNICODE_ID_CONTINUE
 | [\uDB40][\uDD00-\uDDEF]
 ;
 
+// ref. Section 11.6.2
+// ReservedWord::
+//     Keyword
+//     FutureReservedWord
+//     NullLiteral
+//     BooleanLiteral
+RESERVED_WORD
+: KEYWORD
+| FUTURE_RESERVED_WORD
+| NULL_LITERAL
+| BOOLEAN_LITERAL
+;
+
 // ref. Section 11.6.2.1
 // Keyword::
 //     await
@@ -226,6 +239,23 @@ UNICODE_ID_CONTINUE
 //     var void
 //     while with
 //     yield
+KEYWORD
+: AWAIT
+| BREAK
+| CASE | CATCH | CLASS | CONST | CONTINUE
+| DEBUGGER | DEFAULT | DELETE | DO
+| ELSE | EXPORT | EXTENDS
+| FINALLY | FOR | FUNCTION
+| IF | IMPORT | IN | INSTANCEOF
+| NEW
+| RETURN
+| SUPER | SWITCH
+| THIS | THROW | TRY | TYPEOF
+| VAR | VOID
+| WHILE | WITH
+| YIELD
+;
+
 AWAIT:      'await' ;
 BREAK:      'break' ;
 CASE:       'case' ;
@@ -260,6 +290,31 @@ VOID:       'void' ;
 WHILE:      'while' ;
 WITH:       'with' ;
 YIELD:      'yield' ;
+
+// ref. Section 11.6.2.2
+// FutureReservedWord::
+//     enum
+FUTURE_RESERVED_WORD
+: ENUM
+;
+
+ENUM: 'enum' ;
+
+// ref. Section 11.8.1
+// NullLiteral::
+//     null
+NULL_LITERAL
+: 'null'
+;
+
+// ref. Section 11.8.2
+// BooleanLiteral::
+//     true
+//     false
+BOOLEAN_LITERAL
+: 'true'
+| 'false'
+;
 
 // ref. section 11.8.4
 // UnicodeEscapeSequence::
