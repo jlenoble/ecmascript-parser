@@ -50,6 +50,7 @@
     "markdown-include": "*",
     "muter": "*",
     "plumb-gulp": "*",
+    "test262-parser-tests": "0.0.1",
     "through2": "*"
   },
   "peerDependencies": {}

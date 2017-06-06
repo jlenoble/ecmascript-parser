@@ -2,6 +2,6 @@
   "build": "README.md",
   "files": ["docs/index.md"],
   "tableOfContents": {
-    "heading": "# testudoc\n\nConverts test files to markdown examples"
+    "heading": "# ecmascript-parser\n\nWork in progress"
   }
 }
