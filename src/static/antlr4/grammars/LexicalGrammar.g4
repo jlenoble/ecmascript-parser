@@ -617,6 +617,122 @@ fragment
 HEX_DIGIT
 : [0-9a-fA-F]
 ;
+// ref. section 11.8.4
+// StringLiteral::
+//     " DoubleStringCharacters[opt] "
+//     ' SingleStringCharacters[opt] '
+STRING_LITERAL
+: '"'  DOUBLE_STRING_CHARACTERS? '"'
+| '\''  SINGLE_STRING_CHARACTERS? '\''
+;
+
+// ref. section 11.8.4
+// DoubleStringCharacters::
+//     DoubleStringCharacter DoubleStringCharacters[opt]
+fragment
+DOUBLE_STRING_CHARACTERS
+: DOUBLE_STRING_CHARACTER+
+;
+
+// ref. section 11.8.4
+// SingleStringCharacters::
+//     SingleStringCharacter SingleStringCharacters[opt]
+fragment
+SINGLE_STRING_CHARACTERS
+: SINGLE_STRING_CHARACTER+
+;
+
+// ref. section 11.8.4
+// DoubleStringCharacter::
+//     SourceCharacter but not one of " or \ or LineTerminator
+//     \ EscapeSequence
+//     LineContinuation
+fragment
+DOUBLE_STRING_CHARACTER
+: ~["\\\n\r\u2028\u2029]
+| '\\' ESCAPE_SEQUENCE
+| LINE_CONTINUATION
+;
+
+// ref. section 11.8.4
+// SingleStringCharacter::
+//     SourceCharacter but not one of ' or \ or LineTerminator
+//     \ EscapeSequence
+//     LineContinuation
+fragment
+SINGLE_STRING_CHARACTER
+:  ~['\\\n\r\u2028\u2029]
+| '\\' ESCAPE_SEQUENCE
+| LINE_CONTINUATION
+;
+
+// ref. section 11.8.4
+// LineContinuation::
+//     \ LineTerminatorSequence
+fragment
+LINE_CONTINUATION
+: '\\' LINE_TERMINATOR_SEQUENCE
+;
+
+// ref. section 11.8.4
+// EscapeSequence::
+//     CharacterEscapeSequence
+//     0[lookahead ∉ DecimalDigit]
+//     HexEscapeSequence
+//     UnicodeEscapeSequence
+fragment
+ESCAPE_SEQUENCE
+: CHARACTER_ESCAPE_SEQUENCE
+| [0] ~[0-9]
+| HEX_ESCAPE_SEQUENCE
+| UNICODE_ESCAPE_SEQUENCE
+;
+
+// ref. section 11.8.4
+// CharacterEscapeSequence::
+//     SingleEscapeCharacter
+//     NonEscapeCharacter
+fragment
+CHARACTER_ESCAPE_SEQUENCE
+: SINGLE_ESCAPE_CHARACTER
+| NON_ESCAPE_CHARACTER
+;
+
+// ref. section 11.8.4
+// SingleEscapeCharacter::one of
+//     ' " \ b f n r t v
+fragment
+SINGLE_ESCAPE_CHARACTER
+: ['"\\bfnrtv]
+;
+// ref. section 11.8.4
+// NonEscapeCharacter::
+//     SourceCharacter but not one of EscapeCharacter or LineTerminator
+fragment
+NON_ESCAPE_CHARACTER
+: ~['"\\bfnrtv0-9xu\n\r\u2028\u2029]
+;
+
+// ref. section 11.8.4
+// EscapeCharacter::
+//     SingleEscapeCharacter
+//     DecimalDigit
+//     x
+//     u
+fragment
+ESCAPE_CHARACTER
+: SINGLE_ESCAPE_CHARACTER
+| DECIMAL_DIGIT
+| [xu]
+;
+
+// ref. section 11.8.4
+// HexEscapeSequence::
+//     x HexDigit HexDigit
+fragment
+HEX_ESCAPE_SEQUENCE
+: [x] HEX_DIGIT HEX_DIGIT
+;
 
 // ref. section 11.8.4
 // Hex4Digits::
