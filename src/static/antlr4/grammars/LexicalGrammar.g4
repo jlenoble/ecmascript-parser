@@ -256,40 +256,40 @@ KEYWORD
 | YIELD
 ;
 
-AWAIT:      'await' ;
-BREAK:      'break' ;
-CASE:       'case' ;
-CATCH:      'catch' ;
-CLASS:      'class' ;
-CONST:      'const' ;
-CONTINUE:   'continue' ;
-DEBUGGER:   'debugger' ;
-DEFAULT:    'default' ;
-DELETE:     'delete' ;
-DO:         'do' ;
-ELSE:       'else' ;
-EXPORT:     'export' ;
-EXTENDS:    'extends' ;
-FINALLY:    'finally' ;
-FOR:        'for' ;
-FUNCTION:   'function' ;
-IF:         'if' ;
-IMPORT:     'import' ;
+AWAIT:      'await';
+BREAK:      'break';
+CASE:       'case';
+CATCH:      'catch';
+CLASS:      'class';
+CONST:      'const';
+CONTINUE:   'continue';
+DEBUGGER:   'debugger';
+DEFAULT:    'default';
+DELETE:     'delete';
+DO:         'do';
+ELSE:       'else';
+EXPORT:     'export';
+EXTENDS:    'extends';
+FINALLY:    'finally';
+FOR:        'for';
+FUNCTION:   'function';
+IF:         'if';
+IMPORT:     'import';
 IN:         'in';
-INSTANCEOF: 'instanceof' ;
-NEW:        'new' ;
-RETURN:     'return' ;
-SUPER:      'super' ;
-SWITCH:     'switch' ;
-THIS:       'this' ;
-THROW:      'throw' ;
-TRY:        'try' ;
-TYPEOF:     'typeof' ;
-VAR:        'var' ;
-VOID:       'void' ;
-WHILE:      'while' ;
-WITH:       'with' ;
-YIELD:      'yield' ;
+INSTANCEOF: 'instanceof';
+NEW:        'new';
+RETURN:     'return';
+SUPER:      'super';
+SWITCH:     'switch';
+THIS:       'this';
+THROW:      'throw';
+TRY:        'try';
+TYPEOF:     'typeof';
+VAR:        'var';
+VOID:       'void';
+WHILE:      'while';
+WITH:       'with';
+YIELD:      'yield';
 
 // ref. Section 11.6.2.2
 // FutureReservedWord::
@@ -298,7 +298,7 @@ FUTURE_RESERVED_WORD
 : ENUM
 ;
 
-ENUM: 'enum' ;
+ENUM: 'enum';
 
 // ref. Section 11.7
 // Punctuator::
