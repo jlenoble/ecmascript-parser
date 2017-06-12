@@ -1,16 +1,16 @@
 import gulp from 'gulp';
 import antlr4 from 'gulp-antlr4';
-import replace from 'gulp-replace';
+// import replace from 'gulp-replace';
 
 const grammarGlob = [
-  'src/static/antlr4/grammars/Testudoc.g4',
+  'src/static/antlr4/grammars/ECMAScript*.g4',
 ];
 const parserDir = 'src/static/antlr4/parsers';
-const parserGlob = 'src/static/antlr4/parsers/**/*.js';
+// const parserGlob = 'src/static/antlr4/parsers/**/*.js';
 const dataGlob = [
-  'src/static/data/**/*.*',
+  'node_modules/test262-parser-tests/pass/*.js',
 ];
-const grammar = 'Testudoc';
+const grammar = 'ECMAScript';
 const rule = 'file';
 const listener = 'Translator';
 const listenerDir = 'build/src/static/antlr4';
@@ -34,14 +34,15 @@ export const makeParser = () => {
     }));
 };
 
-export const fixParser = () => {
-  return gulp.src(parserGlob, {since: gulp.lastRun(fixParser)})
-    .pipe(replace(/ECMAScript/g, 'Testudoc'))
-    .pipe(gulp.dest(parserDir));
+export const fixParser = done => {
+  /* return gulp.src(parserGlob, {since: gulp.lastRun(fixParser)})
+    .pipe(replace(/ECMAScript/g, 'ECMAScriptParser'))
+    .pipe(gulp.dest(parserDir));*/
+  done();
 };
 
-export const translate = () => {
-  return gulp.src(dataGlob)
+export const translate = file => {
+  return gulp.src(file || dataGlob)
     .pipe(antlr4({
       grammar, parserDir, listener, listenerDir, rule,
     }));
