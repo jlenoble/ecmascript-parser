@@ -1,0 +1,5 @@
+NumericLiteral=1
+DecimalLiteral=2
+BinaryIntegerLiteral=3
+OctalIntegerLiteral=4
+HexIntegerLiteral=5
