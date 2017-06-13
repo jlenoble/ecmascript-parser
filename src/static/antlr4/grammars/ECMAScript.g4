@@ -1,15 +1,12 @@
 grammar ECMAScript;
 import
   AdditionalSyntax,
-  LexicalGrammar;
+  LexicalGrammar,
+  FunctionsAndClasses;
 
 file
 : functionDeclaration EOF
 | NumericLiteral EOF
-;
-
-functionDeclaration
-: Function identifier OpenParen CloseParen OpenBrace functionBody CloseBrace
 ;
 
 identifier

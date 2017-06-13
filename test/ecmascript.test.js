@@ -4,7 +4,7 @@ import Muter, {muted} from 'muter';
 describe('Testing ECMAScript', function () {
   const muter = Muter(process.stderr, 'write'); // eslint-disable-line
 
-  for (let i = 0; i < 3/* 1956 */; i++) {
+  for (let i = 0; i < 8/* 1956 */; i++) {
     let file;
 
     if (
