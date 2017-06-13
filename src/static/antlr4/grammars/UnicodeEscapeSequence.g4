@@ -1,7 +1,6 @@
 /* Source: ECMAScript® 2018 Language Specification - Annex A-1 */
 
 lexer grammar UnicodeEscapeSequence;
-import NumericLiteralB1;
 
 // UnicodeEscapeSequence::
 //     'u' Hex4Digits

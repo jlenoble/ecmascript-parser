@@ -1,7 +1,6 @@
 /* Source: ECMAScript® 2018 Language Specification - Annex A-1 */
 
 lexer grammar StringLiteralA1;
-import UnicodeEscapeSequence;
 
 // StringLiteral::
 //    " DoubleStringCharacters[opt] "

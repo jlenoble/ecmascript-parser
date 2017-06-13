@@ -29,7 +29,7 @@ lexer grammar WhiteSpace;
 //     <MMSP>     U+205F    MEDIUM MATHEMATICAL SPACE     &MediumSpace;
 //                U+3000    IDEOGRAPHIC SPACE
 WhiteSpace
-: [\t\u000b\u000c\u0020\u00a0\ufeff\u0085\u1680\u2000-\u200a\u202f\u205f\u3000]
+: [\t\u000b\u000c\u0020\u00a0\ufeff\u0085\u1680\u2000-\u200a\u202f\u205f\u3000] -> channel(HIDDEN)
 ;
 
 // LineTerminator::

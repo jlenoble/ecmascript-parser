@@ -1,7 +1,6 @@
 /* Source: ECMAScript® 2018 Language Specification - Annex B-1 */
 
 lexer grammar NumericLiteralB1;
-import NumericLiteralA1;
 
 // B.1.1 Numeric Literals
 // The syntax and semantics of 11.8.3 is extended as follows except that this extension is not allowed for strict mode code:

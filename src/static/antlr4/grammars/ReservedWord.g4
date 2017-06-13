@@ -1,57 +1,6 @@
 /* Source: ECMAScript® 2018 Language Specification - Annex A-1 */
 
 lexer grammar ReservedWord;
-import WhiteSpace;
-
-// ReservedWord::
-//    Keyword
-//    FutureReservedWord
-//    NullLiteral
-//    BooleanLiteral
-ReservedWord
-: Keyword
-| FutureReservedWord
-| NullLiteral
-| BooleanLiteral
-;
-
-// Keyword::
-//     await
-//     break
-//     case catch class const continue
-//     debugger default delete do
-//     else export extends
-//     finally for function
-//     if import in instanceof
-//     new
-//     return
-//     super switch
-//     this throw try typeof
-//     var void
-//     while with
-//     yield
-Keyword
-: Await
-| Break
-| Case      | Catch   | Class     | Const       | Continue
-| Debugger  | Default | Delete    | Do
-| Else      | Export  | Extends
-| Finally   | For     | Function
-| If        | Import  | In        | InstanceOf
-| New
-| Return
-| Super     | Switch
-| This      | Throw   | Try       | TypeOf
-| Var       | Void
-| While     | With
-| Yield
-;
-
-// FutureReservedWord::
-//    enum
-FutureReservedWord
-: Enum
-;
 
 Await       : 'await';
 
@@ -103,11 +52,60 @@ Yield       : 'yield';
 
 Enum        : 'enum';
 
+// ReservedWord::
+//    Keyword
+//    FutureReservedWord
+//    NullLiteral
+//    BooleanLiteral
+ReservedWord
+: Keyword
+| FutureReservedWord
+| NullLiteral
+| BooleanLiteral
+;
+
+// Keyword::
+//     await
+//     break
+//     case catch class const continue
+//     debugger default delete do
+//     else export extends
+//     finally for function
+//     if import in instanceof
+//     new
+//     return
+//     super switch
+//     this throw try typeof
+//     var void
+//     while with
+//     yield
+Keyword
+: Await
+| Break
+| Case      | Catch   | Class     | Const       | Continue
+| Debugger  | Default | Delete    | Do
+| Else      | Export  | Extends
+| Finally   | For     | Function
+| If        | Import  | In        | InstanceOf
+| New
+| Return
+| Super     | Switch
+| This      | Throw   | Try       | TypeOf
+| Var       | Void
+| While     | With
+| Yield
+;
+
+// FutureReservedWord::
+//    enum
+FutureReservedWord
+: Enum
+;
+
 // NullLiteral::
 //    null
 NullLiteral
-: Null
-;
+: Null;
 
 Null        : 'null';
 

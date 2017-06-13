@@ -1,7 +1,6 @@
 /* Source: ECMAScript® 2018 Language Specification - Annex B-1 */
 
 lexer grammar StringLiteralB1;
-import StringLiteralA1;
 
 // B.1.2 String Literals
 // The syntax and semantics of 11.8.4 is extended as follows except that this extension is not allowed for strict mode code:
