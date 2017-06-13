@@ -3,4 +3,5 @@
 // A.3 Statements
 grammar Statements;
 import
-  BindingElement;
+  BindingElement,
+  BindingPattern;
