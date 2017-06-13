@@ -4,46 +4,11 @@ import
   LexicalGrammar,
   Expressions,
   Statements,
-  FunctionsAndClasses;
+  FunctionsAndClasses,
+  ScriptsAndModules;
 
 file
-: functionDeclaration EOF
-| NumericLiteral EOF
-;
-
-statementList_Return
-: (statementListItem_Return eos)+
-;
-statementList_Yield_Return
-: (statementListItem_Return eos)+
-;
-statementList_Await_Return
-: (statementListItem_Return eos)+
-;
-statementList_Yield_Await_Return
-: (statementListItem_Return eos)+
-;
-
-statementListItem_Return
-: statement_Return
-//| declaration
-;
-
-statement_Return
-: /*blockStatement_Return
-| variableStatement
-| emptyStatement
-| */expressionStatement
-/*| ifStatement_Return
-| breakableStatement_Return
-| continueStatement
-| breakStatement
-| returnStatement
-| withStatement_Return
-| labelledStatement_Return
-| throwStatement
-| tryStatement_Return
-| debuggerStatement*/
+: Script EOF
 ;
 
 expressionStatement
