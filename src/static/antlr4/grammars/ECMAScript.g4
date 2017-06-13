@@ -11,18 +11,6 @@ file
 | NumericLiteral EOF
 ;
 
-functionBody
-: functionStatementList
-;
-
-functionStatementList
-: statementList_Return
-;
-
-statementList_Return
-: (statementListItem_Return eos)+
-;
-
 statementListItem_Return
 : statement_Return
 //| declaration

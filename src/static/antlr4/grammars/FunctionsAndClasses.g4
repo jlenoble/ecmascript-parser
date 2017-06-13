@@ -4,6 +4,7 @@
 grammar FunctionsAndClasses;
 import
   FormalParameter,
+  FunctionBody,
   MethodDefinition;
 
 // FunctionDeclaration[Yield, Await, Default]:
