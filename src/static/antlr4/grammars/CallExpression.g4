@@ -11,35 +11,50 @@ grammar CallExpression;
 //    CallExpression[?Yield, ?Await] TemplateLiteral[?Yield, ?Await]
 callExpression
 : /*coverCallExpressionAndAsyncArrowHead
-| superCall
-| */callExpression arguments
+| */superCall
+| callExpression arguments
 | callExpression OpenBracket expression_In CloseBracket
 | callExpression Dot IdentifierName
 /*| callExpression templateLiteral*/
 ;
 callExpression_Yield
 : /*coverCallExpressionAndAsyncArrowHead_Yield
-| superCall_Yield
-| */callExpression_Yield arguments_Yield
+| */superCall_Yield
+| callExpression_Yield arguments_Yield
 | callExpression_Yield OpenBracket expression_In_Yield CloseBracket
 | callExpression_Yield Dot IdentifierName
 /*| callExpression_Yield templateLiteral_Yield*/
 ;
 callExpression_Await
 : /*coverCallExpressionAndAsyncArrowHead_Await
-| superCall_Await
-| */callExpression_Await arguments_Await
+| */superCall_Await
+| callExpression_Await arguments_Await
 | callExpression_Await OpenBracket expression_In_Await CloseBracket
 | callExpression_Await Dot IdentifierName
 /*| callExpression_Await templateLiteral_Await*/
 ;
 callExpression_Yield_Await
 : /*coverCallExpressionAndAsyncArrowHead_Yield_Await
-| superCall_Yield_Await
-| */callExpression_Yield_Await arguments_Yield_Await
+| */superCall_Yield_Await
+| callExpression_Yield_Await arguments_Yield_Await
 | callExpression_Yield_Await OpenBracket expression_In_Yield_Await CloseBracket
 | callExpression_Yield_Await Dot IdentifierName
 /*| callExpression_Yield_Await templateLiteral_Yield_Await*/
+;
+
+// SuperCall[Yield, Await]:
+//    super Arguments[?Yield, ?Await]
+superCall
+: Super arguments
+;
+superCall_Yield
+: Super arguments_Yield
+;
+superCall_Await
+: Super arguments_Await
+;
+superCall_Yield_Await
+: Super arguments_Yield_Await
 ;
 
 // Arguments[Yield, Await]:
