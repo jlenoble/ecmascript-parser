@@ -4,7 +4,8 @@
 grammar Statements;
 import
   BindingElement,
-  BindingPattern;
+  BindingPattern,
+  BlockStatement;
 
 // Statement[Yield, Await, Return]:
 //    BlockStatement[?Yield, ?Await, ?Return]
