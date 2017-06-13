@@ -20,69 +20,6 @@ ECMAScriptListener.prototype.exitFile = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ECMAScriptParser#statementList_Return.
-ECMAScriptListener.prototype.enterStatementList_Return = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptParser#statementList_Return.
-ECMAScriptListener.prototype.exitStatementList_Return = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptParser#statementList_Yield_Return.
-ECMAScriptListener.prototype.enterStatementList_Yield_Return = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptParser#statementList_Yield_Return.
-ECMAScriptListener.prototype.exitStatementList_Yield_Return = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptParser#statementList_Await_Return.
-ECMAScriptListener.prototype.enterStatementList_Await_Return = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptParser#statementList_Await_Return.
-ECMAScriptListener.prototype.exitStatementList_Await_Return = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptParser#statementList_Yield_Await_Return.
-ECMAScriptListener.prototype.enterStatementList_Yield_Await_Return = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptParser#statementList_Yield_Await_Return.
-ECMAScriptListener.prototype.exitStatementList_Yield_Await_Return = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptParser#statementListItem_Return.
-ECMAScriptListener.prototype.enterStatementListItem_Return = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptParser#statementListItem_Return.
-ECMAScriptListener.prototype.exitStatementListItem_Return = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptParser#statement_Return.
-ECMAScriptListener.prototype.enterStatement_Return = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptParser#statement_Return.
-ECMAScriptListener.prototype.exitStatement_Return = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptParser#expressionStatement.
-ECMAScriptListener.prototype.enterExpressionStatement = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptParser#expressionStatement.
-ECMAScriptListener.prototype.exitExpressionStatement = function(ctx) {
-};
-
-
 // Enter a parse tree produced by ECMAScriptParser#eos.
 ECMAScriptListener.prototype.enterEos = function(ctx) {
 };
@@ -1289,6 +1226,267 @@ ECMAScriptListener.prototype.exitAssignmentOperator = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptParser#statement.
+ECMAScriptListener.prototype.enterStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statement.
+ECMAScriptListener.prototype.exitStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statement_Yield.
+ECMAScriptListener.prototype.enterStatement_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statement_Yield.
+ECMAScriptListener.prototype.exitStatement_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statement_Await.
+ECMAScriptListener.prototype.enterStatement_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statement_Await.
+ECMAScriptListener.prototype.exitStatement_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statement_Yield_Await.
+ECMAScriptListener.prototype.enterStatement_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statement_Yield_Await.
+ECMAScriptListener.prototype.exitStatement_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statement_Return.
+ECMAScriptListener.prototype.enterStatement_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statement_Return.
+ECMAScriptListener.prototype.exitStatement_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statement_Yield_Return.
+ECMAScriptListener.prototype.enterStatement_Yield_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statement_Yield_Return.
+ECMAScriptListener.prototype.exitStatement_Yield_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statement_Await_Return.
+ECMAScriptListener.prototype.enterStatement_Await_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statement_Await_Return.
+ECMAScriptListener.prototype.exitStatement_Await_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statement_Yield_Await_Return.
+ECMAScriptListener.prototype.enterStatement_Yield_Await_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statement_Yield_Await_Return.
+ECMAScriptListener.prototype.exitStatement_Yield_Await_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementList.
+ECMAScriptListener.prototype.enterStatementList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementList.
+ECMAScriptListener.prototype.exitStatementList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementList_Yield.
+ECMAScriptListener.prototype.enterStatementList_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementList_Yield.
+ECMAScriptListener.prototype.exitStatementList_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementList_Await.
+ECMAScriptListener.prototype.enterStatementList_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementList_Await.
+ECMAScriptListener.prototype.exitStatementList_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementList_Yield_Await.
+ECMAScriptListener.prototype.enterStatementList_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementList_Yield_Await.
+ECMAScriptListener.prototype.exitStatementList_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementList_Return.
+ECMAScriptListener.prototype.enterStatementList_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementList_Return.
+ECMAScriptListener.prototype.exitStatementList_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementList_Yield_Return.
+ECMAScriptListener.prototype.enterStatementList_Yield_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementList_Yield_Return.
+ECMAScriptListener.prototype.exitStatementList_Yield_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementList_Await_Return.
+ECMAScriptListener.prototype.enterStatementList_Await_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementList_Await_Return.
+ECMAScriptListener.prototype.exitStatementList_Await_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementList_Yield_Await_Return.
+ECMAScriptListener.prototype.enterStatementList_Yield_Await_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementList_Yield_Await_Return.
+ECMAScriptListener.prototype.exitStatementList_Yield_Await_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementListItem.
+ECMAScriptListener.prototype.enterStatementListItem = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementListItem.
+ECMAScriptListener.prototype.exitStatementListItem = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementListItem_Yield.
+ECMAScriptListener.prototype.enterStatementListItem_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementListItem_Yield.
+ECMAScriptListener.prototype.exitStatementListItem_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementListItem_Await.
+ECMAScriptListener.prototype.enterStatementListItem_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementListItem_Await.
+ECMAScriptListener.prototype.exitStatementListItem_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementListItem_Yield_Await.
+ECMAScriptListener.prototype.enterStatementListItem_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementListItem_Yield_Await.
+ECMAScriptListener.prototype.exitStatementListItem_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementListItem_Return.
+ECMAScriptListener.prototype.enterStatementListItem_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementListItem_Return.
+ECMAScriptListener.prototype.exitStatementListItem_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementListItem_Yield_Return.
+ECMAScriptListener.prototype.enterStatementListItem_Yield_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementListItem_Yield_Return.
+ECMAScriptListener.prototype.exitStatementListItem_Yield_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementListItem_Await_Return.
+ECMAScriptListener.prototype.enterStatementListItem_Await_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementListItem_Await_Return.
+ECMAScriptListener.prototype.exitStatementListItem_Await_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#statementListItem_Yield_Await_Return.
+ECMAScriptListener.prototype.enterStatementListItem_Yield_Await_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#statementListItem_Yield_Await_Return.
+ECMAScriptListener.prototype.exitStatementListItem_Yield_Await_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#emptyStatement.
+ECMAScriptListener.prototype.enterEmptyStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#emptyStatement.
+ECMAScriptListener.prototype.exitEmptyStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#expressionStatement.
+ECMAScriptListener.prototype.enterExpressionStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#expressionStatement.
+ECMAScriptListener.prototype.exitExpressionStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#expressionStatement_Yield.
+ECMAScriptListener.prototype.enterExpressionStatement_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#expressionStatement_Yield.
+ECMAScriptListener.prototype.exitExpressionStatement_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#expressionStatement_Await.
+ECMAScriptListener.prototype.enterExpressionStatement_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#expressionStatement_Await.
+ECMAScriptListener.prototype.exitExpressionStatement_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#expressionStatement_Yield_Await.
+ECMAScriptListener.prototype.enterExpressionStatement_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#expressionStatement_Yield_Await.
+ECMAScriptListener.prototype.exitExpressionStatement_Yield_Await = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptParser#bindingElementList.
 ECMAScriptListener.prototype.enterBindingElementList = function(ctx) {
 };
@@ -1646,6 +1844,438 @@ ECMAScriptListener.prototype.enterBindingProperty_Yield_Await = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptParser#bindingProperty_Yield_Await.
 ECMAScriptListener.prototype.exitBindingProperty_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#declaration.
+ECMAScriptListener.prototype.enterDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#declaration.
+ECMAScriptListener.prototype.exitDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#declaration_Yield.
+ECMAScriptListener.prototype.enterDeclaration_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#declaration_Yield.
+ECMAScriptListener.prototype.exitDeclaration_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#declaration_Await.
+ECMAScriptListener.prototype.enterDeclaration_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#declaration_Await.
+ECMAScriptListener.prototype.exitDeclaration_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#declaration_Yield_Await.
+ECMAScriptListener.prototype.enterDeclaration_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#declaration_Yield_Await.
+ECMAScriptListener.prototype.exitDeclaration_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#hoistableDeclaration.
+ECMAScriptListener.prototype.enterHoistableDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#hoistableDeclaration.
+ECMAScriptListener.prototype.exitHoistableDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#hoistableDeclaration_Yield.
+ECMAScriptListener.prototype.enterHoistableDeclaration_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#hoistableDeclaration_Yield.
+ECMAScriptListener.prototype.exitHoistableDeclaration_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#hoistableDeclaration_Await.
+ECMAScriptListener.prototype.enterHoistableDeclaration_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#hoistableDeclaration_Await.
+ECMAScriptListener.prototype.exitHoistableDeclaration_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#hoistableDeclaration_Yield_Await.
+ECMAScriptListener.prototype.enterHoistableDeclaration_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#hoistableDeclaration_Yield_Await.
+ECMAScriptListener.prototype.exitHoistableDeclaration_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#hoistableDeclaration_Default.
+ECMAScriptListener.prototype.enterHoistableDeclaration_Default = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#hoistableDeclaration_Default.
+ECMAScriptListener.prototype.exitHoistableDeclaration_Default = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#hoistableDeclaration_Yield_Default.
+ECMAScriptListener.prototype.enterHoistableDeclaration_Yield_Default = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#hoistableDeclaration_Yield_Default.
+ECMAScriptListener.prototype.exitHoistableDeclaration_Yield_Default = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#hoistableDeclaration_Await_Default.
+ECMAScriptListener.prototype.enterHoistableDeclaration_Await_Default = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#hoistableDeclaration_Await_Default.
+ECMAScriptListener.prototype.exitHoistableDeclaration_Await_Default = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#hoistableDeclaration_Yield_Await_Default.
+ECMAScriptListener.prototype.enterHoistableDeclaration_Yield_Await_Default = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#hoistableDeclaration_Yield_Await_Default.
+ECMAScriptListener.prototype.exitHoistableDeclaration_Yield_Await_Default = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#blockStatement.
+ECMAScriptListener.prototype.enterBlockStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#blockStatement.
+ECMAScriptListener.prototype.exitBlockStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#blockStatement_Yield.
+ECMAScriptListener.prototype.enterBlockStatement_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#blockStatement_Yield.
+ECMAScriptListener.prototype.exitBlockStatement_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#blockStatement_Await.
+ECMAScriptListener.prototype.enterBlockStatement_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#blockStatement_Await.
+ECMAScriptListener.prototype.exitBlockStatement_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#blockStatement_Yield_Await.
+ECMAScriptListener.prototype.enterBlockStatement_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#blockStatement_Yield_Await.
+ECMAScriptListener.prototype.exitBlockStatement_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#blockStatement_Return.
+ECMAScriptListener.prototype.enterBlockStatement_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#blockStatement_Return.
+ECMAScriptListener.prototype.exitBlockStatement_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#blockStatement_Yield_Return.
+ECMAScriptListener.prototype.enterBlockStatement_Yield_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#blockStatement_Yield_Return.
+ECMAScriptListener.prototype.exitBlockStatement_Yield_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#blockStatement_Await_Return.
+ECMAScriptListener.prototype.enterBlockStatement_Await_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#blockStatement_Await_Return.
+ECMAScriptListener.prototype.exitBlockStatement_Await_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#blockStatement_Yield_Await_Return.
+ECMAScriptListener.prototype.enterBlockStatement_Yield_Await_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#blockStatement_Yield_Await_Return.
+ECMAScriptListener.prototype.exitBlockStatement_Yield_Await_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#block.
+ECMAScriptListener.prototype.enterBlock = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#block.
+ECMAScriptListener.prototype.exitBlock = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#block_Yield.
+ECMAScriptListener.prototype.enterBlock_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#block_Yield.
+ECMAScriptListener.prototype.exitBlock_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#block_Await.
+ECMAScriptListener.prototype.enterBlock_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#block_Await.
+ECMAScriptListener.prototype.exitBlock_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#block_Yield_Await.
+ECMAScriptListener.prototype.enterBlock_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#block_Yield_Await.
+ECMAScriptListener.prototype.exitBlock_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#block_Return.
+ECMAScriptListener.prototype.enterBlock_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#block_Return.
+ECMAScriptListener.prototype.exitBlock_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#block_Yield_Return.
+ECMAScriptListener.prototype.enterBlock_Yield_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#block_Yield_Return.
+ECMAScriptListener.prototype.exitBlock_Yield_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#block_Await_Return.
+ECMAScriptListener.prototype.enterBlock_Await_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#block_Await_Return.
+ECMAScriptListener.prototype.exitBlock_Await_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#block_Yield_Await_Return.
+ECMAScriptListener.prototype.enterBlock_Yield_Await_Return = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#block_Yield_Await_Return.
+ECMAScriptListener.prototype.exitBlock_Yield_Await_Return = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableStatement.
+ECMAScriptListener.prototype.enterVariableStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableStatement.
+ECMAScriptListener.prototype.exitVariableStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableStatement_Yield.
+ECMAScriptListener.prototype.enterVariableStatement_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableStatement_Yield.
+ECMAScriptListener.prototype.exitVariableStatement_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableStatement_Await.
+ECMAScriptListener.prototype.enterVariableStatement_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableStatement_Await.
+ECMAScriptListener.prototype.exitVariableStatement_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableStatement_Yield_Await.
+ECMAScriptListener.prototype.enterVariableStatement_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableStatement_Yield_Await.
+ECMAScriptListener.prototype.exitVariableStatement_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclarationList.
+ECMAScriptListener.prototype.enterVariableDeclarationList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclarationList.
+ECMAScriptListener.prototype.exitVariableDeclarationList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclarationList_In.
+ECMAScriptListener.prototype.enterVariableDeclarationList_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclarationList_In.
+ECMAScriptListener.prototype.exitVariableDeclarationList_In = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclarationList_Yield.
+ECMAScriptListener.prototype.enterVariableDeclarationList_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclarationList_Yield.
+ECMAScriptListener.prototype.exitVariableDeclarationList_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclarationList_Await.
+ECMAScriptListener.prototype.enterVariableDeclarationList_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclarationList_Await.
+ECMAScriptListener.prototype.exitVariableDeclarationList_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclarationList_Yield_Await.
+ECMAScriptListener.prototype.enterVariableDeclarationList_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclarationList_Yield_Await.
+ECMAScriptListener.prototype.exitVariableDeclarationList_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclarationList_In_Yield.
+ECMAScriptListener.prototype.enterVariableDeclarationList_In_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclarationList_In_Yield.
+ECMAScriptListener.prototype.exitVariableDeclarationList_In_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclarationList_In_Await.
+ECMAScriptListener.prototype.enterVariableDeclarationList_In_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclarationList_In_Await.
+ECMAScriptListener.prototype.exitVariableDeclarationList_In_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclarationList_In_Yield_Await.
+ECMAScriptListener.prototype.enterVariableDeclarationList_In_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclarationList_In_Yield_Await.
+ECMAScriptListener.prototype.exitVariableDeclarationList_In_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclaration.
+ECMAScriptListener.prototype.enterVariableDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclaration.
+ECMAScriptListener.prototype.exitVariableDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclaration_In.
+ECMAScriptListener.prototype.enterVariableDeclaration_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclaration_In.
+ECMAScriptListener.prototype.exitVariableDeclaration_In = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclaration_Yield.
+ECMAScriptListener.prototype.enterVariableDeclaration_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclaration_Yield.
+ECMAScriptListener.prototype.exitVariableDeclaration_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclaration_Await.
+ECMAScriptListener.prototype.enterVariableDeclaration_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclaration_Await.
+ECMAScriptListener.prototype.exitVariableDeclaration_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclaration_Yield_Await.
+ECMAScriptListener.prototype.enterVariableDeclaration_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclaration_Yield_Await.
+ECMAScriptListener.prototype.exitVariableDeclaration_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclaration_In_Yield.
+ECMAScriptListener.prototype.enterVariableDeclaration_In_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclaration_In_Yield.
+ECMAScriptListener.prototype.exitVariableDeclaration_In_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclaration_In_Await.
+ECMAScriptListener.prototype.enterVariableDeclaration_In_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclaration_In_Await.
+ECMAScriptListener.prototype.exitVariableDeclaration_In_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#variableDeclaration_In_Yield_Await.
+ECMAScriptListener.prototype.enterVariableDeclaration_In_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#variableDeclaration_In_Yield_Await.
+ECMAScriptListener.prototype.exitVariableDeclaration_In_Yield_Await = function(ctx) {
 };
 
 
@@ -2105,6 +2735,24 @@ ECMAScriptListener.prototype.enterAsyncMethod_Yield_Await = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptParser#asyncMethod_Yield_Await.
 ECMAScriptListener.prototype.exitAsyncMethod_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#script.
+ECMAScriptListener.prototype.enterScript = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#script.
+ECMAScriptListener.prototype.exitScript = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#scriptBody.
+ECMAScriptListener.prototype.enterScriptBody = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#scriptBody.
+ECMAScriptListener.prototype.exitScriptBody = function(ctx) {
 };
 
 

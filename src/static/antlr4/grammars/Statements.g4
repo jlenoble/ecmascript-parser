@@ -5,6 +5,7 @@ grammar Statements;
 import
   BindingElement,
   BindingPattern,
+  Declaration,
   BlockStatement,
   VariableStatement;
 
@@ -152,28 +153,28 @@ statement_Yield_Await_Return
 //    StatementListItem[?Yield, ?Await, ?Return]
 //    StatementList[?Yield, ?Await, ?Return] StatementListItem[?Yield, ?Await, ?Return]
 statementList
-: statementListItem+
+: (statementListItem eos)+
 ;
 statementList_Yield
-: statementListItem_Yield+
+: (statementListItem_Yield eos)+
 ;
 statementList_Await
-: statementListItem_Await+
+: (statementListItem_Await eos)+
 ;
 statementList_Yield_Await
-: statementListItem_Yield_Await+
+: (statementListItem_Yield_Await eos)+
 ;
 statementList_Return
-: statementListItem_Return+
+: (statementListItem_Return eos)+
 ;
 statementList_Yield_Return
-: statementListItem_Yield_Return+
+: (statementListItem_Yield_Return eos)+
 ;
 statementList_Await_Return
-: statementListItem_Await_Return+
+: (statementListItem_Await_Return eos)+
 ;
 statementList_Yield_Await_Return
-: statementListItem_Yield_Await_Return+
+: (statementListItem_Yield_Await_Return eos)+
 ;
 
 // StatementListItem[Yield, Await, Return]:

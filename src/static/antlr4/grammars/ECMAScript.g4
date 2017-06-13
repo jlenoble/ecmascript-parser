@@ -8,16 +8,11 @@ import
   ScriptsAndModules;
 
 file
-: Script EOF
-;
-
-expressionStatement
-: StringLiteral
-| objectLiteral
-| OpenParen expressionStatement CloseParen
+: script EOF
 ;
 
 eos
 : SemiColon
+| {this._input.LT(1).type == ECMAScriptParser.EOF}?
 | {this._input.LT(1).type == ECMAScriptParser.CloseBrace}?
 ;
