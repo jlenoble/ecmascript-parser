@@ -1,6 +1,6 @@
 /* Source: ECMAScript® 2018 Language Specification - Annex A-1 */
 
-grammar Punctuator;
+lexer grammar Punctuator;
 
 OpenBrace                  : '{';
 OpenParen                  : '(';
@@ -98,15 +98,15 @@ Punctuator
 | FatArrow
 ;
 
+Divide                     : '/';
+DivideAssign               : '/=';
+
 // DivPunctuator::
 //    /
 //    /=
-divPunctuator
+DivPunctuator
 : Divide | DivideAssign
 ;
-
-Divide                     : '/';
-DivideAssign               : '/=';
 
 // RightBracePunctuator::
 //    }
