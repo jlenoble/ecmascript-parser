@@ -3,4 +3,5 @@
 // A.2 Expressions
 grammar Expressions;
 import
-  BindingIdentifier;
+  BindingIdentifier,
+  ArrayLiteral;

@@ -11,10 +11,6 @@ file
 | NumericLiteral EOF
 ;
 
-identifier
-: IdentifierName
-;
-
 functionBody
 : functionStatementList
 ;
