@@ -217,3 +217,18 @@ statementListItem_Yield_Await_Return
 emptyStatement
 : SemiColon
 ;
+
+// ExpressionStatement[Yield, Await]:
+//    [lookahead ∉ { {, function, async [no LineTerminator here] function, class, let [ }] Expression[+In, ?Yield, ?Await];
+expressionStatement
+: expression_In
+;
+expressionStatement_Yield
+: expression_In_Yield
+;
+expressionStatement_Await
+: expression_In_Await
+;
+expressionStatement_Yield_Await
+: expression_In_Yield_Await
+;
