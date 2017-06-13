@@ -1,6 +1,6 @@
 /* Source: ECMAScript® 2018 Language Specification - Annex A-4 */
 
-grammar FormalParameters;
+grammar FormalParameter;
 
 // UniqueFormalParameters[Yield, Await]:
 //    FormalParameters[?Yield, ?Await]

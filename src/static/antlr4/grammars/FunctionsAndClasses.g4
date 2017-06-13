@@ -3,7 +3,7 @@
 // A.4 Functions and Classes
 grammar FunctionsAndClasses;
 import
-  FormalParameters;
+  FormalParameter;
 
 // FunctionDeclaration[Yield, Await, Default]:
 // function BindingIdentifier[?Yield, ?Await] ( FormalParameters[~Yield, ~Await] ) { FunctionBody[~Yield, ~Await] }
