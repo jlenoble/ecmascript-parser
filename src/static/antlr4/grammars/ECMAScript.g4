@@ -51,23 +51,6 @@ expressionStatement
 | OpenParen expressionStatement CloseParen
 ;
 
-objectLiteral
-: OpenBrace propertyDefinitionList CloseBrace
-;
-
-propertyDefinitionList
-: propertyDefinition (Comma propertyDefinition)*
-;
-
-propertyDefinition
-: IdentifierName Colon NumericLiteral
-/*identifierReference
-| coverInitializedName
-| propertyName
-| propertyName Colon assignmentExpression_In
-| methodDefinition*/
-;
-
 eos
 : SemiColon
 | {this._input.LT(1).type == ECMAScriptParser.CloseBrace}?
