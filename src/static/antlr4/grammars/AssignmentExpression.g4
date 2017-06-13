@@ -49,69 +49,77 @@ assignmentExpression
 : assignmentExpression QuestionMark assignmentExpression
   Colon assignmentExpression                  # conditionalExpression
 /*| arrowParameters FatArrow conciseBody        # arrowFunction
-| asyncArrowFunction
+| asyncArrowFunction*/
 | leftHandSideExpression Assign assignmentExpression
-| leftHandSideExpression assignmentOperator assignmentExpression*/
+| leftHandSideExpression assignmentOperator assignmentExpression
+| leftHandSideExpression
 ;
 assignmentExpression_Yield
 : assignmentExpression_Yield QuestionMark assignmentExpression_Yield
   Colon assignmentExpression_Yield            # conditionalExpression_Yield
 | Yield Multiply? assignmentExpression_Yield  # yieldExpression
 /*| arrowParameters_Yield FatArrow conciseBody  # arrowFunction_Yield
-| asyncArrowFunction_Yield
+| asyncArrowFunction_Yield*/
 | leftHandSideExpression_Yield Assign assignmentExpression_Yield
-| leftHandSideExpression_Yield assignmentOperator assignmentExpression_Yield*/
+| leftHandSideExpression_Yield assignmentOperator assignmentExpression_Yield
+| leftHandSideExpression_Yield
 ;
 assignmentExpression_Await
 : assignmentExpression_Await QuestionMark assignmentExpression_Await
   Colon assignmentExpression_Await            # conditionalExpression_Await
 /*| arrowParameters_Await FatArrow conciseBody  # arrowFunction_Await
-| asyncArrowFunction_Await
+| asyncArrowFunction_Await*/
 | leftHandSideExpression_Await Assign assignmentExpression_Await
-| leftHandSideExpression_Await assignmentOperator assignmentExpression_Await*/
+| leftHandSideExpression_Await assignmentOperator assignmentExpression_Await
+| leftHandSideExpression_Await
 ;
 assignmentExpression_Yield_Await
 : assignmentExpression_Yield_Await QuestionMark assignmentExpression_Yield_Await
   Colon assignmentExpression_Yield_Await            # conditionalExpression_Yield_Await
 | Yield Multiply? assignmentExpression_Yield_Await  # yieldExpression_Await
 /*| arrowParameters_Yield_Await FatArrow conciseBody  # arrowFunction_Yield_Await
-| asyncArrowFunction_Yield_Await
+| asyncArrowFunction_Yield_Await*/
 | leftHandSideExpression_Yield_Await Assign assignmentExpression_Yield_Await
-| leftHandSideExpression_Yield_Await assignmentOperator assignmentExpression_Yield_Await*/
+| leftHandSideExpression_Yield_Await assignmentOperator assignmentExpression_Yield_Await
+| leftHandSideExpression_Yield_Await
 ;
 assignmentExpression_In
 : assignmentExpression_In QuestionMark assignmentExpression_In
   Colon assignmentExpression_In                     # conditionalExpression_In
 /*| arrowParameters FatArrow conciseBody_In           # arrowFunction_In
-| asyncArrowFunction_In
+| asyncArrowFunction_In*/
 | leftHandSideExpression Assign assignmentExpression_In
-| leftHandSideExpression assignmentOperator assignmentExpression_In*/
+| leftHandSideExpression assignmentOperator assignmentExpression_In
+| leftHandSideExpression
 ;
 assignmentExpression_In_Yield
 : assignmentExpression_In_Yield QuestionMark assignmentExpression_In_Yield
   Colon assignmentExpression_In_Yield               # conditionalExpression_In_Yield
 | Yield Multiply? assignmentExpression_In_Yield     # yieldExpression_In
 /*| arrowParameters_Yield FatArrow conciseBody_In     # arrowFunction_In_Yield
-| asyncArrowFunction_In_Yield
+| asyncArrowFunction_In_Yield*/
 | leftHandSideExpression_Yield Assign assignmentExpression_In_Yield
-| leftHandSideExpression_Yield assignmentOperator assignmentExpression_In_Yield*/
+| leftHandSideExpression_Yield assignmentOperator assignmentExpression_In_Yield
+| leftHandSideExpression_Yield
 ;
 assignmentExpression_In_Await
 : assignmentExpression_In_Await QuestionMark assignmentExpression_In_Await
   Colon assignmentExpression_In_Await               # conditionalExpression_In_Await
 /*| arrowParameters_Await FatArrow conciseBody_In     # arrowFunction_In_Await
-| asyncArrowFunction_In_Await
+| asyncArrowFunction_In_Await*/
 | leftHandSideExpression_Await Assign assignmentExpression_In_Await
-| leftHandSideExpression_Await assignmentOperator assignmentExpression_In_Await*/
+| leftHandSideExpression_Await assignmentOperator assignmentExpression_In_Await
+| leftHandSideExpression_Await
 ;
 assignmentExpression_In_Yield_Await
 : assignmentExpression_In_Yield_Await QuestionMark assignmentExpression_In_Yield_Await
   Colon assignmentExpression_In_Yield_Await           # conditionalExpression_In_Yield_Await
 | Yield Multiply? assignmentExpression_In_Yield_Await # yieldExpression_In_Await
 /*| arrowParameters_Yield_Await FatArrow conciseBody_In # arrowFunction_In_Yield_Await
-| asyncArrowFunction_In_Yield_Await
+| asyncArrowFunction_In_Yield_Await*/
 | leftHandSideExpression_Yield_Await Assign assignmentExpression_In_Yield_Await
-| leftHandSideExpression_Yield_Await assignmentOperator assignmentExpression_In_Yield_Await*/
+| leftHandSideExpression_Yield_Await assignmentOperator assignmentExpression_In_Yield_Await
+| leftHandSideExpression_Yield_Await
 ;
 
 // AssignmentOperator:one of

@@ -4,6 +4,8 @@
 grammar Expressions;
 import
   BindingIdentifier,
+  PrimaryExpression,
   ArrayLiteral,
   ObjectLiteral,
+  LeftHandSideExpression,
   AssignmentExpression;
