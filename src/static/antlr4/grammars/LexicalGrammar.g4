@@ -5,10 +5,8 @@ lexer grammar LexicalGrammar;
 import
   Punctuator,
   ReservedWord,
-  StringLiteralB1,
   StringLiteralA1,
   UnicodeEscapeSequence,
-  NumericLiteralB1,
   NumericLiteralA1,
   IdentifierName,
   WhiteSpace;

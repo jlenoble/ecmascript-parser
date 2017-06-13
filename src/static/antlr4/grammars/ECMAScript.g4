@@ -1,9 +1,11 @@
 grammar ECMAScript;
-import LexicalGrammar;
+import
+  AdditionalSyntax,
+  LexicalGrammar;
 
 file
-: functionDeclaration
-| NumericLiteral
+: functionDeclaration EOF
+| NumericLiteral EOF
 ;
 
 functionDeclaration
