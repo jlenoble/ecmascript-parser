@@ -2,6 +2,7 @@ grammar ECMAScript;
 import
   AdditionalSyntax,
   LexicalGrammar,
+  Statements,
   FunctionsAndClasses;
 
 file
