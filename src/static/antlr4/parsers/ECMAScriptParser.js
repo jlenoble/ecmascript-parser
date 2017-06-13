@@ -5,10 +5,10 @@ var ECMAScriptListener = require('./ECMAScriptListener').ECMAScriptListener;
 var grammarFileName = "ECMAScript.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u000b\u0007\u0004\u0002\t\u0002\u0003\u0002\u0003\u0002\u0003",
-    "\u0002\u0002\u0002\u0003\u0002\u0002\u0002\u0002\u0005\u0002\u0004\u0003",
-    "\u0002\u0002\u0002\u0004\u0005\u0007\u0004\u0002\u0002\u0005\u0003\u0003",
-    "\u0002\u0002\u0002\u0002"].join("");
+    "\u00037\u0007\u0004\u0002\t\u0002\u0003\u0002\u0003\u0002\u0003\u0002",
+    "\u0002\u0002\u0003\u0002\u0002\u0002\u0002\u0005\u0002\u0004\u0003\u0002",
+    "\u0002\u0002\u0004\u0005\u0007\u0004\u0002\u0002\u0005\u0003\u0003\u0002",
+    "\u0002\u0002\u0002"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -17,11 +17,27 @@ var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new a
 
 var sharedContextCache = new antlr4.PredictionContextCache();
 
-var literalNames = [  ];
+var literalNames = [ null, null, null, null, null, null, null, null, null, 
+                     null, null, "'await'", "'break'", "'case'", "'catch'", 
+                     "'class'", "'const'", "'continue'", "'debugger'", "'default'", 
+                     "'delete'", "'do'", "'else'", "'export'", "'extends'", 
+                     "'finally'", "'for'", "'function'", "'if'", "'import'", 
+                     "'in'", "'instanceof'", "'new'", "'return'", "'super'", 
+                     "'switch'", "'this'", "'throw'", "'try'", "'typeof'", 
+                     "'var'", "'void'", "'while'", "'with'", "'yield'", 
+                     "'enum'", null, "'null'", null, "'true'", "'false'" ];
 
 var symbolicNames = [ null, "StringLiteral", "NumericLiteral", "DecimalLiteral", 
                       "BinaryIntegerLiteral", "OctalIntegerLiteral", "HexIntegerLiteral", 
-                      "WhiteSpace", "LineTerminator", "LineTerminatorSequence" ];
+                      "IdentifierName", "ReservedWord", "Keyword", "FutureReservedWord", 
+                      "Await", "Break", "Case", "Catch", "Class", "Const", 
+                      "Continue", "Debugger", "Default", "Delete", "Do", 
+                      "Else", "Export", "Extends", "Finally", "For", "Function", 
+                      "If", "Import", "In", "InstanceOf", "New", "Return", 
+                      "Super", "Switch", "This", "Throw", "Try", "TypeOf", 
+                      "Var", "Void", "While", "With", "Yield", "Enum", "NullLiteral", 
+                      "Null", "BooleanLiteral", "True", "False", "WhiteSpace", 
+                      "LineTerminator", "LineTerminatorSequence" ];
 
 var ruleNames =  [ "file" ];
 
@@ -50,9 +66,53 @@ ECMAScriptParser.DecimalLiteral = 3;
 ECMAScriptParser.BinaryIntegerLiteral = 4;
 ECMAScriptParser.OctalIntegerLiteral = 5;
 ECMAScriptParser.HexIntegerLiteral = 6;
-ECMAScriptParser.WhiteSpace = 7;
-ECMAScriptParser.LineTerminator = 8;
-ECMAScriptParser.LineTerminatorSequence = 9;
+ECMAScriptParser.IdentifierName = 7;
+ECMAScriptParser.ReservedWord = 8;
+ECMAScriptParser.Keyword = 9;
+ECMAScriptParser.FutureReservedWord = 10;
+ECMAScriptParser.Await = 11;
+ECMAScriptParser.Break = 12;
+ECMAScriptParser.Case = 13;
+ECMAScriptParser.Catch = 14;
+ECMAScriptParser.Class = 15;
+ECMAScriptParser.Const = 16;
+ECMAScriptParser.Continue = 17;
+ECMAScriptParser.Debugger = 18;
+ECMAScriptParser.Default = 19;
+ECMAScriptParser.Delete = 20;
+ECMAScriptParser.Do = 21;
+ECMAScriptParser.Else = 22;
+ECMAScriptParser.Export = 23;
+ECMAScriptParser.Extends = 24;
+ECMAScriptParser.Finally = 25;
+ECMAScriptParser.For = 26;
+ECMAScriptParser.Function = 27;
+ECMAScriptParser.If = 28;
+ECMAScriptParser.Import = 29;
+ECMAScriptParser.In = 30;
+ECMAScriptParser.InstanceOf = 31;
+ECMAScriptParser.New = 32;
+ECMAScriptParser.Return = 33;
+ECMAScriptParser.Super = 34;
+ECMAScriptParser.Switch = 35;
+ECMAScriptParser.This = 36;
+ECMAScriptParser.Throw = 37;
+ECMAScriptParser.Try = 38;
+ECMAScriptParser.TypeOf = 39;
+ECMAScriptParser.Var = 40;
+ECMAScriptParser.Void = 41;
+ECMAScriptParser.While = 42;
+ECMAScriptParser.With = 43;
+ECMAScriptParser.Yield = 44;
+ECMAScriptParser.Enum = 45;
+ECMAScriptParser.NullLiteral = 46;
+ECMAScriptParser.Null = 47;
+ECMAScriptParser.BooleanLiteral = 48;
+ECMAScriptParser.True = 49;
+ECMAScriptParser.False = 50;
+ECMAScriptParser.WhiteSpace = 51;
+ECMAScriptParser.LineTerminator = 52;
+ECMAScriptParser.LineTerminatorSequence = 53;
 
 ECMAScriptParser.RULE_file = 0;
 
