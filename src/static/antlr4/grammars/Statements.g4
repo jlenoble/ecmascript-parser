@@ -5,7 +5,8 @@ grammar Statements;
 import
   BindingElement,
   BindingPattern,
-  BlockStatement;
+  BlockStatement,
+  VariableStatement;
 
 // Statement[Yield, Await, Return]:
 //    BlockStatement[?Yield, ?Await, ?Return]
@@ -209,4 +210,10 @@ statementListItem_Await_Return
 statementListItem_Yield_Await_Return
 : statement_Yield_Await_Return
 | declaration_Yield_Await
+;
+
+// EmptyStatement:
+//    ;
+emptyStatement
+: SemiColon
 ;
