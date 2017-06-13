@@ -11,6 +11,19 @@ file
 | NumericLiteral EOF
 ;
 
+statementList_Return
+: statementListItem_Return+
+;
+statementList_Yield_Return
+: statementListItem_Return+
+;
+statementList_Await_Return
+: statementListItem_Return+
+;
+statementList_Yield_Await_Return
+: statementListItem_Return+
+;
+
 statementListItem_Return
 : statement_Return
 //| declaration

@@ -5,4 +5,5 @@ grammar Expressions;
 import
   BindingIdentifier,
   ArrayLiteral,
-  ObjectLiteral;
+  ObjectLiteral,
+  AssignmentExpression;
