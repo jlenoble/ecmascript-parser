@@ -12,16 +12,16 @@ file
 ;
 
 statementList_Return
-: statementListItem_Return+
+: (statementListItem_Return eos)+
 ;
 statementList_Yield_Return
-: statementListItem_Return+
+: (statementListItem_Return eos)+
 ;
 statementList_Await_Return
-: statementListItem_Return+
+: (statementListItem_Return eos)+
 ;
 statementList_Yield_Await_Return
-: statementListItem_Return+
+: (statementListItem_Return eos)+
 ;
 
 statementListItem_Return
