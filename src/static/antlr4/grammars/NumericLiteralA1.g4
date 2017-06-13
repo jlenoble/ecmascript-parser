@@ -1,6 +1,7 @@
 /* Source: ECMAScript® 2018 Language Specification - Annex A-1 */
 
 lexer grammar NumericLiteralA1;
+import WhiteSpace;
 
 // NumericLiteral::
 //    DecimalLiteral

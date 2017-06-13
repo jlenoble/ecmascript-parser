@@ -2,4 +2,4 @@
 
 // A.1 Lexical Grammar
 lexer grammar LexicalGrammar;
-import NumericLiteralB1;
+import StringLiteralB1;

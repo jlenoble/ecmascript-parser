@@ -5,9 +5,9 @@ var ECMAScriptListener = require('./ECMAScriptListener').ECMAScriptListener;
 var grammarFileName = "ECMAScript.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u0007\u0007\u0004\u0002\t\u0002\u0003\u0002\u0003\u0002\u0003",
+    "\u0003\u000b\u0007\u0004\u0002\t\u0002\u0003\u0002\u0003\u0002\u0003",
     "\u0002\u0002\u0002\u0003\u0002\u0002\u0002\u0002\u0005\u0002\u0004\u0003",
-    "\u0002\u0002\u0002\u0004\u0005\u0007\u0003\u0002\u0002\u0005\u0003\u0003",
+    "\u0002\u0002\u0002\u0004\u0005\u0007\u0004\u0002\u0002\u0005\u0003\u0003",
     "\u0002\u0002\u0002\u0002"].join("");
 
 
@@ -19,8 +19,9 @@ var sharedContextCache = new antlr4.PredictionContextCache();
 
 var literalNames = [  ];
 
-var symbolicNames = [ null, "NumericLiteral", "DecimalLiteral", "BinaryIntegerLiteral", 
-                      "OctalIntegerLiteral", "HexIntegerLiteral" ];
+var symbolicNames = [ null, "StringLiteral", "NumericLiteral", "DecimalLiteral", 
+                      "BinaryIntegerLiteral", "OctalIntegerLiteral", "HexIntegerLiteral", 
+                      "WhiteSpace", "LineTerminator", "LineTerminatorSequence" ];
 
 var ruleNames =  [ "file" ];
 
@@ -43,11 +44,15 @@ Object.defineProperty(ECMAScriptParser.prototype, "atn", {
 });
 
 ECMAScriptParser.EOF = antlr4.Token.EOF;
-ECMAScriptParser.NumericLiteral = 1;
-ECMAScriptParser.DecimalLiteral = 2;
-ECMAScriptParser.BinaryIntegerLiteral = 3;
-ECMAScriptParser.OctalIntegerLiteral = 4;
-ECMAScriptParser.HexIntegerLiteral = 5;
+ECMAScriptParser.StringLiteral = 1;
+ECMAScriptParser.NumericLiteral = 2;
+ECMAScriptParser.DecimalLiteral = 3;
+ECMAScriptParser.BinaryIntegerLiteral = 4;
+ECMAScriptParser.OctalIntegerLiteral = 5;
+ECMAScriptParser.HexIntegerLiteral = 6;
+ECMAScriptParser.WhiteSpace = 7;
+ECMAScriptParser.LineTerminator = 8;
+ECMAScriptParser.LineTerminatorSequence = 9;
 
 ECMAScriptParser.RULE_file = 0;
 

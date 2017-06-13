@@ -1,5 +1,9 @@
-NumericLiteral=1
-DecimalLiteral=2
-BinaryIntegerLiteral=3
-OctalIntegerLiteral=4
-HexIntegerLiteral=5
+StringLiteral=1
+NumericLiteral=2
+DecimalLiteral=3
+BinaryIntegerLiteral=4
+OctalIntegerLiteral=5
+HexIntegerLiteral=6
+WhiteSpace=7
+LineTerminator=8
+LineTerminatorSequence=9
