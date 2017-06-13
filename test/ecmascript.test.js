@@ -4,7 +4,9 @@ import Muter, {muted} from 'muter';
 describe('Testing ECMAScript', function () {
   const muter = Muter(process.stderr, 'write'); // eslint-disable-line
 
-  for (let i = 0; i < 2/* 1956 */; i++) {
+  for (let i = 0; i < 3/* 1956 */; i++) {
+    let file;
+
     if (
       i === 397 ||
       i === 398 ||
@@ -22,13 +24,14 @@ describe('Testing ECMAScript', function () {
       (i >= 1686 && i <= 1695) ||
       (i >= 1698 && i <= 1701)
     ) {
-      // Skip missing files
-      continue;
+      file = `${i}.module.js`;
+    } else {
+      file = `${i}.script.js`;
     }
 
-    it(`Parsing file pass/${i}.script.js`, muted(muter, function () {
+    it(`Parsing file pass/${file}`, muted(muter, function () {
       return new Promise((resolve, reject) => {
-        translate(`node_modules/test262-parser-tests/pass/${i}.script.js`)
+        translate(`node_modules/test262-parser-tests/pass/${file}`)
           .on('error', reject)
           .on('finish', () => {
             const logs = muter.getLogs();
