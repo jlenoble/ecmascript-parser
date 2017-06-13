@@ -73,3 +73,17 @@ bindingRestElement_Yield_Await
 | Spread bindingPattern_Yield_Await
 ;
 
+// SingleNameBinding[Yield, Await]:
+//    BindingIdentifier[?Yield, ?Await] Initializer[+In, ?Yield, ?Await][opt]
+singleNameBinding
+: bindingIdentifier initializer_In?
+;
+singleNameBinding_Yield
+: bindingIdentifier_Yield initializer_In_Yield?
+;
+singleNameBinding_Await
+: bindingIdentifier_Await initializer_In_Await?
+;
+singleNameBinding_Yield_Await
+: bindingIdentifier_Yield_Await initializer_In_Yield_Await?
+;
