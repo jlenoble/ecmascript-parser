@@ -2,7 +2,7 @@ import {translate} from '../gulp/parse';
 import Muter, {muted} from 'muter';
 
 describe('Testing ECMAScript', function () {
-  this.timeout(10000); // eslint-disable-line no-invalid-this
+  this.timeout(60000); // eslint-disable-line no-invalid-this
 
   const muter = Muter(process.stderr, 'write'); // eslint-disable-line
 

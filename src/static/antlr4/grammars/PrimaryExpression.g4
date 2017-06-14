@@ -21,8 +21,8 @@ primaryExpression
 | literal
 | arrayLiteral
 | objectLiteral
-/*| functionExpression
-| classExpression
+| functionExpression
+/*| classExpression
 | generatorExpression
 | asyncFunctionExpression
 | RegularExpressionLiteral
@@ -35,8 +35,8 @@ primaryExpression_Yield
 | literal
 | arrayLiteral_Yield
 | objectLiteral_Yield
-/*| functionExpression
-| classExpression_Yield
+| functionExpression
+/*| classExpression_Yield
 | generatorExpression
 | asyncFunctionExpression
 | RegularExpressionLiteral
@@ -49,8 +49,8 @@ primaryExpression_Await
 | literal
 | arrayLiteral_Await
 | objectLiteral_Await
-/*| functionExpression
-| classExpression_Await
+| functionExpression
+/*| classExpression_Await
 | generatorExpression
 | asyncFunctionExpression
 | RegularExpressionLiteral
@@ -63,8 +63,8 @@ primaryExpression_Yield_Await
 | literal
 | arrayLiteral_Yield_Await
 | objectLiteral_Yield_Await
-/*| functionExpression
-| classExpression_Yield_Await
+| functionExpression
+/*| classExpression_Yield_Await
 | generatorExpression
 | asyncFunctionExpression
 | RegularExpressionLiteral

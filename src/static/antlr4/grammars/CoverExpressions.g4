@@ -58,3 +58,34 @@ parenthesizedExpression_Await
 parenthesizedExpression_Yield_Await
 : OpenParen expression_In_Yield_Await CloseParen
 ;
+
+// CoverCallExpressionAndAsyncArrowHead[Yield, Await]:
+//    MemberExpression[?Yield, ?Await] Arguments[?Yield, ?Await]
+coverCallExpressionAndAsyncArrowHead
+: memberExpression arguments
+;
+coverCallExpressionAndAsyncArrowHead_Yield
+: memberExpression_Yield arguments_Yield
+;
+coverCallExpressionAndAsyncArrowHead_Await
+: memberExpression_Await arguments_Await
+;
+coverCallExpressionAndAsyncArrowHead_Yield_Await
+: memberExpression_Yield_Await arguments_Yield_Await
+;
+
+// When processing an instance of the production CallExpression:CoverCallExpressionAndAsyncArrowHead the interpretation of CoverCallExpressionAndAsyncArrowHead is refined using the following grammar:
+// CallMemberExpression[Yield, Await]:
+//    MemberExpression[?Yield, ?Await] Arguments[?Yield, ?Await]
+callMemberExpression
+: memberExpression arguments
+;
+callMemberExpression_Yield
+: memberExpression_Yield arguments_Yield
+;
+callMemberExpression_Await
+: memberExpression_Await arguments_Await
+;
+callMemberExpression_Yield_Await
+: memberExpression_Yield_Await arguments_Yield_Await
+;

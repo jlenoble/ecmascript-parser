@@ -38,3 +38,9 @@ functionDeclaration_Yield_Await_Default
 : Function bindingIdentifier_Yield_Await OpenParen formalParameters CloseParen OpenBrace functionBody CloseBrace
 | Function OpenParen formalParameters CloseParen OpenBrace functionBody CloseBrace
 ;
+
+// FunctionExpression:
+//    function BindingIdentifier[~Yield, ~Await][opt] ( FormalParameters[~Yield, ~Await] ) { FunctionBody[~Yield, ~Await] }
+functionExpression
+: Function bindingIdentifier? OpenParen formalParameters CloseParen OpenBrace functionBody CloseBrace
+;

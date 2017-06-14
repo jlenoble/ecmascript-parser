@@ -299,6 +299,78 @@ ECMAScriptListener.prototype.exitParenthesizedExpression_Yield_Await = function(
 };
 
 
+// Enter a parse tree produced by ECMAScriptParser#coverCallExpressionAndAsyncArrowHead.
+ECMAScriptListener.prototype.enterCoverCallExpressionAndAsyncArrowHead = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#coverCallExpressionAndAsyncArrowHead.
+ECMAScriptListener.prototype.exitCoverCallExpressionAndAsyncArrowHead = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#coverCallExpressionAndAsyncArrowHead_Yield.
+ECMAScriptListener.prototype.enterCoverCallExpressionAndAsyncArrowHead_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#coverCallExpressionAndAsyncArrowHead_Yield.
+ECMAScriptListener.prototype.exitCoverCallExpressionAndAsyncArrowHead_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#coverCallExpressionAndAsyncArrowHead_Await.
+ECMAScriptListener.prototype.enterCoverCallExpressionAndAsyncArrowHead_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#coverCallExpressionAndAsyncArrowHead_Await.
+ECMAScriptListener.prototype.exitCoverCallExpressionAndAsyncArrowHead_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#coverCallExpressionAndAsyncArrowHead_Yield_Await.
+ECMAScriptListener.prototype.enterCoverCallExpressionAndAsyncArrowHead_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#coverCallExpressionAndAsyncArrowHead_Yield_Await.
+ECMAScriptListener.prototype.exitCoverCallExpressionAndAsyncArrowHead_Yield_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#callMemberExpression.
+ECMAScriptListener.prototype.enterCallMemberExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#callMemberExpression.
+ECMAScriptListener.prototype.exitCallMemberExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#callMemberExpression_Yield.
+ECMAScriptListener.prototype.enterCallMemberExpression_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#callMemberExpression_Yield.
+ECMAScriptListener.prototype.exitCallMemberExpression_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#callMemberExpression_Await.
+ECMAScriptListener.prototype.enterCallMemberExpression_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#callMemberExpression_Await.
+ECMAScriptListener.prototype.exitCallMemberExpression_Await = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#callMemberExpression_Yield_Await.
+ECMAScriptListener.prototype.enterCallMemberExpression_Yield_Await = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#callMemberExpression_Yield_Await.
+ECMAScriptListener.prototype.exitCallMemberExpression_Yield_Await = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptParser#arrayLiteral.
 ECMAScriptListener.prototype.enterArrayLiteral = function(ctx) {
 };
@@ -2420,6 +2492,15 @@ ECMAScriptListener.prototype.enterFunctionDeclaration_Yield_Await_Default = func
 
 // Exit a parse tree produced by ECMAScriptParser#functionDeclaration_Yield_Await_Default.
 ECMAScriptListener.prototype.exitFunctionDeclaration_Yield_Await_Default = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#functionExpression.
+ECMAScriptListener.prototype.enterFunctionExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#functionExpression.
+ECMAScriptListener.prototype.exitFunctionExpression = function(ctx) {
 };
 
 
