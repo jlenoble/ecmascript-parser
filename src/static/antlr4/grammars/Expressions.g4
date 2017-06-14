@@ -5,6 +5,7 @@ grammar Expressions;
 import
   BindingIdentifier,
   PrimaryExpression,
+  CoverExpressions,
   ArrayLiteral,
   ObjectLiteral,
   CallExpression,

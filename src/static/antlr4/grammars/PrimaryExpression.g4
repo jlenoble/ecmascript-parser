@@ -26,8 +26,8 @@ primaryExpression
 | generatorExpression
 | asyncFunctionExpression
 | RegularExpressionLiteral
-| templateLiteral
-| coverParenthesizedExpressionAndArrowParameterList*/
+| templateLiteral*/
+| coverParenthesizedExpressionAndArrowParameterList
 ;
 primaryExpression_Yield
 : This
@@ -40,8 +40,8 @@ primaryExpression_Yield
 | generatorExpression
 | asyncFunctionExpression
 | RegularExpressionLiteral
-| templateLiteral_Yield
-| coverParenthesizedExpressionAndArrowParameterList_Yield*/
+| templateLiteral_Yield*/
+| coverParenthesizedExpressionAndArrowParameterList_Yield
 ;
 primaryExpression_Await
 : This
@@ -54,8 +54,8 @@ primaryExpression_Await
 | generatorExpression
 | asyncFunctionExpression
 | RegularExpressionLiteral
-| templateLiteral_Await
-| coverParenthesizedExpressionAndArrowParameterList_Await*/
+| templateLiteral_Await*/
+| coverParenthesizedExpressionAndArrowParameterList_Await
 ;
 primaryExpression_Yield_Await
 : This
@@ -68,8 +68,8 @@ primaryExpression_Yield_Await
 | generatorExpression
 | asyncFunctionExpression
 | RegularExpressionLiteral
-| templateLiteral_Yield_Await
-| coverParenthesizedExpressionAndArrowParameterList_Yield_Await*/
+| templateLiteral_Yield_Await*/
+| coverParenthesizedExpressionAndArrowParameterList_Yield_Await
 ;
 
 // Literal:
