@@ -7,6 +7,23 @@ const {ECMAScriptListener} = require(path.join(base, rel,
 
 export class Translator extends ECMAScriptListener {
   enterFile (ctx) {
+    debugger;
     console.log(ctx.getText());
+  }
+  enterFunctionExpression (ctx) {
+    debugger;
+    console.log('func expression', ctx.getText());
+  }
+  enterFunctionDeclaration (ctx) {
+    debugger;
+    console.log('func declaration', ctx.getText());
+  }
+  enterObjectLiteral (ctx) {
+    debugger;
+    console.log('object literal', ctx.getText());
+  }
+  enterPrimaryExpression (ctx) {
+    debugger;
+    console.log('primary expression', ctx.getText());
   }
 }
