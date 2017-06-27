@@ -1,4 +1,4 @@
-// Generated from /home/jason/Projets/ecmascript-parser/src/static/antlr4/grammars/ECMAScript.g4 by ANTLR 4.7
+// Generated from /home/jason/Projets/ecmascript-parser/src/static/antlr4/grammars/ECMAScript2015.g4 by ANTLR 4.7
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 
@@ -662,150 +662,196 @@ var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
 
 var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new antlr4.dfa.DFA(ds, index); });
 
-function ECMAScriptLexer(input) {
+function ECMAScript2015Lexer(input) {
 	antlr4.Lexer.call(this, input);
     this._interp = new antlr4.atn.LexerATNSimulator(this, atn, decisionsToDFA, new antlr4.PredictionContextCache());
     return this;
 }
 
-ECMAScriptLexer.prototype = Object.create(antlr4.Lexer.prototype);
-ECMAScriptLexer.prototype.constructor = ECMAScriptLexer;
+ECMAScript2015Lexer.prototype = Object.create(antlr4.Lexer.prototype);
+ECMAScript2015Lexer.prototype.constructor = ECMAScript2015Lexer;
 
-ECMAScriptLexer.EOF = antlr4.Token.EOF;
-ECMAScriptLexer.RegularExpressionLiteral = 1;
-ECMAScriptLexer.LineTerminator = 2;
-ECMAScriptLexer.OpenBracket = 3;
-ECMAScriptLexer.CloseBracket = 4;
-ECMAScriptLexer.OpenParen = 5;
-ECMAScriptLexer.CloseParen = 6;
-ECMAScriptLexer.OpenBrace = 7;
-ECMAScriptLexer.CloseBrace = 8;
-ECMAScriptLexer.SemiColon = 9;
-ECMAScriptLexer.Comma = 10;
-ECMAScriptLexer.Assign = 11;
-ECMAScriptLexer.QuestionMark = 12;
-ECMAScriptLexer.Colon = 13;
-ECMAScriptLexer.Dot = 14;
-ECMAScriptLexer.PlusPlus = 15;
-ECMAScriptLexer.MinusMinus = 16;
-ECMAScriptLexer.Plus = 17;
-ECMAScriptLexer.Minus = 18;
-ECMAScriptLexer.BitNot = 19;
-ECMAScriptLexer.Not = 20;
-ECMAScriptLexer.Multiply = 21;
-ECMAScriptLexer.Divide = 22;
-ECMAScriptLexer.Modulus = 23;
-ECMAScriptLexer.RightShiftArithmetic = 24;
-ECMAScriptLexer.LeftShiftArithmetic = 25;
-ECMAScriptLexer.RightShiftLogical = 26;
-ECMAScriptLexer.LessThan = 27;
-ECMAScriptLexer.MoreThan = 28;
-ECMAScriptLexer.LessThanEquals = 29;
-ECMAScriptLexer.GreaterThanEquals = 30;
-ECMAScriptLexer.Equals = 31;
-ECMAScriptLexer.NotEquals = 32;
-ECMAScriptLexer.IdentityEquals = 33;
-ECMAScriptLexer.IdentityNotEquals = 34;
-ECMAScriptLexer.BitAnd = 35;
-ECMAScriptLexer.BitXOr = 36;
-ECMAScriptLexer.BitOr = 37;
-ECMAScriptLexer.And = 38;
-ECMAScriptLexer.Or = 39;
-ECMAScriptLexer.MultiplyAssign = 40;
-ECMAScriptLexer.DivideAssign = 41;
-ECMAScriptLexer.ModulusAssign = 42;
-ECMAScriptLexer.PlusAssign = 43;
-ECMAScriptLexer.MinusAssign = 44;
-ECMAScriptLexer.LeftShiftArithmeticAssign = 45;
-ECMAScriptLexer.RightShiftArithmeticAssign = 46;
-ECMAScriptLexer.RightShiftLogicalAssign = 47;
-ECMAScriptLexer.BitAndAssign = 48;
-ECMAScriptLexer.BitXorAssign = 49;
-ECMAScriptLexer.BitOrAssign = 50;
-ECMAScriptLexer.NullLiteral = 51;
-ECMAScriptLexer.BooleanLiteral = 52;
-ECMAScriptLexer.DecimalLiteral = 53;
-ECMAScriptLexer.HexIntegerLiteral = 54;
-ECMAScriptLexer.OctalIntegerLiteral = 55;
-ECMAScriptLexer.Break = 56;
-ECMAScriptLexer.Do = 57;
-ECMAScriptLexer.Instanceof = 58;
-ECMAScriptLexer.Typeof = 59;
-ECMAScriptLexer.Case = 60;
-ECMAScriptLexer.Else = 61;
-ECMAScriptLexer.New = 62;
-ECMAScriptLexer.Var = 63;
-ECMAScriptLexer.Catch = 64;
-ECMAScriptLexer.Finally = 65;
-ECMAScriptLexer.Return = 66;
-ECMAScriptLexer.Void = 67;
-ECMAScriptLexer.Continue = 68;
-ECMAScriptLexer.For = 69;
-ECMAScriptLexer.Switch = 70;
-ECMAScriptLexer.While = 71;
-ECMAScriptLexer.Debugger = 72;
-ECMAScriptLexer.Function = 73;
-ECMAScriptLexer.This = 74;
-ECMAScriptLexer.With = 75;
-ECMAScriptLexer.Default = 76;
-ECMAScriptLexer.If = 77;
-ECMAScriptLexer.Throw = 78;
-ECMAScriptLexer.Delete = 79;
-ECMAScriptLexer.In = 80;
-ECMAScriptLexer.Try = 81;
-ECMAScriptLexer.Class = 82;
-ECMAScriptLexer.Enum = 83;
-ECMAScriptLexer.Extends = 84;
-ECMAScriptLexer.Super = 85;
-ECMAScriptLexer.Const = 86;
-ECMAScriptLexer.Export = 87;
-ECMAScriptLexer.Import = 88;
-ECMAScriptLexer.Implements = 89;
-ECMAScriptLexer.Let = 90;
-ECMAScriptLexer.Private = 91;
-ECMAScriptLexer.Public = 92;
-ECMAScriptLexer.Interface = 93;
-ECMAScriptLexer.Package = 94;
-ECMAScriptLexer.Protected = 95;
-ECMAScriptLexer.Static = 96;
-ECMAScriptLexer.Yield = 97;
-ECMAScriptLexer.Identifier = 98;
-ECMAScriptLexer.StringLiteral = 99;
-ECMAScriptLexer.WhiteSpaces = 100;
-ECMAScriptLexer.MultiLineComment = 101;
-ECMAScriptLexer.SingleLineComment = 102;
-ECMAScriptLexer.UnexpectedCharacter = 103;
+ECMAScript2015Lexer.EOF = antlr4.Token.EOF;
+ECMAScript2015Lexer.RegularExpressionLiteral = 1;
+ECMAScript2015Lexer.LineTerminator = 2;
+ECMAScript2015Lexer.OpenBracket = 3;
+ECMAScript2015Lexer.CloseBracket = 4;
+ECMAScript2015Lexer.OpenParen = 5;
+ECMAScript2015Lexer.CloseParen = 6;
+ECMAScript2015Lexer.OpenBrace = 7;
+ECMAScript2015Lexer.CloseBrace = 8;
+ECMAScript2015Lexer.SemiColon = 9;
+ECMAScript2015Lexer.Comma = 10;
+ECMAScript2015Lexer.Assign = 11;
+ECMAScript2015Lexer.QuestionMark = 12;
+ECMAScript2015Lexer.Colon = 13;
+ECMAScript2015Lexer.Dot = 14;
+ECMAScript2015Lexer.PlusPlus = 15;
+ECMAScript2015Lexer.MinusMinus = 16;
+ECMAScript2015Lexer.Plus = 17;
+ECMAScript2015Lexer.Minus = 18;
+ECMAScript2015Lexer.BitNot = 19;
+ECMAScript2015Lexer.Not = 20;
+ECMAScript2015Lexer.Multiply = 21;
+ECMAScript2015Lexer.Divide = 22;
+ECMAScript2015Lexer.Modulus = 23;
+ECMAScript2015Lexer.RightShiftArithmetic = 24;
+ECMAScript2015Lexer.LeftShiftArithmetic = 25;
+ECMAScript2015Lexer.RightShiftLogical = 26;
+ECMAScript2015Lexer.LessThan = 27;
+ECMAScript2015Lexer.MoreThan = 28;
+ECMAScript2015Lexer.LessThanEquals = 29;
+ECMAScript2015Lexer.GreaterThanEquals = 30;
+ECMAScript2015Lexer.Equals = 31;
+ECMAScript2015Lexer.NotEquals = 32;
+ECMAScript2015Lexer.IdentityEquals = 33;
+ECMAScript2015Lexer.IdentityNotEquals = 34;
+ECMAScript2015Lexer.BitAnd = 35;
+ECMAScript2015Lexer.BitXOr = 36;
+ECMAScript2015Lexer.BitOr = 37;
+ECMAScript2015Lexer.And = 38;
+ECMAScript2015Lexer.Or = 39;
+ECMAScript2015Lexer.MultiplyAssign = 40;
+ECMAScript2015Lexer.DivideAssign = 41;
+ECMAScript2015Lexer.ModulusAssign = 42;
+ECMAScript2015Lexer.PlusAssign = 43;
+ECMAScript2015Lexer.MinusAssign = 44;
+ECMAScript2015Lexer.LeftShiftArithmeticAssign = 45;
+ECMAScript2015Lexer.RightShiftArithmeticAssign = 46;
+ECMAScript2015Lexer.RightShiftLogicalAssign = 47;
+ECMAScript2015Lexer.BitAndAssign = 48;
+ECMAScript2015Lexer.BitXorAssign = 49;
+ECMAScript2015Lexer.BitOrAssign = 50;
+ECMAScript2015Lexer.NullLiteral = 51;
+ECMAScript2015Lexer.BooleanLiteral = 52;
+ECMAScript2015Lexer.DecimalLiteral = 53;
+ECMAScript2015Lexer.HexIntegerLiteral = 54;
+ECMAScript2015Lexer.OctalIntegerLiteral = 55;
+ECMAScript2015Lexer.Break = 56;
+ECMAScript2015Lexer.Do = 57;
+ECMAScript2015Lexer.Instanceof = 58;
+ECMAScript2015Lexer.Typeof = 59;
+ECMAScript2015Lexer.Case = 60;
+ECMAScript2015Lexer.Else = 61;
+ECMAScript2015Lexer.New = 62;
+ECMAScript2015Lexer.Var = 63;
+ECMAScript2015Lexer.Catch = 64;
+ECMAScript2015Lexer.Finally = 65;
+ECMAScript2015Lexer.Return = 66;
+ECMAScript2015Lexer.Void = 67;
+ECMAScript2015Lexer.Continue = 68;
+ECMAScript2015Lexer.For = 69;
+ECMAScript2015Lexer.Switch = 70;
+ECMAScript2015Lexer.While = 71;
+ECMAScript2015Lexer.Debugger = 72;
+ECMAScript2015Lexer.Function = 73;
+ECMAScript2015Lexer.This = 74;
+ECMAScript2015Lexer.With = 75;
+ECMAScript2015Lexer.Default = 76;
+ECMAScript2015Lexer.If = 77;
+ECMAScript2015Lexer.Throw = 78;
+ECMAScript2015Lexer.Delete = 79;
+ECMAScript2015Lexer.In = 80;
+ECMAScript2015Lexer.Try = 81;
+ECMAScript2015Lexer.Class = 82;
+ECMAScript2015Lexer.Enum = 83;
+ECMAScript2015Lexer.Extends = 84;
+ECMAScript2015Lexer.Super = 85;
+ECMAScript2015Lexer.Const = 86;
+ECMAScript2015Lexer.Export = 87;
+ECMAScript2015Lexer.Import = 88;
+ECMAScript2015Lexer.Implements = 89;
+ECMAScript2015Lexer.Let = 90;
+ECMAScript2015Lexer.Private = 91;
+ECMAScript2015Lexer.Public = 92;
+ECMAScript2015Lexer.Interface = 93;
+ECMAScript2015Lexer.Package = 94;
+ECMAScript2015Lexer.Protected = 95;
+ECMAScript2015Lexer.Static = 96;
+ECMAScript2015Lexer.Yield = 97;
+ECMAScript2015Lexer.Identifier = 98;
+ECMAScript2015Lexer.StringLiteral = 99;
+ECMAScript2015Lexer.WhiteSpaces = 100;
+ECMAScript2015Lexer.MultiLineComment = 101;
+ECMAScript2015Lexer.SingleLineComment = 102;
+ECMAScript2015Lexer.UnexpectedCharacter = 103;
 
-ECMAScriptLexer.prototype.channelNames = [ "DEFAULT_TOKEN_CHANNEL", "HIDDEN" ];
+ECMAScript2015Lexer.prototype.channelNames = [ "DEFAULT_TOKEN_CHANNEL", "HIDDEN" ];
 
-ECMAScriptLexer.prototype.modeNames = [ "DEFAULT_MODE" ];
+ECMAScript2015Lexer.prototype.modeNames = [ "DEFAULT_MODE" ];
 
-ECMAScriptLexer.prototype.literalNames = [ null, null, null, "'['", "']'", 
-                                           "'('", "')'", "'{'", "'}'", "';'", 
-                                           "','", "'='", "'?'", "':'", "'.'", 
-                                           "'++'", "'--'", "'+'", "'-'", 
-                                           "'~'", "'!'", "'*'", "'/'", "'%'", 
-                                           "'>>'", "'<<'", "'>>>'", "'<'", 
-                                           "'>'", "'<='", "'>='", "'=='", 
-                                           "'!='", "'==='", "'!=='", "'&'", 
-                                           "'^'", "'|'", "'&&'", "'||'", 
-                                           "'*='", "'/='", "'%='", "'+='", 
-                                           "'-='", "'<<='", "'>>='", "'>>>='", 
-                                           "'&='", "'^='", "'|='", "'null'", 
-                                           null, null, null, null, "'break'", 
-                                           "'do'", "'instanceof'", "'typeof'", 
-                                           "'case'", "'else'", "'new'", 
-                                           "'var'", "'catch'", "'finally'", 
-                                           "'return'", "'void'", "'continue'", 
-                                           "'for'", "'switch'", "'while'", 
-                                           "'debugger'", "'function'", "'this'", 
-                                           "'with'", "'default'", "'if'", 
-                                           "'throw'", "'delete'", "'in'", 
-                                           "'try'", "'class'", "'enum'", 
-                                           "'extends'", "'super'", "'const'", 
-                                           "'export'", "'import'" ];
+ECMAScript2015Lexer.prototype.literalNames = [ null, null, null, "'['", 
+                                               "']'", "'('", "')'", "'{'", 
+                                               "'}'", "';'", "','", "'='", 
+                                               "'?'", "':'", "'.'", "'++'", 
+                                               "'--'", "'+'", "'-'", "'~'", 
+                                               "'!'", "'*'", "'/'", "'%'", 
+                                               "'>>'", "'<<'", "'>>>'", 
+                                               "'<'", "'>'", "'<='", "'>='", 
+                                               "'=='", "'!='", "'==='", 
+                                               "'!=='", "'&'", "'^'", "'|'", 
+                                               "'&&'", "'||'", "'*='", "'/='", 
+                                               "'%='", "'+='", "'-='", "'<<='", 
+                                               "'>>='", "'>>>='", "'&='", 
+                                               "'^='", "'|='", "'null'", 
+                                               null, null, null, null, "'break'", 
+                                               "'do'", "'instanceof'", "'typeof'", 
+                                               "'case'", "'else'", "'new'", 
+                                               "'var'", "'catch'", "'finally'", 
+                                               "'return'", "'void'", "'continue'", 
+                                               "'for'", "'switch'", "'while'", 
+                                               "'debugger'", "'function'", 
+                                               "'this'", "'with'", "'default'", 
+                                               "'if'", "'throw'", "'delete'", 
+                                               "'in'", "'try'", "'class'", 
+                                               "'enum'", "'extends'", "'super'", 
+                                               "'const'", "'export'", "'import'" ];
 
-ECMAScriptLexer.prototype.symbolicNames = [ null, "RegularExpressionLiteral", 
+ECMAScript2015Lexer.prototype.symbolicNames = [ null, "RegularExpressionLiteral", 
+                                                "LineTerminator", "OpenBracket", 
+                                                "CloseBracket", "OpenParen", 
+                                                "CloseParen", "OpenBrace", 
+                                                "CloseBrace", "SemiColon", 
+                                                "Comma", "Assign", "QuestionMark", 
+                                                "Colon", "Dot", "PlusPlus", 
+                                                "MinusMinus", "Plus", "Minus", 
+                                                "BitNot", "Not", "Multiply", 
+                                                "Divide", "Modulus", "RightShiftArithmetic", 
+                                                "LeftShiftArithmetic", "RightShiftLogical", 
+                                                "LessThan", "MoreThan", 
+                                                "LessThanEquals", "GreaterThanEquals", 
+                                                "Equals", "NotEquals", "IdentityEquals", 
+                                                "IdentityNotEquals", "BitAnd", 
+                                                "BitXOr", "BitOr", "And", 
+                                                "Or", "MultiplyAssign", 
+                                                "DivideAssign", "ModulusAssign", 
+                                                "PlusAssign", "MinusAssign", 
+                                                "LeftShiftArithmeticAssign", 
+                                                "RightShiftArithmeticAssign", 
+                                                "RightShiftLogicalAssign", 
+                                                "BitAndAssign", "BitXorAssign", 
+                                                "BitOrAssign", "NullLiteral", 
+                                                "BooleanLiteral", "DecimalLiteral", 
+                                                "HexIntegerLiteral", "OctalIntegerLiteral", 
+                                                "Break", "Do", "Instanceof", 
+                                                "Typeof", "Case", "Else", 
+                                                "New", "Var", "Catch", "Finally", 
+                                                "Return", "Void", "Continue", 
+                                                "For", "Switch", "While", 
+                                                "Debugger", "Function", 
+                                                "This", "With", "Default", 
+                                                "If", "Throw", "Delete", 
+                                                "In", "Try", "Class", "Enum", 
+                                                "Extends", "Super", "Const", 
+                                                "Export", "Import", "Implements", 
+                                                "Let", "Private", "Public", 
+                                                "Interface", "Package", 
+                                                "Protected", "Static", "Yield", 
+                                                "Identifier", "StringLiteral", 
+                                                "WhiteSpaces", "MultiLineComment", 
+                                                "SingleLineComment", "UnexpectedCharacter" ];
+
+ECMAScript2015Lexer.prototype.ruleNames = [ "RegularExpressionLiteral", 
                                             "LineTerminator", "OpenBracket", 
                                             "CloseBracket", "OpenParen", 
                                             "CloseParen", "OpenBrace", "CloseBrace", 
@@ -843,59 +889,25 @@ ECMAScriptLexer.prototype.symbolicNames = [ null, "RegularExpressionLiteral",
                                             "Package", "Protected", "Static", 
                                             "Yield", "Identifier", "StringLiteral", 
                                             "WhiteSpaces", "MultiLineComment", 
-                                            "SingleLineComment", "UnexpectedCharacter" ];
+                                            "SingleLineComment", "UnexpectedCharacter", 
+                                            "DoubleStringCharacter", "SingleStringCharacter", 
+                                            "EscapeSequence", "CharacterEscapeSequence", 
+                                            "HexEscapeSequence", "UnicodeEscapeSequence", 
+                                            "SingleEscapeCharacter", "NonEscapeCharacter", 
+                                            "EscapeCharacter", "LineContinuation", 
+                                            "LineTerminatorSequence", "DecimalDigit", 
+                                            "HexDigit", "OctalDigit", "DecimalIntegerLiteral", 
+                                            "ExponentPart", "IdentifierStart", 
+                                            "IdentifierPart", "UnicodeLetter", 
+                                            "UnicodeCombiningMark", "UnicodeDigit", 
+                                            "UnicodeConnectorPunctuation", 
+                                            "ZWNJ", "ZWJ", "RegularExpressionBody", 
+                                            "RegularExpressionFlags", "RegularExpressionFirstChar", 
+                                            "RegularExpressionChar", "RegularExpressionNonTerminator", 
+                                            "RegularExpressionBackslashSequence", 
+                                            "RegularExpressionClass", "RegularExpressionClassChar" ];
 
-ECMAScriptLexer.prototype.ruleNames = [ "RegularExpressionLiteral", "LineTerminator", 
-                                        "OpenBracket", "CloseBracket", "OpenParen", 
-                                        "CloseParen", "OpenBrace", "CloseBrace", 
-                                        "SemiColon", "Comma", "Assign", 
-                                        "QuestionMark", "Colon", "Dot", 
-                                        "PlusPlus", "MinusMinus", "Plus", 
-                                        "Minus", "BitNot", "Not", "Multiply", 
-                                        "Divide", "Modulus", "RightShiftArithmetic", 
-                                        "LeftShiftArithmetic", "RightShiftLogical", 
-                                        "LessThan", "MoreThan", "LessThanEquals", 
-                                        "GreaterThanEquals", "Equals", "NotEquals", 
-                                        "IdentityEquals", "IdentityNotEquals", 
-                                        "BitAnd", "BitXOr", "BitOr", "And", 
-                                        "Or", "MultiplyAssign", "DivideAssign", 
-                                        "ModulusAssign", "PlusAssign", "MinusAssign", 
-                                        "LeftShiftArithmeticAssign", "RightShiftArithmeticAssign", 
-                                        "RightShiftLogicalAssign", "BitAndAssign", 
-                                        "BitXorAssign", "BitOrAssign", "NullLiteral", 
-                                        "BooleanLiteral", "DecimalLiteral", 
-                                        "HexIntegerLiteral", "OctalIntegerLiteral", 
-                                        "Break", "Do", "Instanceof", "Typeof", 
-                                        "Case", "Else", "New", "Var", "Catch", 
-                                        "Finally", "Return", "Void", "Continue", 
-                                        "For", "Switch", "While", "Debugger", 
-                                        "Function", "This", "With", "Default", 
-                                        "If", "Throw", "Delete", "In", "Try", 
-                                        "Class", "Enum", "Extends", "Super", 
-                                        "Const", "Export", "Import", "Implements", 
-                                        "Let", "Private", "Public", "Interface", 
-                                        "Package", "Protected", "Static", 
-                                        "Yield", "Identifier", "StringLiteral", 
-                                        "WhiteSpaces", "MultiLineComment", 
-                                        "SingleLineComment", "UnexpectedCharacter", 
-                                        "DoubleStringCharacter", "SingleStringCharacter", 
-                                        "EscapeSequence", "CharacterEscapeSequence", 
-                                        "HexEscapeSequence", "UnicodeEscapeSequence", 
-                                        "SingleEscapeCharacter", "NonEscapeCharacter", 
-                                        "EscapeCharacter", "LineContinuation", 
-                                        "LineTerminatorSequence", "DecimalDigit", 
-                                        "HexDigit", "OctalDigit", "DecimalIntegerLiteral", 
-                                        "ExponentPart", "IdentifierStart", 
-                                        "IdentifierPart", "UnicodeLetter", 
-                                        "UnicodeCombiningMark", "UnicodeDigit", 
-                                        "UnicodeConnectorPunctuation", "ZWNJ", 
-                                        "ZWJ", "RegularExpressionBody", 
-                                        "RegularExpressionFlags", "RegularExpressionFirstChar", 
-                                        "RegularExpressionChar", "RegularExpressionNonTerminator", 
-                                        "RegularExpressionBackslashSequence", 
-                                        "RegularExpressionClass", "RegularExpressionClassChar" ];
-
-ECMAScriptLexer.prototype.grammarFileName = "ECMAScript.g4";
+ECMAScript2015Lexer.prototype.grammarFileName = "ECMAScript2015.g4";
 
 
 ECMAScriptLexer.prototype.strictMode = true;
@@ -969,7 +981,7 @@ ECMAScriptLexer.prototype.isRegexPossible = function() {
 };
 
 
-ECMAScriptLexer.prototype.sempred = function(localctx, ruleIndex, predIndex) {
+ECMAScript2015Lexer.prototype.sempred = function(localctx, ruleIndex, predIndex) {
 	switch (ruleIndex) {
 		case 0:
 			return this.RegularExpressionLiteral_sempred(localctx, predIndex);
@@ -998,7 +1010,7 @@ ECMAScriptLexer.prototype.sempred = function(localctx, ruleIndex, predIndex) {
     }
 };
 
-ECMAScriptLexer.prototype.RegularExpressionLiteral_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.RegularExpressionLiteral_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 0:
 			return this.isRegexPossible();
@@ -1007,7 +1019,7 @@ ECMAScriptLexer.prototype.RegularExpressionLiteral_sempred = function(localctx, 
 	}
 };
 
-ECMAScriptLexer.prototype.OctalIntegerLiteral_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.OctalIntegerLiteral_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 1:
 			return !this.strictMode;
@@ -1016,7 +1028,7 @@ ECMAScriptLexer.prototype.OctalIntegerLiteral_sempred = function(localctx, predI
 	}
 };
 
-ECMAScriptLexer.prototype.Implements_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.Implements_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 2:
 			return this.strictMode;
@@ -1025,7 +1037,7 @@ ECMAScriptLexer.prototype.Implements_sempred = function(localctx, predIndex) {
 	}
 };
 
-ECMAScriptLexer.prototype.Let_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.Let_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 3:
 			return this.strictMode;
@@ -1034,7 +1046,7 @@ ECMAScriptLexer.prototype.Let_sempred = function(localctx, predIndex) {
 	}
 };
 
-ECMAScriptLexer.prototype.Private_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.Private_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 4:
 			return this.strictMode;
@@ -1043,7 +1055,7 @@ ECMAScriptLexer.prototype.Private_sempred = function(localctx, predIndex) {
 	}
 };
 
-ECMAScriptLexer.prototype.Public_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.Public_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 5:
 			return this.strictMode;
@@ -1052,7 +1064,7 @@ ECMAScriptLexer.prototype.Public_sempred = function(localctx, predIndex) {
 	}
 };
 
-ECMAScriptLexer.prototype.Interface_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.Interface_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 6:
 			return this.strictMode;
@@ -1061,7 +1073,7 @@ ECMAScriptLexer.prototype.Interface_sempred = function(localctx, predIndex) {
 	}
 };
 
-ECMAScriptLexer.prototype.Package_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.Package_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 7:
 			return this.strictMode;
@@ -1070,7 +1082,7 @@ ECMAScriptLexer.prototype.Package_sempred = function(localctx, predIndex) {
 	}
 };
 
-ECMAScriptLexer.prototype.Protected_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.Protected_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 8:
 			return this.strictMode;
@@ -1079,7 +1091,7 @@ ECMAScriptLexer.prototype.Protected_sempred = function(localctx, predIndex) {
 	}
 };
 
-ECMAScriptLexer.prototype.Static_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.Static_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 9:
 			return this.strictMode;
@@ -1088,7 +1100,7 @@ ECMAScriptLexer.prototype.Static_sempred = function(localctx, predIndex) {
 	}
 };
 
-ECMAScriptLexer.prototype.Yield_sempred = function(localctx, predIndex) {
+ECMAScript2015Lexer.prototype.Yield_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 10:
 			return this.strictMode;
@@ -1099,5 +1111,5 @@ ECMAScriptLexer.prototype.Yield_sempred = function(localctx, predIndex) {
 
 
 
-exports.ECMAScriptLexer = ECMAScriptLexer;
+exports.ECMAScript2015Lexer = ECMAScript2015Lexer;
 

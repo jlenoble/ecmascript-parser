@@ -15,13 +15,10 @@ export const test = () => {
 export const debug = () => {
   return gulp.src(testGlob)
     .pipe(mocha({
-      inspect: true,
-      debugBrk: true,
+      inspectBrk: true,
     }));
 };
 
-gulp.task('test', gulp.series(gulp.series(makeParser, fixParser, 'build'),
-  test));
+gulp.task('test', gulp.series(makeParser, fixParser, 'build', test));
 
-gulp.task('debug', gulp.series(gulp.series(makeParser, fixParser, 'build'),
-  debug));
+gulp.task('debug', gulp.series(makeParser, fixParser, 'build', debug));
