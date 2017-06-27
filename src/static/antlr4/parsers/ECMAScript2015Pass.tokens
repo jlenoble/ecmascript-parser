@@ -101,6 +101,7 @@ WhiteSpaces=100
 MultiLineComment=101
 SingleLineComment=102
 UnexpectedCharacter=103
+IdentifierName=104
 '['=3
 ']'=4
 '('=5

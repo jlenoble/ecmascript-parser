@@ -29,6 +29,8 @@
  * Developed by : Bart Kiers, bart@big-o.nl
  */
 grammar ECMAScript2015Pass;
+import
+  IdentifierName;
 
 @parser::members {
 /**
@@ -969,21 +971,6 @@ fragment DecimalIntegerLiteral
 
 fragment ExponentPart
  : [eE] [+-]? DecimalDigit+
- ;
-
-fragment IdentifierStart
- : UnicodeLetter
- | [$_]
- | '\\' UnicodeEscapeSequence
- ;
-
-fragment IdentifierPart
- : IdentifierStart
- | UnicodeCombiningMark
- | UnicodeDigit
- | UnicodeConnectorPunctuation
- | ZWNJ
- | ZWJ
  ;
 
 fragment UnicodeLetter

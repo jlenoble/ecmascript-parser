@@ -5,7 +5,7 @@ var ECMAScriptPassListener = require('./ECMAScriptPassListener').ECMAScriptPassL
 var grammarFileName = "ECMAScriptPass.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003i\u0274\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0003j\u0274\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
     "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004",
     "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0004\f\t\f\u0004",
     "\r\t\r\u0004\u000e\t\u000e\u0004\u000f\t\u000f\u0004\u0010\t\u0010\u0004",
@@ -459,7 +459,7 @@ var symbolicNames = [ null, "RegularExpressionLiteral", "LineTerminator",
                       "Let", "Private", "Public", "Interface", "Package", 
                       "Protected", "Static", "Yield", "Identifier", "StringLiteral", 
                       "WhiteSpaces", "MultiLineComment", "SingleLineComment", 
-                      "UnexpectedCharacter" ];
+                      "UnexpectedCharacter", "IdentifierName" ];
 
 var ruleNames =  [ "file", "program", "sourceElements", "sourceElement", 
                    "statement", "block", "statementList", "variableStatement", 
@@ -635,6 +635,7 @@ ECMAScriptPassParser.WhiteSpaces = 100;
 ECMAScriptPassParser.MultiLineComment = 101;
 ECMAScriptPassParser.SingleLineComment = 102;
 ECMAScriptPassParser.UnexpectedCharacter = 103;
+ECMAScriptPassParser.IdentifierName = 104;
 
 ECMAScriptPassParser.RULE_file = 0;
 ECMAScriptPassParser.RULE_program = 1;
