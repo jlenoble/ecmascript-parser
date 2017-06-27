@@ -30,7 +30,10 @@
  */
 grammar ECMAScript2015Pass;
 import
-  IdentifierName;
+  ReservedWord,
+  IdentifierName,
+  LexicalDeclaration,
+  BindingIdentifier;
 
 @parser::members {
 /**
@@ -157,7 +160,8 @@ sourceElements
 ///     FunctionDeclaration
 sourceElement
  : statement
- | functionDeclaration
+  | functionDeclaration
+  | lexicalDeclaration
  ;
 
 /// Statement :
@@ -223,12 +227,12 @@ variableDeclarationList
 /// VariableDeclaration :
 ///     Identifier Initialiser?
 variableDeclaration
- : Identifier initialiser?
+ : Identifier initializer?
  ;
 
 /// Initialiser :
 ///     = AssignmentExpression
-initialiser
+initializer
  : '=' singleExpression
  ;
 
@@ -853,7 +857,6 @@ Class   : 'class';
 Enum    : 'enum';
 Extends : 'extends';
 Super   : 'super';
-Const   : 'const';
 Export  : 'export';
 Import  : 'import';
 
