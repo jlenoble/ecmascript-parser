@@ -6,7 +6,7 @@ describe('Testing ECMAScript', function () {
 
   const muter = Muter(process.stderr, 'write'); // eslint-disable-line
 
-  for (let i = 0; i < 10/* 1956 */; i++) {
+  for (let i = 0; i < 1956; i++) {
     let file;
 
     if (
@@ -33,7 +33,10 @@ describe('Testing ECMAScript', function () {
 
     it(`Parsing file pass/${file}`, muted(muter, function () {
       return new Promise((resolve, reject) => {
-        translate(`node_modules/test262-parser-tests/pass/${file}`)
+        translate(`node_modules/test262-parser-tests/pass/${file}`, {
+          grammar: 'ECMAScriptPass',
+          listener: 'TranslatorPass',
+        })
           .on('error', reject)
           .on('finish', () => {
             const logs = muter.getLogs();

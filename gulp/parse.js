@@ -41,10 +41,12 @@ export const fixParser = done => {
   done();
 };
 
-export const translate = file => {
+export const translate = (file, options = {}) => {
   return gulp.src(file || dataGlob)
     .pipe(antlr4({
-      grammar, parserDir, listener, listenerDir, rule,
+      grammar: options.grammar || grammar,
+      listener: options.listener || listener,
+      parserDir, listenerDir, rule,
     }));
 };
 
