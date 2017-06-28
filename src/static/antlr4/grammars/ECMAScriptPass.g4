@@ -1,20 +1,16 @@
 grammar ECMAScriptPass;
 import
-  PrimaryExpression,
-  LeftHandSideExpression,
-  BindingIdentifier,
+  Expressions,
+  Statements,
   LexicalDeclaration,
-  AssignmentExpression,
-  ObjectLiteral,
   NumericLiteralB1,
   LexicalGrammar;
 
 file
-: statement? EOF
+: statementList?
 ;
 
-statement
-: lexicalDeclaration
-| IdentifierName
-| primaryExpression
+eos
+: SemiColon
+| EOF
 ;
