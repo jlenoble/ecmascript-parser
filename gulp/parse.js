@@ -50,7 +50,7 @@ export const translate = (file, options = {}) => {
     }));
 };
 
-gulp.task('translate', gulp.series(/*makeParser, fixParser, */translate));
+gulp.task('translate', gulp.series(makeParser, fixParser, translate));
 
 export const parse = translate;
 

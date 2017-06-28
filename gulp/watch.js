@@ -14,11 +14,11 @@ const allBuildGlob = [
 ];
 const grammarGlob = [
   'src/static/antlr4/grammars/**/*.g4',
-  'build/src/static/antlr4/Translator.js',
+  'build/src/static/antlr4/Translator*.js',
 ];
 const dataGlob = [
   'src/static/data/**/*.*',
-  'src/static/antlr4/parsers/ECMAScriptParser.js',
+  'src/static/antlr4/parsers/ECMAScript*Parser.js',
 ];
 
 export const watch = done => {
