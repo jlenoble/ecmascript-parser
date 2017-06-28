@@ -2,6 +2,7 @@ grammar ECMAScriptPass;
 import
   Expressions,
   Statements,
+  FunctionsAndClasses,
   NumericLiteralB1,
   LexicalGrammar;
 

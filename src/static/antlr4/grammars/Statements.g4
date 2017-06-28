@@ -3,8 +3,8 @@
 // A.3 Statements
 grammar Statements;
 import
-  /*BindingElement,
-  BindingPattern,*/
+  BindingElement,
+  /*BindingPattern,*/
   LexicalDeclaration,
   Declaration/*,
   BlockStatement,
@@ -84,12 +84,12 @@ statement_Yield_Await
 | throwStatement_Yield_Await
 | tryStatement_Yield_Await
 | debuggerStatement
-;
+;*/
 statement_Return
-: blockStatement_Return
+: /*blockStatement_Return
 | variableStatement
 | emptyStatement
-| expressionStatement
+| */expressionStatement/*
 | ifStatement_Return
 | breakableStatement_Return
 | continueStatement
@@ -99,9 +99,9 @@ statement_Return
 | labelledStatement_Return
 | throwStatement
 | tryStatement_Return
-| debuggerStatement
+| debuggerStatement*/
 ;
-statement_Yield_Return
+/*statement_Yield_Return
 : blockStatement_Yield_Return
 | variableStatement_Yield
 | emptyStatement
@@ -164,11 +164,11 @@ statementList_Await
 ;
 statementList_Yield_Await
 : (statementListItem_Yield_Await eos)+
-;
+;*/
 statementList_Return
 : (statementListItem_Return eos)+
 ;
-statementList_Yield_Return
+/*statementList_Yield_Return
 : (statementListItem_Yield_Return eos)+
 ;
 statementList_Await_Return
@@ -196,12 +196,12 @@ statementListItem_Await
 statementListItem_Yield_Await
 : statement_Yield_Await
 | declaration_Yield_Await
-;
+;*/
 statementListItem_Return
 : statement_Return
 | declaration
 ;
-statementListItem_Yield_Return
+/*statementListItem_Yield_Return
 : statement_Yield_Return
 | declaration_Yield
 ;
