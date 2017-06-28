@@ -7,14 +7,7 @@ import
   AssignmentExpression,
   ObjectLiteral,
   NumericLiteralB1,
-  Punctuator,
-  ReservedWord,
-  StringLiteralA1,
-  UnicodeEscapeSequence,
-  NumericLiteralA1,
-  IdentifierName,
-  Comment,
-  WhiteSpace;
+  LexicalGrammar;
 
 file
 : statement? EOF
