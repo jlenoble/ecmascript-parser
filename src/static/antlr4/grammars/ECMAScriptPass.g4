@@ -7,10 +7,10 @@ import
   LexicalGrammar;
 
 file
-: statementList?
+: statementList? EOF
 ;
 
 eos
 : SemiColon
-| EOF
+| {this._input.LT(1).type === ECMAScriptPassParser.EOF}?
 ;

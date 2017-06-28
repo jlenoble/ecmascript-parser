@@ -17,8 +17,8 @@ grammar PrimaryExpression;
 //    CoverParenthesizedExpressionAndArrowParameterList[?Yield, ?Await]
 primaryExpression
 : /*This
-| identifierReference
-| */literal
+| */identifierReference
+| literal
 | /*arrayLiteral
 | */objectLiteral/*
 | functionExpression

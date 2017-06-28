@@ -8,8 +8,8 @@ grammar BindingIdentifier;
 //    [~Await] await *
 identifierReference
 : identifier
-/*| Yield
-| Await Multiply*/
+| Yield
+| Await Multiply
 ;
 /*identifierReference_Yield
 : identifier
