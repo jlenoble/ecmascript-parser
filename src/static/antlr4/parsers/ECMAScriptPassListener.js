@@ -83,6 +83,15 @@ ECMAScriptPassListener.prototype.exitLiteral = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#coverParenthesizedExpressionAndArrowParameterList.
+ECMAScriptPassListener.prototype.enterCoverParenthesizedExpressionAndArrowParameterList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#coverParenthesizedExpressionAndArrowParameterList.
+ECMAScriptPassListener.prototype.exitCoverParenthesizedExpressionAndArrowParameterList = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#objectLiteral.
 ECMAScriptPassListener.prototype.enterObjectLiteral = function(ctx) {
 };

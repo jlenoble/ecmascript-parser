@@ -26,8 +26,8 @@ primaryExpression
 | generatorExpression
 | asyncFunctionExpression
 | RegularExpressionLiteral
-| templateLiteral
-| coverParenthesizedExpressionAndArrowParameterList*/
+| templateLiteral*/
+| coverParenthesizedExpressionAndArrowParameterList
 ;
 /*primaryExpression_Yield
 : This

@@ -7,5 +7,6 @@ makeTest({
     'StatementList1',
     'StatementList2',
     'StatementList3',
+    'StatementList4',
   ],
 });

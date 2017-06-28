@@ -5,8 +5,8 @@ grammar Expressions;
 import
   BindingIdentifier,
   PrimaryExpression,
-  /*CoverExpressions,
-  ArrayLiteral,*/
+  CoverExpressions,
+  /*ArrayLiteral,*/
   ObjectLiteral,
   /*CallExpression,*/
   LeftHandSideExpression,
