@@ -2,12 +2,13 @@
 
 // A.3 Statements
 grammar Statements;
-/*import
-  BindingElement,
-  BindingPattern,
-  Declaration,
+import
+  /*BindingElement,
+  BindingPattern,*/
+  LexicalDeclaration,
+  Declaration/*,
   BlockStatement,
-  VariableStatement;*/
+  VariableStatement*/;
 
 // Statement[Yield, Await, Return]:
 //    BlockStatement[?Yield, ?Await, ?Return]
@@ -182,7 +183,7 @@ statementList_Yield_Await_Return
 //    Declaration[?Yield, ?Await]
 statementListItem
 : statement
-/*| declaration*/
+| declaration
 ;
 /*statementListItem_Yield
 : statement_Yield
