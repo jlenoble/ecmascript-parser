@@ -5,7 +5,7 @@ var ECMAScriptPassListener = require('./ECMAScriptPassListener').ECMAScriptPassL
 var grammarFileName = "ECMAScriptPass.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u0004\u0007\u0004\u0002\t\u0002\u0003\u0002\u0003\u0002\u0003",
+    "\u0003\u0007\u0007\u0004\u0002\t\u0002\u0003\u0002\u0003\u0002\u0003",
     "\u0002\u0002\u0002\u0003\u0002\u0002\u0002\u0002\u0005\u0002\u0004\u0003",
     "\u0002\u0002\u0002\u0004\u0005\u0007\u0002\u0002\u0003\u0005\u0003\u0003",
     "\u0002\u0002\u0002\u0002"].join("");
@@ -19,7 +19,8 @@ var sharedContextCache = new antlr4.PredictionContextCache();
 
 var literalNames = [  ];
 
-var symbolicNames = [ null, "MultiLineComment", "SingleLineComment" ];
+var symbolicNames = [ null, "MultiLineComment", "SingleLineComment", "WhiteSpace", 
+                      "LineTerminator", "LineTerminatorSequence" ];
 
 var ruleNames =  [ "file" ];
 
@@ -44,6 +45,9 @@ Object.defineProperty(ECMAScriptPassParser.prototype, "atn", {
 ECMAScriptPassParser.EOF = antlr4.Token.EOF;
 ECMAScriptPassParser.MultiLineComment = 1;
 ECMAScriptPassParser.SingleLineComment = 2;
+ECMAScriptPassParser.WhiteSpace = 3;
+ECMAScriptPassParser.LineTerminator = 4;
+ECMAScriptPassParser.LineTerminatorSequence = 5;
 
 ECMAScriptPassParser.RULE_file = 0;
 

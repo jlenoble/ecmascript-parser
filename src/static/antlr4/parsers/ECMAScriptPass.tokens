@@ -1,2 +1,5 @@
 MultiLineComment=1
 SingleLineComment=2
+WhiteSpace=3
+LineTerminator=4
+LineTerminatorSequence=5

@@ -1,6 +1,7 @@
 grammar ECMAScriptPass;
 import
-  Comment;
+  Comment,
+  WhiteSpace;
 
 file
 : EOF

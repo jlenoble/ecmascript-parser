@@ -8,6 +8,5 @@ const {ECMAScriptPassListener} = require(path.join(base, rel,
 export class TranslatorPass extends ECMAScriptPassListener {
   enterFile (ctx) {
     debugger;
-    console.log(ctx.getText());
   }
 }
