@@ -29,12 +29,48 @@ ECMAScriptPassListener.prototype.exitStatement = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#primaryExpression.
+ECMAScriptPassListener.prototype.enterPrimaryExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#primaryExpression.
+ECMAScriptPassListener.prototype.exitPrimaryExpression = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#literal.
 ECMAScriptPassListener.prototype.enterLiteral = function(ctx) {
 };
 
 // Exit a parse tree produced by ECMAScriptPassParser#literal.
 ECMAScriptPassListener.prototype.exitLiteral = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#leftHandSideExpression.
+ECMAScriptPassListener.prototype.enterLeftHandSideExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#leftHandSideExpression.
+ECMAScriptPassListener.prototype.exitLeftHandSideExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#newExpression.
+ECMAScriptPassListener.prototype.enterNewExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#newExpression.
+ECMAScriptPassListener.prototype.exitNewExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#memberExpression.
+ECMAScriptPassListener.prototype.enterMemberExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#memberExpression.
+ECMAScriptPassListener.prototype.exitMemberExpression = function(ctx) {
 };
 
 
@@ -98,6 +134,96 @@ ECMAScriptPassListener.prototype.enterLexicalBinding = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#lexicalBinding.
 ECMAScriptPassListener.prototype.exitLexicalBinding = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#lhsExpression_In.
+ECMAScriptPassListener.prototype.enterLhsExpression_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#lhsExpression_In.
+ECMAScriptPassListener.prototype.exitLhsExpression_In = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#assignmentOperator.
+ECMAScriptPassListener.prototype.enterAssignmentOperator = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#assignmentOperator.
+ECMAScriptPassListener.prototype.exitAssignmentOperator = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#objectLiteral.
+ECMAScriptPassListener.prototype.enterObjectLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#objectLiteral.
+ECMAScriptPassListener.prototype.exitObjectLiteral = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#propertyDefinitionList.
+ECMAScriptPassListener.prototype.enterPropertyDefinitionList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#propertyDefinitionList.
+ECMAScriptPassListener.prototype.exitPropertyDefinitionList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#propertyDefinition.
+ECMAScriptPassListener.prototype.enterPropertyDefinition = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#propertyDefinition.
+ECMAScriptPassListener.prototype.exitPropertyDefinition = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#propertyName.
+ECMAScriptPassListener.prototype.enterPropertyName = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#propertyName.
+ECMAScriptPassListener.prototype.exitPropertyName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#literalPropertyName.
+ECMAScriptPassListener.prototype.enterLiteralPropertyName = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#literalPropertyName.
+ECMAScriptPassListener.prototype.exitLiteralPropertyName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#reservedWord.
+ECMAScriptPassListener.prototype.enterReservedWord = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#reservedWord.
+ECMAScriptPassListener.prototype.exitReservedWord = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#keyword.
+ECMAScriptPassListener.prototype.enterKeyword = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#keyword.
+ECMAScriptPassListener.prototype.exitKeyword = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#futureReservedWord.
+ECMAScriptPassListener.prototype.enterFutureReservedWord = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#futureReservedWord.
+ECMAScriptPassListener.prototype.exitFutureReservedWord = function(ctx) {
 };
 
 

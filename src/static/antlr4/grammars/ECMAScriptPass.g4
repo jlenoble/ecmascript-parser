@@ -1,7 +1,11 @@
 grammar ECMAScriptPass;
 import
+  PrimaryExpression,
+  LeftHandSideExpression,
   BindingIdentifier,
   LexicalDeclaration,
+  AssignmentExpression,
+  ObjectLiteral,
   NumericLiteralB1,
   Punctuator,
   ReservedWord,
@@ -19,10 +23,5 @@ file
 statement
 : lexicalDeclaration
 | IdentifierName
-| literal
-;
-
-literal
-: NumericLiteral
-| StringLiteral
+| primaryExpression
 ;
