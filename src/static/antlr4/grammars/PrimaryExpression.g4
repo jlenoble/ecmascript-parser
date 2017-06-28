@@ -20,8 +20,8 @@ primaryExpression
 | */identifierReference
 | literal
 | /*arrayLiteral
-| */objectLiteral/*
-| functionExpression
+| */objectLiteral
+| functionExpression/*
 | classExpression
 | generatorExpression
 | asyncFunctionExpression
