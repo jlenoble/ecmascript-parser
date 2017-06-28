@@ -14,29 +14,29 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u0003\u0007\u0003\b\u0003\b\u0003\b\u0003\b\u0003\t\u0003\t\u0003\n",
     "\u0003\n\u0003\n\u0007\n4\n\n\f\n\u000e\n7\u000b\n\u0003\u000b\u0003",
     "\u000b\u0003\u000b\u0002\u0002\f\u0002\u0004\u0006\b\n\f\u000e\u0010",
-    "\u0012\u0014\u0002\u0004\u0004\u0002ffjj\u0004\u0002>>ee\u00025\u0002",
-    "\u0017\u0003\u0002\u0002\u0002\u0004\u001d\u0003\u0002\u0002\u0002\u0006",
-    "\u001f\u0003\u0002\u0002\u0002\b!\u0003\u0002\u0002\u0002\n&\u0003\u0002",
-    "\u0002\u0002\f(\u0003\u0002\u0002\u0002\u000e*\u0003\u0002\u0002\u0002",
-    "\u0010.\u0003\u0002\u0002\u0002\u00120\u0003\u0002\u0002\u0002\u0014",
-    "8\u0003\u0002\u0002\u0002\u0016\u0018\u0005\u0004\u0003\u0002\u0017",
-    "\u0016\u0003\u0002\u0002\u0002\u0017\u0018\u0003\u0002\u0002\u0002\u0018",
-    "\u0019\u0003\u0002\u0002\u0002\u0019\u001a\u0007\u0002\u0002\u0003\u001a",
-    "\u0003\u0003\u0002\u0002\u0002\u001b\u001e\u0005\u000e\b\u0002\u001c",
-    "\u001e\u0005\u0006\u0004\u0002\u001d\u001b\u0003\u0002\u0002\u0002\u001d",
-    "\u001c\u0003\u0002\u0002\u0002\u001e\u0005\u0003\u0002\u0002\u0002\u001f",
-    " \t\u0002\u0002\u0002 \u0007\u0003\u0002\u0002\u0002!\"\u0005\f\u0007",
-    "\u0002\"\t\u0003\u0002\u0002\u0002#\'\u0005\f\u0007\u0002$\'\u0007Z",
-    "\u0002\u0002%\'\u00079\u0002\u0002&#\u0003\u0002\u0002\u0002&$\u0003",
-    "\u0002\u0002\u0002&%\u0003\u0002\u0002\u0002\'\u000b\u0003\u0002\u0002",
-    "\u0002()\u0007j\u0002\u0002)\r\u0003\u0002\u0002\u0002*+\u0005\u0010",
-    "\t\u0002+,\u0005\u0012\n\u0002,-\u0007\n\u0002\u0002-\u000f\u0003\u0002",
-    "\u0002\u0002./\t\u0003\u0002\u0002/\u0011\u0003\u0002\u0002\u000205",
-    "\u0005\u0014\u000b\u000212\u0007\u000b\u0002\u000224\u0005\u0014\u000b",
-    "\u000231\u0003\u0002\u0002\u000247\u0003\u0002\u0002\u000253\u0003\u0002",
-    "\u0002\u000256\u0003\u0002\u0002\u00026\u0013\u0003\u0002\u0002\u0002",
-    "75\u0003\u0002\u0002\u000289\u0005\n\u0006\u00029\u0015\u0003\u0002",
-    "\u0002\u0002\u0006\u0017\u001d&5"].join("");
+    "\u0012\u0014\u0002\u0004\u0004\u0002\u0003\u0003jj\u0004\u0002??ff\u0002",
+    "5\u0002\u0017\u0003\u0002\u0002\u0002\u0004\u001d\u0003\u0002\u0002",
+    "\u0002\u0006\u001f\u0003\u0002\u0002\u0002\b!\u0003\u0002\u0002\u0002",
+    "\n&\u0003\u0002\u0002\u0002\f(\u0003\u0002\u0002\u0002\u000e*\u0003",
+    "\u0002\u0002\u0002\u0010.\u0003\u0002\u0002\u0002\u00120\u0003\u0002",
+    "\u0002\u0002\u00148\u0003\u0002\u0002\u0002\u0016\u0018\u0005\u0004",
+    "\u0003\u0002\u0017\u0016\u0003\u0002\u0002\u0002\u0017\u0018\u0003\u0002",
+    "\u0002\u0002\u0018\u0019\u0003\u0002\u0002\u0002\u0019\u001a\u0007\u0002",
+    "\u0002\u0003\u001a\u0003\u0003\u0002\u0002\u0002\u001b\u001e\u0005\u000e",
+    "\b\u0002\u001c\u001e\u0005\u0006\u0004\u0002\u001d\u001b\u0003\u0002",
+    "\u0002\u0002\u001d\u001c\u0003\u0002\u0002\u0002\u001e\u0005\u0003\u0002",
+    "\u0002\u0002\u001f \t\u0002\u0002\u0002 \u0007\u0003\u0002\u0002\u0002",
+    "!\"\u0005\f\u0007\u0002\"\t\u0003\u0002\u0002\u0002#\'\u0005\f\u0007",
+    "\u0002$\'\u0007[\u0002\u0002%\'\u0007:\u0002\u0002&#\u0003\u0002\u0002",
+    "\u0002&$\u0003\u0002\u0002\u0002&%\u0003\u0002\u0002\u0002\'\u000b\u0003",
+    "\u0002\u0002\u0002()\u0007j\u0002\u0002)\r\u0003\u0002\u0002\u0002*",
+    "+\u0005\u0010\t\u0002+,\u0005\u0012\n\u0002,-\u0007\u000b\u0002\u0002",
+    "-\u000f\u0003\u0002\u0002\u0002./\t\u0003\u0002\u0002/\u0011\u0003\u0002",
+    "\u0002\u000205\u0005\u0014\u000b\u000212\u0007\f\u0002\u000224\u0005",
+    "\u0014\u000b\u000231\u0003\u0002\u0002\u000247\u0003\u0002\u0002\u0002",
+    "53\u0003\u0002\u0002\u000256\u0003\u0002\u0002\u00026\u0013\u0003\u0002",
+    "\u0002\u000275\u0003\u0002\u0002\u000289\u0005\n\u0006\u00029\u0015",
+    "\u0003\u0002\u0002\u0002\u0006\u0017\u001d&5"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -45,14 +45,14 @@ var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new a
 
 var sharedContextCache = new antlr4.PredictionContextCache();
 
-var literalNames = [ null, "'{'", "'('", "')'", "'['", "']'", "'.'", "'...'", 
-                     "';'", "','", "'<'", "'>'", "'<='", "'>='", "'=='", 
-                     "'!='", "'==='", "'!=='", "'+'", "'-'", "'*'", "'%'", 
-                     "'**'", "'++'", "'--'", "'<<'", "'>>'", "'>>>'", "'&'", 
-                     "'|'", "'^'", "'!'", "'~'", "'&&'", "'||'", "'?'", 
-                     "':'", "'='", "'+='", "'-='", "'*='", "'%='", "'**='", 
-                     "'<<='", "'>>='", "'>>>='", "'&='", "'|='", "'^='", 
-                     "'=>'", null, "'/'", "'/='", null, "'}'", "'await'", 
+var literalNames = [ null, null, "'{'", "'('", "')'", "'['", "']'", "'.'", 
+                     "'...'", "';'", "','", "'<'", "'>'", "'<='", "'>='", 
+                     "'=='", "'!='", "'==='", "'!=='", "'+'", "'-'", "'*'", 
+                     "'%'", "'**'", "'++'", "'--'", "'<<'", "'>>'", "'>>>'", 
+                     "'&'", "'|'", "'^'", "'!'", "'~'", "'&&'", "'||'", 
+                     "'?'", "':'", "'='", "'+='", "'-='", "'*='", "'%='", 
+                     "'**='", "'<<='", "'>>='", "'>>>='", "'&='", "'|='", 
+                     "'^='", "'=>'", null, "'/'", "'/='", null, "'}'", "'await'", 
                      "'break'", "'case'", "'catch'", "'class'", "'const'", 
                      "'continue'", "'debugger'", "'default'", "'delete'", 
                      "'do'", "'else'", "'export'", "'extends'", "'finally'", 
@@ -63,28 +63,28 @@ var literalNames = [ null, "'{'", "'('", "')'", "'['", "']'", "'.'", "'...'",
                      null, null, null, null, "'null'", null, "'true'", "'false'", 
                      "'async'", "'let'" ];
 
-var symbolicNames = [ null, "OpenBrace", "OpenParen", "CloseParen", "OpenBracket", 
-                      "CloseBracket", "Dot", "Spread", "SemiColon", "Comma", 
-                      "LessThan", "GreaterThan", "LessThanEquals", "GreaterThanEquals", 
-                      "Equals", "NotEquals", "IdentityEquals", "IdentityNotEquals", 
-                      "Plus", "Minus", "Multiply", "Modulo", "Power", "PlusPlus", 
-                      "MinusMinus", "LeftShiftArithmetic", "RightShiftArithmetic", 
-                      "RightShiftLogical", "BitAnd", "BitOr", "BitXOr", 
-                      "Not", "BitNot", "And", "Or", "QuestionMark", "Colon", 
-                      "Assign", "PlusAssign", "MinusAssign", "MultiplyAssign", 
-                      "ModuloAssign", "PowerAssign", "LeftShiftArithmeticAssign", 
-                      "RightShiftArithmeticAssign", "RightShiftLogicalAssign", 
-                      "BitAndAssign", "BitOrAssign", "BitXorAssign", "FatArrow", 
-                      "Punctuator", "Divide", "DivideAssign", "DivPunctuator", 
-                      "CloseBrace", "Await", "Break", "Case", "Catch", "Class", 
-                      "Const", "Continue", "Debugger", "Default", "Delete", 
-                      "Do", "Else", "Export", "Extends", "Finally", "For", 
-                      "Function", "If", "Import", "In", "Instanceof", "New", 
-                      "Return", "Super", "Switch", "This", "Throw", "Try", 
-                      "Typeof", "Var", "Void", "While", "With", "Yield", 
-                      "Enum", "ReservedWord", "Keyword", "FutureReservedWord", 
-                      "NullLiteral", "Null", "BooleanLiteral", "True", "False", 
-                      "Async", "Let", "NumericLiteral", "BinaryIntegerLiteral", 
+var symbolicNames = [ null, "NumericLiteral", "OpenBrace", "OpenParen", 
+                      "CloseParen", "OpenBracket", "CloseBracket", "Dot", 
+                      "Spread", "SemiColon", "Comma", "LessThan", "GreaterThan", 
+                      "LessThanEquals", "GreaterThanEquals", "Equals", "NotEquals", 
+                      "IdentityEquals", "IdentityNotEquals", "Plus", "Minus", 
+                      "Multiply", "Modulo", "Power", "PlusPlus", "MinusMinus", 
+                      "LeftShiftArithmetic", "RightShiftArithmetic", "RightShiftLogical", 
+                      "BitAnd", "BitOr", "BitXOr", "Not", "BitNot", "And", 
+                      "Or", "QuestionMark", "Colon", "Assign", "PlusAssign", 
+                      "MinusAssign", "MultiplyAssign", "ModuloAssign", "PowerAssign", 
+                      "LeftShiftArithmeticAssign", "RightShiftArithmeticAssign", 
+                      "RightShiftLogicalAssign", "BitAndAssign", "BitOrAssign", 
+                      "BitXorAssign", "FatArrow", "Punctuator", "Divide", 
+                      "DivideAssign", "DivPunctuator", "CloseBrace", "Await", 
+                      "Break", "Case", "Catch", "Class", "Const", "Continue", 
+                      "Debugger", "Default", "Delete", "Do", "Else", "Export", 
+                      "Extends", "Finally", "For", "Function", "If", "Import", 
+                      "In", "Instanceof", "New", "Return", "Super", "Switch", 
+                      "This", "Throw", "Try", "Typeof", "Var", "Void", "While", 
+                      "With", "Yield", "Enum", "ReservedWord", "Keyword", 
+                      "FutureReservedWord", "NullLiteral", "Null", "BooleanLiteral", 
+                      "True", "False", "Async", "Let", "BinaryIntegerLiteral", 
                       "OctalIntegerLiteral", "HexIntegerLiteral", "IdentifierName", 
                       "MultiLineComment", "SingleLineComment", "WhiteSpace", 
                       "LineTerminator", "LineTerminatorSequence" ];
@@ -112,106 +112,106 @@ Object.defineProperty(ECMAScriptPassParser.prototype, "atn", {
 });
 
 ECMAScriptPassParser.EOF = antlr4.Token.EOF;
-ECMAScriptPassParser.OpenBrace = 1;
-ECMAScriptPassParser.OpenParen = 2;
-ECMAScriptPassParser.CloseParen = 3;
-ECMAScriptPassParser.OpenBracket = 4;
-ECMAScriptPassParser.CloseBracket = 5;
-ECMAScriptPassParser.Dot = 6;
-ECMAScriptPassParser.Spread = 7;
-ECMAScriptPassParser.SemiColon = 8;
-ECMAScriptPassParser.Comma = 9;
-ECMAScriptPassParser.LessThan = 10;
-ECMAScriptPassParser.GreaterThan = 11;
-ECMAScriptPassParser.LessThanEquals = 12;
-ECMAScriptPassParser.GreaterThanEquals = 13;
-ECMAScriptPassParser.Equals = 14;
-ECMAScriptPassParser.NotEquals = 15;
-ECMAScriptPassParser.IdentityEquals = 16;
-ECMAScriptPassParser.IdentityNotEquals = 17;
-ECMAScriptPassParser.Plus = 18;
-ECMAScriptPassParser.Minus = 19;
-ECMAScriptPassParser.Multiply = 20;
-ECMAScriptPassParser.Modulo = 21;
-ECMAScriptPassParser.Power = 22;
-ECMAScriptPassParser.PlusPlus = 23;
-ECMAScriptPassParser.MinusMinus = 24;
-ECMAScriptPassParser.LeftShiftArithmetic = 25;
-ECMAScriptPassParser.RightShiftArithmetic = 26;
-ECMAScriptPassParser.RightShiftLogical = 27;
-ECMAScriptPassParser.BitAnd = 28;
-ECMAScriptPassParser.BitOr = 29;
-ECMAScriptPassParser.BitXOr = 30;
-ECMAScriptPassParser.Not = 31;
-ECMAScriptPassParser.BitNot = 32;
-ECMAScriptPassParser.And = 33;
-ECMAScriptPassParser.Or = 34;
-ECMAScriptPassParser.QuestionMark = 35;
-ECMAScriptPassParser.Colon = 36;
-ECMAScriptPassParser.Assign = 37;
-ECMAScriptPassParser.PlusAssign = 38;
-ECMAScriptPassParser.MinusAssign = 39;
-ECMAScriptPassParser.MultiplyAssign = 40;
-ECMAScriptPassParser.ModuloAssign = 41;
-ECMAScriptPassParser.PowerAssign = 42;
-ECMAScriptPassParser.LeftShiftArithmeticAssign = 43;
-ECMAScriptPassParser.RightShiftArithmeticAssign = 44;
-ECMAScriptPassParser.RightShiftLogicalAssign = 45;
-ECMAScriptPassParser.BitAndAssign = 46;
-ECMAScriptPassParser.BitOrAssign = 47;
-ECMAScriptPassParser.BitXorAssign = 48;
-ECMAScriptPassParser.FatArrow = 49;
-ECMAScriptPassParser.Punctuator = 50;
-ECMAScriptPassParser.Divide = 51;
-ECMAScriptPassParser.DivideAssign = 52;
-ECMAScriptPassParser.DivPunctuator = 53;
-ECMAScriptPassParser.CloseBrace = 54;
-ECMAScriptPassParser.Await = 55;
-ECMAScriptPassParser.Break = 56;
-ECMAScriptPassParser.Case = 57;
-ECMAScriptPassParser.Catch = 58;
-ECMAScriptPassParser.Class = 59;
-ECMAScriptPassParser.Const = 60;
-ECMAScriptPassParser.Continue = 61;
-ECMAScriptPassParser.Debugger = 62;
-ECMAScriptPassParser.Default = 63;
-ECMAScriptPassParser.Delete = 64;
-ECMAScriptPassParser.Do = 65;
-ECMAScriptPassParser.Else = 66;
-ECMAScriptPassParser.Export = 67;
-ECMAScriptPassParser.Extends = 68;
-ECMAScriptPassParser.Finally = 69;
-ECMAScriptPassParser.For = 70;
-ECMAScriptPassParser.Function = 71;
-ECMAScriptPassParser.If = 72;
-ECMAScriptPassParser.Import = 73;
-ECMAScriptPassParser.In = 74;
-ECMAScriptPassParser.Instanceof = 75;
-ECMAScriptPassParser.New = 76;
-ECMAScriptPassParser.Return = 77;
-ECMAScriptPassParser.Super = 78;
-ECMAScriptPassParser.Switch = 79;
-ECMAScriptPassParser.This = 80;
-ECMAScriptPassParser.Throw = 81;
-ECMAScriptPassParser.Try = 82;
-ECMAScriptPassParser.Typeof = 83;
-ECMAScriptPassParser.Var = 84;
-ECMAScriptPassParser.Void = 85;
-ECMAScriptPassParser.While = 86;
-ECMAScriptPassParser.With = 87;
-ECMAScriptPassParser.Yield = 88;
-ECMAScriptPassParser.Enum = 89;
-ECMAScriptPassParser.ReservedWord = 90;
-ECMAScriptPassParser.Keyword = 91;
-ECMAScriptPassParser.FutureReservedWord = 92;
-ECMAScriptPassParser.NullLiteral = 93;
-ECMAScriptPassParser.Null = 94;
-ECMAScriptPassParser.BooleanLiteral = 95;
-ECMAScriptPassParser.True = 96;
-ECMAScriptPassParser.False = 97;
-ECMAScriptPassParser.Async = 98;
-ECMAScriptPassParser.Let = 99;
-ECMAScriptPassParser.NumericLiteral = 100;
+ECMAScriptPassParser.NumericLiteral = 1;
+ECMAScriptPassParser.OpenBrace = 2;
+ECMAScriptPassParser.OpenParen = 3;
+ECMAScriptPassParser.CloseParen = 4;
+ECMAScriptPassParser.OpenBracket = 5;
+ECMAScriptPassParser.CloseBracket = 6;
+ECMAScriptPassParser.Dot = 7;
+ECMAScriptPassParser.Spread = 8;
+ECMAScriptPassParser.SemiColon = 9;
+ECMAScriptPassParser.Comma = 10;
+ECMAScriptPassParser.LessThan = 11;
+ECMAScriptPassParser.GreaterThan = 12;
+ECMAScriptPassParser.LessThanEquals = 13;
+ECMAScriptPassParser.GreaterThanEquals = 14;
+ECMAScriptPassParser.Equals = 15;
+ECMAScriptPassParser.NotEquals = 16;
+ECMAScriptPassParser.IdentityEquals = 17;
+ECMAScriptPassParser.IdentityNotEquals = 18;
+ECMAScriptPassParser.Plus = 19;
+ECMAScriptPassParser.Minus = 20;
+ECMAScriptPassParser.Multiply = 21;
+ECMAScriptPassParser.Modulo = 22;
+ECMAScriptPassParser.Power = 23;
+ECMAScriptPassParser.PlusPlus = 24;
+ECMAScriptPassParser.MinusMinus = 25;
+ECMAScriptPassParser.LeftShiftArithmetic = 26;
+ECMAScriptPassParser.RightShiftArithmetic = 27;
+ECMAScriptPassParser.RightShiftLogical = 28;
+ECMAScriptPassParser.BitAnd = 29;
+ECMAScriptPassParser.BitOr = 30;
+ECMAScriptPassParser.BitXOr = 31;
+ECMAScriptPassParser.Not = 32;
+ECMAScriptPassParser.BitNot = 33;
+ECMAScriptPassParser.And = 34;
+ECMAScriptPassParser.Or = 35;
+ECMAScriptPassParser.QuestionMark = 36;
+ECMAScriptPassParser.Colon = 37;
+ECMAScriptPassParser.Assign = 38;
+ECMAScriptPassParser.PlusAssign = 39;
+ECMAScriptPassParser.MinusAssign = 40;
+ECMAScriptPassParser.MultiplyAssign = 41;
+ECMAScriptPassParser.ModuloAssign = 42;
+ECMAScriptPassParser.PowerAssign = 43;
+ECMAScriptPassParser.LeftShiftArithmeticAssign = 44;
+ECMAScriptPassParser.RightShiftArithmeticAssign = 45;
+ECMAScriptPassParser.RightShiftLogicalAssign = 46;
+ECMAScriptPassParser.BitAndAssign = 47;
+ECMAScriptPassParser.BitOrAssign = 48;
+ECMAScriptPassParser.BitXorAssign = 49;
+ECMAScriptPassParser.FatArrow = 50;
+ECMAScriptPassParser.Punctuator = 51;
+ECMAScriptPassParser.Divide = 52;
+ECMAScriptPassParser.DivideAssign = 53;
+ECMAScriptPassParser.DivPunctuator = 54;
+ECMAScriptPassParser.CloseBrace = 55;
+ECMAScriptPassParser.Await = 56;
+ECMAScriptPassParser.Break = 57;
+ECMAScriptPassParser.Case = 58;
+ECMAScriptPassParser.Catch = 59;
+ECMAScriptPassParser.Class = 60;
+ECMAScriptPassParser.Const = 61;
+ECMAScriptPassParser.Continue = 62;
+ECMAScriptPassParser.Debugger = 63;
+ECMAScriptPassParser.Default = 64;
+ECMAScriptPassParser.Delete = 65;
+ECMAScriptPassParser.Do = 66;
+ECMAScriptPassParser.Else = 67;
+ECMAScriptPassParser.Export = 68;
+ECMAScriptPassParser.Extends = 69;
+ECMAScriptPassParser.Finally = 70;
+ECMAScriptPassParser.For = 71;
+ECMAScriptPassParser.Function = 72;
+ECMAScriptPassParser.If = 73;
+ECMAScriptPassParser.Import = 74;
+ECMAScriptPassParser.In = 75;
+ECMAScriptPassParser.Instanceof = 76;
+ECMAScriptPassParser.New = 77;
+ECMAScriptPassParser.Return = 78;
+ECMAScriptPassParser.Super = 79;
+ECMAScriptPassParser.Switch = 80;
+ECMAScriptPassParser.This = 81;
+ECMAScriptPassParser.Throw = 82;
+ECMAScriptPassParser.Try = 83;
+ECMAScriptPassParser.Typeof = 84;
+ECMAScriptPassParser.Var = 85;
+ECMAScriptPassParser.Void = 86;
+ECMAScriptPassParser.While = 87;
+ECMAScriptPassParser.With = 88;
+ECMAScriptPassParser.Yield = 89;
+ECMAScriptPassParser.Enum = 90;
+ECMAScriptPassParser.ReservedWord = 91;
+ECMAScriptPassParser.Keyword = 92;
+ECMAScriptPassParser.FutureReservedWord = 93;
+ECMAScriptPassParser.NullLiteral = 94;
+ECMAScriptPassParser.Null = 95;
+ECMAScriptPassParser.BooleanLiteral = 96;
+ECMAScriptPassParser.True = 97;
+ECMAScriptPassParser.False = 98;
+ECMAScriptPassParser.Async = 99;
+ECMAScriptPassParser.Let = 100;
 ECMAScriptPassParser.BinaryIntegerLiteral = 101;
 ECMAScriptPassParser.OctalIntegerLiteral = 102;
 ECMAScriptPassParser.HexIntegerLiteral = 103;
@@ -284,7 +284,7 @@ ECMAScriptPassParser.prototype.file = function() {
         this.state = 21;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        if(_la===ECMAScriptPassParser.Const || ((((_la - 99)) & ~0x1f) == 0 && ((1 << (_la - 99)) & ((1 << (ECMAScriptPassParser.Let - 99)) | (1 << (ECMAScriptPassParser.NumericLiteral - 99)) | (1 << (ECMAScriptPassParser.IdentifierName - 99)))) !== 0)) {
+        if(_la===ECMAScriptPassParser.NumericLiteral || _la===ECMAScriptPassParser.Const || _la===ECMAScriptPassParser.Let || _la===ECMAScriptPassParser.IdentifierName) {
             this.state = 20;
             this.statement();
         }

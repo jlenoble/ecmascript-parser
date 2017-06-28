@@ -2,6 +2,7 @@ grammar ECMAScriptPass;
 import
   BindingIdentifier,
   LexicalDeclaration,
+  NumericLiteralB1,
   Punctuator,
   ReservedWord,
   UnicodeEscapeSequence,
