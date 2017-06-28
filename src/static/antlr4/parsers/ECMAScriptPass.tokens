@@ -1,5 +1,9 @@
-MultiLineComment=1
-SingleLineComment=2
-WhiteSpace=3
-LineTerminator=4
-LineTerminatorSequence=5
+NumericLiteral=1
+BinaryIntegerLiteral=2
+OctalIntegerLiteral=3
+HexIntegerLiteral=4
+MultiLineComment=5
+SingleLineComment=6
+WhiteSpace=7
+LineTerminator=8
+LineTerminatorSequence=9

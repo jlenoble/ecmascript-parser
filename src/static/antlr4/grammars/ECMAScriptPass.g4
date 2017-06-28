@@ -1,8 +1,9 @@
 grammar ECMAScriptPass;
 import
+  NumericLiteralA1,
   Comment,
   WhiteSpace;
 
 file
-: EOF
+: NumericLiteral? EOF
 ;

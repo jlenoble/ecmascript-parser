@@ -5,10 +5,12 @@ var ECMAScriptPassListener = require('./ECMAScriptPassListener').ECMAScriptPassL
 var grammarFileName = "ECMAScriptPass.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u0007\u0007\u0004\u0002\t\u0002\u0003\u0002\u0003\u0002\u0003",
-    "\u0002\u0002\u0002\u0003\u0002\u0002\u0002\u0002\u0005\u0002\u0004\u0003",
-    "\u0002\u0002\u0002\u0004\u0005\u0007\u0002\u0002\u0003\u0005\u0003\u0003",
-    "\u0002\u0002\u0002\u0002"].join("");
+    "\u0003\u000b\n\u0004\u0002\t\u0002\u0003\u0002\u0005\u0002\u0006\n\u0002",
+    "\u0003\u0002\u0003\u0002\u0003\u0002\u0002\u0002\u0003\u0002\u0002\u0002",
+    "\u0002\t\u0002\u0005\u0003\u0002\u0002\u0002\u0004\u0006\u0007\u0003",
+    "\u0002\u0002\u0005\u0004\u0003\u0002\u0002\u0002\u0005\u0006\u0003\u0002",
+    "\u0002\u0002\u0006\u0007\u0003\u0002\u0002\u0002\u0007\b\u0007\u0002",
+    "\u0002\u0003\b\u0003\u0003\u0002\u0002\u0002\u0003\u0005"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -19,8 +21,9 @@ var sharedContextCache = new antlr4.PredictionContextCache();
 
 var literalNames = [  ];
 
-var symbolicNames = [ null, "MultiLineComment", "SingleLineComment", "WhiteSpace", 
-                      "LineTerminator", "LineTerminatorSequence" ];
+var symbolicNames = [ null, "NumericLiteral", "BinaryIntegerLiteral", "OctalIntegerLiteral", 
+                      "HexIntegerLiteral", "MultiLineComment", "SingleLineComment", 
+                      "WhiteSpace", "LineTerminator", "LineTerminatorSequence" ];
 
 var ruleNames =  [ "file" ];
 
@@ -43,11 +46,15 @@ Object.defineProperty(ECMAScriptPassParser.prototype, "atn", {
 });
 
 ECMAScriptPassParser.EOF = antlr4.Token.EOF;
-ECMAScriptPassParser.MultiLineComment = 1;
-ECMAScriptPassParser.SingleLineComment = 2;
-ECMAScriptPassParser.WhiteSpace = 3;
-ECMAScriptPassParser.LineTerminator = 4;
-ECMAScriptPassParser.LineTerminatorSequence = 5;
+ECMAScriptPassParser.NumericLiteral = 1;
+ECMAScriptPassParser.BinaryIntegerLiteral = 2;
+ECMAScriptPassParser.OctalIntegerLiteral = 3;
+ECMAScriptPassParser.HexIntegerLiteral = 4;
+ECMAScriptPassParser.MultiLineComment = 5;
+ECMAScriptPassParser.SingleLineComment = 6;
+ECMAScriptPassParser.WhiteSpace = 7;
+ECMAScriptPassParser.LineTerminator = 8;
+ECMAScriptPassParser.LineTerminatorSequence = 9;
 
 ECMAScriptPassParser.RULE_file = 0;
 
@@ -71,6 +78,10 @@ FileContext.prototype.EOF = function() {
     return this.getToken(ECMAScriptPassParser.EOF, 0);
 };
 
+FileContext.prototype.NumericLiteral = function() {
+    return this.getToken(ECMAScriptPassParser.NumericLiteral, 0);
+};
+
 FileContext.prototype.enterRule = function(listener) {
     if(listener instanceof ECMAScriptPassListener ) {
         listener.enterFile(this);
@@ -92,9 +103,18 @@ ECMAScriptPassParser.prototype.file = function() {
 
     var localctx = new FileContext(this, this._ctx, this.state);
     this.enterRule(localctx, 0, ECMAScriptPassParser.RULE_file);
+    var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 2;
+        this.state = 3;
+        this._errHandler.sync(this);
+        _la = this._input.LA(1);
+        if(_la===ECMAScriptPassParser.NumericLiteral) {
+            this.state = 2;
+            this.match(ECMAScriptPassParser.NumericLiteral);
+        }
+
+        this.state = 5;
         this.match(ECMAScriptPassParser.EOF);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {

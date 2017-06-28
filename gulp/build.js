@@ -7,7 +7,7 @@ const buildDir = 'build';
 const allSrcGlob = [
   'src/*.js',
   'src/static/antlr4/Translator*.js',
-  'test/**/*.js',
+  'test/*.js',
   'gulp/**/*.js'
 ];
 
