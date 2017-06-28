@@ -5,10 +5,10 @@ var ECMAScriptPassListener = require('./ECMAScriptPassListener').ECMAScriptPassL
 var grammarFileName = "ECMAScriptPass.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u0005\b\u0004\u0002\t\u0002\u0003\u0002\u0003\u0002\u0003\u0002",
-    "\u0003\u0002\u0002\u0002\u0003\u0002\u0002\u0002\u0002\u0006\u0002\u0004",
-    "\u0003\u0002\u0002\u0002\u0004\u0005\u0007\u0003\u0002\u0002\u0005\u0006",
-    "\u0007\u0002\u0002\u0003\u0006\u0003\u0003\u0002\u0002\u0002\u0002"].join("");
+    "\u0003\u0004\u0007\u0004\u0002\t\u0002\u0003\u0002\u0003\u0002\u0003",
+    "\u0002\u0002\u0002\u0003\u0002\u0002\u0002\u0002\u0005\u0002\u0004\u0003",
+    "\u0002\u0002\u0002\u0004\u0005\u0007\u0002\u0002\u0003\u0005\u0003\u0003",
+    "\u0002\u0002\u0002\u0002"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -19,7 +19,7 @@ var sharedContextCache = new antlr4.PredictionContextCache();
 
 var literalNames = [  ];
 
-var symbolicNames = [ null, "Comment", "MultiLineComment", "SingleLineComment" ];
+var symbolicNames = [ null, "MultiLineComment", "SingleLineComment" ];
 
 var ruleNames =  [ "file" ];
 
@@ -42,9 +42,8 @@ Object.defineProperty(ECMAScriptPassParser.prototype, "atn", {
 });
 
 ECMAScriptPassParser.EOF = antlr4.Token.EOF;
-ECMAScriptPassParser.Comment = 1;
-ECMAScriptPassParser.MultiLineComment = 2;
-ECMAScriptPassParser.SingleLineComment = 3;
+ECMAScriptPassParser.MultiLineComment = 1;
+ECMAScriptPassParser.SingleLineComment = 2;
 
 ECMAScriptPassParser.RULE_file = 0;
 
@@ -63,10 +62,6 @@ function FileContext(parser, parent, invokingState) {
 
 FileContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 FileContext.prototype.constructor = FileContext;
-
-FileContext.prototype.Comment = function() {
-    return this.getToken(ECMAScriptPassParser.Comment, 0);
-};
 
 FileContext.prototype.EOF = function() {
     return this.getToken(ECMAScriptPassParser.EOF, 0);
@@ -96,8 +91,6 @@ ECMAScriptPassParser.prototype.file = function() {
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 2;
-        this.match(ECMAScriptPassParser.Comment);
-        this.state = 3;
         this.match(ECMAScriptPassParser.EOF);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {

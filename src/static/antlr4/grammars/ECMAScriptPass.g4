@@ -3,5 +3,5 @@ import
   Comment;
 
 file
-: Comment EOF
+: EOF
 ;

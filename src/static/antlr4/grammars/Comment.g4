@@ -5,10 +5,6 @@ lexer grammar Comment;
 // Comment::
 //     MultiLineComment
 //     SingleLineComment
-Comment
-: MultiLineComment
-| SingleLineComment
-;
 
 // MultiLineComment::
 //     '/*' MultiLineCommentChars[opt] '*/'
@@ -23,7 +19,7 @@ Comment
 // MultiLineNotForwardSlashOrAsteriskChar::
 //     SourceCharacter but not one of '/' or '*'
 MultiLineComment
-: '/*' .*? '*/'
+: '/*' .*? '*/' -> channel(HIDDEN)
 ;
 
 // SingleLineComment::
