@@ -38,7 +38,7 @@ WhiteSpace
 //     <LS>     U+2028    LINE SEPARATOR
 //     <PS>     U+2029    PARAGRAPH SEPARATOR
 LineTerminator
-: [\n\r\u2028\u2029]
+: [\n\r\u2028\u2029] -> channel(HIDDEN)
 ;
 
 // LineTerminatorSequence::

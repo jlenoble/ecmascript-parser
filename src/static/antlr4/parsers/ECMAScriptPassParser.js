@@ -5,7 +5,7 @@ var ECMAScriptPassListener = require('./ECMAScriptPassListener').ECMAScriptPassL
 var grammarFileName = "ECMAScriptPass.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003m\u00b8\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0003m\u00b9\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
     "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004",
     "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0004\f\t\f\u0004",
     "\r\t\r\u0004\u000e\t\u000e\u0004\u000f\t\u000f\u0004\u0010\t\u0010\u0004",
@@ -14,100 +14,101 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u0018\t\u0018\u0004\u0019\t\u0019\u0004\u001a\t\u001a\u0004\u001b\t",
     "\u001b\u0004\u001c\t\u001c\u0004\u001d\t\u001d\u0004\u001e\t\u001e\u0004",
     "\u001f\t\u001f\u0004 \t \u0003\u0002\u0005\u0002B\n\u0002\u0003\u0002",
-    "\u0003\u0002\u0003\u0003\u0003\u0003\u0005\u0003H\n\u0003\u0003\u0004",
-    "\u0003\u0004\u0003\u0004\u0007\u0004M\n\u0004\f\u0004\u000e\u0004P\u000b",
-    "\u0004\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0005\u0005V",
-    "\n\u0005\u0003\u0006\u0003\u0006\u0003\u0006\u0005\u0006[\n\u0006\u0003",
-    "\u0007\u0003\u0007\u0003\b\u0003\b\u0003\b\u0005\bb\n\b\u0003\t\u0003",
-    "\t\u0003\n\u0003\n\u0003\n\u0003\n\u0003\n\u0005\nk\n\n\u0003\n\u0003",
-    "\n\u0005\no\n\n\u0003\u000b\u0003\u000b\u0003\u000b\u0007\u000bt\n\u000b",
-    "\f\u000b\u000e\u000bw\u000b\u000b\u0003\f\u0003\f\u0003\f\u0003\f\u0003",
-    "\r\u0003\r\u0003\u000e\u0003\u000e\u0003\u000f\u0003\u000f\u0003\u0010",
-    "\u0003\u0010\u0003\u0011\u0003\u0011\u0003\u0012\u0003\u0012\u0003\u0013",
-    "\u0003\u0013\u0003\u0014\u0003\u0014\u0003\u0015\u0003\u0015\u0003\u0015",
-    "\u0006\u0015\u0090\n\u0015\r\u0015\u000e\u0015\u0091\u0003\u0016\u0003",
-    "\u0016\u0005\u0016\u0096\n\u0016\u0003\u0017\u0003\u0017\u0003\u0018",
-    "\u0003\u0018\u0003\u0019\u0003\u0019\u0003\u0019\u0003\u0019\u0003\u001a",
-    "\u0003\u001a\u0003\u001b\u0003\u001b\u0003\u001b\u0007\u001b\u00a5\n",
-    "\u001b\f\u001b\u000e\u001b\u00a8\u000b\u001b\u0003\u001c\u0003\u001c",
-    "\u0003\u001d\u0003\u001d\u0003\u001e\u0003\u001e\u0003\u001e\u0003\u001e",
-    "\u0005\u001e\u00b2\n\u001e\u0003\u001f\u0003\u001f\u0003 \u0003 \u0003",
-    " \u0002\u0002!\u0002\u0004\u0006\b\n\f\u000e\u0010\u0012\u0014\u0016",
-    "\u0018\u001a\u001c\u001e \"$&(*,.02468:<>\u0002\u0007\u0005\u0002\u0003",
-    "\u0003:;dd\u0005\u0002\u0003\u0003ddhh\u0004\u0002)377\u0004\u0002A",
-    "Acc\u0003\u0002<]\u0002\u00aa\u0002A\u0003\u0002\u0002\u0002\u0004G",
-    "\u0003\u0002\u0002\u0002\u0006I\u0003\u0002\u0002\u0002\bU\u0003\u0002",
-    "\u0002\u0002\nZ\u0003\u0002\u0002\u0002\f\\\u0003\u0002\u0002\u0002",
-    "\u000ea\u0003\u0002\u0002\u0002\u0010c\u0003\u0002\u0002\u0002\u0012",
-    "n\u0003\u0002\u0002\u0002\u0014p\u0003\u0002\u0002\u0002\u0016x\u0003",
-    "\u0002\u0002\u0002\u0018|\u0003\u0002\u0002\u0002\u001a~\u0003\u0002",
-    "\u0002\u0002\u001c\u0080\u0003\u0002\u0002\u0002\u001e\u0082\u0003\u0002",
-    "\u0002\u0002 \u0084\u0003\u0002\u0002\u0002\"\u0086\u0003\u0002\u0002",
-    "\u0002$\u0088\u0003\u0002\u0002\u0002&\u008a\u0003\u0002\u0002\u0002",
-    "(\u008f\u0003\u0002\u0002\u0002*\u0095\u0003\u0002\u0002\u0002,\u0097",
-    "\u0003\u0002\u0002\u0002.\u0099\u0003\u0002\u0002\u00020\u009b\u0003",
-    "\u0002\u0002\u00022\u009f\u0003\u0002\u0002\u00024\u00a1\u0003\u0002",
-    "\u0002\u00026\u00a9\u0003\u0002\u0002\u00028\u00ab\u0003\u0002\u0002",
-    "\u0002:\u00b1\u0003\u0002\u0002\u0002<\u00b3\u0003\u0002\u0002\u0002",
-    ">\u00b5\u0003\u0002\u0002\u0002@B\u0005(\u0015\u0002A@\u0003\u0002\u0002",
-    "\u0002AB\u0003\u0002\u0002\u0002BC\u0003\u0002\u0002\u0002CD\u0007\u0002",
-    "\u0002\u0003D\u0003\u0003\u0002\u0002\u0002EH\u0007\u000b\u0002\u0002",
-    "FH\u0006\u0003\u0002\u0002GE\u0003\u0002\u0002\u0002GF\u0003\u0002\u0002",
-    "\u0002H\u0005\u0003\u0002\u0002\u0002IN\u0005\"\u0012\u0002JK\u0007",
-    "\f\u0002\u0002KM\u0005\"\u0012\u0002LJ\u0003\u0002\u0002\u0002MP\u0003",
-    "\u0002\u0002\u0002NL\u0003\u0002\u0002\u0002NO\u0003\u0002\u0002\u0002",
-    "O\u0007\u0003\u0002\u0002\u0002PN\u0003\u0002\u0002\u0002QV\u0005\f",
-    "\u0007\u0002RV\u0007]\u0002\u0002ST\u0007<\u0002\u0002TV\u0007\u0017",
-    "\u0002\u0002UQ\u0003\u0002\u0002\u0002UR\u0003\u0002\u0002\u0002US\u0003",
-    "\u0002\u0002\u0002V\t\u0003\u0002\u0002\u0002W[\u0005\f\u0007\u0002",
-    "X[\u0007]\u0002\u0002Y[\u0007<\u0002\u0002ZW\u0003\u0002\u0002\u0002",
-    "ZX\u0003\u0002\u0002\u0002ZY\u0003\u0002\u0002\u0002[\u000b\u0003\u0002",
-    "\u0002\u0002\\]\u0007h\u0002\u0002]\r\u0003\u0002\u0002\u0002^b\u0005",
-    "\b\u0005\u0002_b\u0005\u0010\t\u0002`b\u0005\u0012\n\u0002a^\u0003\u0002",
-    "\u0002\u0002a_\u0003\u0002\u0002\u0002a`\u0003\u0002\u0002\u0002b\u000f",
-    "\u0003\u0002\u0002\u0002cd\t\u0002\u0002\u0002d\u0011\u0003\u0002\u0002",
-    "\u0002ef\u0007\u0004\u0002\u0002fo\u00079\u0002\u0002gh\u0007\u0004",
-    "\u0002\u0002hj\u0005\u0014\u000b\u0002ik\u0007\f\u0002\u0002ji\u0003",
-    "\u0002\u0002\u0002jk\u0003\u0002\u0002\u0002kl\u0003\u0002\u0002\u0002",
-    "lm\u00079\u0002\u0002mo\u0003\u0002\u0002\u0002ne\u0003\u0002\u0002",
-    "\u0002ng\u0003\u0002\u0002\u0002o\u0013\u0003\u0002\u0002\u0002pu\u0005",
-    "\u0016\f\u0002qr\u0007\f\u0002\u0002rt\u0005\u0016\f\u0002sq\u0003\u0002",
-    "\u0002\u0002tw\u0003\u0002\u0002\u0002us\u0003\u0002\u0002\u0002uv\u0003",
-    "\u0002\u0002\u0002v\u0015\u0003\u0002\u0002\u0002wu\u0003\u0002\u0002",
-    "\u0002xy\u0005\u0018\r\u0002yz\u0007\'\u0002\u0002z{\u0005\"\u0012\u0002",
-    "{\u0017\u0003\u0002\u0002\u0002|}\u0005\u001a\u000e\u0002}\u0019\u0003",
-    "\u0002\u0002\u0002~\u007f\t\u0003\u0002\u0002\u007f\u001b\u0003\u0002",
-    "\u0002\u0002\u0080\u0081\u0005\u001e\u0010\u0002\u0081\u001d\u0003\u0002",
-    "\u0002\u0002\u0082\u0083\u0005 \u0011\u0002\u0083\u001f\u0003\u0002",
-    "\u0002\u0002\u0084\u0085\u0005\u000e\b\u0002\u0085!\u0003\u0002\u0002",
-    "\u0002\u0086\u0087\u0005\u001c\u000f\u0002\u0087#\u0003\u0002\u0002",
-    "\u0002\u0088\u0089\t\u0004\u0002\u0002\u0089%\u0003\u0002\u0002\u0002",
-    "\u008a\u008b\u0005.\u0018\u0002\u008b\'\u0003\u0002\u0002\u0002\u008c",
-    "\u008d\u0005*\u0016\u0002\u008d\u008e\u0005\u0004\u0003\u0002\u008e",
-    "\u0090\u0003\u0002\u0002\u0002\u008f\u008c\u0003\u0002\u0002\u0002\u0090",
-    "\u0091\u0003\u0002\u0002\u0002\u0091\u008f\u0003\u0002\u0002\u0002\u0091",
-    "\u0092\u0003\u0002\u0002\u0002\u0092)\u0003\u0002\u0002\u0002\u0093",
-    "\u0096\u0005&\u0014\u0002\u0094\u0096\u00058\u001d\u0002\u0095\u0093",
-    "\u0003\u0002\u0002\u0002\u0095\u0094\u0003\u0002\u0002\u0002\u0096+",
-    "\u0003\u0002\u0002\u0002\u0097\u0098\u0007\u000b\u0002\u0002\u0098-",
-    "\u0003\u0002\u0002\u0002\u0099\u009a\u0005\u0006\u0004\u0002\u009a/",
-    "\u0003\u0002\u0002\u0002\u009b\u009c\u00052\u001a\u0002\u009c\u009d",
-    "\u00054\u001b\u0002\u009d\u009e\u0007\u000b\u0002\u0002\u009e1\u0003",
-    "\u0002\u0002\u0002\u009f\u00a0\t\u0005\u0002\u0002\u00a03\u0003\u0002",
-    "\u0002\u0002\u00a1\u00a6\u00056\u001c\u0002\u00a2\u00a3\u0007\f\u0002",
-    "\u0002\u00a3\u00a5\u00056\u001c\u0002\u00a4\u00a2\u0003\u0002\u0002",
-    "\u0002\u00a5\u00a8\u0003\u0002\u0002\u0002\u00a6\u00a4\u0003\u0002\u0002",
-    "\u0002\u00a6\u00a7\u0003\u0002\u0002\u0002\u00a75\u0003\u0002\u0002",
-    "\u0002\u00a8\u00a6\u0003\u0002\u0002\u0002\u00a9\u00aa\u0005\n\u0006",
-    "\u0002\u00aa7\u0003\u0002\u0002\u0002\u00ab\u00ac\u00050\u0019\u0002",
-    "\u00ac9\u0003\u0002\u0002\u0002\u00ad\u00b2\u0005<\u001f\u0002\u00ae",
-    "\u00b2\u0005> \u0002\u00af\u00b2\u0007:\u0002\u0002\u00b0\u00b2\u0007",
-    ";\u0002\u0002\u00b1\u00ad\u0003\u0002\u0002\u0002\u00b1\u00ae\u0003",
-    "\u0002\u0002\u0002\u00b1\u00af\u0003\u0002\u0002\u0002\u00b1\u00b0\u0003",
-    "\u0002\u0002\u0002\u00b2;\u0003\u0002\u0002\u0002\u00b3\u00b4\t\u0006",
-    "\u0002\u0002\u00b4=\u0003\u0002\u0002\u0002\u00b5\u00b6\u0007^\u0002",
-    "\u0002\u00b6?\u0003\u0002\u0002\u0002\u000fAGNUZajnu\u0091\u0095\u00a6",
-    "\u00b1"].join("");
+    "\u0003\u0002\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003I\n\u0003",
+    "\u0003\u0004\u0003\u0004\u0003\u0004\u0007\u0004N\n\u0004\f\u0004\u000e",
+    "\u0004Q\u000b\u0004\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005",
+    "\u0005\u0005W\n\u0005\u0003\u0006\u0003\u0006\u0003\u0006\u0005\u0006",
+    "\\\n\u0006\u0003\u0007\u0003\u0007\u0003\b\u0003\b\u0003\b\u0005\bc",
+    "\n\b\u0003\t\u0003\t\u0003\n\u0003\n\u0003\n\u0003\n\u0003\n\u0005\n",
+    "l\n\n\u0003\n\u0003\n\u0005\np\n\n\u0003\u000b\u0003\u000b\u0003\u000b",
+    "\u0007\u000bu\n\u000b\f\u000b\u000e\u000bx\u000b\u000b\u0003\f\u0003",
+    "\f\u0003\f\u0003\f\u0003\r\u0003\r\u0003\u000e\u0003\u000e\u0003\u000f",
+    "\u0003\u000f\u0003\u0010\u0003\u0010\u0003\u0011\u0003\u0011\u0003\u0012",
+    "\u0003\u0012\u0003\u0013\u0003\u0013\u0003\u0014\u0003\u0014\u0003\u0015",
+    "\u0003\u0015\u0003\u0015\u0006\u0015\u0091\n\u0015\r\u0015\u000e\u0015",
+    "\u0092\u0003\u0016\u0003\u0016\u0005\u0016\u0097\n\u0016\u0003\u0017",
+    "\u0003\u0017\u0003\u0018\u0003\u0018\u0003\u0019\u0003\u0019\u0003\u0019",
+    "\u0003\u0019\u0003\u001a\u0003\u001a\u0003\u001b\u0003\u001b\u0003\u001b",
+    "\u0007\u001b\u00a6\n\u001b\f\u001b\u000e\u001b\u00a9\u000b\u001b\u0003",
+    "\u001c\u0003\u001c\u0003\u001d\u0003\u001d\u0003\u001e\u0003\u001e\u0003",
+    "\u001e\u0003\u001e\u0005\u001e\u00b3\n\u001e\u0003\u001f\u0003\u001f",
+    "\u0003 \u0003 \u0003 \u0002\u0002!\u0002\u0004\u0006\b\n\f\u000e\u0010",
+    "\u0012\u0014\u0016\u0018\u001a\u001c\u001e \"$&(*,.02468:<>\u0002\u0007",
+    "\u0005\u0002\u0003\u0003:;dd\u0005\u0002\u0003\u0003ddhh\u0004\u0002",
+    ")377\u0004\u0002AAcc\u0003\u0002<]\u0002\u00ac\u0002A\u0003\u0002\u0002",
+    "\u0002\u0004H\u0003\u0002\u0002\u0002\u0006J\u0003\u0002\u0002\u0002",
+    "\bV\u0003\u0002\u0002\u0002\n[\u0003\u0002\u0002\u0002\f]\u0003\u0002",
+    "\u0002\u0002\u000eb\u0003\u0002\u0002\u0002\u0010d\u0003\u0002\u0002",
+    "\u0002\u0012o\u0003\u0002\u0002\u0002\u0014q\u0003\u0002\u0002\u0002",
+    "\u0016y\u0003\u0002\u0002\u0002\u0018}\u0003\u0002\u0002\u0002\u001a",
+    "\u007f\u0003\u0002\u0002\u0002\u001c\u0081\u0003\u0002\u0002\u0002\u001e",
+    "\u0083\u0003\u0002\u0002\u0002 \u0085\u0003\u0002\u0002\u0002\"\u0087",
+    "\u0003\u0002\u0002\u0002$\u0089\u0003\u0002\u0002\u0002&\u008b\u0003",
+    "\u0002\u0002\u0002(\u0090\u0003\u0002\u0002\u0002*\u0096\u0003\u0002",
+    "\u0002\u0002,\u0098\u0003\u0002\u0002\u0002.\u009a\u0003\u0002\u0002",
+    "\u00020\u009c\u0003\u0002\u0002\u00022\u00a0\u0003\u0002\u0002\u0002",
+    "4\u00a2\u0003\u0002\u0002\u00026\u00aa\u0003\u0002\u0002\u00028\u00ac",
+    "\u0003\u0002\u0002\u0002:\u00b2\u0003\u0002\u0002\u0002<\u00b4\u0003",
+    "\u0002\u0002\u0002>\u00b6\u0003\u0002\u0002\u0002@B\u0005(\u0015\u0002",
+    "A@\u0003\u0002\u0002\u0002AB\u0003\u0002\u0002\u0002BC\u0003\u0002\u0002",
+    "\u0002CD\u0007\u0002\u0002\u0003D\u0003\u0003\u0002\u0002\u0002EI\u0007",
+    "\u000b\u0002\u0002FI\u0006\u0003\u0002\u0002GI\u0006\u0003\u0003\u0002",
+    "HE\u0003\u0002\u0002\u0002HF\u0003\u0002\u0002\u0002HG\u0003\u0002\u0002",
+    "\u0002I\u0005\u0003\u0002\u0002\u0002JO\u0005\"\u0012\u0002KL\u0007",
+    "\f\u0002\u0002LN\u0005\"\u0012\u0002MK\u0003\u0002\u0002\u0002NQ\u0003",
+    "\u0002\u0002\u0002OM\u0003\u0002\u0002\u0002OP\u0003\u0002\u0002\u0002",
+    "P\u0007\u0003\u0002\u0002\u0002QO\u0003\u0002\u0002\u0002RW\u0005\f",
+    "\u0007\u0002SW\u0007]\u0002\u0002TU\u0007<\u0002\u0002UW\u0007\u0017",
+    "\u0002\u0002VR\u0003\u0002\u0002\u0002VS\u0003\u0002\u0002\u0002VT\u0003",
+    "\u0002\u0002\u0002W\t\u0003\u0002\u0002\u0002X\\\u0005\f\u0007\u0002",
+    "Y\\\u0007]\u0002\u0002Z\\\u0007<\u0002\u0002[X\u0003\u0002\u0002\u0002",
+    "[Y\u0003\u0002\u0002\u0002[Z\u0003\u0002\u0002\u0002\\\u000b\u0003\u0002",
+    "\u0002\u0002]^\u0007h\u0002\u0002^\r\u0003\u0002\u0002\u0002_c\u0005",
+    "\b\u0005\u0002`c\u0005\u0010\t\u0002ac\u0005\u0012\n\u0002b_\u0003\u0002",
+    "\u0002\u0002b`\u0003\u0002\u0002\u0002ba\u0003\u0002\u0002\u0002c\u000f",
+    "\u0003\u0002\u0002\u0002de\t\u0002\u0002\u0002e\u0011\u0003\u0002\u0002",
+    "\u0002fg\u0007\u0004\u0002\u0002gp\u00079\u0002\u0002hi\u0007\u0004",
+    "\u0002\u0002ik\u0005\u0014\u000b\u0002jl\u0007\f\u0002\u0002kj\u0003",
+    "\u0002\u0002\u0002kl\u0003\u0002\u0002\u0002lm\u0003\u0002\u0002\u0002",
+    "mn\u00079\u0002\u0002np\u0003\u0002\u0002\u0002of\u0003\u0002\u0002",
+    "\u0002oh\u0003\u0002\u0002\u0002p\u0013\u0003\u0002\u0002\u0002qv\u0005",
+    "\u0016\f\u0002rs\u0007\f\u0002\u0002su\u0005\u0016\f\u0002tr\u0003\u0002",
+    "\u0002\u0002ux\u0003\u0002\u0002\u0002vt\u0003\u0002\u0002\u0002vw\u0003",
+    "\u0002\u0002\u0002w\u0015\u0003\u0002\u0002\u0002xv\u0003\u0002\u0002",
+    "\u0002yz\u0005\u0018\r\u0002z{\u0007\'\u0002\u0002{|\u0005\"\u0012\u0002",
+    "|\u0017\u0003\u0002\u0002\u0002}~\u0005\u001a\u000e\u0002~\u0019\u0003",
+    "\u0002\u0002\u0002\u007f\u0080\t\u0003\u0002\u0002\u0080\u001b\u0003",
+    "\u0002\u0002\u0002\u0081\u0082\u0005\u001e\u0010\u0002\u0082\u001d\u0003",
+    "\u0002\u0002\u0002\u0083\u0084\u0005 \u0011\u0002\u0084\u001f\u0003",
+    "\u0002\u0002\u0002\u0085\u0086\u0005\u000e\b\u0002\u0086!\u0003\u0002",
+    "\u0002\u0002\u0087\u0088\u0005\u001c\u000f\u0002\u0088#\u0003\u0002",
+    "\u0002\u0002\u0089\u008a\t\u0004\u0002\u0002\u008a%\u0003\u0002\u0002",
+    "\u0002\u008b\u008c\u0005.\u0018\u0002\u008c\'\u0003\u0002\u0002\u0002",
+    "\u008d\u008e\u0005*\u0016\u0002\u008e\u008f\u0005\u0004\u0003\u0002",
+    "\u008f\u0091\u0003\u0002\u0002\u0002\u0090\u008d\u0003\u0002\u0002\u0002",
+    "\u0091\u0092\u0003\u0002\u0002\u0002\u0092\u0090\u0003\u0002\u0002\u0002",
+    "\u0092\u0093\u0003\u0002\u0002\u0002\u0093)\u0003\u0002\u0002\u0002",
+    "\u0094\u0097\u0005&\u0014\u0002\u0095\u0097\u00058\u001d\u0002\u0096",
+    "\u0094\u0003\u0002\u0002\u0002\u0096\u0095\u0003\u0002\u0002\u0002\u0097",
+    "+\u0003\u0002\u0002\u0002\u0098\u0099\u0007\u000b\u0002\u0002\u0099",
+    "-\u0003\u0002\u0002\u0002\u009a\u009b\u0005\u0006\u0004\u0002\u009b",
+    "/\u0003\u0002\u0002\u0002\u009c\u009d\u00052\u001a\u0002\u009d\u009e",
+    "\u00054\u001b\u0002\u009e\u009f\u0007\u000b\u0002\u0002\u009f1\u0003",
+    "\u0002\u0002\u0002\u00a0\u00a1\t\u0005\u0002\u0002\u00a13\u0003\u0002",
+    "\u0002\u0002\u00a2\u00a7\u00056\u001c\u0002\u00a3\u00a4\u0007\f\u0002",
+    "\u0002\u00a4\u00a6\u00056\u001c\u0002\u00a5\u00a3\u0003\u0002\u0002",
+    "\u0002\u00a6\u00a9\u0003\u0002\u0002\u0002\u00a7\u00a5\u0003\u0002\u0002",
+    "\u0002\u00a7\u00a8\u0003\u0002\u0002\u0002\u00a85\u0003\u0002\u0002",
+    "\u0002\u00a9\u00a7\u0003\u0002\u0002\u0002\u00aa\u00ab\u0005\n\u0006",
+    "\u0002\u00ab7\u0003\u0002\u0002\u0002\u00ac\u00ad\u00050\u0019\u0002",
+    "\u00ad9\u0003\u0002\u0002\u0002\u00ae\u00b3\u0005<\u001f\u0002\u00af",
+    "\u00b3\u0005> \u0002\u00b0\u00b3\u0007:\u0002\u0002\u00b1\u00b3\u0007",
+    ";\u0002\u0002\u00b2\u00ae\u0003\u0002\u0002\u0002\u00b2\u00af\u0003",
+    "\u0002\u0002\u0002\u00b2\u00b0\u0003\u0002\u0002\u0002\u00b2\u00b1\u0003",
+    "\u0002\u0002\u0002\u00b3;\u0003\u0002\u0002\u0002\u00b4\u00b5\t\u0006",
+    "\u0002\u0002\u00b5=\u0003\u0002\u0002\u0002\u00b6\u00b7\u0007^\u0002",
+    "\u0002\u00b7?\u0003\u0002\u0002\u0002\u000fAHOV[bkov\u0092\u0096\u00a7",
+    "\u00b2"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -176,6 +177,42 @@ function ECMAScriptPassParser (input) {
     this.ruleNames = ruleNames;
     this.literalNames = literalNames;
     this.symbolicNames = symbolicNames;
+
+	/**
+	 * Returns true if, on the current index of the parser's
+	 * token stream, a token exists on the HIDDEN channel which
+	 * either is a line terminator, or is a multi line comment that
+	 * contains a line terminator.
+	 * @returns {Boolean}
+	 */
+	ECMAScriptPassParser.prototype.lineTerminatorAhead = function() {
+	// ECMAScript® 2018 Language Specification - Section 5.1.2
+	// Simple white space and single-line comments are discarded and do not appear
+	// in the stream of input elements for the syntactic grammar. A MultiLineComment
+	// (that is, a comment of the form /*…*/ regardless of whether it spans more
+	// than one line) is likewise simply discarded if it contains no line
+	// terminator; but if a MultiLineComment contains one or more line terminators,
+	// then it is replaced by a single line terminator, which becomes part of the
+	// stream of input elements for the syntactic grammar.
+	  var possibleIndexEosToken = antlr4.Parser.prototype.getCurrentToken
+	    .call(this).tokenIndex - 1;
+	  var ahead = this._input.get(possibleIndexEosToken);
+
+	  if (ahead.channel !== antlr4.Lexer.HIDDEN)
+	    return false;
+
+	  var text = ahead.text;
+	  var type = ahead.type;
+
+	  return (
+	    type === ECMAScriptPassParser.MultiLineComment &&
+	    text.indexOf('\r') !== -1 ||
+	    text.indexOf('\n') !== -1 ||
+	    text.indexOf('\u2028') !== -1 ||
+	    text.indexOf('\u2029') !== -1
+	  ) || (type === ECMAScriptPassParser.LineTerminator);
+	};
+
     return this;
 }
 
@@ -443,7 +480,7 @@ ECMAScriptPassParser.prototype.eos = function() {
     var localctx = new EosContext(this, this._ctx, this.state);
     this.enterRule(localctx, 2, ECMAScriptPassParser.RULE_eos);
     try {
-        this.state = 69;
+        this.state = 70;
         this._errHandler.sync(this);
         var la_ = this._interp.adaptivePredict(this._input,1,this._ctx);
         switch(la_) {
@@ -456,6 +493,14 @@ ECMAScriptPassParser.prototype.eos = function() {
         case 2:
             this.enterOuterAlt(localctx, 2);
             this.state = 68;
+            if (!( this.lineTerminatorAhead())) {
+                throw new antlr4.error.FailedPredicateException(this, "this.lineTerminatorAhead()");
+            }
+            break;
+
+        case 3:
+            this.enterOuterAlt(localctx, 3);
+            this.state = 69;
             if (!( this._input.LT(1).type === ECMAScriptPassParser.EOF)) {
                 throw new antlr4.error.FailedPredicateException(this, "this._input.LT(1).type === ECMAScriptPassParser.EOF");
             }
@@ -538,19 +583,19 @@ ECMAScriptPassParser.prototype.expression_In = function() {
     this.enterRule(localctx, 4, ECMAScriptPassParser.RULE_expression_In);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 71;
+        this.state = 72;
         this.assignmentExpression_In();
-        this.state = 76;
+        this.state = 77;
         this._errHandler.sync(this);
         var _alt = this._interp.adaptivePredict(this._input,2,this._ctx)
         while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
             if(_alt===1) {
-                this.state = 72;
-                this.match(ECMAScriptPassParser.Comma);
                 this.state = 73;
+                this.match(ECMAScriptPassParser.Comma);
+                this.state = 74;
                 this.assignmentExpression_In(); 
             }
-            this.state = 78;
+            this.state = 79;
             this._errHandler.sync(this);
             _alt = this._interp.adaptivePredict(this._input,2,this._ctx);
         }
@@ -623,24 +668,24 @@ ECMAScriptPassParser.prototype.identifierReference = function() {
     var localctx = new IdentifierReferenceContext(this, this._ctx, this.state);
     this.enterRule(localctx, 6, ECMAScriptPassParser.RULE_identifierReference);
     try {
-        this.state = 83;
+        this.state = 84;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ECMAScriptPassParser.IdentifierName:
             this.enterOuterAlt(localctx, 1);
-            this.state = 79;
+            this.state = 80;
             this.identifier();
             break;
         case ECMAScriptPassParser.Yield:
             this.enterOuterAlt(localctx, 2);
-            this.state = 80;
+            this.state = 81;
             this.match(ECMAScriptPassParser.Yield);
             break;
         case ECMAScriptPassParser.Await:
             this.enterOuterAlt(localctx, 3);
-            this.state = 81;
-            this.match(ECMAScriptPassParser.Await);
             this.state = 82;
+            this.match(ECMAScriptPassParser.Await);
+            this.state = 83;
             this.match(ECMAScriptPassParser.Multiply);
             break;
         default:
@@ -710,22 +755,22 @@ ECMAScriptPassParser.prototype.bindingIdentifier = function() {
     var localctx = new BindingIdentifierContext(this, this._ctx, this.state);
     this.enterRule(localctx, 8, ECMAScriptPassParser.RULE_bindingIdentifier);
     try {
-        this.state = 88;
+        this.state = 89;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ECMAScriptPassParser.IdentifierName:
             this.enterOuterAlt(localctx, 1);
-            this.state = 85;
+            this.state = 86;
             this.identifier();
             break;
         case ECMAScriptPassParser.Yield:
             this.enterOuterAlt(localctx, 2);
-            this.state = 86;
+            this.state = 87;
             this.match(ECMAScriptPassParser.Yield);
             break;
         case ECMAScriptPassParser.Await:
             this.enterOuterAlt(localctx, 3);
-            this.state = 87;
+            this.state = 88;
             this.match(ECMAScriptPassParser.Await);
             break;
         default:
@@ -788,7 +833,7 @@ ECMAScriptPassParser.prototype.identifier = function() {
     this.enterRule(localctx, 10, ECMAScriptPassParser.RULE_identifier);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 90;
+        this.state = 91;
         this.match(ECMAScriptPassParser.IdentifierName);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -854,14 +899,14 @@ ECMAScriptPassParser.prototype.primaryExpression = function() {
     var localctx = new PrimaryExpressionContext(this, this._ctx, this.state);
     this.enterRule(localctx, 12, ECMAScriptPassParser.RULE_primaryExpression);
     try {
-        this.state = 95;
+        this.state = 96;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ECMAScriptPassParser.Await:
         case ECMAScriptPassParser.Yield:
         case ECMAScriptPassParser.IdentifierName:
             this.enterOuterAlt(localctx, 1);
-            this.state = 92;
+            this.state = 93;
             this.identifierReference();
             break;
         case ECMAScriptPassParser.NumericLiteral:
@@ -869,12 +914,12 @@ ECMAScriptPassParser.prototype.primaryExpression = function() {
         case ECMAScriptPassParser.BooleanLiteral:
         case ECMAScriptPassParser.StringLiteral:
             this.enterOuterAlt(localctx, 2);
-            this.state = 93;
+            this.state = 94;
             this.literal();
             break;
         case ECMAScriptPassParser.OpenBrace:
             this.enterOuterAlt(localctx, 3);
-            this.state = 94;
+            this.state = 95;
             this.objectLiteral();
             break;
         default:
@@ -950,7 +995,7 @@ ECMAScriptPassParser.prototype.literal = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 97;
+        this.state = 98;
         _la = this._input.LA(1);
         if(!(_la===ECMAScriptPassParser.NumericLiteral || _la===ECMAScriptPassParser.NullLiteral || _la===ECMAScriptPassParser.BooleanLiteral || _la===ECMAScriptPassParser.StringLiteral)) {
         this._errHandler.recoverInline(this);
@@ -1028,33 +1073,33 @@ ECMAScriptPassParser.prototype.objectLiteral = function() {
     this.enterRule(localctx, 16, ECMAScriptPassParser.RULE_objectLiteral);
     var _la = 0; // Token type
     try {
-        this.state = 108;
+        this.state = 109;
         this._errHandler.sync(this);
         var la_ = this._interp.adaptivePredict(this._input,7,this._ctx);
         switch(la_) {
         case 1:
             this.enterOuterAlt(localctx, 1);
-            this.state = 99;
-            this.match(ECMAScriptPassParser.OpenBrace);
             this.state = 100;
+            this.match(ECMAScriptPassParser.OpenBrace);
+            this.state = 101;
             this.match(ECMAScriptPassParser.CloseBrace);
             break;
 
         case 2:
             this.enterOuterAlt(localctx, 2);
-            this.state = 101;
-            this.match(ECMAScriptPassParser.OpenBrace);
             this.state = 102;
+            this.match(ECMAScriptPassParser.OpenBrace);
+            this.state = 103;
             this.propertyDefinitionList();
-            this.state = 104;
+            this.state = 105;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
             if(_la===ECMAScriptPassParser.Comma) {
-                this.state = 103;
+                this.state = 104;
                 this.match(ECMAScriptPassParser.Comma);
             }
 
-            this.state = 106;
+            this.state = 107;
             this.match(ECMAScriptPassParser.CloseBrace);
             break;
 
@@ -1135,19 +1180,19 @@ ECMAScriptPassParser.prototype.propertyDefinitionList = function() {
     this.enterRule(localctx, 18, ECMAScriptPassParser.RULE_propertyDefinitionList);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 110;
+        this.state = 111;
         this.propertyDefinition();
-        this.state = 115;
+        this.state = 116;
         this._errHandler.sync(this);
         var _alt = this._interp.adaptivePredict(this._input,8,this._ctx)
         while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
             if(_alt===1) {
-                this.state = 111;
-                this.match(ECMAScriptPassParser.Comma);
                 this.state = 112;
+                this.match(ECMAScriptPassParser.Comma);
+                this.state = 113;
                 this.propertyDefinition(); 
             }
-            this.state = 117;
+            this.state = 118;
             this._errHandler.sync(this);
             _alt = this._interp.adaptivePredict(this._input,8,this._ctx);
         }
@@ -1217,11 +1262,11 @@ ECMAScriptPassParser.prototype.propertyDefinition = function() {
     this.enterRule(localctx, 20, ECMAScriptPassParser.RULE_propertyDefinition);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 118;
-        this.propertyName();
         this.state = 119;
-        this.match(ECMAScriptPassParser.Colon);
+        this.propertyName();
         this.state = 120;
+        this.match(ECMAScriptPassParser.Colon);
+        this.state = 121;
         this.assignmentExpression_In();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1280,7 +1325,7 @@ ECMAScriptPassParser.prototype.propertyName = function() {
     this.enterRule(localctx, 22, ECMAScriptPassParser.RULE_propertyName);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 122;
+        this.state = 123;
         this.literalPropertyName();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1348,7 +1393,7 @@ ECMAScriptPassParser.prototype.literalPropertyName = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 124;
+        this.state = 125;
         _la = this._input.LA(1);
         if(!(_la===ECMAScriptPassParser.NumericLiteral || _la===ECMAScriptPassParser.StringLiteral || _la===ECMAScriptPassParser.IdentifierName)) {
         this._errHandler.recoverInline(this);
@@ -1414,7 +1459,7 @@ ECMAScriptPassParser.prototype.leftHandSideExpression = function() {
     this.enterRule(localctx, 26, ECMAScriptPassParser.RULE_leftHandSideExpression);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 126;
+        this.state = 127;
         this.newExpression();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1473,7 +1518,7 @@ ECMAScriptPassParser.prototype.newExpression = function() {
     this.enterRule(localctx, 28, ECMAScriptPassParser.RULE_newExpression);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 128;
+        this.state = 129;
         this.memberExpression();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1532,7 +1577,7 @@ ECMAScriptPassParser.prototype.memberExpression = function() {
     this.enterRule(localctx, 30, ECMAScriptPassParser.RULE_memberExpression);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 130;
+        this.state = 131;
         this.primaryExpression();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1608,7 +1653,7 @@ ECMAScriptPassParser.prototype.assignmentExpression_In = function() {
     try {
         localctx = new LhsExpression_InContext(this, localctx);
         this.enterOuterAlt(localctx, 1);
-        this.state = 132;
+        this.state = 133;
         this.leftHandSideExpression();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1712,7 +1757,7 @@ ECMAScriptPassParser.prototype.assignmentOperator = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 134;
+        this.state = 135;
         _la = this._input.LA(1);
         if(!(((((_la - 39)) & ~0x1f) == 0 && ((1 << (_la - 39)) & ((1 << (ECMAScriptPassParser.PlusAssign - 39)) | (1 << (ECMAScriptPassParser.MinusAssign - 39)) | (1 << (ECMAScriptPassParser.MultiplyAssign - 39)) | (1 << (ECMAScriptPassParser.ModuloAssign - 39)) | (1 << (ECMAScriptPassParser.PowerAssign - 39)) | (1 << (ECMAScriptPassParser.LeftShiftArithmeticAssign - 39)) | (1 << (ECMAScriptPassParser.RightShiftArithmeticAssign - 39)) | (1 << (ECMAScriptPassParser.RightShiftLogicalAssign - 39)) | (1 << (ECMAScriptPassParser.BitAndAssign - 39)) | (1 << (ECMAScriptPassParser.BitOrAssign - 39)) | (1 << (ECMAScriptPassParser.BitXorAssign - 39)) | (1 << (ECMAScriptPassParser.DivideAssign - 39)))) !== 0))) {
         this._errHandler.recoverInline(this);
@@ -1778,7 +1823,7 @@ ECMAScriptPassParser.prototype.statement = function() {
     this.enterRule(localctx, 36, ECMAScriptPassParser.RULE_statement);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 136;
+        this.state = 137;
         this.expressionStatement();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1856,15 +1901,15 @@ ECMAScriptPassParser.prototype.statementList = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 141; 
+        this.state = 142; 
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         do {
-            this.state = 138;
-            this.statementListItem();
             this.state = 139;
+            this.statementListItem();
+            this.state = 140;
             this.eos();
-            this.state = 143; 
+            this.state = 144; 
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         } while(_la===ECMAScriptPassParser.NumericLiteral || _la===ECMAScriptPassParser.OpenBrace || ((((_la - 56)) & ~0x1f) == 0 && ((1 << (_la - 56)) & ((1 << (ECMAScriptPassParser.NullLiteral - 56)) | (1 << (ECMAScriptPassParser.BooleanLiteral - 56)) | (1 << (ECMAScriptPassParser.Await - 56)) | (1 << (ECMAScriptPassParser.Const - 56)))) !== 0) || ((((_la - 91)) & ~0x1f) == 0 && ((1 << (_la - 91)) & ((1 << (ECMAScriptPassParser.Yield - 91)) | (1 << (ECMAScriptPassParser.Let - 91)) | (1 << (ECMAScriptPassParser.StringLiteral - 91)) | (1 << (ECMAScriptPassParser.IdentifierName - 91)))) !== 0));
@@ -1928,7 +1973,7 @@ ECMAScriptPassParser.prototype.statementListItem = function() {
     var localctx = new StatementListItemContext(this, this._ctx, this.state);
     this.enterRule(localctx, 40, ECMAScriptPassParser.RULE_statementListItem);
     try {
-        this.state = 147;
+        this.state = 148;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ECMAScriptPassParser.NumericLiteral:
@@ -1940,13 +1985,13 @@ ECMAScriptPassParser.prototype.statementListItem = function() {
         case ECMAScriptPassParser.StringLiteral:
         case ECMAScriptPassParser.IdentifierName:
             this.enterOuterAlt(localctx, 1);
-            this.state = 145;
+            this.state = 146;
             this.statement();
             break;
         case ECMAScriptPassParser.Const:
         case ECMAScriptPassParser.Let:
             this.enterOuterAlt(localctx, 2);
-            this.state = 146;
+            this.state = 147;
             this.declaration();
             break;
         default:
@@ -2009,7 +2054,7 @@ ECMAScriptPassParser.prototype.emptyStatement = function() {
     this.enterRule(localctx, 42, ECMAScriptPassParser.RULE_emptyStatement);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 149;
+        this.state = 150;
         this.match(ECMAScriptPassParser.SemiColon);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -2068,7 +2113,7 @@ ECMAScriptPassParser.prototype.expressionStatement = function() {
     this.enterRule(localctx, 44, ECMAScriptPassParser.RULE_expressionStatement);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 151;
+        this.state = 152;
         this.expression_In();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -2135,11 +2180,11 @@ ECMAScriptPassParser.prototype.lexicalDeclaration_In = function() {
     this.enterRule(localctx, 46, ECMAScriptPassParser.RULE_lexicalDeclaration_In);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 153;
-        this.letOrConst();
         this.state = 154;
-        this.bindingList_In();
+        this.letOrConst();
         this.state = 155;
+        this.bindingList_In();
+        this.state = 156;
         this.match(ECMAScriptPassParser.SemiColon);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -2203,7 +2248,7 @@ ECMAScriptPassParser.prototype.letOrConst = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 157;
+        this.state = 158;
         _la = this._input.LA(1);
         if(!(_la===ECMAScriptPassParser.Const || _la===ECMAScriptPassParser.Let)) {
         this._errHandler.recoverInline(this);
@@ -2289,17 +2334,17 @@ ECMAScriptPassParser.prototype.bindingList_In = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 159;
+        this.state = 160;
         this.lexicalBinding_In();
-        this.state = 164;
+        this.state = 165;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         while(_la===ECMAScriptPassParser.Comma) {
-            this.state = 160;
-            this.match(ECMAScriptPassParser.Comma);
             this.state = 161;
+            this.match(ECMAScriptPassParser.Comma);
+            this.state = 162;
             this.lexicalBinding_In();
-            this.state = 166;
+            this.state = 167;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         }
@@ -2360,7 +2405,7 @@ ECMAScriptPassParser.prototype.lexicalBinding_In = function() {
     this.enterRule(localctx, 52, ECMAScriptPassParser.RULE_lexicalBinding_In);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 167;
+        this.state = 168;
         this.bindingIdentifier();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -2419,7 +2464,7 @@ ECMAScriptPassParser.prototype.declaration = function() {
     this.enterRule(localctx, 54, ECMAScriptPassParser.RULE_declaration);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 169;
+        this.state = 170;
         this.lexicalDeclaration_In();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -2489,7 +2534,7 @@ ECMAScriptPassParser.prototype.reservedWord = function() {
     var localctx = new ReservedWordContext(this, this._ctx, this.state);
     this.enterRule(localctx, 56, ECMAScriptPassParser.RULE_reservedWord);
     try {
-        this.state = 175;
+        this.state = 176;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ECMAScriptPassParser.Await:
@@ -2527,22 +2572,22 @@ ECMAScriptPassParser.prototype.reservedWord = function() {
         case ECMAScriptPassParser.With:
         case ECMAScriptPassParser.Yield:
             this.enterOuterAlt(localctx, 1);
-            this.state = 171;
+            this.state = 172;
             this.keyword();
             break;
         case ECMAScriptPassParser.Enum:
             this.enterOuterAlt(localctx, 2);
-            this.state = 172;
+            this.state = 173;
             this.futureReservedWord();
             break;
         case ECMAScriptPassParser.NullLiteral:
             this.enterOuterAlt(localctx, 3);
-            this.state = 173;
+            this.state = 174;
             this.match(ECMAScriptPassParser.NullLiteral);
             break;
         case ECMAScriptPassParser.BooleanLiteral:
             this.enterOuterAlt(localctx, 4);
-            this.state = 174;
+            this.state = 175;
             this.match(ECMAScriptPassParser.BooleanLiteral);
             break;
         default:
@@ -2738,7 +2783,7 @@ ECMAScriptPassParser.prototype.keyword = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 177;
+        this.state = 178;
         _la = this._input.LA(1);
         if(!(((((_la - 58)) & ~0x1f) == 0 && ((1 << (_la - 58)) & ((1 << (ECMAScriptPassParser.Await - 58)) | (1 << (ECMAScriptPassParser.Break - 58)) | (1 << (ECMAScriptPassParser.Case - 58)) | (1 << (ECMAScriptPassParser.Catch - 58)) | (1 << (ECMAScriptPassParser.Class - 58)) | (1 << (ECMAScriptPassParser.Const - 58)) | (1 << (ECMAScriptPassParser.Continue - 58)) | (1 << (ECMAScriptPassParser.Debugger - 58)) | (1 << (ECMAScriptPassParser.Default - 58)) | (1 << (ECMAScriptPassParser.Delete - 58)) | (1 << (ECMAScriptPassParser.Do - 58)) | (1 << (ECMAScriptPassParser.Else - 58)) | (1 << (ECMAScriptPassParser.Export - 58)) | (1 << (ECMAScriptPassParser.Extends - 58)) | (1 << (ECMAScriptPassParser.Finally - 58)) | (1 << (ECMAScriptPassParser.For - 58)) | (1 << (ECMAScriptPassParser.Function - 58)) | (1 << (ECMAScriptPassParser.If - 58)) | (1 << (ECMAScriptPassParser.Import - 58)) | (1 << (ECMAScriptPassParser.In - 58)) | (1 << (ECMAScriptPassParser.Instanceof - 58)) | (1 << (ECMAScriptPassParser.New - 58)) | (1 << (ECMAScriptPassParser.Return - 58)) | (1 << (ECMAScriptPassParser.Super - 58)) | (1 << (ECMAScriptPassParser.Switch - 58)) | (1 << (ECMAScriptPassParser.This - 58)) | (1 << (ECMAScriptPassParser.Throw - 58)) | (1 << (ECMAScriptPassParser.Try - 58)) | (1 << (ECMAScriptPassParser.Typeof - 58)) | (1 << (ECMAScriptPassParser.Var - 58)) | (1 << (ECMAScriptPassParser.Void - 58)) | (1 << (ECMAScriptPassParser.While - 58)))) !== 0) || _la===ECMAScriptPassParser.With || _la===ECMAScriptPassParser.Yield)) {
         this._errHandler.recoverInline(this);
@@ -2804,7 +2849,7 @@ ECMAScriptPassParser.prototype.futureReservedWord = function() {
     this.enterRule(localctx, 60, ECMAScriptPassParser.RULE_futureReservedWord);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 179;
+        this.state = 180;
         this.match(ECMAScriptPassParser.Enum);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -2833,6 +2878,8 @@ ECMAScriptPassParser.prototype.sempred = function(localctx, ruleIndex, predIndex
 ECMAScriptPassParser.prototype.eos_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 0:
+			return this.lineTerminatorAhead();
+		case 1:
 			return this._input.LT(1).type === ECMAScriptPassParser.EOF;
 		default:
 			throw "No predicate with index:" + predIndex;
