@@ -20,5 +20,14 @@ ECMAScriptPassListener.prototype.exitFile = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#literal.
+ECMAScriptPassListener.prototype.enterLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#literal.
+ECMAScriptPassListener.prototype.exitLiteral = function(ctx) {
+};
+
+
 
 exports.ECMAScriptPassListener = ECMAScriptPassListener;

@@ -1,9 +1,16 @@
 grammar ECMAScriptPass;
 import
+  UnicodeEscapeSequence,
   NumericLiteralA1,
+  IdentifierName,
   Comment,
   WhiteSpace;
 
 file
-: NumericLiteral? EOF
+: literal? EOF
+;
+
+literal
+: IdentifierName
+| NumericLiteral
 ;
