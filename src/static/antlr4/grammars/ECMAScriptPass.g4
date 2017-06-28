@@ -1,5 +1,9 @@
 grammar ECMAScriptPass;
 import
+  BindingIdentifier,
+  LexicalDeclaration,
+  Punctuator,
+  ReservedWord,
   UnicodeEscapeSequence,
   NumericLiteralA1,
   IdentifierName,
@@ -7,7 +11,12 @@ import
   WhiteSpace;
 
 file
-: literal? EOF
+: statement? EOF
+;
+
+statement
+: lexicalDeclaration
+| literal
 ;
 
 literal
