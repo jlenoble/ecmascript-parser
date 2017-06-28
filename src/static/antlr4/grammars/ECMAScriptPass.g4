@@ -5,6 +5,7 @@ import
   NumericLiteralB1,
   Punctuator,
   ReservedWord,
+  StringLiteralA1,
   UnicodeEscapeSequence,
   NumericLiteralA1,
   IdentifierName,
@@ -17,10 +18,11 @@ file
 
 statement
 : lexicalDeclaration
+| IdentifierName
 | literal
 ;
 
 literal
-: IdentifierName
-| NumericLiteral
+: NumericLiteral
+| StringLiteral
 ;

@@ -15,5 +15,5 @@ UnicodeEscapeSequence
 //   HexDigit HexDigit HexDigit HexDigit
 fragment
 Hex4Digits
-: HexDigit[4]
+: HexDigit HexDigit HexDigit HexDigit
 ;

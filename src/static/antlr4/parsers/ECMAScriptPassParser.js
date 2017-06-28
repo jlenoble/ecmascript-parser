@@ -5,38 +5,39 @@ var ECMAScriptPassListener = require('./ECMAScriptPassListener').ECMAScriptPassL
 var grammarFileName = "ECMAScriptPass.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003o;\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t\u0004",
+    "\u0003p<\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t\u0004",
     "\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004\b",
     "\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0003\u0002\u0005\u0002",
-    "\u0018\n\u0002\u0003\u0002\u0003\u0002\u0003\u0003\u0003\u0003\u0005",
-    "\u0003\u001e\n\u0003\u0003\u0004\u0003\u0004\u0003\u0005\u0003\u0005",
-    "\u0003\u0006\u0003\u0006\u0003\u0006\u0005\u0006\'\n\u0006\u0003\u0007",
-    "\u0003\u0007\u0003\b\u0003\b\u0003\b\u0003\b\u0003\t\u0003\t\u0003\n",
-    "\u0003\n\u0003\n\u0007\n4\n\n\f\n\u000e\n7\u000b\n\u0003\u000b\u0003",
-    "\u000b\u0003\u000b\u0002\u0002\f\u0002\u0004\u0006\b\n\f\u000e\u0010",
-    "\u0012\u0014\u0002\u0004\u0004\u0002\u0003\u0003jj\u0004\u0002??ff\u0002",
-    "5\u0002\u0017\u0003\u0002\u0002\u0002\u0004\u001d\u0003\u0002\u0002",
-    "\u0002\u0006\u001f\u0003\u0002\u0002\u0002\b!\u0003\u0002\u0002\u0002",
-    "\n&\u0003\u0002\u0002\u0002\f(\u0003\u0002\u0002\u0002\u000e*\u0003",
-    "\u0002\u0002\u0002\u0010.\u0003\u0002\u0002\u0002\u00120\u0003\u0002",
-    "\u0002\u0002\u00148\u0003\u0002\u0002\u0002\u0016\u0018\u0005\u0004",
+    "\u0018\n\u0002\u0003\u0002\u0003\u0002\u0003\u0003\u0003\u0003\u0003",
+    "\u0003\u0005\u0003\u001f\n\u0003\u0003\u0004\u0003\u0004\u0003\u0005",
+    "\u0003\u0005\u0003\u0006\u0003\u0006\u0003\u0006\u0005\u0006(\n\u0006",
+    "\u0003\u0007\u0003\u0007\u0003\b\u0003\b\u0003\b\u0003\b\u0003\t\u0003",
+    "\t\u0003\n\u0003\n\u0003\n\u0007\n5\n\n\f\n\u000e\n8\u000b\n\u0003\u000b",
+    "\u0003\u000b\u0003\u000b\u0002\u0002\f\u0002\u0004\u0006\b\n\f\u000e",
+    "\u0010\u0012\u0014\u0002\u0004\u0004\u0002\u0003\u0003gg\u0004\u0002",
+    "??ff\u00027\u0002\u0017\u0003\u0002\u0002\u0002\u0004\u001e\u0003\u0002",
+    "\u0002\u0002\u0006 \u0003\u0002\u0002\u0002\b\"\u0003\u0002\u0002\u0002",
+    "\n\'\u0003\u0002\u0002\u0002\f)\u0003\u0002\u0002\u0002\u000e+\u0003",
+    "\u0002\u0002\u0002\u0010/\u0003\u0002\u0002\u0002\u00121\u0003\u0002",
+    "\u0002\u0002\u00149\u0003\u0002\u0002\u0002\u0016\u0018\u0005\u0004",
     "\u0003\u0002\u0017\u0016\u0003\u0002\u0002\u0002\u0017\u0018\u0003\u0002",
     "\u0002\u0002\u0018\u0019\u0003\u0002\u0002\u0002\u0019\u001a\u0007\u0002",
-    "\u0002\u0003\u001a\u0003\u0003\u0002\u0002\u0002\u001b\u001e\u0005\u000e",
-    "\b\u0002\u001c\u001e\u0005\u0006\u0004\u0002\u001d\u001b\u0003\u0002",
-    "\u0002\u0002\u001d\u001c\u0003\u0002\u0002\u0002\u001e\u0005\u0003\u0002",
-    "\u0002\u0002\u001f \t\u0002\u0002\u0002 \u0007\u0003\u0002\u0002\u0002",
-    "!\"\u0005\f\u0007\u0002\"\t\u0003\u0002\u0002\u0002#\'\u0005\f\u0007",
-    "\u0002$\'\u0007[\u0002\u0002%\'\u0007:\u0002\u0002&#\u0003\u0002\u0002",
-    "\u0002&$\u0003\u0002\u0002\u0002&%\u0003\u0002\u0002\u0002\'\u000b\u0003",
-    "\u0002\u0002\u0002()\u0007j\u0002\u0002)\r\u0003\u0002\u0002\u0002*",
-    "+\u0005\u0010\t\u0002+,\u0005\u0012\n\u0002,-\u0007\u000b\u0002\u0002",
-    "-\u000f\u0003\u0002\u0002\u0002./\t\u0003\u0002\u0002/\u0011\u0003\u0002",
-    "\u0002\u000205\u0005\u0014\u000b\u000212\u0007\f\u0002\u000224\u0005",
-    "\u0014\u000b\u000231\u0003\u0002\u0002\u000247\u0003\u0002\u0002\u0002",
-    "53\u0003\u0002\u0002\u000256\u0003\u0002\u0002\u00026\u0013\u0003\u0002",
-    "\u0002\u000275\u0003\u0002\u0002\u000289\u0005\n\u0006\u00029\u0015",
-    "\u0003\u0002\u0002\u0002\u0006\u0017\u001d&5"].join("");
+    "\u0002\u0003\u001a\u0003\u0003\u0002\u0002\u0002\u001b\u001f\u0005\u000e",
+    "\b\u0002\u001c\u001f\u0007k\u0002\u0002\u001d\u001f\u0005\u0006\u0004",
+    "\u0002\u001e\u001b\u0003\u0002\u0002\u0002\u001e\u001c\u0003\u0002\u0002",
+    "\u0002\u001e\u001d\u0003\u0002\u0002\u0002\u001f\u0005\u0003\u0002\u0002",
+    "\u0002 !\t\u0002\u0002\u0002!\u0007\u0003\u0002\u0002\u0002\"#\u0005",
+    "\f\u0007\u0002#\t\u0003\u0002\u0002\u0002$(\u0005\f\u0007\u0002%(\u0007",
+    "[\u0002\u0002&(\u0007:\u0002\u0002\'$\u0003\u0002\u0002\u0002\'%\u0003",
+    "\u0002\u0002\u0002\'&\u0003\u0002\u0002\u0002(\u000b\u0003\u0002\u0002",
+    "\u0002)*\u0007k\u0002\u0002*\r\u0003\u0002\u0002\u0002+,\u0005\u0010",
+    "\t\u0002,-\u0005\u0012\n\u0002-.\u0007\u000b\u0002\u0002.\u000f\u0003",
+    "\u0002\u0002\u0002/0\t\u0003\u0002\u00020\u0011\u0003\u0002\u0002\u0002",
+    "16\u0005\u0014\u000b\u000223\u0007\f\u0002\u000235\u0005\u0014\u000b",
+    "\u000242\u0003\u0002\u0002\u000258\u0003\u0002\u0002\u000264\u0003\u0002",
+    "\u0002\u000267\u0003\u0002\u0002\u00027\u0013\u0003\u0002\u0002\u0002",
+    "86\u0003\u0002\u0002\u00029:\u0005\n\u0006\u0002:\u0015\u0003\u0002",
+    "\u0002\u0002\u0006\u0017\u001e\'6"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -84,10 +85,10 @@ var symbolicNames = [ null, "NumericLiteral", "OpenBrace", "OpenParen",
                       "This", "Throw", "Try", "Typeof", "Var", "Void", "While", 
                       "With", "Yield", "Enum", "ReservedWord", "Keyword", 
                       "FutureReservedWord", "NullLiteral", "Null", "BooleanLiteral", 
-                      "True", "False", "Async", "Let", "BinaryIntegerLiteral", 
-                      "OctalIntegerLiteral", "HexIntegerLiteral", "IdentifierName", 
-                      "MultiLineComment", "SingleLineComment", "WhiteSpace", 
-                      "LineTerminator", "LineTerminatorSequence" ];
+                      "True", "False", "Async", "Let", "StringLiteral", 
+                      "BinaryIntegerLiteral", "OctalIntegerLiteral", "HexIntegerLiteral", 
+                      "IdentifierName", "MultiLineComment", "SingleLineComment", 
+                      "WhiteSpace", "LineTerminator", "LineTerminatorSequence" ];
 
 var ruleNames =  [ "file", "statement", "literal", "identifierReference", 
                    "bindingIdentifier", "identifier", "lexicalDeclaration", 
@@ -212,15 +213,16 @@ ECMAScriptPassParser.True = 97;
 ECMAScriptPassParser.False = 98;
 ECMAScriptPassParser.Async = 99;
 ECMAScriptPassParser.Let = 100;
-ECMAScriptPassParser.BinaryIntegerLiteral = 101;
-ECMAScriptPassParser.OctalIntegerLiteral = 102;
-ECMAScriptPassParser.HexIntegerLiteral = 103;
-ECMAScriptPassParser.IdentifierName = 104;
-ECMAScriptPassParser.MultiLineComment = 105;
-ECMAScriptPassParser.SingleLineComment = 106;
-ECMAScriptPassParser.WhiteSpace = 107;
-ECMAScriptPassParser.LineTerminator = 108;
-ECMAScriptPassParser.LineTerminatorSequence = 109;
+ECMAScriptPassParser.StringLiteral = 101;
+ECMAScriptPassParser.BinaryIntegerLiteral = 102;
+ECMAScriptPassParser.OctalIntegerLiteral = 103;
+ECMAScriptPassParser.HexIntegerLiteral = 104;
+ECMAScriptPassParser.IdentifierName = 105;
+ECMAScriptPassParser.MultiLineComment = 106;
+ECMAScriptPassParser.SingleLineComment = 107;
+ECMAScriptPassParser.WhiteSpace = 108;
+ECMAScriptPassParser.LineTerminator = 109;
+ECMAScriptPassParser.LineTerminatorSequence = 110;
 
 ECMAScriptPassParser.RULE_file = 0;
 ECMAScriptPassParser.RULE_statement = 1;
@@ -284,7 +286,7 @@ ECMAScriptPassParser.prototype.file = function() {
         this.state = 21;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        if(_la===ECMAScriptPassParser.NumericLiteral || _la===ECMAScriptPassParser.Const || _la===ECMAScriptPassParser.Let || _la===ECMAScriptPassParser.IdentifierName) {
+        if(_la===ECMAScriptPassParser.NumericLiteral || _la===ECMAScriptPassParser.Const || ((((_la - 100)) & ~0x1f) == 0 && ((1 << (_la - 100)) & ((1 << (ECMAScriptPassParser.Let - 100)) | (1 << (ECMAScriptPassParser.StringLiteral - 100)) | (1 << (ECMAScriptPassParser.IdentifierName - 100)))) !== 0)) {
             this.state = 20;
             this.statement();
         }
@@ -325,6 +327,10 @@ StatementContext.prototype.lexicalDeclaration = function() {
     return this.getTypedRuleContext(LexicalDeclarationContext,0);
 };
 
+StatementContext.prototype.IdentifierName = function() {
+    return this.getToken(ECMAScriptPassParser.IdentifierName, 0);
+};
+
 StatementContext.prototype.literal = function() {
     return this.getTypedRuleContext(LiteralContext,0);
 };
@@ -351,7 +357,7 @@ ECMAScriptPassParser.prototype.statement = function() {
     var localctx = new StatementContext(this, this._ctx, this.state);
     this.enterRule(localctx, 2, ECMAScriptPassParser.RULE_statement);
     try {
-        this.state = 27;
+        this.state = 28;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ECMAScriptPassParser.Const:
@@ -360,10 +366,15 @@ ECMAScriptPassParser.prototype.statement = function() {
             this.state = 25;
             this.lexicalDeclaration();
             break;
-        case ECMAScriptPassParser.NumericLiteral:
         case ECMAScriptPassParser.IdentifierName:
             this.enterOuterAlt(localctx, 2);
             this.state = 26;
+            this.match(ECMAScriptPassParser.IdentifierName);
+            break;
+        case ECMAScriptPassParser.NumericLiteral:
+        case ECMAScriptPassParser.StringLiteral:
+            this.enterOuterAlt(localctx, 3);
+            this.state = 27;
             this.literal();
             break;
         default:
@@ -399,12 +410,12 @@ function LiteralContext(parser, parent, invokingState) {
 LiteralContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 LiteralContext.prototype.constructor = LiteralContext;
 
-LiteralContext.prototype.IdentifierName = function() {
-    return this.getToken(ECMAScriptPassParser.IdentifierName, 0);
-};
-
 LiteralContext.prototype.NumericLiteral = function() {
     return this.getToken(ECMAScriptPassParser.NumericLiteral, 0);
+};
+
+LiteralContext.prototype.StringLiteral = function() {
+    return this.getToken(ECMAScriptPassParser.StringLiteral, 0);
 };
 
 LiteralContext.prototype.enterRule = function(listener) {
@@ -431,9 +442,9 @@ ECMAScriptPassParser.prototype.literal = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 29;
+        this.state = 30;
         _la = this._input.LA(1);
-        if(!(_la===ECMAScriptPassParser.NumericLiteral || _la===ECMAScriptPassParser.IdentifierName)) {
+        if(!(_la===ECMAScriptPassParser.NumericLiteral || _la===ECMAScriptPassParser.StringLiteral)) {
         this._errHandler.recoverInline(this);
         }
         else {
@@ -497,7 +508,7 @@ ECMAScriptPassParser.prototype.identifierReference = function() {
     this.enterRule(localctx, 6, ECMAScriptPassParser.RULE_identifierReference);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 31;
+        this.state = 32;
         this.identifier();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -563,22 +574,22 @@ ECMAScriptPassParser.prototype.bindingIdentifier = function() {
     var localctx = new BindingIdentifierContext(this, this._ctx, this.state);
     this.enterRule(localctx, 8, ECMAScriptPassParser.RULE_bindingIdentifier);
     try {
-        this.state = 36;
+        this.state = 37;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ECMAScriptPassParser.IdentifierName:
             this.enterOuterAlt(localctx, 1);
-            this.state = 33;
+            this.state = 34;
             this.identifier();
             break;
         case ECMAScriptPassParser.Yield:
             this.enterOuterAlt(localctx, 2);
-            this.state = 34;
+            this.state = 35;
             this.match(ECMAScriptPassParser.Yield);
             break;
         case ECMAScriptPassParser.Await:
             this.enterOuterAlt(localctx, 3);
-            this.state = 35;
+            this.state = 36;
             this.match(ECMAScriptPassParser.Await);
             break;
         default:
@@ -641,7 +652,7 @@ ECMAScriptPassParser.prototype.identifier = function() {
     this.enterRule(localctx, 10, ECMAScriptPassParser.RULE_identifier);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 38;
+        this.state = 39;
         this.match(ECMAScriptPassParser.IdentifierName);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -708,11 +719,11 @@ ECMAScriptPassParser.prototype.lexicalDeclaration = function() {
     this.enterRule(localctx, 12, ECMAScriptPassParser.RULE_lexicalDeclaration);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 40;
-        this.letOrConst();
         this.state = 41;
-        this.bindingList();
+        this.letOrConst();
         this.state = 42;
+        this.bindingList();
+        this.state = 43;
         this.match(ECMAScriptPassParser.SemiColon);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -776,7 +787,7 @@ ECMAScriptPassParser.prototype.letOrConst = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 44;
+        this.state = 45;
         _la = this._input.LA(1);
         if(!(_la===ECMAScriptPassParser.Const || _la===ECMAScriptPassParser.Let)) {
         this._errHandler.recoverInline(this);
@@ -862,17 +873,17 @@ ECMAScriptPassParser.prototype.bindingList = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 46;
+        this.state = 47;
         this.lexicalBinding();
-        this.state = 51;
+        this.state = 52;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         while(_la===ECMAScriptPassParser.Comma) {
-            this.state = 47;
-            this.match(ECMAScriptPassParser.Comma);
             this.state = 48;
+            this.match(ECMAScriptPassParser.Comma);
+            this.state = 49;
             this.lexicalBinding();
-            this.state = 53;
+            this.state = 54;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         }
@@ -933,7 +944,7 @@ ECMAScriptPassParser.prototype.lexicalBinding = function() {
     this.enterRule(localctx, 18, ECMAScriptPassParser.RULE_lexicalBinding);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 54;
+        this.state = 55;
         this.bindingIdentifier();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
