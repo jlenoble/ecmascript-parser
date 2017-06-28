@@ -51,4 +51,5 @@ eos
 : SemiColon
 | {this.lineTerminatorAhead()}?
 | {this._input.LT(1).type === ECMAScriptPassParser.EOF}?
+| {this._input.LT(1).type === ECMAScriptPassParser.CloseBrace}?
 ;
