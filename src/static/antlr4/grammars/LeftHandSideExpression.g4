@@ -5,21 +5,22 @@ grammar LeftHandSideExpression;
 // LeftHandSideExpression[Yield, Await]:
 //    NewExpression[?Yield, ?Await]
 //    CallExpression[?Yield, ?Await]
+// NOTE: reordered to make (arguments) prevalent over parenthesizedExpression
 leftHandSideExpression
-: newExpression
-/*| callExpression*/
+: callExpression
+| newExpression
 ;
 /*leftHandSideExpression_Yield
-: newExpression_Yield
-| callExpression_Yield
+: callExpression_Yield
+| newExpression_Yield
 ;
 leftHandSideExpression_Await
-: newExpression_Await
-| callExpression_Await
+: callExpression_Await
+| newExpression_Await
 ;
 leftHandSideExpression_Yield_Await
-: newExpression_Yield_Await
-| callExpression_Yield_Await
+: callExpression_Yield_Await
+| newExpression_Yield_Await
 ;*/
 
 // NewExpression[Yield, Await]:

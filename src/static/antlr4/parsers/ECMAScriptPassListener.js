@@ -92,6 +92,15 @@ ECMAScriptPassListener.prototype.exitCoverParenthesizedExpressionAndArrowParamet
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#coverCallExpressionAndAsyncArrowHead.
+ECMAScriptPassListener.prototype.enterCoverCallExpressionAndAsyncArrowHead = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#coverCallExpressionAndAsyncArrowHead.
+ECMAScriptPassListener.prototype.exitCoverCallExpressionAndAsyncArrowHead = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#objectLiteral.
 ECMAScriptPassListener.prototype.enterObjectLiteral = function(ctx) {
 };
@@ -134,6 +143,33 @@ ECMAScriptPassListener.prototype.enterLiteralPropertyName = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#literalPropertyName.
 ECMAScriptPassListener.prototype.exitLiteralPropertyName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#callExpression.
+ECMAScriptPassListener.prototype.enterCallExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#callExpression.
+ECMAScriptPassListener.prototype.exitCallExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#arguments.
+ECMAScriptPassListener.prototype.enterArguments = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#arguments.
+ECMAScriptPassListener.prototype.exitArguments = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#argumentList.
+ECMAScriptPassListener.prototype.enterArgumentList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#argumentList.
+ECMAScriptPassListener.prototype.exitArgumentList = function(ctx) {
 };
 
 

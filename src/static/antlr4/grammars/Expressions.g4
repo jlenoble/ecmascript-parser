@@ -8,7 +8,7 @@ import
   CoverExpressions,
   /*ArrayLiteral,*/
   ObjectLiteral,
-  /*CallExpression,*/
+  CallExpression,
   LeftHandSideExpression,
   AssignmentExpression;
 
