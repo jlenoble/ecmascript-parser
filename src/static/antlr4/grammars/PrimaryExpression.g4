@@ -24,9 +24,9 @@ primaryExpression
 | functionExpression/*
 | classExpression
 | generatorExpression
-| asyncFunctionExpression
+| asyncFunctionExpression*/
 | RegularExpressionLiteral
-| templateLiteral*/
+/*| templateLiteral*/
 | coverParenthesizedExpressionAndArrowParameterList
 ;
 /*primaryExpression_Yield

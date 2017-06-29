@@ -3,6 +3,7 @@
 // A.1 Lexical Grammar
 lexer grammar LexicalGrammar;
 import
+  RegularExpressionLiteral,
   Punctuator,
   ReservedWord,
   StringLiteralA1,
