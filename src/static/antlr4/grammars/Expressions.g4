@@ -6,7 +6,7 @@ import
   BindingIdentifier,
   PrimaryExpression,
   CoverExpressions,
-  /*ArrayLiteral,*/
+  ArrayLiteral,
   ObjectLiteral,
   CallExpression,
   LeftHandSideExpression,

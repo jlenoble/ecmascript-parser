@@ -19,8 +19,8 @@ primaryExpression
 : /*This
 | */identifierReference
 | literal
-| /*arrayLiteral
-| */objectLiteral
+| arrayLiteral
+| objectLiteral
 | functionExpression/*
 | classExpression
 | generatorExpression

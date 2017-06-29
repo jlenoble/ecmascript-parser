@@ -101,6 +101,42 @@ ECMAScriptPassListener.prototype.exitCoverCallExpressionAndAsyncArrowHead = func
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#arrayLiteral.
+ECMAScriptPassListener.prototype.enterArrayLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#arrayLiteral.
+ECMAScriptPassListener.prototype.exitArrayLiteral = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#elementList.
+ECMAScriptPassListener.prototype.enterElementList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#elementList.
+ECMAScriptPassListener.prototype.exitElementList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#elision.
+ECMAScriptPassListener.prototype.enterElision = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#elision.
+ECMAScriptPassListener.prototype.exitElision = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#spreadElement.
+ECMAScriptPassListener.prototype.enterSpreadElement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#spreadElement.
+ECMAScriptPassListener.prototype.exitSpreadElement = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#objectLiteral.
 ECMAScriptPassListener.prototype.enterObjectLiteral = function(ctx) {
 };
