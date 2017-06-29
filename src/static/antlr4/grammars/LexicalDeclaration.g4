@@ -4,9 +4,9 @@ grammar LexicalDeclaration;
 
 // LexicalDeclaration[In, Yield, Await]:
 //    LetOrConst BindingList[?In, ?Yield, ?Await] ;
-/*lexicalDeclaration
+lexicalDeclaration
 : letOrConst bindingList SemiColon
-;*/
+;
 lexicalDeclaration_In
 : letOrConst bindingList_In SemiColon
 ;
@@ -40,9 +40,9 @@ letOrConst
 // BindingList[In, Yield, Await]:
 //    LexicalBinding[?In, ?Yield, ?Await]
 //    BindingList[?In, ?Yield, ?Await] , LexicalBinding[?In, ?Yield, ?Await]
-/*bindingList
+bindingList
 : lexicalBinding (Comma lexicalBinding)*
-;*/
+;
 bindingList_In
 : lexicalBinding_In (Comma lexicalBinding_In)*
 ;
@@ -68,10 +68,10 @@ bindingList_In_Yield_Await
 // LexicalBinding[In, Yield, Await]:
 //    BindingIdentifier[?Yield, ?Await] Initializer[?In, ?Yield, ?Await][opt]
 //    BindingPattern[?Yield, ?Await] Initializer[?In, ?Yield, ?Await]
-/*lexicalBinding
+lexicalBinding
 : bindingIdentifier initializer?
-| bindingPattern initializer
-;*/
+/*| bindingPattern initializer*/
+;
 lexicalBinding_In
 : bindingIdentifier initializer_In?
 /*| bindingPattern initializer_In*/

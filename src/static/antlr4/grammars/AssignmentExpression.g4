@@ -4,10 +4,10 @@ grammar AssignmentExpression;
 
 // Initializer[In, Yield, Await]:
 //    = AssignmentExpression[?In, ?Yield, ?Await]
-/*initializer
+initializer
 : Assign assignmentExpression
 ;
-initializer_Yield
+/*initializer_Yield
 : Assign assignmentExpression_Yield
 ;
 initializer_Await
@@ -45,16 +45,16 @@ initializer_In_Yield_Await
 //    AsyncArrowFunction[?In, ?Yield, ?Await]
 //    LeftHandSideExpression[?Yield, ?Await] = AssignmentExpression[?In, ?Yield, ?Await]
 //    LeftHandSideExpression[?Yield, ?Await] AssignmentOperator AssignmentExpression[?In, ?Yield, ?Await]
-/*assignmentExpression
-: assignmentExpression QuestionMark assignmentExpression
+assignmentExpression
+: /*assignmentExpression QuestionMark assignmentExpression
   Colon assignmentExpression                                      # conditionalExpression
 | arrowParameters FatArrow conciseBody        # arrowFunction
 | asyncArrowFunction
-| leftHandSideExpression Assign assignmentExpression              # assignExpression
+| */leftHandSideExpression Assign assignmentExpression              # assignExpression
 | leftHandSideExpression assignmentOperator assignmentExpression  # assignmentOperatorExpression
 | leftHandSideExpression                                          # lhsExpression
 ;
-assignmentExpression_Yield
+/*assignmentExpression_Yield
 : assignmentExpression_Yield QuestionMark assignmentExpression_Yield
   Colon assignmentExpression_Yield                                            # conditionalExpression_Yield
 | Yield Multiply? assignmentExpression_Yield                                  # yieldExpression

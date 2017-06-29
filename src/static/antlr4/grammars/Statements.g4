@@ -6,7 +6,9 @@ import
   BindingElement,
   /*BindingPattern,*/
   LexicalDeclaration,
-  Declaration/*,
+  Declaration,
+  IterationStatement,
+  BreakableStatement/*,
   BlockStatement,
   VariableStatement*/;
 
@@ -28,11 +30,11 @@ import
 statement
 : /*blockStatement
 | variableStatement
-| emptyStatement
-| */expressionStatement/*
-| ifStatement
+| */emptyStatement
+| expressionStatement/*
+| ifStatement*/
 | breakableStatement
-| continueStatement
+/*| continueStatement
 | breakStatement
 | withStatement
 | labelledStatement
