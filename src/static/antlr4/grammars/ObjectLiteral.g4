@@ -48,8 +48,8 @@ propertyDefinitionList_Yield_Await
 //    PropertyName[?Yield, ?Await] : AssignmentExpression[+In, ?Yield, ?Await]
 //    MethodDefinition[?Yield, ?Await]
 propertyDefinition
-: /*identifierReference
-| coverInitializedName
+: identifierReference
+| /*coverInitializedName
 | */propertyName Colon assignmentExpression_In
 /*| methodDefinition*/
 ;

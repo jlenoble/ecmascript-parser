@@ -8,5 +8,7 @@ makeTest({
     'ObjectLiteral2',
     'ObjectLiteral3',
     'ObjectLiteral4',
+    'ObjectLiteral5',
+    'ObjectLiteral6',
   ],
 });
