@@ -15,11 +15,11 @@ initializer_Await
 ;
 initializer_Yield_Await
 : Assign assignmentExpression_Yield_Await
-;
+;*/
 initializer_In
 : Assign assignmentExpression_In
 ;
-initializer_In_Yield
+/*initializer_In_Yield
 : Assign assignmentExpression_In_Yield
 ;
 initializer_In_Await
@@ -88,9 +88,9 @@ assignmentExpression_In
   Colon assignmentExpression_In                                       # conditionalExpression_In
 | arrowParameters FatArrow conciseBody_In                             # arrowFunction_In
 | asyncArrowFunction_In
-| leftHandSideExpression Assign assignmentExpression_In               # assignExpression_In
+| */leftHandSideExpression Assign assignmentExpression_In               # assignExpression_In
 | leftHandSideExpression assignmentOperator assignmentExpression_In   # assignmentOperatorExpression_In
-| */leftHandSideExpression                                              # lhsExpression_In
+| leftHandSideExpression                                              # lhsExpression_In
 ;
 /*assignmentExpression_In_Yield
 : assignmentExpression_In_Yield QuestionMark assignmentExpression_In_Yield

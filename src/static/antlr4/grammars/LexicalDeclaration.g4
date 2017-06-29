@@ -73,7 +73,7 @@ bindingList_In_Yield_Await
 | bindingPattern initializer
 ;*/
 lexicalBinding_In
-: bindingIdentifier //initializer_In?
+: bindingIdentifier initializer_In?
 /*| bindingPattern initializer_In*/
 ;
 /*lexicalBinding_Yield

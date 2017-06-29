@@ -5,7 +5,7 @@ const rel = path.relative(base, 'src/static/antlr4/parsers');
 const {ECMAScriptPassListener} = require(path.join(base, rel,
   'ECMAScriptPassListener'));
 
-const debug = false;
+const debug = true;
 
 export class TranslatorPass extends ECMAScriptPassListener {
   exitFile (ctx) {

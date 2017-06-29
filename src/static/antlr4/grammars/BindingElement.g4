@@ -76,7 +76,7 @@ bindingRestElement_Yield_Await
 // SingleNameBinding[Yield, Await]:
 //    BindingIdentifier[?Yield, ?Await] Initializer[+In, ?Yield, ?Await][opt]
 singleNameBinding
-: bindingIdentifier //initializer_In?
+: bindingIdentifier initializer_In?
 ;
 /*singleNameBinding_Yield
 : bindingIdentifier_Yield initializer_In_Yield?

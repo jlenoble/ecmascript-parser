@@ -200,6 +200,33 @@ ECMAScriptPassListener.prototype.exitMemberExpression = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#initializer_In.
+ECMAScriptPassListener.prototype.enterInitializer_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#initializer_In.
+ECMAScriptPassListener.prototype.exitInitializer_In = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#assignExpression_In.
+ECMAScriptPassListener.prototype.enterAssignExpression_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#assignExpression_In.
+ECMAScriptPassListener.prototype.exitAssignExpression_In = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression_In.
+ECMAScriptPassListener.prototype.enterAssignmentOperatorExpression_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression_In.
+ECMAScriptPassListener.prototype.exitAssignmentOperatorExpression_In = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#lhsExpression_In.
 ECMAScriptPassListener.prototype.enterLhsExpression_In = function(ctx) {
 };
