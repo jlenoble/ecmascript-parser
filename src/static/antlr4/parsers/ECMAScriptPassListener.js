@@ -857,6 +857,24 @@ ECMAScriptPassListener.prototype.exitBreakableStatement = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#blockStatement.
+ECMAScriptPassListener.prototype.enterBlockStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#blockStatement.
+ECMAScriptPassListener.prototype.exitBlockStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#block.
+ECMAScriptPassListener.prototype.enterBlock = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#block.
+ECMAScriptPassListener.prototype.exitBlock = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#variableStatement.
 ECMAScriptPassListener.prototype.enterVariableStatement = function(ctx) {
 };

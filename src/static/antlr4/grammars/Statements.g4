@@ -8,8 +8,8 @@ import
   LexicalDeclaration,
   Declaration,
   IterationStatement,
-  BreakableStatement/*,
-  BlockStatement*/,
+  BreakableStatement,
+  BlockStatement,
   VariableStatement;
 
 // Statement[Yield, Await, Return]:
@@ -28,8 +28,8 @@ import
 //    TryStatement[?Yield, ?Await, ?Return]
 //    DebuggerStatement
 statement
-: /*blockStatement
-| */variableStatement
+: blockStatement
+| variableStatement
 | emptyStatement
 | expressionStatement/*
 | ifStatement*/
