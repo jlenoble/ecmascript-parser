@@ -14,7 +14,7 @@ callExpression
 /*| superCall*/
 | callExpression arguments
 /*| callExpression OpenBracket expression_In CloseBracket*/
-| callExpression Dot IdentifierName
+| callExpression Dot identifierName
 /*| callExpression templateLiteral*/
 ;
 /*callExpression_Yield
@@ -22,7 +22,7 @@ callExpression
 | superCall_Yield
 | callExpression_Yield arguments_Yield
 | callExpression_Yield OpenBracket expression_In_Yield CloseBracket
-| callExpression_Yield Dot IdentifierName
+| callExpression_Yield Dot identifierName
 | callExpression_Yield templateLiteral_Yield
 ;
 callExpression_Await
@@ -30,7 +30,7 @@ callExpression_Await
 | superCall_Await
 | callExpression_Await arguments_Await
 | callExpression_Await OpenBracket expression_In_Await CloseBracket
-| callExpression_Await Dot IdentifierName
+| callExpression_Await Dot identifierName
 | callExpression_Await templateLiteral_Await
 ;
 callExpression_Yield_Await
@@ -38,7 +38,7 @@ callExpression_Yield_Await
 | superCall_Yield_Await
 | callExpression_Yield_Await arguments_Yield_Await
 | callExpression_Yield_Await OpenBracket expression_In_Yield_Await CloseBracket
-| callExpression_Yield_Await Dot IdentifierName
+| callExpression_Yield_Await Dot identifierName
 | callExpression_Yield_Await templateLiteral_Yield_Await
 ;*/
 

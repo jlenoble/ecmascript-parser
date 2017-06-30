@@ -54,7 +54,7 @@ newExpression_Yield_Await
 memberExpression
 : primaryExpression
 | memberExpression OpenBracket expression_In CloseBracket
-| memberExpression Dot IdentifierName
+| memberExpression Dot identifierName
 /*| memberExpression templateLiteral
 | superProperty
 | metaProperty*/
@@ -63,7 +63,7 @@ memberExpression
 /*memberExpression_Yield
 : primaryExpression_Yield
 | memberExpression_Yield OpenBracket expression_In_Yield CloseBracket
-| memberExpression_Yield Dot IdentifierName
+| memberExpression_Yield Dot identifierName
 | memberExpression_Yield templateLiteral_Yield
 | superProperty_Yield
 | metaProperty
@@ -72,7 +72,7 @@ memberExpression
 memberExpression_Await
 : primaryExpression_Await
 | memberExpression_Await OpenBracket expression_In_Await CloseBracket
-| memberExpression_Await Dot IdentifierName
+| memberExpression_Await Dot identifierName
 | memberExpression_Await templateLiteral_Await
 | superProperty_Await
 | metaProperty
@@ -81,7 +81,7 @@ memberExpression_Await
 memberExpression_Yield_Await
 : primaryExpression_Yield_Await
 | memberExpression_Yield_Await OpenBracket expression_In_Yield_Await CloseBracket
-| memberExpression_Yield_Await Dot IdentifierName
+| memberExpression_Yield_Await Dot identifierName
 | memberExpression_Yield_Await templateLiteral_Yield_Await
 | superProperty_Yield_Await
 | metaProperty

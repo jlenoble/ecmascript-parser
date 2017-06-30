@@ -686,5 +686,14 @@ ECMAScriptPassListener.prototype.exitFutureReservedWord = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#identifierName.
+ECMAScriptPassListener.prototype.enterIdentifierName = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#identifierName.
+ECMAScriptPassListener.prototype.exitIdentifierName = function(ctx) {
+};
+
+
 
 exports.ECMAScriptPassListener = ECMAScriptPassListener;

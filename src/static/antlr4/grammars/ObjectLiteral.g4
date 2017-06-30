@@ -97,7 +97,7 @@ propertyName_Yield_Await
 //    StringLiteral
 //    NumericLiteral
 literalPropertyName
-: IdentifierName
+: identifierName
 | StringLiteral
 | NumericLiteral
 ;
