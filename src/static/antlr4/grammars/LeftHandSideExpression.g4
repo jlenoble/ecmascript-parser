@@ -28,7 +28,7 @@ leftHandSideExpression_Yield_Await
 //    newNewExpression[?Yield, ?Await]
 newExpression
 : memberExpression
-/*| New newExpression*/
+| New newExpression
 ;
 /*newExpression_Yield
 : memberExpression_Yield
