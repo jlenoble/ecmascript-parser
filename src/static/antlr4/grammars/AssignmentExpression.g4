@@ -165,6 +165,7 @@ assignmentExpression_In
 | assignmentExpression_In additiveOperator assignmentExpression_In        # additiveExpression_In
 | assignmentExpression_In shiftOperator assignmentExpression_In           # shiftExpression_In
 | assignmentExpression_In relationalOperator assignmentExpression_In      # relationalExpression_In
+| assignmentExpression_In In assignmentExpression_In                      # inExpression_In
 | assignmentExpression_In Instanceof assignmentExpression_In              # instanceOfExpression_In
 | assignmentExpression_In equalityOperator assignmentExpression_In        # equalityExpression_In
 | assignmentExpression_In BitAnd assignmentExpression_In                  # bitwiseANDExpression_In

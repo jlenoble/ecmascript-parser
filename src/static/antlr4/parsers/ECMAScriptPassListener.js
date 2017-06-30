@@ -542,6 +542,15 @@ ECMAScriptPassListener.prototype.exitInstanceOfExpression_In = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#inExpression_In.
+ECMAScriptPassListener.prototype.enterInExpression_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#inExpression_In.
+ECMAScriptPassListener.prototype.exitInExpression_In = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#logicalORExpression_In.
 ECMAScriptPassListener.prototype.enterLogicalORExpression_In = function(ctx) {
 };
