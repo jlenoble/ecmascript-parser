@@ -1193,7 +1193,7 @@ ECMAScriptPassLexer.RightShiftArithmetic = 30;
 ECMAScriptPassLexer.RightShiftLogical = 31;
 ECMAScriptPassLexer.BitAnd = 32;
 ECMAScriptPassLexer.BitOr = 33;
-ECMAScriptPassLexer.BitXOr = 34;
+ECMAScriptPassLexer.BitXor = 34;
 ECMAScriptPassLexer.Not = 35;
 ECMAScriptPassLexer.BitNot = 36;
 ECMAScriptPassLexer.And = 37;
@@ -1320,7 +1320,7 @@ ECMAScriptPassLexer.prototype.symbolicNames = [ null, null, null, "NumericLitera
                                                 "Power", "PlusPlus", "MinusMinus", 
                                                 "LeftShiftArithmetic", "RightShiftArithmetic", 
                                                 "RightShiftLogical", "BitAnd", 
-                                                "BitOr", "BitXOr", "Not", 
+                                                "BitOr", "BitXor", "Not", 
                                                 "BitNot", "And", "Or", "QuestionMark", 
                                                 "Colon", "Assign", "PlusAssign", 
                                                 "MinusAssign", "MultiplyAssign", 
@@ -1376,7 +1376,7 @@ ECMAScriptPassLexer.prototype.ruleNames = [ "T__0", "T__1", "EscapeSequence",
                                             "Power", "PlusPlus", "MinusMinus", 
                                             "LeftShiftArithmetic", "RightShiftArithmetic", 
                                             "RightShiftLogical", "BitAnd", 
-                                            "BitOr", "BitXOr", "Not", "BitNot", 
+                                            "BitOr", "BitXor", "Not", "BitNot", 
                                             "And", "Or", "QuestionMark", 
                                             "Colon", "Assign", "PlusAssign", 
                                             "MinusAssign", "MultiplyAssign", 

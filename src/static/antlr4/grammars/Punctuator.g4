@@ -38,7 +38,7 @@ RightShiftLogical          : '>>>';
 
 BitAnd                     : '&';
 BitOr                      : '|';
-BitXOr                     : '^';
+BitXor                     : '^';
 
 Not                        : '!';
 BitNot                     : '~';
@@ -88,7 +88,7 @@ Punctuator
 | Plus          | Minus       | Multiply        | Modulo            | Power
 | PlusPlus      | MinusMinus
 | LeftShiftArithmetic         | RightShiftArithmetic                | RightShiftLogical
-| BitAnd        | BitOr       | BitXOr
+| BitAnd        | BitOr       | BitXor
 | Not           | BitNot
 | And           | Or
 | QuestionMark  | Colon

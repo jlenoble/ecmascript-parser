@@ -29,6 +29,66 @@ initializer_In_Yield_Await
 : Assign assignmentExpression_In_Yield_Await
 ;*/
 
+// UpdateExpression[Yield, Await]:
+//    LeftHandSideExpression[?Yield, ?Await]
+//    LeftHandSideExpression[?Yield, ?Await] [no LineTerminator here] ++
+//    LeftHandSideExpression[?Yield, ?Await] [no LineTerminator here] --
+//    ++ UnaryExpression[?Yield, ?Await]
+//    -- UnaryExpression[?Yield, ?Await]
+// UnaryExpression[Yield, Await]:
+//    UpdateExpression[?Yield, ?Await]
+//    deleteUnaryExpression[?Yield, ?Await]
+//    voidUnaryExpression[?Yield, ?Await]
+//    typeofUnaryExpression[?Yield, ?Await]
+//    + UnaryExpression[?Yield, ?Await]
+//    - UnaryExpression[?Yield, ?Await]
+//    ~ UnaryExpression[?Yield, ?Await]
+//    ! UnaryExpression[?Yield, ?Await]
+//    [+Await] AwaitExpression[?Yield]
+// ExponentiationExpression[Yield, Await]:
+//    UnaryExpression[?Yield, ?Await]
+//    UpdateExpression[?Yield, ?Await] ** ExponentiationExpression[?Yield, ?Await]
+// MultiplicativeExpression[Yield, Await]:
+//    ExponentiationExpression[?Yield, ?Await]
+//    MultiplicativeExpression[?Yield, ?Await] MultiplicativeOperator ExponentiationExpression[?Yield, ?Await]
+// AdditiveExpression[Yield, Await]:
+//    MultiplicativeExpression[?Yield, ?Await]
+//    AdditiveExpression[?Yield, ?Await] + MultiplicativeExpression[?Yield, ?Await]
+//    AdditiveExpression[?Yield, ?Await] - MultiplicativeExpression[?Yield, ?Await]
+// ShiftExpression[Yield, Await]:
+//    AdditiveExpression[?Yield, ?Await]
+//    ShiftExpression[?Yield, ?Await] << AdditiveExpression[?Yield, ?Await]
+//    ShiftExpression[?Yield, ?Await] >> AdditiveExpression[?Yield, ?Await]
+//    ShiftExpression[?Yield, ?Await] >>> AdditiveExpression[?Yield, ?Await]
+// RelationalExpression[In, Yield, Await]:
+//    ShiftExpression[?Yield, ?Await]
+//    RelationalExpression[?In, ?Yield, ?Await] < ShiftExpression[?Yield, ?Await]
+//    RelationalExpression[?In, ?Yield, ?Await] > ShiftExpression[?Yield, ?Await]
+//    RelationalExpression[?In, ?Yield, ?Await] <= ShiftExpression[?Yield, ?Await]
+//    RelationalExpression[?In, ?Yield, ?Await] >= ShiftExpression[?Yield, ?Await]
+//    RelationalExpression[?In, ?Yield, ?Await] instanceof ShiftExpression[?Yield, ?Await]
+//    [+In]RelationalExpression[+In, ?Yield, ?Await] in ShiftExpression[?Yield, ?Await]
+// EqualityExpression[In, Yield, Await]:
+//    RelationalExpression[?In, ?Yield, ?Await]
+//    EqualityExpression[?In, ?Yield, ?Await] == RelationalExpression[?In, ?Yield, ?Await]
+//    EqualityExpression[?In, ?Yield, ?Await] != RelationalExpression[?In, ?Yield, ?Await]
+//    EqualityExpression[?In, ?Yield, ?Await] === RelationalExpression[?In, ?Yield, ?Await]
+//    EqualityExpression[?In, ?Yield, ?Await] !== RelationalExpression[?In, ?Yield, ?Await]
+// BitwiseANDExpression[In, Yield, Await]:
+//    EqualityExpression[?In, ?Yield, ?Await]
+//    BitwiseANDExpression[?In, ?Yield, ?Await] & EqualityExpression[?In, ?Yield, ?Await]
+// BitwiseXORExpression[In, Yield, Await]:
+//    BitwiseANDExpression[?In, ?Yield, ?Await]
+//    BitwiseXORExpression[?In, ?Yield, ?Await] ^ BitwiseANDExpression[?In, ?Yield, ?Await]
+// BitwiseORExpression[In, Yield, Await]:
+//    BitwiseXORExpression[?In, ?Yield, ?Await]
+//    BitwiseORExpression[?In, ?Yield, ?Await] | BitwiseXORExpression[?In, ?Yield, ?Await]
+// LogicalANDExpression[In, Yield, Await]:
+//    BitwiseORExpression[?In, ?Yield, ?Await]
+//    LogicalANDExpression[?In, ?Yield, ?Await] && BitwiseORExpression[?In, ?Yield, ?Await]
+// LogicalORExpression[In, Yield, Await]:
+//    LogicalANDExpression[?In, ?Yield, ?Await]
+//    LogicalORExpression[?In, ?Yield, ?Await] || LogicalANDExpression[?In, ?Yield, ?Await]
 // ConditionalExpression[In, Yield, Await]:
 //    LogicalORExpression[?In, ?Yield, ?Await]
 //    LogicalORExpression[?In, ?Yield, ?Await] ? AssignmentExpression[+In, ?Yield, ?Await] : AssignmentExpression[?In, ?Yield, ?Await]
@@ -46,13 +106,27 @@ initializer_In_Yield_Await
 //    LeftHandSideExpression[?Yield, ?Await] = AssignmentExpression[?In, ?Yield, ?Await]
 //    LeftHandSideExpression[?Yield, ?Await] AssignmentOperator AssignmentExpression[?In, ?Yield, ?Await]
 assignmentExpression
-: /*assignmentExpression QuestionMark assignmentExpression
-  Colon assignmentExpression                                      # conditionalExpression
-| arrowParameters FatArrow conciseBody        # arrowFunction
-| asyncArrowFunction
-| */leftHandSideExpression Assign assignmentExpression              # assignExpression
-| leftHandSideExpression assignmentOperator assignmentExpression  # assignmentOperatorExpression
-| leftHandSideExpression                                          # lhsExpression
+: assignmentExpression (PlusPlus|MinusMinus)                        # updateExpression
+| unaryOperator assignmentExpression                                # unaryExpression
+| assignmentExpression Power assignmentExpression                   # exponentiationExpression
+| assignmentExpression multiplicativeOperator assignmentExpression  # multiplicativeExpression
+| assignmentExpression additiveOperator assignmentExpression        # additiveExpression
+| assignmentExpression shiftOperator assignmentExpression           # shiftExpression
+| assignmentExpression relationalOperator assignmentExpression      # relationalExpression
+| assignmentExpression Instanceof assignmentExpression              # instanceOfExpression
+| assignmentExpression equalityOperator assignmentExpression        # equalityExpression
+| assignmentExpression BitAnd assignmentExpression                  # bitwiseANDExpression
+| assignmentExpression BitXor assignmentExpression                  # bitwiseXORExpression
+| assignmentExpression BitOr assignmentExpression                   # bitwiseORExpression
+| assignmentExpression And assignmentExpression                     # logicalANDExpression
+| assignmentExpression Or assignmentExpression                      # logicalORExpression
+| assignmentExpression QuestionMark assignmentExpression
+  Colon assignmentExpression                                        # conditionalExpression
+/*| arrowParameters FatArrow conciseBody        # arrowFunction
+| asyncArrowFunction*/
+| leftHandSideExpression Assign assignmentExpression                # assignExpression
+| leftHandSideExpression assignmentOperator assignmentExpression    # assignmentOperatorExpression
+| leftHandSideExpression                                            # lhsExpression
 ;
 /*assignmentExpression_Yield
 : assignmentExpression_Yield QuestionMark assignmentExpression_Yield
@@ -84,13 +158,27 @@ assignmentExpression_Yield_Await
 | leftHandSideExpression_Yield_Await                                                      # lhsExpression_Yield_Await
 ;*/
 assignmentExpression_In
-: /*assignmentExpression_In QuestionMark assignmentExpression_In
-  Colon assignmentExpression_In                                       # conditionalExpression_In
-| arrowParameters FatArrow conciseBody_In                             # arrowFunction_In
-| asyncArrowFunction_In
-| */leftHandSideExpression Assign assignmentExpression_In               # assignExpression_In
-| leftHandSideExpression assignmentOperator assignmentExpression_In   # assignmentOperatorExpression_In
-| leftHandSideExpression                                              # lhsExpression_In
+: assignmentExpression_In (PlusPlus|MinusMinus)                           # updateExpression_In
+| unaryOperator assignmentExpression_In                                   # unaryExpression_In
+| assignmentExpression_In Power assignmentExpression_In                   # exponentiationExpression_In
+| assignmentExpression_In multiplicativeOperator assignmentExpression_In  # multiplicativeExpression_In
+| assignmentExpression_In additiveOperator assignmentExpression_In        # additiveExpression_In
+| assignmentExpression_In shiftOperator assignmentExpression_In           # shiftExpression_In
+| assignmentExpression_In relationalOperator assignmentExpression_In      # relationalExpression_In
+| assignmentExpression_In Instanceof assignmentExpression_In              # instanceOfExpression_In
+| assignmentExpression_In equalityOperator assignmentExpression_In        # equalityExpression_In
+| assignmentExpression_In BitAnd assignmentExpression_In                  # bitwiseANDExpression_In
+| assignmentExpression_In BitXor assignmentExpression_In                  # bitwiseXORExpression_In
+| assignmentExpression_In BitOr assignmentExpression_In                   # bitwiseORExpression_In
+| assignmentExpression_In And assignmentExpression_In                     # logicalANDExpression_In
+| assignmentExpression_In Or assignmentExpression_In                      # logicalORExpression_In
+| assignmentExpression_In QuestionMark assignmentExpression_In
+  Colon assignmentExpression_In                                           # conditionalExpression_In
+/*| arrowParameters FatArrow conciseBody        # arrowFunction
+| asyncArrowFunction*/
+| leftHandSideExpression Assign assignmentExpression_In                   # assignExpression_In
+| leftHandSideExpression assignmentOperator assignmentExpression_In       # assignmentOperatorExpression_In
+| leftHandSideExpression                                                  # lhsExpression_In
 ;
 /*assignmentExpression_In_Yield
 : assignmentExpression_In_Yield QuestionMark assignmentExpression_In_Yield
@@ -121,6 +209,32 @@ assignmentExpression_In_Yield_Await
 | leftHandSideExpression_Yield_Await assignmentOperator assignmentExpression_In_Yield_Await   # assignmentOperatorExpression_In_Yield_Await
 | leftHandSideExpression_Yield_Await                                                          # lhsExpression_In_Yield_Await
 ;*/
+
+unaryOperator
+: (Delete|Void|Typeof|PlusPlus|MinusMinus|Plus|Minus|BitNot|Not)
+;
+
+// MultiplicativeOperator:one of
+//    * / %
+multiplicativeOperator
+: (Multiply|Divide|Modulo)
+;
+
+additiveOperator
+: (Plus|Minus)
+;
+
+shiftOperator
+: (LeftShiftArithmetic|RightShiftArithmetic|RightShiftLogical)
+;
+
+relationalOperator
+: (LessThan|GreaterThan|LessThanEquals|GreaterThanEquals)
+;
+
+equalityOperator
+: (Equals|NotEquals|IdentityEquals|IdentityNotEquals)
+;
 
 // AssignmentOperator:one of
 //    *= /= %= += -= <<= >>= >>>= &= ^= |= **=
