@@ -15,11 +15,11 @@ grammar IterationStatement;
 //    for ( var ForBinding[?Yield, ?Await] of AssignmentExpression[+In, ?Yield, ?Await] ) Statement[?Yield, ?Await, ?Return]
 //    for ( ForDeclaration[?Yield, ?Await] of AssignmentExpression[+In, ?Yield, ?Await] ) Statement[?Yield, ?Await, ?Return]
 iterationStatement
-: /*Do statement While OpenParen expression_In CloseParen SemiColon
+: Do statement While OpenParen expression_In CloseParen eos
 | While OpenParen expression_In CloseParen statement
-| For OpenParen expression? SemiColon expression_In? SemiColon expression_In? CloseParen statement
+/*| For OpenParen expression? SemiColon expression_In? SemiColon expression_In? CloseParen statement
 | For OpenParen Var variableDeclarationList SemiColon expression_In? SemiColon expression_In? CloseParen statement
-| */For OpenParen lexicalDeclaration expression_In? SemiColon expression_In? CloseParen statement
+*/| For OpenParen lexicalDeclaration expression_In? SemiColon expression_In? CloseParen statement
 /*| For OpenParen leftHandSideExpression In expression_In CloseParen statement
 | For OpenParen Var forBinding In expression_In CloseParen statement
 | For OpenParen forDeclaration In expression_In CloseParen statement
@@ -28,7 +28,7 @@ iterationStatement
 | For OpenParen forDeclaration Of assignmentExpression_In CloseParen statement*/
 ;
 /*iterationStatement_Yield
-: Do statement_Yield While OpenParen expression_In_Yield CloseParen SemiColon
+: Do statement_Yield While OpenParen expression_In_Yield CloseParen eos
 | While OpenParen expression_In_Yield CloseParen statement_Yield
 | For OpenParen expression_Yield? SemiColon expression_In_Yield? SemiColon expression_In_Yield? CloseParen statement_Yield
 | For OpenParen Var variableDeclarationList_Yield SemiColon expression_In_Yield? SemiColon expression_In_Yield? CloseParen statement_Yield
@@ -41,7 +41,7 @@ iterationStatement
 | For OpenParen forDeclaration_Yield Of assignmentExpression_In_Yield CloseParen statement_Yield
 ;
 iterationStatement_Await
-: Do statement_Await While OpenParen expression_In_Await CloseParen SemiColon
+: Do statement_Await While OpenParen expression_In_Await CloseParen eos
 | While OpenParen expression_In_Await CloseParen statement_Await
 | For OpenParen expression_Await? SemiColon expression_In_Await? SemiColon expression_In_Await? CloseParen statement_Await
 | For OpenParen Var variableDeclarationList_Await SemiColon expression_In_Await? SemiColon expression_In_Await? CloseParen statement_Await
@@ -54,7 +54,7 @@ iterationStatement_Await
 | For OpenParen forDeclaration_Await Of assignmentExpression_In_Await CloseParen statement_Await
 ;
 iterationStatement_Yield_Await
-: Do statement_Yield_Await While OpenParen expression_In_Yield_Await CloseParen SemiColon
+: Do statement_Yield_Await While OpenParen expression_In_Yield_Await CloseParen eos
 | While OpenParen expression_In_Yield_Await CloseParen statement_Yield_Await
 | For OpenParen expression_Yield_Await? SemiColon expression_In_Yield_Await? SemiColon expression_In_Yield_Await? CloseParen statement_Yield_Await
 | For OpenParen Var variableDeclarationList_Yield_Await SemiColon expression_In_Yield_Await? SemiColon expression_In_Yield_Await? CloseParen statement_Yield_Await
