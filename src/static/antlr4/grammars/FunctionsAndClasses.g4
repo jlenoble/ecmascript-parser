@@ -4,8 +4,8 @@
 grammar FunctionsAndClasses;
 import
   FormalParameter,
-  FunctionBody/*,
-  MethodDefinition*/;
+  FunctionBody,
+  MethodDefinition;
 
 // FunctionDeclaration[Yield, Await, Default]:
 // function BindingIdentifier[?Yield, ?Await] ( FormalParameters[~Yield, ~Await] ) { FunctionBody[~Yield, ~Await] }

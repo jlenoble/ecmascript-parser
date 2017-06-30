@@ -51,7 +51,7 @@ propertyDefinition
 : identifierReference
 | /*coverInitializedName
 | */propertyName Colon assignmentExpression_In
-/*| methodDefinition*/
+| methodDefinition
 ;
 /*propertyDefinition_Yield
 : identifierReference_Yield

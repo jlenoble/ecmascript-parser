@@ -641,6 +641,24 @@ ECMAScriptPassListener.prototype.exitFunctionStatementList = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#methodDefinition.
+ECMAScriptPassListener.prototype.enterMethodDefinition = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#methodDefinition.
+ECMAScriptPassListener.prototype.exitMethodDefinition = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#propertySetParameterList.
+ECMAScriptPassListener.prototype.enterPropertySetParameterList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#propertySetParameterList.
+ECMAScriptPassListener.prototype.exitPropertySetParameterList = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#reservedWord.
 ECMAScriptPassListener.prototype.enterReservedWord = function(ctx) {
 };
