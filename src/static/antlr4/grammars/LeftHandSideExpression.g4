@@ -53,7 +53,7 @@ newExpression_Yield_Await
 //    new MemberExpression[?Yield, ?Await] Arguments[?Yield, ?Await]
 memberExpression
 : primaryExpression
-/*| memberExpression OpenBracket expression_In CloseBracket*/
+| memberExpression OpenBracket expression_In CloseBracket
 | memberExpression Dot IdentifierName
 /*| memberExpression templateLiteral
 | superProperty
