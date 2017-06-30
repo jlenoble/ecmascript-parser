@@ -11,9 +11,9 @@ grammar CallExpression;
 //    CallExpression[?Yield, ?Await] TemplateLiteral[?Yield, ?Await]
 callExpression
 : coverCallExpressionAndAsyncArrowHead
-/*| superCall
+/*| superCall*/
 | callExpression arguments
-| callExpression OpenBracket expression_In CloseBracket*/
+/*| callExpression OpenBracket expression_In CloseBracket*/
 | callExpression Dot IdentifierName
 /*| callExpression templateLiteral*/
 ;
