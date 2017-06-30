@@ -8,6 +8,7 @@ import
   LexicalDeclaration,
   Declaration,
   IterationStatement,
+  IfStatement,
   BreakableStatement,
   BlockStatement,
   VariableStatement;
@@ -31,8 +32,8 @@ statement
 : blockStatement
 | variableStatement
 | emptyStatement
-| expressionStatement/*
-| ifStatement*/
+| expressionStatement
+| ifStatement
 | breakableStatement
 /*| continueStatement
 | breakStatement

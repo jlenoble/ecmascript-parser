@@ -848,6 +848,15 @@ ECMAScriptPassListener.prototype.exitForBinding = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#ifStatement.
+ECMAScriptPassListener.prototype.enterIfStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#ifStatement.
+ECMAScriptPassListener.prototype.exitIfStatement = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#breakableStatement.
 ECMAScriptPassListener.prototype.enterBreakableStatement = function(ctx) {
 };
