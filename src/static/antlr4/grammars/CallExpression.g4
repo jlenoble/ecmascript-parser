@@ -13,9 +13,9 @@ callExpression
 : coverCallExpressionAndAsyncArrowHead
 /*| superCall
 | callExpression arguments
-| callExpression OpenBracket expression_In CloseBracket
+| callExpression OpenBracket expression_In CloseBracket*/
 | callExpression Dot IdentifierName
-| callExpression templateLiteral*/
+/*| callExpression templateLiteral*/
 ;
 /*callExpression_Yield
 : coverCallExpressionAndAsyncArrowHead_Yield
