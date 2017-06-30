@@ -1,9 +1,9 @@
 grammar ECMAScriptPass;
 import
+  AdditionalSyntax,
   Expressions,
   Statements,
   FunctionsAndClasses,
-  NumericLiteralB1,
   LexicalGrammar;
 
 @parser::members {
