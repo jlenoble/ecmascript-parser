@@ -57,8 +57,8 @@ memberExpression
 | memberExpression Dot IdentifierName
 | memberExpression templateLiteral
 | superProperty
-| metaProperty
-| New memberExpression arguments*/
+| metaProperty*/
+| New memberExpression arguments
 ;
 /*memberExpression_Yield
 : primaryExpression_Yield
