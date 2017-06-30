@@ -157,28 +157,28 @@ statement_Yield_Await_Return
 //    StatementListItem[?Yield, ?Await, ?Return]
 //    StatementList[?Yield, ?Await, ?Return] StatementListItem[?Yield, ?Await, ?Return]
 statementList
-: (statementListItem eos)+
+: statementListItem+
 ;
 /*statementList_Yield
-: (statementListItem_Yield eos)+
+: statementListItem_Yield+
 ;
 statementList_Await
-: (statementListItem_Await eos)+
+: statementListItem_Await+
 ;
 statementList_Yield_Await
-: (statementListItem_Yield_Await eos)+
+: statementListItem_Yield_Await+
 ;*/
 statementList_Return
-: (statementListItem_Return eos)+
+: statementListItem_Return+
 ;
 /*statementList_Yield_Return
-: (statementListItem_Yield_Return eos)+
+: statementListItem_Yield_Return+
 ;
 statementList_Await_Return
-: (statementListItem_Await_Return eos)+
+: statementListItem_Await_Return+
 ;
 statementList_Yield_Await_Return
-: (statementListItem_Yield_Await_Return eos)+
+: statementListItem_Yield_Await_Return+
 ;*/
 
 // StatementListItem[Yield, Await, Return]:
@@ -224,9 +224,9 @@ emptyStatement
 ;
 
 // ExpressionStatement[Yield, Await]:
-//    [lookahead ∉ { {, function, async [no LineTerminator here] function, class, let [ }] Expression[+In, ?Yield, ?Await];
+//    [lookahead ∉ { {, function, async [no LineTerminator here] function, class, let [ }] Expression[+In, ?Yield, ?Await] ;
 expressionStatement
-: expression_In
+: expression_In eos
 ;
 /*expressionStatement_Yield
 : expression_In_Yield

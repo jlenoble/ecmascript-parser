@@ -3,9 +3,9 @@
 grammar VariableStatement;
 
 // VariableStatement[Yield, Await]:
-//    var VariableDeclarationList[+In, ?Yield, ?Await];
+//    var VariableDeclarationList[+In, ?Yield, ?Await] ;
 variableStatement
-: Var variableDeclarationList_In
+: Var variableDeclarationList_In eos
 ;
 /*variableStatement_Yield
 : Var variableDeclarationList_In_Yield
