@@ -524,6 +524,51 @@ ECMAScriptPassListener.prototype.exitBreakableStatement = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#variableStatement.
+ECMAScriptPassListener.prototype.enterVariableStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#variableStatement.
+ECMAScriptPassListener.prototype.exitVariableStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#variableDeclarationList.
+ECMAScriptPassListener.prototype.enterVariableDeclarationList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#variableDeclarationList.
+ECMAScriptPassListener.prototype.exitVariableDeclarationList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#variableDeclarationList_In.
+ECMAScriptPassListener.prototype.enterVariableDeclarationList_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#variableDeclarationList_In.
+ECMAScriptPassListener.prototype.exitVariableDeclarationList_In = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#variableDeclaration.
+ECMAScriptPassListener.prototype.enterVariableDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#variableDeclaration.
+ECMAScriptPassListener.prototype.exitVariableDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#variableDeclaration_In.
+ECMAScriptPassListener.prototype.enterVariableDeclaration_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#variableDeclaration_In.
+ECMAScriptPassListener.prototype.exitVariableDeclaration_In = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#functionDeclaration.
 ECMAScriptPassListener.prototype.enterFunctionDeclaration = function(ctx) {
 };

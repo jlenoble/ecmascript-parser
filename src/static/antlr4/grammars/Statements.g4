@@ -9,8 +9,8 @@ import
   Declaration,
   IterationStatement,
   BreakableStatement/*,
-  BlockStatement,
-  VariableStatement*/;
+  BlockStatement*/,
+  VariableStatement;
 
 // Statement[Yield, Await, Return]:
 //    BlockStatement[?Yield, ?Await, ?Return]
@@ -29,8 +29,8 @@ import
 //    DebuggerStatement
 statement
 : /*blockStatement
-| variableStatement
-| */emptyStatement
+| */variableStatement
+| emptyStatement
 | expressionStatement/*
 | ifStatement*/
 | breakableStatement

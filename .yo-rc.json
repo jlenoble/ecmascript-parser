@@ -52,7 +52,7 @@
     "testRunners": [
       "Mocha"
     ],
-    "grammar": "Testudoc",
+    "grammar": "ECMAScript",
     "rule": "file",
     "parsers": [
       "Listener"
