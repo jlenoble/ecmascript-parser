@@ -29,6 +29,15 @@ ECMAScriptPassListener.prototype.exitEos = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#expression.
+ECMAScriptPassListener.prototype.enterExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#expression.
+ECMAScriptPassListener.prototype.exitExpression = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#expression_In.
 ECMAScriptPassListener.prototype.enterExpression_In = function(ctx) {
 };

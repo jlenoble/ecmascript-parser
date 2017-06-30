@@ -17,12 +17,12 @@ grammar IterationStatement;
 iterationStatement
 : Do statement While OpenParen expression_In CloseParen eos
 | While OpenParen expression_In CloseParen statement
-/*| For OpenParen expression? SemiColon expression_In? SemiColon expression_In? CloseParen statement
+| For OpenParen expression? SemiColon expression_In? SemiColon expression_In? CloseParen statement
 | For OpenParen Var variableDeclarationList SemiColon expression_In? SemiColon expression_In? CloseParen statement
-*/| For OpenParen lexicalDeclaration expression_In? SemiColon expression_In? CloseParen statement
-/*| For OpenParen leftHandSideExpression In expression_In CloseParen statement
+| For OpenParen lexicalDeclaration expression_In? SemiColon expression_In? CloseParen statement
+| For OpenParen leftHandSideExpression In expression_In CloseParen statement
 | For OpenParen Var forBinding In expression_In CloseParen statement
-| For OpenParen forDeclaration In expression_In CloseParen statement
+/*| For OpenParen forDeclaration In expression_In CloseParen statement
 | For OpenParen leftHandSideExpression Of assignmentExpression_In CloseParen statement
 | For OpenParen Var forBinding Of assignmentExpression_In CloseParen statement
 | For OpenParen forDeclaration Of assignmentExpression_In CloseParen statement*/
@@ -67,7 +67,7 @@ iterationStatement_Yield_Await
 | For OpenParen forDeclaration_Yield_Await Of assignmentExpression_In_Yield_Await CloseParen statement_Yield_Await
 ;
 iterationStatement_Return
-: Do statement_Return While OpenParen expression_In CloseParen SemiColon
+: Do statement_Return While OpenParen expression_In CloseParen eos
 | While OpenParen expression_In CloseParen statement_Return
 | For OpenParen expression? SemiColon expression_In? SemiColon expression_In? CloseParen statement_Return
 | For OpenParen Var variableDeclarationList SemiColon expression_In? SemiColon expression_In? CloseParen statement_Return
@@ -80,7 +80,7 @@ iterationStatement_Return
 | For OpenParen forDeclaration Of assignmentExpression_In CloseParen statement_Return
 ;
 iterationStatement_Yield_Return
-: Do statement_Yield_Return While OpenParen expression_In_Yield CloseParen SemiColon
+: Do statement_Yield_Return While OpenParen expression_In_Yield CloseParen eos
 | While OpenParen expression_In_Yield CloseParen statement_Yield_Return
 | For OpenParen expression_Yield? SemiColon expression_In_Yield? SemiColon expression_In_Yield? CloseParen statement_Yield_Return
 | For OpenParen Var variableDeclarationList_Yield SemiColon expression_In_Yield? SemiColon expression_In_Yield? CloseParen statement_Yield_Return
@@ -93,7 +93,7 @@ iterationStatement_Yield_Return
 | For OpenParen forDeclaration_Yield Of assignmentExpression_In_Yield CloseParen statement_Yield_Return
 ;
 iterationStatement_Await_Return
-: Do statement_Await_Return While OpenParen expression_In_Await CloseParen SemiColon
+: Do statement_Await_Return While OpenParen expression_In_Await CloseParen eos
 | While OpenParen expression_In_Await CloseParen statement_Await_Return
 | For OpenParen expression_Await? SemiColon expression_In_Await? SemiColon expression_In_Await? CloseParen statement_Await_Return
 | For OpenParen Var variableDeclarationList_Await SemiColon expression_In_Await? SemiColon expression_In_Await? CloseParen statement_Await_Return
@@ -106,7 +106,7 @@ iterationStatement_Await_Return
 | For OpenParen forDeclaration_Await Of assignmentExpression_In_Await CloseParen statement_Await_Return
 ;
 iterationStatement_Yield_Await_Return
-: Do statement_Yield_Await_Return While OpenParen expression_In_Yield_Await CloseParen SemiColon
+: Do statement_Yield_Await_Return While OpenParen expression_In_Yield_Await CloseParen eos
 | While OpenParen expression_In_Yield_Await CloseParen statement_Yield_Await_Return
 | For OpenParen expression_Yield_Await? SemiColon expression_In_Yield_Await? SemiColon expression_In_Yield_Await? CloseParen statement_Yield_Await_Return
 | For OpenParen Var variableDeclarationList_Yield_Await SemiColon expression_In_Yield_Await? SemiColon expression_In_Yield_Await? CloseParen statement_Yield_Await_Return

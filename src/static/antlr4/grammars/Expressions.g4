@@ -15,10 +15,10 @@ import
 // Expression[In, Yield, Await]:
 //    AssignmentExpression[?In, ?Yield, ?Await]
 //    Expression[?In, ?Yield, ?Await] , AssignmentExpression[?In, ?Yield, ?Await]
-/*expression
+expression
 : assignmentExpression (Comma assignmentExpression)*
 ;
-expression_Yield
+/*expression_Yield
 : assignmentExpression_Yield (Comma assignmentExpression_Yield)*
 ;
 expression_Await
