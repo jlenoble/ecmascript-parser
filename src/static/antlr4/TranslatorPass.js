@@ -65,6 +65,12 @@ export class TranslatorPass extends ECMAScriptPassListener {
     }
   }
 
+  exitUpdateExpression (ctx) {
+    if (debug) {
+      console.log('>>UpdateExpression:', ctx.getText());
+    }
+  }
+
   exitPrimaryExpression (ctx) {
     if (debug) {
       console.log('>>PrimaryExpression:', ctx.getText());

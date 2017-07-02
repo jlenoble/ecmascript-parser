@@ -106,7 +106,8 @@ initializer_In_Yield_Await
 //    LeftHandSideExpression[?Yield, ?Await] = AssignmentExpression[?In, ?Yield, ?Await]
 //    LeftHandSideExpression[?Yield, ?Await] AssignmentOperator AssignmentExpression[?In, ?Yield, ?Await]
 assignmentExpression
-: assignmentExpression (PlusPlus|MinusMinus)                        # updateExpression
+: assignmentExpression {!this.isLineTerminatorEquivalent()}?
+  (PlusPlus|MinusMinus)                                             # updateExpression
 | unaryOperator assignmentExpression                                # unaryExpression
 | assignmentExpression Power assignmentExpression                   # exponentiationExpression
 | assignmentExpression multiplicativeOperator assignmentExpression  # multiplicativeExpression
@@ -158,7 +159,8 @@ assignmentExpression_Yield_Await
 | leftHandSideExpression_Yield_Await                                                      # lhsExpression_Yield_Await
 ;*/
 assignmentExpression_In
-: assignmentExpression_In (PlusPlus|MinusMinus)                           # updateExpression_In
+: assignmentExpression_In  {!this.isLineTerminatorEquivalent()}?
+  (PlusPlus|MinusMinus)                                                   # updateExpression_In
 | unaryOperator assignmentExpression_In                                   # unaryExpression_In
 | assignmentExpression_In Power assignmentExpression_In                   # exponentiationExpression_In
 | assignmentExpression_In multiplicativeOperator assignmentExpression_In  # multiplicativeExpression_In
