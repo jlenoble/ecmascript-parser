@@ -839,6 +839,51 @@ ECMAScriptPassListener.prototype.exitHoistableDeclaration = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#throwStatement.
+ECMAScriptPassListener.prototype.enterThrowStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#throwStatement.
+ECMAScriptPassListener.prototype.exitThrowStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#tryStatement.
+ECMAScriptPassListener.prototype.enterTryStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#tryStatement.
+ECMAScriptPassListener.prototype.exitTryStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#catchPart.
+ECMAScriptPassListener.prototype.enterCatchPart = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#catchPart.
+ECMAScriptPassListener.prototype.exitCatchPart = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#finallyPart.
+ECMAScriptPassListener.prototype.enterFinallyPart = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#finallyPart.
+ECMAScriptPassListener.prototype.exitFinallyPart = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#catchParameter.
+ECMAScriptPassListener.prototype.enterCatchParameter = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#catchParameter.
+ECMAScriptPassListener.prototype.exitCatchParameter = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#withStatement.
 ECMAScriptPassListener.prototype.enterWithStatement = function(ctx) {
 };

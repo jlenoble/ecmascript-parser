@@ -7,6 +7,7 @@ import
   /*BindingPattern,*/
   LexicalDeclaration,
   Declaration,
+  TryStatement,
   WithStatement,
   LabelledStatement,
   SwitchStatement,
@@ -42,9 +43,9 @@ statement
 | breakStatement
 | withStatement
 | labelledStatement
-/*| throwStatement
+| throwStatement
 | tryStatement
-| debuggerStatement*/
+/*| debuggerStatement*/
 ;
 /*statement_Yield
 : blockStatement_Yield
