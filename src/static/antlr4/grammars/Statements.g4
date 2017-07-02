@@ -189,8 +189,8 @@ statementList_Yield_Await_Return
 //    Statement[?Yield, ?Await, ?Return]
 //    Declaration[?Yield, ?Await]
 statementListItem
-: statement
-| declaration
+: declaration
+| statement
 ;
 /*statementListItem_Yield
 : statement_Yield
@@ -205,8 +205,8 @@ statementListItem_Yield_Await
 | declaration_Yield_Await
 ;*/
 statementListItem_Return
-: statement_Return
-| declaration
+: declaration
+| statement_Return
 ;
 /*statementListItem_Yield_Return
 : statement_Yield_Return

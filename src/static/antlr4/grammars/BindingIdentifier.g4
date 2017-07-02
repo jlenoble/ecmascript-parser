@@ -10,6 +10,7 @@ identifierReference
 : identifier
 | Yield
 | Await Multiply
+| Let
 ;
 /*identifierReference_Yield
 : identifier
