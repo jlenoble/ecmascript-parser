@@ -22,6 +22,12 @@ export class TranslatorPass extends ECMAScriptPassListener {
     }
   }
 
+  exitCoverCallExpressionAndAsyncArrowHead (ctx) {
+    if (debug) {
+      console.log('>>CoverCallExpressionAndAsyncArrowHead:', ctx.getText());
+    }
+  }
+
   exitDeclaration (ctx) {
     if (debug) {
       console.log('>>Declaration:', ctx.getText());

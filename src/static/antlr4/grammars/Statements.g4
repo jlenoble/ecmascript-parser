@@ -97,9 +97,9 @@ statement_Return
 | ifStatement_Return
 | breakableStatement_Return
 | continueStatement
-| breakStatement
+| breakStatement*/
 | returnStatement
-| withStatement_Return
+/*| withStatement_Return
 | labelledStatement_Return
 | throwStatement
 | tryStatement_Return
@@ -223,6 +223,22 @@ statementListItem_Yield_Await_Return
 emptyStatement
 : SemiColon
 ;
+
+// ReturnStatement[Yield, Await]:
+//    return ;
+//    return [no LineTerminator here] Expression[+In, ?Yield, ?Await] ;
+returnStatement
+: Return expression_In? eos
+;
+/*returnStatement_Yield
+: Return expression_In_Yield? eos
+;
+returnStatement_Await
+: Return expression_In_Await? eos
+;
+returnStatement_Yield_Await
+: Return expression_In_Yield_Await? eos
+;*/
 
 // ExpressionStatement[Yield, Await]:
 //    [lookahead ∉ { {, function, async [no LineTerminator here] function, class, let [ }] Expression[+In, ?Yield, ?Await] ;

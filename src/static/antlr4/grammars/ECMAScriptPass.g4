@@ -12,7 +12,8 @@ ECMAScriptPassParser.prototype.getHiddenToken = function () {
     .call(this).tokenIndex - 1;
   var previousToken = this._input.get(previousTokenIndex);
 
-  return (previousToken.channel === antlr4.Lexer.HIDDEN) ? previousToken : null;
+  return (previousToken &&
+    previousToken.channel === antlr4.Lexer.HIDDEN) ? previousToken : null;
 };
 
 ECMAScriptPassParser.prototype.isEndOfStatementToken = function (token) {

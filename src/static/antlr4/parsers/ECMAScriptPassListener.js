@@ -722,6 +722,15 @@ ECMAScriptPassListener.prototype.exitEmptyStatement = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#returnStatement.
+ECMAScriptPassListener.prototype.enterReturnStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#returnStatement.
+ECMAScriptPassListener.prototype.exitReturnStatement = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#expressionStatement.
 ECMAScriptPassListener.prototype.enterExpressionStatement = function(ctx) {
 };
