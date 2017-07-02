@@ -839,6 +839,15 @@ ECMAScriptPassListener.prototype.exitHoistableDeclaration = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#withStatement.
+ECMAScriptPassListener.prototype.enterWithStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#withStatement.
+ECMAScriptPassListener.prototype.exitWithStatement = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#labelledStatement.
 ECMAScriptPassListener.prototype.enterLabelledStatement = function(ctx) {
 };
