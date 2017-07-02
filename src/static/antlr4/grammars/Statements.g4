@@ -45,7 +45,7 @@ statement
 | labelledStatement
 | throwStatement
 | tryStatement
-/*| debuggerStatement*/
+| debuggerStatement
 ;
 /*statement_Yield
 : blockStatement_Yield
@@ -242,6 +242,12 @@ returnStatement_Await
 returnStatement_Yield_Await
 : Return expression_In_Yield_Await? eos
 ;*/
+
+// DebuggerStatement:
+//    debugger ;
+debuggerStatement
+: Debugger eos
+;
 
 // ExpressionStatement[Yield, Await]:
 //    [lookahead ∉ { {, function, async [no LineTerminator here] function, class, let [ }] Expression[+In, ?Yield, ?Await] ;

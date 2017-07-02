@@ -731,6 +731,15 @@ ECMAScriptPassListener.prototype.exitReturnStatement = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#debuggerStatement.
+ECMAScriptPassListener.prototype.enterDebuggerStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#debuggerStatement.
+ECMAScriptPassListener.prototype.exitDebuggerStatement = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#expressionStatement.
 ECMAScriptPassListener.prototype.enterExpressionStatement = function(ctx) {
 };
