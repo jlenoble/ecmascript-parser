@@ -43,7 +43,7 @@ breakableStatement_Yield_Await_Return
 // continue [no LineTerminator here] LabelIdentifier[?Yield, ?Await] ;
 continueStatement
 : Continue eos
-| Continue {this.noLineTerminatorHere()}? labelIdentifier eos
+| Continue labelIdentifier eos
 ;
 /*continueStatement_Yield
 : Continue eos
