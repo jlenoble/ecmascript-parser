@@ -37,10 +37,10 @@ statement
 | ifStatement
 | breakableStatement
 | continueStatement
-/*| breakStatement
-| withStatement
+| breakStatement
+/*| withStatement*/
 | labelledStatement
-| throwStatement
+/*| throwStatement
 | tryStatement
 | debuggerStatement*/
 ;

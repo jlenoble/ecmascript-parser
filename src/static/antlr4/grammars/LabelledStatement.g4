@@ -4,39 +4,39 @@ grammar LabelledStatement;
 
 // LabelledStatement[Yield, Await, Return]:
 //    LabelIdentifier[?Yield, ?Await] : LabelledItem[?Yield, ?Await, ?Return]
-/*labelledStatement
-: labelIdentifier ':' labelledItem
+labelledStatement
+: labelIdentifier Colon labelledItem
 ;
-labelledStatement_Yield
-: labelIdentifier_Yield ':' labelledItem_Yield
+/*labelledStatement_Yield
+: labelIdentifier_Yield Colon labelledItem_Yield
 ;
 labelledStatement_Await
-: labelIdentifier_Await ':' labelledItem_Await
+: labelIdentifier_Await Colon labelledItem_Await
 ;
 labelledStatement_Yield_Await
-: labelIdentifier_Yield_Await ':' labelledItem_Yield_Await
+: labelIdentifier_Yield_Await Colon labelledItem_Yield_Await
 ;
 labelledStatement_Return
-: labelIdentifier ':' labelledItem_Return
+: labelIdentifier Colon labelledItem_Return
 ;
 labelledStatement_Yield_Return
-: labelIdentifier_Yield ':' labelledItem_Yield_Return
+: labelIdentifier_Yield Colon labelledItem_Yield_Return
 ;
 labelledStatement_Await_Return
-: labelIdentifier_Await ':' labelledItem_Await_Return
+: labelIdentifier_Await Colon labelledItem_Await_Return
 ;
 labelledStatement_Yield_Await_Return
-: labelIdentifier_Yield_Await ':' labelledItem_Yield_Await_Return
+: labelIdentifier_Yield_Await Colon labelledItem_Yield_Await_Return
 ;*/
 
 // LabelledItem[Yield, Await, Return]:
 //    Statement[?Yield, ?Await, ?Return]
 //    FunctionDeclaration[?Yield, ?Await, ~Default]
-/*labelledItem
+labelledItem
 : statement
 | functionDeclaration
 ;
-labelledItem_Yield
+/*labelledItem_Yield
 : statement_Yield
 | functionDeclaration_Yield
 ;

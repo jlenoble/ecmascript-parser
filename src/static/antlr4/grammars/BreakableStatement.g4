@@ -42,8 +42,8 @@ breakableStatement_Yield_Await_Return
 // continue ;
 // continue [no LineTerminator here] LabelIdentifier[?Yield, ?Await] ;
 continueStatement
-: Continue eos
-| Continue labelIdentifier eos
+: Continue labelIdentifier eos
+| Continue eos
 ;
 /*continueStatement_Yield
 : Continue eos
@@ -56,4 +56,24 @@ continueStatement_Await
 continueStatement_Yield_Await
 : Continue eos
 | Continue labelIdentifier_Yield_Await eos
+;*/
+
+// BreakStatement[Yield, Await]:
+//    break ;
+//    break [no LineTerminator here] LabelIdentifier[?Yield, ?Await] ;
+breakStatement
+: Break labelIdentifier eos
+| Break eos
+;
+/*breakStatement_Yield
+: Break eos
+| Break labelIdentifier_Yield eos
+;
+breakStatement_Await
+: Break eos
+| Break labelIdentifier_Await eos
+;
+breakStatement_Yield_Await
+: Break eos
+| Break labelIdentifier_Yield_Await eos
 ;*/
