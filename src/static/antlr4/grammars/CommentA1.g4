@@ -1,6 +1,6 @@
 /* Source: ECMAScript® 2018 Language Specification - Annex A-1 */
 
-lexer grammar Comment;
+lexer grammar CommentA1;
 
 // Comment::
 //     MultiLineComment
