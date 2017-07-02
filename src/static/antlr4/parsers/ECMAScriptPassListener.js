@@ -875,6 +875,51 @@ ECMAScriptPassListener.prototype.exitLabelIdentifier = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#switchStatement.
+ECMAScriptPassListener.prototype.enterSwitchStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#switchStatement.
+ECMAScriptPassListener.prototype.exitSwitchStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#caseBlock.
+ECMAScriptPassListener.prototype.enterCaseBlock = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#caseBlock.
+ECMAScriptPassListener.prototype.exitCaseBlock = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#caseClauses.
+ECMAScriptPassListener.prototype.enterCaseClauses = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#caseClauses.
+ECMAScriptPassListener.prototype.exitCaseClauses = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#caseClause.
+ECMAScriptPassListener.prototype.enterCaseClause = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#caseClause.
+ECMAScriptPassListener.prototype.exitCaseClause = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#defaultClause.
+ECMAScriptPassListener.prototype.enterDefaultClause = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#defaultClause.
+ECMAScriptPassListener.prototype.exitDefaultClause = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#iterationStatement.
 ECMAScriptPassListener.prototype.enterIterationStatement = function(ctx) {
 };

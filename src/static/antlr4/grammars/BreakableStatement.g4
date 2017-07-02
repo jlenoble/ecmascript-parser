@@ -7,7 +7,7 @@ grammar BreakableStatement;
 //    SwitchStatement[?Yield, ?Await, ?Return]
 breakableStatement
 : iterationStatement
-/*| switchStatement*/
+| switchStatement
 ;
 /*breakableStatement_Yield
 : iterationStatement_Yield

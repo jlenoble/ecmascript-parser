@@ -9,6 +9,7 @@ import
   Declaration,
   WithStatement,
   LabelledStatement,
+  SwitchStatement,
   IterationStatement,
   IfStatement,
   BreakableStatement,
