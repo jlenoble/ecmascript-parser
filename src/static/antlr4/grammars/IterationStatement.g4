@@ -22,8 +22,8 @@ iterationStatement
 | For OpenParen lexicalDeclaration expression_In? SemiColon expression_In? CloseParen statement
 | For OpenParen leftHandSideExpression In expression_In CloseParen statement
 | For OpenParen Var forBinding In expression_In CloseParen statement
-/*| For OpenParen forDeclaration In expression_In CloseParen statement
-| For OpenParen leftHandSideExpression Of assignmentExpression_In CloseParen statement
+| For OpenParen forDeclaration In expression_In CloseParen statement
+/*| For OpenParen leftHandSideExpression Of assignmentExpression_In CloseParen statement
 | For OpenParen Var forBinding Of assignmentExpression_In CloseParen statement
 | For OpenParen forDeclaration Of assignmentExpression_In CloseParen statement*/
 ;

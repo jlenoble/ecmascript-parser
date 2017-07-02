@@ -5,28 +5,28 @@ grammar LexicalDeclaration;
 // LexicalDeclaration[In, Yield, Await]:
 //    LetOrConst BindingList[?In, ?Yield, ?Await] ;
 lexicalDeclaration
-: letOrConst bindingList SemiColon
+: letOrConst bindingList eos
 ;
 lexicalDeclaration_In
-: letOrConst bindingList_In SemiColon
+: letOrConst bindingList_In eos
 ;
 /*lexicalDeclaration_Yield
-: letOrConst bindingList_Yield SemiColon
+: letOrConst bindingList_Yield eos
 ;
 lexicalDeclaration_Await
-: letOrConst bindingList_Await SemiColon
+: letOrConst bindingList_Await eos
 ;
 lexicalDeclaration_Yield_Await
-: letOrConst bindingList_Yield_Await SemiColon
+: letOrConst bindingList_Yield_Await eos
 ;
 lexicalDeclaration_In_Yield
-: letOrConst bindingList_In_Yield SemiColon
+: letOrConst bindingList_In_Yield eos
 ;
 lexicalDeclaration_In_Await
-: letOrConst bindingList_In_Await SemiColon
+: letOrConst bindingList_In_Await eos
 ;
 lexicalDeclaration_In_Yield_Await
-: letOrConst bindingList_In_Yield_Await SemiColon
+: letOrConst bindingList_In_Yield_Await eos
 ;*/
 
 // LetOrConst:

@@ -40,6 +40,11 @@ export class TranslatorPass extends ECMAScriptPassListener {
     }
   }
 
+  exitBindingIdentifier (ctx) {
+    if (debug) {
+      console.log('>>BindingIdentifier:', ctx.getText());
+    }
+  }
 
   exitFunctionDeclaration (ctx) {
     if (debug) {
