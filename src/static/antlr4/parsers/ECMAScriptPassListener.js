@@ -758,6 +758,15 @@ ECMAScriptPassListener.prototype.exitBindingElement = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#bindingRestElement.
+ECMAScriptPassListener.prototype.enterBindingRestElement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#bindingRestElement.
+ECMAScriptPassListener.prototype.exitBindingRestElement = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#singleNameBinding.
 ECMAScriptPassListener.prototype.enterSingleNameBinding = function(ctx) {
 };
@@ -1142,6 +1151,15 @@ ECMAScriptPassListener.prototype.enterFormalParameterList = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#formalParameterList.
 ECMAScriptPassListener.prototype.exitFormalParameterList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#functionRestParameter.
+ECMAScriptPassListener.prototype.enterFunctionRestParameter = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#functionRestParameter.
+ECMAScriptPassListener.prototype.exitFunctionRestParameter = function(ctx) {
 };
 
 

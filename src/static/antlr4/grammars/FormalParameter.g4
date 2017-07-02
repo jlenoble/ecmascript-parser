@@ -25,9 +25,9 @@ uniqueFormalParameters_Yield_Await
 //    FormalParameterList[?Yield, ?Await] , FunctionRestParameter[?Yield, ?Await]
 formalParameters
 :
-/*| functionRestParameter*/
+| functionRestParameter
 | formalParameterList Comma?
-/*| formalParameterList Comma functionRestParameter*/
+| formalParameterList Comma functionRestParameter
 ;
 /*formalParameters_Yield
 :
@@ -66,10 +66,10 @@ formalParameterList_Yield_Await
 
 // FunctionRestParameter[Yield, Await]:
 //    BindingRestElement[?Yield, ?Await]
-/*functionRestParameter
+functionRestParameter
 : bindingRestElement
 ;
-functionRestParameter_Yield
+/*functionRestParameter_Yield
 : bindingRestElement_Yield
 ;
 functionRestParameter_Await

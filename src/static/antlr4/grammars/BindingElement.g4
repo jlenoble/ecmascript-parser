@@ -56,11 +56,11 @@ bindingElement_Yield_Await
 // BindingRestElement[Yield, Await]:
 //    ... BindingIdentifier[?Yield, ?Await]
 //    ... BindingPattern[?Yield, ?Await]
-/*bindingRestElement
+bindingRestElement
 : Spread bindingIdentifier
-| Spread bindingPattern
+/*| Spread bindingPattern*/
 ;
-bindingRestElement_Yield
+/*bindingRestElement_Yield
 : Spread bindingIdentifier_Yield
 | Spread bindingPattern_Yield
 ;
