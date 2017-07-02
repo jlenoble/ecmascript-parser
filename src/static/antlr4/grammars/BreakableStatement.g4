@@ -37,3 +37,23 @@ breakableStatement_Yield_Await_Return
 : iterationStatement_Yield_Await_Return
 | switchStatement_Yield_Await_Return
 ;*/
+
+// ContinueStatement[Yield, Await]:
+// continue ;
+// continue [no LineTerminator here] LabelIdentifier[?Yield, ?Await] ;
+continueStatement
+: Continue eos
+| Continue {this.noLineTerminatorHere()}? labelIdentifier eos
+;
+/*continueStatement_Yield
+: Continue eos
+| Continue labelIdentifier_Yield eos
+;
+continueStatement_Await
+: Continue eos
+| Continue labelIdentifier_Await eos
+;
+continueStatement_Yield_Await
+: Continue eos
+| Continue labelIdentifier_Yield_Await eos
+;*/

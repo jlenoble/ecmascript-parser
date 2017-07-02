@@ -7,6 +7,7 @@ import
   /*BindingPattern,*/
   LexicalDeclaration,
   Declaration,
+  LabelledStatement,
   IterationStatement,
   IfStatement,
   BreakableStatement,
@@ -35,8 +36,8 @@ statement
 | expressionStatement
 | ifStatement
 | breakableStatement
-/*| continueStatement
-| breakStatement
+| continueStatement
+/*| breakStatement
 | withStatement
 | labelledStatement
 | throwStatement

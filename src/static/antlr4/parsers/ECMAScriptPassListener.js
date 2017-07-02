@@ -830,6 +830,15 @@ ECMAScriptPassListener.prototype.exitHoistableDeclaration = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#labelIdentifier.
+ECMAScriptPassListener.prototype.enterLabelIdentifier = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#labelIdentifier.
+ECMAScriptPassListener.prototype.exitLabelIdentifier = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#iterationStatement.
 ECMAScriptPassListener.prototype.enterIterationStatement = function(ctx) {
 };
@@ -872,6 +881,15 @@ ECMAScriptPassListener.prototype.enterBreakableStatement = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#breakableStatement.
 ECMAScriptPassListener.prototype.exitBreakableStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#continueStatement.
+ECMAScriptPassListener.prototype.enterContinueStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#continueStatement.
+ECMAScriptPassListener.prototype.exitContinueStatement = function(ctx) {
 };
 
 

@@ -14,7 +14,7 @@ import
  * contains a line terminator.
  * @returns {Boolean}
  */
-ECMAScriptPassParser.prototype.lineTerminatorAhead = function() {
+ECMAScriptPassParser.prototype.lineTerminatorAhead = function () {
 // ECMAScript® 2018 Language Specification - Section 5.1.2
 // Simple white space and single-line comments are discarded and do not appear
 // in the stream of input elements for the syntactic grammar. A MultiLineComment
@@ -40,6 +40,9 @@ ECMAScriptPassParser.prototype.lineTerminatorAhead = function() {
     text.indexOf('\u2028') !== -1 ||
     text.indexOf('\u2029') !== -1
   ) || (type === ECMAScriptPassParser.LineTerminator);
+};
+
+ECMAScriptPassParser.prototype.noLineTerminatorHere = function () {
 };
 }
 
