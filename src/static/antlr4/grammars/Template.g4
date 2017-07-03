@@ -6,8 +6,8 @@ grammar Template;
 //    NoSubstitutionTemplate
 //    TemplateHead Expression[+In, ?Yield, ?Await] TemplateSpans[?Yield, ?Await]
 templateLiteral
-: NoSubstitutionTemplate
-/*| TemplateHead expression_In templateSpans*/
+: TemplateHead expression_In templateSpans
+| NoSubstitutionTemplate
 ;
 /*templateLiteral_Yield
 : NoSubstitutionTemplate
@@ -25,11 +25,10 @@ templateLiteral_Yield_Await
 // TemplateSpans[Yield, Await]:
 //    TemplateTail
 //    TemplateMiddleList[?Yield, ?Await] TemplateTail
-/*templateSpans
-: TemplateTail
-| templateMiddleList TemplateTail
+templateSpans
+: templateMiddleList? TemplateTail
 ;
-templateSpans_Yield
+/*templateSpans_Yield
 : TemplateTail
 | templateMiddleList_Yield TemplateTail
 ;
@@ -45,10 +44,10 @@ templateSpans_Yield_Await
 // TemplateMiddleList[Yield, Await]:
 //    TemplateMiddle Expression[+In, ?Yield, ?Await]
 //    TemplateMiddleList[?Yield, ?Await] TemplateMiddle Expression[+In, ?Yield, ?Await]
-/*templateMiddleList
+templateMiddleList
 : TemplateMiddle expression_In+
 ;
-templateMiddleList_Yield
+/*templateMiddleList_Yield
 : TemplateMiddle expression_In_Yield+
 ;
 templateMiddleList_Await
@@ -62,17 +61,29 @@ templateMiddleList_Yield_Await
 //    NoSubstitutionTemplate
 //    TemplateHead
 
+// TemplateHead::
+//    ` TemplateCharacters[opt] ${
+TemplateHead
+: '`' (TemplateCharacter|'{'|'}')*? '${'
+;
+
+// TemplateMiddle::
+//    } TemplateCharacters[opt] ${
+TemplateMiddle
+: '}' (TemplateCharacter|'{')*? '${'
+;
+
+// TemplateTail::
+//    } TemplateCharacters[opt] `
+TemplateTail
+: '}' TemplateCharacter*? '`'
+;
+
 // NoSubstitutionTemplate::
 //    ` TemplateCharacters[opt] `
 NoSubstitutionTemplate
-: '`' TemplateCharacters? '`'
+: '`' TemplateCharacter*? '`'
 ;
-
-// TemplateHead::
-//    ` TemplateCharacters[opt] ${
-/*TemplateHead
-: '`' TemplateCharacters? '${'
-;*/
 
 // TemplateSubstitutionTail::
 //    TemplateMiddle
@@ -82,25 +93,8 @@ NoSubstitutionTemplate
 | TemplateTail
 ;*/
 
-// TemplateMiddle::
-//    } TemplateCharacters[opt] ${
-/*TemplateMiddle
-: '}' TemplateCharacters? '${'
-;*/
-
-// TemplateTail::
-//    } TemplateCharacters[opt] `
-/*TemplateTail
-: '}' TemplateCharacters? '`'
-;*/
-
 // TemplateCharacters::
 //    TemplateCharacter TemplateCharacters[opt]
-fragment
-TemplateCharacters
-: TemplateCharacter+
-;
-
 // TemplateCharacter::
 //    $ [lookahead ≠ {]
 //    \ EscapeSequence
@@ -113,5 +107,10 @@ TemplateCharacter
 | '\\' EscapeSequence
 | LineContinuation
 | LineTerminatorSequence
-| ~[`\\$\n\r\u2028\u2029]
+| ~[`{}\\$\n\r\u2028\u2029]
+;
+
+fragment
+Dollar
+: '$'
 ;

@@ -1217,6 +1217,24 @@ ECMAScriptPassListener.prototype.exitTemplateLiteral = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#templateSpans.
+ECMAScriptPassListener.prototype.enterTemplateSpans = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#templateSpans.
+ECMAScriptPassListener.prototype.exitTemplateSpans = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#templateMiddleList.
+ECMAScriptPassListener.prototype.enterTemplateMiddleList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#templateMiddleList.
+ECMAScriptPassListener.prototype.exitTemplateMiddleList = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#reservedWord.
 ECMAScriptPassListener.prototype.enterReservedWord = function(ctx) {
 };
