@@ -121,9 +121,10 @@ True        : 'true';
 False       : 'false';
 
 miscIdentifier
-: Async | From | Get | Let | Set | Static
+: As | Async | From | Get | Let | Set | Static
 ;
 
+As          : 'as';
 Async       : 'async';
 From        : 'from';
 Get         : 'get';

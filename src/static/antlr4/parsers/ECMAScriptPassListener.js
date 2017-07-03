@@ -1406,12 +1406,75 @@ ECMAScriptPassListener.prototype.exitModuleItem = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#importDeclaration.
+ECMAScriptPassListener.prototype.enterImportDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#importDeclaration.
+ECMAScriptPassListener.prototype.exitImportDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#importClause.
+ECMAScriptPassListener.prototype.enterImportClause = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#importClause.
+ECMAScriptPassListener.prototype.exitImportClause = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#importedDefaultBinding.
+ECMAScriptPassListener.prototype.enterImportedDefaultBinding = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#importedDefaultBinding.
+ECMAScriptPassListener.prototype.exitImportedDefaultBinding = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#nameSpaceImport.
+ECMAScriptPassListener.prototype.enterNameSpaceImport = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#nameSpaceImport.
+ECMAScriptPassListener.prototype.exitNameSpaceImport = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#namedImports.
+ECMAScriptPassListener.prototype.enterNamedImports = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#namedImports.
+ECMAScriptPassListener.prototype.exitNamedImports = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#fromClause.
 ECMAScriptPassListener.prototype.enterFromClause = function(ctx) {
 };
 
 // Exit a parse tree produced by ECMAScriptPassParser#fromClause.
 ECMAScriptPassListener.prototype.exitFromClause = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#importsList.
+ECMAScriptPassListener.prototype.enterImportsList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#importsList.
+ECMAScriptPassListener.prototype.exitImportsList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#importSpecifier.
+ECMAScriptPassListener.prototype.enterImportSpecifier = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#importSpecifier.
+ECMAScriptPassListener.prototype.exitImportSpecifier = function(ctx) {
 };
 
 

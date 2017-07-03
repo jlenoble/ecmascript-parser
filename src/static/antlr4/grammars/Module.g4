@@ -27,18 +27,18 @@ moduleItemList
 //    ExportDeclaration
 //    StatementListItem[~Yield, ~Await, ~Return]
 moduleItem
-: /*importDeclaration
-| */exportDeclaration
+: importDeclaration
+| exportDeclaration
 | statementListItem
 ;
 
 // ImportDeclaration:
 //    import ImportClause FromClause ;
 //    import ModuleSpecifier ;
-/*importDeclaration
-: Import importClause fromClause SemiColon
-| Import moduleSpecifier SemiColon
-;*/
+importDeclaration
+: Import importClause fromClause eos
+| Import moduleSpecifier eos
+;
 
 // ImportClause:
 //    ImportedDefaultBinding
@@ -46,35 +46,34 @@ moduleItem
 //    NamedImports
 //    ImportedDefaultBinding , NameSpaceImport
 //    ImportedDefaultBinding , NamedImports
-/*importClause
+importClause
 : importedDefaultBinding
 | nameSpaceImport
 | namedImports
-| importedDefaultBinding Comma nameSpaceImport
+/*| importedDefaultBinding Comma nameSpaceImport*/
 | importedDefaultBinding Comma namedImports
-;*/
+;
 
 // ImportedDefaultBinding:
 //    ImportedBinding
-/*importedDefaultBinding
+importedDefaultBinding
 : importedBinding
-;*/
+;
 
 // NameSpaceImport:
 //    * as ImportedBinding
-/*nameSpaceImport
+nameSpaceImport
 : Multiply As importedBinding
-;*/
+;
 
 // NamedImports:
 //    { }
 //    { ImportsList }
 //    { ImportsList , }
-/*namedImports
+namedImports
 : OpenBrace CloseBrace
-| OpenBrace importsList CloseBrace
-| OpenBrace importsList Comma CloseBrace
-;*/
+| OpenBrace importsList Comma? CloseBrace
+;
 
 // FromClause:
 //    fromModuleSpecifier
@@ -85,17 +84,17 @@ fromClause
 // ImportsList:
 // ImportSpecifier
 // ImportsList , ImportSpecifier
-/*importsList
+importsList
 : importSpecifier (Comma importSpecifier)*
-;*/
+;
 
 // ImportSpecifier:
 //    ImportedBinding
 //    IdentifierName as ImportedBinding
-/*importSpecifier
+importSpecifier
 : importedBinding
-| IdentifierName As importedBinding
-;*/
+| identifierName As importedBinding
+;
 
 // ModuleSpecifier:
 //    StringLiteral

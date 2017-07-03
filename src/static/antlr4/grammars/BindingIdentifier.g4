@@ -54,5 +54,5 @@ bindingIdentifier_Yield_Await
 //    IdentifierName but not ReservedWord
 identifier
 : IdentifierName
-| Let | Get | Set
+| miscIdentifier
 ;

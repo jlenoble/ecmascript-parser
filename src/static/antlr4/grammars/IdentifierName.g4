@@ -5,7 +5,7 @@ grammar IdentifierName;
 identifierName
 : IdentifierName
 | reservedWord
-| Let | Get | Set
+| miscIdentifier
 ;
 
 // IdentifierName::
