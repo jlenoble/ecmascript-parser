@@ -121,4 +121,6 @@ True        : 'true';
 False       : 'false';
 
 Async       : 'async';
+Get         : 'get';
 Let         : 'let';
+Set         : 'set';

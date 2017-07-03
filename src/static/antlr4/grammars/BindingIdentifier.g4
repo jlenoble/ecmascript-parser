@@ -10,7 +10,6 @@ identifierReference
 : identifier
 | Yield
 | Await Multiply
-| Let
 ;
 /*identifierReference_Yield
 : identifier
@@ -55,4 +54,5 @@ bindingIdentifier_Yield_Await
 //    IdentifierName but not ReservedWord
 identifier
 : IdentifierName
+| Let | Get | Set
 ;
