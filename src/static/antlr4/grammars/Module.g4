@@ -78,9 +78,9 @@ moduleItem
 
 // FromClause:
 //    fromModuleSpecifier
-/*fromClause
+fromClause
 : From moduleSpecifier
-;*/
+;
 
 // ImportsList:
 // ImportSpecifier
@@ -119,37 +119,37 @@ importedBinding
 //    export default ClassDeclaration[~Yield, ~Await, +Default]
 //    export default[lookahead ∉ { function, async [no LineTerminator here] function, class }] AssignmentExpression[+In, ~Yield, ~Await] ;
 exportDeclaration
-: /*Export Multiply fromClause SemiColon
-| Export exportClause fromClause SemiColon
-| Export exportClause SemiColon
-| */Export variableStatement
+: Export Multiply fromClause eos
+| Export exportClause fromClause eos
+| Export exportClause eos
+| Export variableStatement
 | Export declaration
-/*| Export Default hoistableDeclaration_Default
+/*| Export Default hoistableDeclaration_Default*/
 | Export Default classDeclaration
-| Export Default assignmentExpression_In SemiColon*/
+| Export Default assignmentExpression_In eos
 ;
 
 // ExportClause:
 //    { }
 //    { ExportsList }
 //    { ExportsList , }
-/*exportClause
+exportClause
 : OpenBrace CloseBrace
 | OpenBrace exportsList Comma? CloseBrace
-;*/
+;
 
 // ExportsList:
 //    ExportSpecifier
 //    ExportsList , ExportSpecifier
-/*exportsList
+exportsList
 : exportSpecifier (Comma exportSpecifier)*
-;*/
+;
 
 // ExportSpecifier:
 //    IdentifierName
 //    IdentifierName as IdentifierName
-/*exportSpecifier
-: IdentifierName
-| IdentifierName As IdentifierName
-;*/
+exportSpecifier
+: identifierName
+/*| identifierName As identifierName*/
+;
 

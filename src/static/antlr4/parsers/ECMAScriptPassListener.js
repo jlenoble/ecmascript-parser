@@ -1406,6 +1406,15 @@ ECMAScriptPassListener.prototype.exitModuleItem = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#fromClause.
+ECMAScriptPassListener.prototype.enterFromClause = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#fromClause.
+ECMAScriptPassListener.prototype.exitFromClause = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#moduleSpecifier.
 ECMAScriptPassListener.prototype.enterModuleSpecifier = function(ctx) {
 };
@@ -1430,6 +1439,33 @@ ECMAScriptPassListener.prototype.enterExportDeclaration = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#exportDeclaration.
 ECMAScriptPassListener.prototype.exitExportDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#exportClause.
+ECMAScriptPassListener.prototype.enterExportClause = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#exportClause.
+ECMAScriptPassListener.prototype.exitExportClause = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#exportsList.
+ECMAScriptPassListener.prototype.enterExportsList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#exportsList.
+ECMAScriptPassListener.prototype.exitExportsList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#exportSpecifier.
+ECMAScriptPassListener.prototype.enterExportSpecifier = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#exportSpecifier.
+ECMAScriptPassListener.prototype.exitExportSpecifier = function(ctx) {
 };
 
 
