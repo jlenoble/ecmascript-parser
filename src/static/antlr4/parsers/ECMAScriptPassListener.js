@@ -911,6 +911,15 @@ ECMAScriptPassListener.prototype.exitAdditiveExpression_In = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#genExpression_In.
+ECMAScriptPassListener.prototype.enterGenExpression_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#genExpression_In.
+ECMAScriptPassListener.prototype.exitGenExpression_In = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#assignExpression_In.
 ECMAScriptPassListener.prototype.enterAssignExpression_In = function(ctx) {
 };
@@ -1079,6 +1088,15 @@ ECMAScriptPassListener.prototype.enterLogicalORExpression_In_Yield = function(ct
 
 // Exit a parse tree produced by ECMAScriptPassParser#logicalORExpression_In_Yield.
 ECMAScriptPassListener.prototype.exitLogicalORExpression_In_Yield = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#genExpression_In_Yield.
+ECMAScriptPassListener.prototype.enterGenExpression_In_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#genExpression_In_Yield.
+ECMAScriptPassListener.prototype.exitGenExpression_In_Yield = function(ctx) {
 };
 
 

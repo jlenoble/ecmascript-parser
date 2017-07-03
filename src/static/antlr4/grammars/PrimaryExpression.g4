@@ -21,9 +21,7 @@ primaryExpression
 | literal
 | arrayLiteral
 | objectLiteral
-| functionExpression
 | classExpression
-| generatorExpression
 /*| asyncFunctionExpression*/
 | RegularExpressionLiteral
 | templateLiteral
@@ -35,9 +33,7 @@ primaryExpression_Yield
 | literal
 | arrayLiteral_Yield
 | objectLiteral_Yield
-| functionExpression
 | classExpression_Yield
-| generatorExpression
 /*| asyncFunctionExpression
 | RegularExpressionLiteral
 | templateLiteral_Yield*/

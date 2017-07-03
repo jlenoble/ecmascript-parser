@@ -176,7 +176,8 @@ assignmentExpression_Yield_Await
 | leftHandSideExpression_Yield_Await                                                      # lhsExpression_Yield_Await
 ;*/
 assignmentExpression_In
-: functionExpression                                                      # funcExpression_In
+: generatorExpression                                                     # genExpression_In
+| functionExpression                                                      # funcExpression_In
 | assignmentExpression_In  {!this.isLineTerminatorEquivalent()}?
   (PlusPlus|MinusMinus)                                                   # updateExpression_In
 | unaryOperator assignmentExpression_In                                   # unaryExpression_In
@@ -202,7 +203,8 @@ assignmentExpression_In
 | leftHandSideExpression                                                  # lhsExpression_In
 ;
 assignmentExpression_In_Yield
-: functionExpression                                                                  # funcExpression_In_Yield
+: generatorExpression                                                                 # genExpression_In_Yield
+| functionExpression                                                                  # funcExpression_In_Yield
 | assignmentExpression_In_Yield {!this.isLineTerminatorEquivalent()}?
   (PlusPlus|MinusMinus)                                                               # updateExpression_In_Yield
 | unaryOperator assignmentExpression_In_Yield                                         # unaryExpression_In_Yield
