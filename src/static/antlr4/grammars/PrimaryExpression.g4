@@ -21,7 +21,6 @@ primaryExpression
 | literal
 | arrayLiteral
 | objectLiteral
-| functionExpression
 | classExpression
 /*| generatorExpression
 | asyncFunctionExpression*/

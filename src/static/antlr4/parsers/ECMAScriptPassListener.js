@@ -335,6 +335,15 @@ ECMAScriptPassListener.prototype.exitMultiplicativeExpression = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#functionExpression.
+ECMAScriptPassListener.prototype.enterFunctionExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#functionExpression.
+ECMAScriptPassListener.prototype.exitFunctionExpression = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#lhsExpression.
 ECMAScriptPassListener.prototype.enterLhsExpression = function(ctx) {
 };
@@ -380,21 +389,21 @@ ECMAScriptPassListener.prototype.exitUpdateExpression = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression.
-ECMAScriptPassListener.prototype.enterAssignmentOperatorExpression = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression.
-ECMAScriptPassListener.prototype.exitAssignmentOperatorExpression = function(ctx) {
-};
-
-
 // Enter a parse tree produced by ECMAScriptPassParser#exponentiationExpression.
 ECMAScriptPassListener.prototype.enterExponentiationExpression = function(ctx) {
 };
 
 // Exit a parse tree produced by ECMAScriptPassParser#exponentiationExpression.
 ECMAScriptPassListener.prototype.exitExponentiationExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression.
+ECMAScriptPassListener.prototype.enterAssignmentOperatorExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression.
+ECMAScriptPassListener.prototype.exitAssignmentOperatorExpression = function(ctx) {
 };
 
 
@@ -533,21 +542,21 @@ ECMAScriptPassListener.prototype.exitAssignExpression_In = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression_In.
-ECMAScriptPassListener.prototype.enterAssignmentOperatorExpression_In = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression_In.
-ECMAScriptPassListener.prototype.exitAssignmentOperatorExpression_In = function(ctx) {
-};
-
-
 // Enter a parse tree produced by ECMAScriptPassParser#relationalExpression_In.
 ECMAScriptPassListener.prototype.enterRelationalExpression_In = function(ctx) {
 };
 
 // Exit a parse tree produced by ECMAScriptPassParser#relationalExpression_In.
 ECMAScriptPassListener.prototype.exitRelationalExpression_In = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression_In.
+ECMAScriptPassListener.prototype.enterAssignmentOperatorExpression_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression_In.
+ECMAScriptPassListener.prototype.exitAssignmentOperatorExpression_In = function(ctx) {
 };
 
 
@@ -584,6 +593,15 @@ ECMAScriptPassListener.prototype.enterShiftExpression_In = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#shiftExpression_In.
 ECMAScriptPassListener.prototype.exitShiftExpression_In = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#functionExpression_In.
+ECMAScriptPassListener.prototype.enterFunctionExpression_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#functionExpression_In.
+ECMAScriptPassListener.prototype.exitFunctionExpression_In = function(ctx) {
 };
 
 
@@ -1169,15 +1187,6 @@ ECMAScriptPassListener.prototype.enterFunctionDeclaration = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#functionDeclaration.
 ECMAScriptPassListener.prototype.exitFunctionDeclaration = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptPassParser#functionExpression.
-ECMAScriptPassListener.prototype.enterFunctionExpression = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptPassParser#functionExpression.
-ECMAScriptPassListener.prototype.exitFunctionExpression = function(ctx) {
 };
 
 

@@ -29,6 +29,9 @@ initializer_In_Yield_Await
 : Assign assignmentExpression_In_Yield_Await
 ;*/
 
+
+// FunctionExpression:
+//    function BindingIdentifier[~Yield, ~Await][opt] ( FormalParameters[~Yield, ~Await] ) { FunctionBody[~Yield, ~Await] }
 // UpdateExpression[Yield, Await]:
 //    LeftHandSideExpression[?Yield, ?Await]
 //    LeftHandSideExpression[?Yield, ?Await] [no LineTerminator here] ++
@@ -106,7 +109,9 @@ initializer_In_Yield_Await
 //    LeftHandSideExpression[?Yield, ?Await] = AssignmentExpression[?In, ?Yield, ?Await]
 //    LeftHandSideExpression[?Yield, ?Await] AssignmentOperator AssignmentExpression[?In, ?Yield, ?Await]
 assignmentExpression
-: assignmentExpression {!this.isLineTerminatorEquivalent()}?
+: Function bindingIdentifier? OpenParen formalParameters CloseParen
+  OpenBrace functionBody CloseBrace                                 # functionExpression
+| assignmentExpression {!this.isLineTerminatorEquivalent()}?
   (PlusPlus|MinusMinus)                                             # updateExpression
 | unaryOperator assignmentExpression                                # unaryExpression
 | assignmentExpression Power assignmentExpression                   # exponentiationExpression
@@ -125,8 +130,8 @@ assignmentExpression
   Colon assignmentExpression                                        # conditionalExpression
 /*| arrowParameters FatArrow conciseBody        # arrowFunction
 | asyncArrowFunction*/
-| leftHandSideExpression Assign assignmentExpression                # assignExpression
-| leftHandSideExpression assignmentOperator assignmentExpression    # assignmentOperatorExpression
+| assignmentExpression Assign assignmentExpression                  # assignExpression
+| assignmentExpression assignmentOperator assignmentExpression      # assignmentOperatorExpression
 | leftHandSideExpression                                            # lhsExpression
 ;
 /*assignmentExpression_Yield
@@ -159,7 +164,9 @@ assignmentExpression_Yield_Await
 | leftHandSideExpression_Yield_Await                                                      # lhsExpression_Yield_Await
 ;*/
 assignmentExpression_In
-: assignmentExpression_In  {!this.isLineTerminatorEquivalent()}?
+: Function bindingIdentifier? OpenParen formalParameters CloseParen
+  OpenBrace functionBody CloseBrace                                       # functionExpression_In
+| assignmentExpression_In  {!this.isLineTerminatorEquivalent()}?
   (PlusPlus|MinusMinus)                                                   # updateExpression_In
 | unaryOperator assignmentExpression_In                                   # unaryExpression_In
 | assignmentExpression_In Power assignmentExpression_In                   # exponentiationExpression_In
@@ -179,8 +186,8 @@ assignmentExpression_In
   Colon assignmentExpression_In                                           # conditionalExpression_In
 | arrowParameters FatArrow conciseBody_In                                 # arrowFunction_In
 /*| asyncArrowFunction*/
-| leftHandSideExpression Assign assignmentExpression_In                   # assignExpression_In
-| leftHandSideExpression assignmentOperator assignmentExpression_In       # assignmentOperatorExpression_In
+| assignmentExpression_In Assign assignmentExpression_In                  # assignExpression_In
+| assignmentExpression_In assignmentOperator assignmentExpression_In      # assignmentOperatorExpression_In
 | leftHandSideExpression                                                  # lhsExpression_In
 ;
 /*assignmentExpression_In_Yield
