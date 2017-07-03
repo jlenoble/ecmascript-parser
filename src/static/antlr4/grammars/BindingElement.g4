@@ -38,11 +38,11 @@ bindingElisionElement_Yield_Await
 //    BindingPattern[?Yield, ?Await] Initializer[+In, ?Yield, ?Await][opt]
 bindingElement
 : singleNameBinding
-/*| bindingPattern initializer_In?*/
+| bindingPattern initializer_In?
 ;
 bindingElement_Yield
 : singleNameBinding_Yield
-/*| bindingPattern_Yield initializer_In_Yield?*/
+| bindingPattern_Yield initializer_In_Yield?
 ;
 /*bindingElement_Await
 : singleNameBinding_Await
