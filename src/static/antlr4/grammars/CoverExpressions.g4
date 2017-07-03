@@ -18,15 +18,15 @@ coverParenthesizedExpressionAndArrowParameterList
 | OpenParen expression_In Comma Spread bindingIdentifier CloseParen
 | OpenParen expression_In Comma Spread bindingPattern CloseParen*/
 ;
-/*coverParenthesizedExpressionAndArrowParameterList_Yield
+coverParenthesizedExpressionAndArrowParameterList_Yield
 : OpenParen expression_In_Yield Comma? CloseParen
 | OpenParen CloseParen
-| OpenParen Spread bindingIdentifier_Yield CloseParen
+/*| OpenParen Spread bindingIdentifier_Yield CloseParen
 | OpenParen Spread bindingPattern_Yield CloseParen
 | OpenParen expression_In_Yield Comma Spread bindingIdentifier_Yield CloseParen
 | OpenParen expression_In_Yield Comma Spread bindingPattern_Yield CloseParen
-;
-coverParenthesizedExpressionAndArrowParameterList_Await
+*/;
+/*coverParenthesizedExpressionAndArrowParameterList_Await
 : OpenParen expression_In_Await Comma? CloseParen
 | OpenParen CloseParen
 | OpenParen Spread bindingIdentifier_Await CloseParen
@@ -67,10 +67,10 @@ parenthesizedExpression_Yield_Await
 coverCallExpressionAndAsyncArrowHead
 : memberExpression arguments
 ;
-/*coverCallExpressionAndAsyncArrowHead_Yield
+coverCallExpressionAndAsyncArrowHead_Yield
 : memberExpression_Yield arguments_Yield
 ;
-coverCallExpressionAndAsyncArrowHead_Await
+/*coverCallExpressionAndAsyncArrowHead_Await
 : memberExpression_Await arguments_Await
 ;
 coverCallExpressionAndAsyncArrowHead_Yield_Await

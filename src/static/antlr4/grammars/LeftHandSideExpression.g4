@@ -10,11 +10,11 @@ leftHandSideExpression
 : callExpression
 | newExpression
 ;
-/*leftHandSideExpression_Yield
+leftHandSideExpression_Yield
 : callExpression_Yield
 | newExpression_Yield
 ;
-leftHandSideExpression_Await
+/*leftHandSideExpression_Await
 : callExpression_Await
 | newExpression_Await
 ;
@@ -30,11 +30,11 @@ newExpression
 : memberExpression
 | New newExpression
 ;
-/*newExpression_Yield
+newExpression_Yield
 : memberExpression_Yield
 | New newExpression_Yield
 ;
-newExpression_Await
+/*newExpression_Await
 : memberExpression_Await
 | New newExpression_Await
 ;
@@ -60,16 +60,16 @@ memberExpression
 | metaProperty*/
 | New memberExpression arguments
 ;
-/*memberExpression_Yield
+memberExpression_Yield
 : primaryExpression_Yield
 | memberExpression_Yield OpenBracket expression_In_Yield CloseBracket
 | memberExpression_Yield Dot identifierName
 | memberExpression_Yield templateLiteral_Yield
-| superProperty_Yield
-| metaProperty
+/*| superProperty_Yield
+| metaProperty*/
 | New memberExpression_Yield arguments_Yield
 ;
-memberExpression_Await
+/*memberExpression_Await
 : primaryExpression_Await
 | memberExpression_Await OpenBracket expression_In_Await CloseBracket
 | memberExpression_Await Dot identifierName

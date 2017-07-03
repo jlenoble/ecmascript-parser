@@ -11,12 +11,12 @@ declaration
 | classDeclaration
 | lexicalDeclaration_In
 ;
-/*declaration_Yield
+declaration_Yield
 : hoistableDeclaration_Yield
 | classDeclaration_Yield
 | lexicalDeclaration_In_Yield
 ;
-declaration_Await
+/*declaration_Await
 : hoistableDeclaration_Await
 | classDeclaration_Await
 | lexicalDeclaration_In_Await
@@ -33,15 +33,15 @@ declaration_Yield_Await
 //    AsyncFunctionDeclaration[?Yield, ?Await, ?Default]
 hoistableDeclaration
 : functionDeclaration
-/*| generatorDeclaration
-| asyncFunctionDeclaration*/
+| generatorDeclaration
+/*| asyncFunctionDeclaration*/
 ;
-/*hoistableDeclaration_Yield
+hoistableDeclaration_Yield
 : functionDeclaration_Yield
 | generatorDeclaration_Yield
-| asyncFunctionDeclaration_Yield
+/*| asyncFunctionDeclaration_Yield*/
 ;
-hoistableDeclaration_Await
+/*hoistableDeclaration_Await
 : functionDeclaration_Await
 | generatorDeclaration_Await
 | asyncFunctionDeclaration_Await

@@ -10,20 +10,17 @@ objectLiteral
 : OpenBrace CloseBrace
 | OpenBrace propertyDefinitionList Comma? CloseBrace
 ;
-/*objectLiteral_Yield
+objectLiteral_Yield
 : OpenBrace CloseBrace
-| OpenBrace propertyDefinitionList_Yield CloseBrace
-| OpenBrace propertyDefinitionList_Yield Comma CloseBrace
+| OpenBrace propertyDefinitionList_Yield Comma? CloseBrace
 ;
-objectLiteral_Await
+/*objectLiteral_Await
 : OpenBrace CloseBrace
-| OpenBrace propertyDefinitionList_Await CloseBrace
-| OpenBrace propertyDefinitionList_Await Comma CloseBrace
+| OpenBrace propertyDefinitionList_Await Comma? CloseBrace
 ;
 objectLiteral_Yield_Await
 : OpenBrace CloseBrace
-| OpenBrace propertyDefinitionList_Yield_Await CloseBrace
-| OpenBrace propertyDefinitionList_Yield_Await Comma CloseBrace
+| OpenBrace propertyDefinitionList_Yield_Await Comma? CloseBrace
 ;*/
 
 // PropertyDefinitionList[Yield, Await]:
@@ -32,10 +29,10 @@ objectLiteral_Yield_Await
 propertyDefinitionList
 : propertyDefinition (Comma propertyDefinition)*
 ;
-/*propertyDefinitionList_Yield
+propertyDefinitionList_Yield
 : propertyDefinition_Yield (Comma propertyDefinition_Yield)*
 ;
-propertyDefinitionList_Await
+/*propertyDefinitionList_Await
 : propertyDefinition_Await (Comma propertyDefinition_Await)*
 ;
 propertyDefinitionList_Yield_Await
@@ -49,17 +46,17 @@ propertyDefinitionList_Yield_Await
 //    MethodDefinition[?Yield, ?Await]
 propertyDefinition
 : methodDefinition
-| /*coverInitializedName
-| */propertyName Colon assignmentExpression_In
+/*| coverInitializedName*/
+| propertyName Colon assignmentExpression_In
 | identifierReference
 ;
-/*propertyDefinition_Yield
-: identifierReference_Yield
-| coverInitializedName_Yield
+propertyDefinition_Yield
+: methodDefinition_Yield
+/*| coverInitializedName_Yield*/
 | propertyName_Yield Colon assignmentExpression_In_Yield
-| methodDefinition_Yield
+| identifierReference_Yield
 ;
-propertyDefinition_Await
+/*propertyDefinition_Await
 : identifierReference_Await
 | coverInitializedName_Await
 | propertyName_Await Colon assignmentExpression_In_Await
@@ -79,11 +76,11 @@ propertyName
 : literalPropertyName
 /*| computedPropertyName*/
 ;
-/*propertyName_Yield
+propertyName_Yield
 : literalPropertyName
-| computedPropertyName_Yield
+/*| computedPropertyName_Yield*/
 ;
-propertyName_Await
+/*propertyName_Await
 : literalPropertyName
 | computedPropertyName_Await
 ;

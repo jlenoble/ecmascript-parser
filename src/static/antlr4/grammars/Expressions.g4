@@ -30,10 +30,10 @@ expression_Yield_Await
 expression_In
 : assignmentExpression_In (Comma assignmentExpression_In)*
 ;
-/*expression_In_Yield
+expression_In_Yield
 : assignmentExpression_In_Yield (Comma assignmentExpression_In_Yield)*
 ;
-expression_In_Await
+/*expression_In_Await
 : assignmentExpression_In_Await (Comma assignmentExpression_In_Await)*
 ;
 expression_In_Yield_Await

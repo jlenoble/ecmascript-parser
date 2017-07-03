@@ -8,10 +8,10 @@ grammar Class;
 classDeclaration
 : Class bindingIdentifier classTail
 ;
-/*classDeclaration_Yield
+classDeclaration_Yield
 : Class bindingIdentifier_Yield classTail_Yield
 ;
-classDeclaration_Await
+/*classDeclaration_Await
 : Class bindingIdentifier_Await classTail_Await
 ;
 classDeclaration_Yield_Await
@@ -54,10 +54,10 @@ classExpression_Yield_Await
 classTail
 : classHeritage? OpenBrace classBody? CloseBrace
 ;
-/*classTail_Yield
+classTail_Yield
 : classHeritage_Yield? OpenBrace classBody_Yield? CloseBrace
 ;
-classTail_Await
+/*classTail_Await
 : classHeritage_Await? OpenBrace classBody_Await? CloseBrace
 ;
 classTail_Yield_Await
@@ -69,10 +69,10 @@ classTail_Yield_Await
 classHeritage
 : Extends leftHandSideExpression
 ;
-/*classHeritage_Yield
+classHeritage_Yield
 : Extends leftHandSideExpression_Yield
 ;
-classHeritage_Await
+/*classHeritage_Await
 : Extends leftHandSideExpression_Await
 ;
 classHeritage_Yield_Await
@@ -84,10 +84,10 @@ classHeritage_Yield_Await
 classBody
 : classElementList
 ;
-/*classBody_Yield
+classBody_Yield
 : classElementList_Yield
 ;
-classBody_Await
+/*classBody_Await
 : classElementList_Await
 ;
 classBody_Yield_Await
@@ -100,10 +100,10 @@ classBody_Yield_Await
 classElementList
 : classElement+
 ;
-/*classElementList_Yield
+classElementList_Yield
 : classElement_Yield+
 ;
-classElementList_Await
+/*classElementList_Await
 : classElement_Await+
 ;
 classElementList_Yield_Await
@@ -119,12 +119,12 @@ classElement
 | Static methodDefinition
 | SemiColon
 ;
-/*classElement_Yield
+classElement_Yield
 : methodDefinition_Yield
 | Static methodDefinition_Yield
 | SemiColon
 ;
-classElement_Await
+/*classElement_Await
 : methodDefinition_Await
 | Static methodDefinition_Await
 | SemiColon

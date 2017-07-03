@@ -11,12 +11,12 @@ arrayLiteral
 | OpenBracket elementList CloseBracket
 | OpenBracket elementList Comma elision? CloseBracket
 ;
-/*arrayLiteral_Yield
+arrayLiteral_Yield
 : OpenBracket elision? CloseBracket
 | OpenBracket elementList_Yield CloseBracket
 | OpenBracket elementList_Yield Comma elision? CloseBracket
 ;
-arrayLiteral_Await
+/*arrayLiteral_Await
 : OpenBracket elision? CloseBracket
 | OpenBracket elementList_Await CloseBracket
 | OpenBracket elementList_Await Comma elision? CloseBracket
@@ -38,13 +38,13 @@ elementList
 | elementList Comma elision? assignmentExpression_In
 | elementList Comma elision? spreadElement
 ;
-/*elementList_Yield
+elementList_Yield
 : elision? assignmentExpression_In_Yield
 | elision? spreadElement_Yield
 | elementList_Yield Comma elision? assignmentExpression_In_Yield
 | elementList_Yield Comma elision? spreadElement_Yield
 ;
-elementList_Await
+/*elementList_Await
 : elision? assignmentExpression_In_Await
 | elision? spreadElement_Await
 | elementList_Await Comma elision? assignmentExpression_In_Await
@@ -69,10 +69,10 @@ elision
 spreadElement
 : Spread assignmentExpression_In
 ;
-/*spreadElement_Yield
+spreadElement_Yield
 : Spread assignmentExpression_In_Yield
 ;
-spreadElement_Await
+/*spreadElement_Await
 : Spread assignmentExpression_In_Await
 ;
 spreadElement_Yield_Await

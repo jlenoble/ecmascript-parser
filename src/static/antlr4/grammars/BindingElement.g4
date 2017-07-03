@@ -40,11 +40,11 @@ bindingElement
 : singleNameBinding
 /*| bindingPattern initializer_In?*/
 ;
-/*bindingElement_Yield
+bindingElement_Yield
 : singleNameBinding_Yield
-| bindingPattern_Yield initializer_In_Yield?
+/*| bindingPattern_Yield initializer_In_Yield?*/
 ;
-bindingElement_Await
+/*bindingElement_Await
 : singleNameBinding_Await
 | bindingPattern_Await initializer_In_Await?
 ;
@@ -60,11 +60,11 @@ bindingRestElement
 : Spread bindingIdentifier
 /*| Spread bindingPattern*/
 ;
-/*bindingRestElement_Yield
+bindingRestElement_Yield
 : Spread bindingIdentifier_Yield
-| Spread bindingPattern_Yield
+/*| Spread bindingPattern_Yield*/
 ;
-bindingRestElement_Await
+/*bindingRestElement_Await
 : Spread bindingIdentifier_Await
 | Spread bindingPattern_Await
 ;
@@ -78,10 +78,10 @@ bindingRestElement_Yield_Await
 singleNameBinding
 : bindingIdentifier initializer_In?
 ;
-/*singleNameBinding_Yield
+singleNameBinding_Yield
 : bindingIdentifier_Yield initializer_In_Yield?
 ;
-singleNameBinding_Await
+/*singleNameBinding_Await
 : bindingIdentifier_Await initializer_In_Await?
 ;
 singleNameBinding_Yield_Await

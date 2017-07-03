@@ -11,11 +11,11 @@ identifierReference
 | Yield
 | Await Multiply
 ;
-/*identifierReference_Yield
+identifierReference_Yield
 : identifier
 | Await Multiply
 ;
-identifierReference_Await
+/*identifierReference_Await
 : identifier
 | Yield
 ;
@@ -38,11 +38,11 @@ bindingIdentifier
 | Yield
 | Await
 ;
-/*bindingIdentifier_Yield
+bindingIdentifier_Yield
 : identifier
 | Await
 ;
-bindingIdentifier_Await
+/*bindingIdentifier_Await
 : identifier
 | Yield
 ;

@@ -108,23 +108,23 @@ statement_Return
 | tryStatement_Return
 | debuggerStatement*/
 ;
-/*statement_Yield_Return
-: blockStatement_Yield_Return
+statement_Yield_Return
+: /*blockStatement_Yield_Return
 | variableStatement_Yield
 | emptyStatement
-| expressionStatement_Yield
+| */expressionStatement_Yield/*
 | ifStatement_Yield_Return
 | breakableStatement_Yield_Return
 | continueStatement_Yield
-| breakStatement_Yield
+| breakStatement_Yield*/
 | returnStatement_Yield
-| withStatement_Yield_Return
+/*| withStatement_Yield_Return
 | labelledStatement_Yield_Return
 | throwStatement_Yield
 | tryStatement_Yield_Return
-| debuggerStatement
+| debuggerStatement*/
 ;
-statement_Await_Return
+/*statement_Await_Return
 : blockStatement_Await_Return
 | variableStatement_Await
 | emptyStatement
@@ -175,10 +175,10 @@ statementList_Yield_Await
 statementList_Return
 : statementListItem_Return+
 ;
-/*statementList_Yield_Return
+statementList_Yield_Return
 : statementListItem_Yield_Return+
 ;
-statementList_Await_Return
+/*statementList_Await_Return
 : statementListItem_Await_Return+
 ;
 statementList_Yield_Await_Return
@@ -208,11 +208,11 @@ statementListItem_Return
 : declaration
 | statement_Return
 ;
-/*statementListItem_Yield_Return
+statementListItem_Yield_Return
 : statement_Yield_Return
 | declaration_Yield
 ;
-statementListItem_Await_Return
+/*statementListItem_Await_Return
 : statement_Await_Return
 | declaration_Await
 ;
@@ -233,10 +233,10 @@ emptyStatement
 returnStatement
 : Return expression_In? eos
 ;
-/*returnStatement_Yield
+returnStatement_Yield
 : Return expression_In_Yield? eos
 ;
-returnStatement_Await
+/*returnStatement_Await
 : Return expression_In_Await? eos
 ;
 returnStatement_Yield_Await
@@ -254,10 +254,10 @@ debuggerStatement
 expressionStatement
 : expression_In eos
 ;
-/*expressionStatement_Yield
+expressionStatement_Yield
 : expression_In_Yield
 ;
-expressionStatement_Await
+/*expressionStatement_Await
 : expression_In_Await
 ;
 expressionStatement_Yield_Await

@@ -14,14 +14,14 @@ methodDefinition
 | propertyName OpenParen uniqueFormalParameters CloseParen OpenBrace functionBody CloseBrace
 /*| generatorMethod
 | asyncMethod*/;
-/*methodDefinition_Yield
+methodDefinition_Yield
 : propertyName_Yield OpenParen uniqueFormalParameters CloseParen OpenBrace functionBody CloseBrace
-| generatorMethod_Yield
-| asyncMethod_Yield
+/*| generatorMethod_Yield
+| asyncMethod_Yield*/
 | Get propertyName_Yield OpenParen CloseParen OpenBrace functionBody CloseBrace
 | Set propertyName_Yield OpenParen propertySetParameterList CloseParen OpenBrace functionBody CloseBrace
 ;
-methodDefinition_Await
+/*methodDefinition_Await
 : propertyName_Await OpenParen uniqueFormalParameters CloseParen OpenBrace functionBody CloseBrace
 | generatorMethod_Await
 | asyncMethod_Await

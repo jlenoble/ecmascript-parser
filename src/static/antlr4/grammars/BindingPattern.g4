@@ -9,11 +9,11 @@ bindingPattern
 : objectBindingPattern
 | arrayBindingPattern
 ;
-/*bindingPattern_Yield
+bindingPattern_Yield
 : objectBindingPattern_Yield
 | arrayBindingPattern_Yield
 ;
-bindingPattern_Await
+/*bindingPattern_Await
 : objectBindingPattern_Await
 | arrayBindingPattern_Await
 ;
@@ -31,12 +31,12 @@ objectBindingPattern
 | OpenBrace bindingPropertyList CloseBrace
 | OpenBrace bindingPropertyList Comma CloseBrace
 ;
-/*objectBindingPattern_Yield
+objectBindingPattern_Yield
 : OpenBrace CloseBrace
 | OpenBrace bindingPropertyList_Yield CloseBrace
 | OpenBrace bindingPropertyList_Yield Comma CloseBrace
 ;
-objectBindingPattern_Await
+/*objectBindingPattern_Await
 : OpenBrace CloseBrace
 | OpenBrace bindingPropertyList_Await CloseBrace
 | OpenBrace bindingPropertyList_Await Comma CloseBrace
@@ -56,12 +56,12 @@ arrayBindingPattern
 | OpenBracket bindingPropertyList CloseBracket
 | OpenBracket bindingPropertyList Comma elision? bindingRestElement? CloseBracket
 ;
-/*arrayBindingPattern_Yield
+arrayBindingPattern_Yield
 : OpenBracket elision? bindingRestElement_Yield? CloseBracket
 | OpenBracket bindingPropertyList_Yield CloseBracket
 | OpenBracket bindingPropertyList_Yield Comma elision? bindingRestElement_Yield? CloseBracket
 ;
-arrayBindingPattern_Await
+/*arrayBindingPattern_Await
 : OpenBracket elision? bindingRestElement_Await? CloseBracket
 | OpenBracket bindingPropertyList_Await CloseBracket
 | OpenBracket bindingPropertyList_Await Comma elision? bindingRestElement_Await? CloseBracket
@@ -78,10 +78,10 @@ arrayBindingPattern_Yield_Await
 bindingPropertyList
 : bindingProperty (Comma bindingProperty)*
 ;
-/*bindingPropertyList_Yield
+bindingPropertyList_Yield
 : bindingProperty_Yield  (Comma bindingProperty_Yield)*
 ;
-bindingPropertyList_Await
+/*bindingPropertyList_Await
 : bindingProperty_Await (Comma bindingProperty_Await)*
 ;
 bindingPropertyList_Yield_Await
@@ -95,11 +95,11 @@ bindingProperty
 : singleNameBinding
 | propertyName Colon bindingElement
 ;
-/*bindingProperty_Yield
+bindingProperty_Yield
 : singleNameBinding_Yield
 | propertyName_Yield Colon bindingElement_Yield
 ;
-bindingProperty_Await
+/*bindingProperty_Await
 : singleNameBinding_Await
 | propertyName_Await Colon bindingElement_Await
 ;

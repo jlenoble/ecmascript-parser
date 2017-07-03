@@ -4,6 +4,7 @@
 grammar FunctionsAndClasses;
 import
   Class,
+  Generator,
   FormalParameter,
   FunctionBody,
   MethodDefinition;
@@ -14,10 +15,10 @@ import
 functionDeclaration
 : Function bindingIdentifier OpenParen formalParameters CloseParen OpenBrace functionBody CloseBrace
 ;
-/*functionDeclaration_Yield
+functionDeclaration_Yield
 : Function bindingIdentifier_Yield OpenParen formalParameters CloseParen OpenBrace functionBody CloseBrace
 ;
-functionDeclaration_Await
+/*functionDeclaration_Await
 : Function bindingIdentifier_Await OpenParen formalParameters CloseParen OpenBrace functionBody CloseBrace
 ;
 functionDeclaration_Yield_Await
@@ -39,3 +40,9 @@ functionDeclaration_Yield_Await_Default
 : Function bindingIdentifier_Yield_Await OpenParen formalParameters CloseParen OpenBrace functionBody CloseBrace
 | Function OpenParen formalParameters CloseParen OpenBrace functionBody CloseBrace
 ;*/
+
+// FunctionExpression:
+//    function BindingIdentifier[~Yield, ~Await][opt] ( FormalParameters[~Yield, ~Await] ) { FunctionBody[~Yield, ~Await] }
+functionExpression
+: Function bindingIdentifier? OpenParen formalParameters CloseParen OpenBrace functionBody CloseBrace
+;

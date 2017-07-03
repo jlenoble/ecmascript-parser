@@ -21,28 +21,29 @@ primaryExpression
 | literal
 | arrayLiteral
 | objectLiteral
+| functionExpression
 | classExpression
-/*| generatorExpression
-| asyncFunctionExpression*/
+| generatorExpression
+/*| asyncFunctionExpression*/
 | RegularExpressionLiteral
 | templateLiteral
 | coverParenthesizedExpressionAndArrowParameterList
 ;
-/*primaryExpression_Yield
+primaryExpression_Yield
 : This
 | identifierReference_Yield
 | literal
 | arrayLiteral_Yield
 | objectLiteral_Yield
 | functionExpression
-| classExpression_Yield
+/*| classExpression_Yield
 | generatorExpression
 | asyncFunctionExpression
 | RegularExpressionLiteral
-| templateLiteral_Yield
+| templateLiteral_Yield*/
 | coverParenthesizedExpressionAndArrowParameterList_Yield
 ;
-primaryExpression_Await
+/*primaryExpression_Await
 : This
 | identifierReference_Await
 | literal

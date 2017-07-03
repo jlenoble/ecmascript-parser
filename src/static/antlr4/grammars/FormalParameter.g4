@@ -29,13 +29,13 @@ formalParameters
 | formalParameterList Comma?
 | formalParameterList Comma functionRestParameter
 ;
-/*formalParameters_Yield
+formalParameters_Yield
 :
 | functionRestParameter_Yield
 | formalParameterList_Yield Comma?
 | formalParameterList_Yield Comma functionRestParameter_Yield
 ;
-formalParameters_Await
+/*formalParameters_Await
 :
 | functionRestParameter_Await
 | formalParameterList_Await Comma?
@@ -54,10 +54,10 @@ formalParameters_Yield_Await
 formalParameterList
 : formalParameter (Comma formalParameter)*
 ;
-/*formalParameterList_Yield
+formalParameterList_Yield
 : formalParameter_Yield (Comma formalParameter_Yield)*
 ;
-formalParameterList_Await
+/*formalParameterList_Await
 : formalParameter_Await (Comma formalParameter_Await)*
 ;
 formalParameterList_Yield_Await
@@ -69,10 +69,10 @@ formalParameterList_Yield_Await
 functionRestParameter
 : bindingRestElement
 ;
-/*functionRestParameter_Yield
+functionRestParameter_Yield
 : bindingRestElement_Yield
 ;
-functionRestParameter_Await
+/*functionRestParameter_Await
 : bindingRestElement_Await
 ;
 functionRestParameter_Yield_Await
@@ -84,10 +84,10 @@ functionRestParameter_Yield_Await
 formalParameter
 : bindingElement
 ;
-/*formalParameter_Yield
+formalParameter_Yield
 : bindingElement_Yield
 ;
-formalParameter_Await
+/*formalParameter_Await
 : bindingElement_Await
 ;
 formalParameter_Yield_Await
