@@ -7,10 +7,10 @@ grammar FormalParameter;
 uniqueFormalParameters
 : formalParameters
 ;
-/*uniqueFormalParameters_Yield
+uniqueFormalParameters_Yield
 : formalParameters_Yield
 ;
-uniqueFormalParameters_Await
+/*uniqueFormalParameters_Await
 : formalParameters_Await
 ;
 uniqueFormalParameters_Yield_Await

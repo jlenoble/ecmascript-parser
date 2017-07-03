@@ -19,11 +19,11 @@ callExpression
 ;
 callExpression_Yield
 : coverCallExpressionAndAsyncArrowHead_Yield
-/*| superCall_Yield
+/*| superCall_Yield*/
 | callExpression_Yield arguments_Yield
-| callExpression_Yield OpenBracket expression_In_Yield CloseBracket
+/*| callExpression_Yield OpenBracket expression_In_Yield CloseBracket*/
 | callExpression_Yield Dot identifierName
-| callExpression_Yield templateLiteral_Yield*/
+/*| callExpression_Yield templateLiteral_Yield*/
 ;
 /*callExpression_Await
 : coverCallExpressionAndAsyncArrowHead_Await

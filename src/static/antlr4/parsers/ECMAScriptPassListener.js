@@ -1955,6 +1955,15 @@ ECMAScriptPassListener.prototype.exitClassExpression = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#classExpression_Yield.
+ECMAScriptPassListener.prototype.enterClassExpression_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#classExpression_Yield.
+ECMAScriptPassListener.prototype.exitClassExpression_Yield = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#classTail.
 ECMAScriptPassListener.prototype.enterClassTail = function(ctx) {
 };
@@ -2078,6 +2087,15 @@ ECMAScriptPassListener.prototype.enterUniqueFormalParameters = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#uniqueFormalParameters.
 ECMAScriptPassListener.prototype.exitUniqueFormalParameters = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#uniqueFormalParameters_Yield.
+ECMAScriptPassListener.prototype.enterUniqueFormalParameters_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#uniqueFormalParameters_Yield.
+ECMAScriptPassListener.prototype.exitUniqueFormalParameters_Yield = function(ctx) {
 };
 
 
@@ -2249,6 +2267,15 @@ ECMAScriptPassListener.prototype.enterPropertySetParameterList = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#propertySetParameterList.
 ECMAScriptPassListener.prototype.exitPropertySetParameterList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#generatorMethod.
+ECMAScriptPassListener.prototype.enterGeneratorMethod = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#generatorMethod.
+ECMAScriptPassListener.prototype.exitGeneratorMethod = function(ctx) {
 };
 
 

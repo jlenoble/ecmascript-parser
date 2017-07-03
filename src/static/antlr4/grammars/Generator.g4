@@ -2,7 +2,6 @@
 
 grammar Generator;
 
-
 // GeneratorDeclaration[Yield, Await, Default]:
 // function * BindingIdentifier[?Yield, ?Await] ( FormalParameters[+Yield, ~Await] ) { GeneratorBody }
 // [+Default] function * ( FormalParameters[+Yield, ~Await] ) { GeneratorBody }

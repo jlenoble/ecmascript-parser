@@ -39,10 +39,10 @@ classDeclaration_Yield_Await_Default
 classExpression
 : Class bindingIdentifier? classTail
 ;
-/*classExpression_Yield
+classExpression_Yield
 : Class bindingIdentifier_Yield? classTail_Yield
 ;
-classExpression_Await
+/*classExpression_Await
 : Class bindingIdentifier_Await? classTail_Await
 ;
 classExpression_Yield_Await

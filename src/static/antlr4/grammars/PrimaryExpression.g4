@@ -36,9 +36,9 @@ primaryExpression_Yield
 | arrayLiteral_Yield
 | objectLiteral_Yield
 | functionExpression
-/*| classExpression_Yield
+| classExpression_Yield
 | generatorExpression
-| asyncFunctionExpression
+/*| asyncFunctionExpression
 | RegularExpressionLiteral
 | templateLiteral_Yield*/
 | coverParenthesizedExpressionAndArrowParameterList_Yield

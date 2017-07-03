@@ -12,8 +12,8 @@ methodDefinition
 : Get propertyName OpenParen CloseParen OpenBrace functionBody CloseBrace
 | Set propertyName OpenParen propertySetParameterList CloseParen OpenBrace functionBody CloseBrace
 | propertyName OpenParen uniqueFormalParameters CloseParen OpenBrace functionBody CloseBrace
-/*| generatorMethod
-| asyncMethod*/;
+| generatorMethod
+/*| asyncMethod*/;
 methodDefinition_Yield
 : propertyName_Yield OpenParen uniqueFormalParameters CloseParen OpenBrace functionBody CloseBrace
 /*| generatorMethod_Yield
@@ -44,10 +44,10 @@ propertySetParameterList
 
 // GeneratorMethod[Yield, Await]:
 //    * PropertyName[?Yield, ?Await] ( UniqueFormalParameters[+Yield, ~Await] ) { GeneratorBody }
-/*generatorMethod
+generatorMethod
 : Multiply propertyName OpenParen uniqueFormalParameters_Yield CloseParen OpenBrace generatorBody CloseBrace
 ;
-generatorMethod_Yield
+/*generatorMethod_Yield
 : Multiply propertyName_Yield OpenParen uniqueFormalParameters_Yield CloseParen OpenBrace generatorBody CloseBrace
 ;
 generatorMethod_Await

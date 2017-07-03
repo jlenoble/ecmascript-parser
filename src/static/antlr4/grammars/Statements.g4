@@ -111,8 +111,8 @@ statement_Return
 statement_Yield_Return
 : /*blockStatement_Yield_Return
 | variableStatement_Yield
-| emptyStatement
-| */expressionStatement_Yield/*
+| */emptyStatement
+| expressionStatement_Yield/*
 | ifStatement_Yield_Return
 | breakableStatement_Yield_Return
 | continueStatement_Yield
@@ -209,8 +209,8 @@ statementListItem_Return
 | statement_Return
 ;
 statementListItem_Yield_Return
-: statement_Yield_Return
-| declaration_Yield
+: declaration_Yield
+| statement_Yield_Return
 ;
 /*statementListItem_Await_Return
 : statement_Await_Return
