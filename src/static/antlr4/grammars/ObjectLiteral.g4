@@ -74,11 +74,11 @@ propertyDefinition_Yield_Await
 //    ComputedPropertyName[?Yield, ?Await]
 propertyName
 : literalPropertyName
-/*| computedPropertyName*/
+| computedPropertyName
 ;
 propertyName_Yield
 : literalPropertyName
-/*| computedPropertyName_Yield*/
+| computedPropertyName_Yield
 ;
 /*propertyName_Await
 : literalPropertyName
@@ -101,13 +101,13 @@ literalPropertyName
 
 // ComputedPropertyName[Yield, Await]:
 //    [AssignmentExpression[+In, ?Yield, ?Await]]
-/*computedPropertyName
+computedPropertyName
 : assignmentExpression_In
 ;
 computedPropertyName_Yield
 : assignmentExpression_In_Yield
 ;
-computedPropertyName_Await
+/*computedPropertyName_Await
 : assignmentExpression_In_Await
 ;
 computedPropertyName_Yield_Await

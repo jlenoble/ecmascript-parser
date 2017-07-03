@@ -308,6 +308,24 @@ ECMAScriptPassListener.prototype.exitLiteralPropertyName = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#computedPropertyName.
+ECMAScriptPassListener.prototype.enterComputedPropertyName = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#computedPropertyName.
+ECMAScriptPassListener.prototype.exitComputedPropertyName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#computedPropertyName_Yield.
+ECMAScriptPassListener.prototype.enterComputedPropertyName_Yield = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#computedPropertyName_Yield.
+ECMAScriptPassListener.prototype.exitComputedPropertyName_Yield = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#callExpression.
 ECMAScriptPassListener.prototype.enterCallExpression = function(ctx) {
 };

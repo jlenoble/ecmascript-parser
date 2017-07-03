@@ -115,13 +115,13 @@ classElementList_Yield_Await
 //    staticMethodDefinition[?Yield, ?Await]
 //    ;
 classElement
-: methodDefinition
-| Static methodDefinition
+: Static methodDefinition
+| methodDefinition
 | SemiColon
 ;
 classElement_Yield
-: methodDefinition_Yield
-| Static methodDefinition_Yield
+: Static methodDefinition_Yield
+| methodDefinition_Yield
 | SemiColon
 ;
 /*classElement_Await
