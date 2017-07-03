@@ -70,11 +70,11 @@ bindingList_In_Yield_Await
 //    BindingPattern[?Yield, ?Await] Initializer[?In, ?Yield, ?Await]
 lexicalBinding
 : bindingIdentifier initializer?
-/*| bindingPattern initializer*/
+| bindingPattern initializer
 ;
 lexicalBinding_In
 : bindingIdentifier initializer_In?
-/*| bindingPattern initializer_In*/
+| bindingPattern initializer_In
 ;
 /*lexicalBinding_Yield
 : bindingIdentifier_Yield initializer_Yield?

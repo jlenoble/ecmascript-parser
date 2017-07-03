@@ -785,6 +785,51 @@ ECMAScriptPassListener.prototype.exitSingleNameBinding = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#bindingPattern.
+ECMAScriptPassListener.prototype.enterBindingPattern = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#bindingPattern.
+ECMAScriptPassListener.prototype.exitBindingPattern = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#objectBindingPattern.
+ECMAScriptPassListener.prototype.enterObjectBindingPattern = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#objectBindingPattern.
+ECMAScriptPassListener.prototype.exitObjectBindingPattern = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#arrayBindingPattern.
+ECMAScriptPassListener.prototype.enterArrayBindingPattern = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#arrayBindingPattern.
+ECMAScriptPassListener.prototype.exitArrayBindingPattern = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#bindingPropertyList.
+ECMAScriptPassListener.prototype.enterBindingPropertyList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#bindingPropertyList.
+ECMAScriptPassListener.prototype.exitBindingPropertyList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#bindingProperty.
+ECMAScriptPassListener.prototype.enterBindingProperty = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#bindingProperty.
+ECMAScriptPassListener.prototype.exitBindingProperty = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#lexicalDeclaration.
 ECMAScriptPassListener.prototype.enterLexicalDeclaration = function(ctx) {
 };

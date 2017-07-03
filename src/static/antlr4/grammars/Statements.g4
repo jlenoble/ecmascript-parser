@@ -4,7 +4,7 @@
 grammar Statements;
 import
   BindingElement,
-  /*BindingPattern,*/
+  BindingPattern,
   LexicalDeclaration,
   Declaration,
   TryStatement,

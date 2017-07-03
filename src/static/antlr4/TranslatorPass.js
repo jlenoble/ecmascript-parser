@@ -34,6 +34,12 @@ export class TranslatorPass extends ECMAScriptPassListener {
     }
   }
 
+  exitBindingPattern (ctx) {
+    if (debug) {
+      console.log('>>BindingPattern:', ctx.getText());
+    }
+  }
+
   exitLexicalDeclaration (ctx) {
     if (debug) {
       console.log('>>LexicalDeclaration:', ctx.getText());
