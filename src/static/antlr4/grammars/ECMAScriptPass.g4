@@ -4,6 +4,7 @@ import
   Expressions,
   Statements,
   FunctionsAndClasses,
+  ScriptsAndModules,
   LexicalGrammar;
 
 @parser::members {
@@ -52,7 +53,8 @@ ECMAScriptPassParser.prototype.isLineTerminatorEquivalent = function () {
 }
 
 file
-: statementList? EOF
+: script EOF
+| module EOF
 ;
 
 eos

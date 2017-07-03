@@ -1289,6 +1289,87 @@ ECMAScriptPassListener.prototype.exitPropertySetParameterList = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#script.
+ECMAScriptPassListener.prototype.enterScript = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#script.
+ECMAScriptPassListener.prototype.exitScript = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#scriptBody.
+ECMAScriptPassListener.prototype.enterScriptBody = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#scriptBody.
+ECMAScriptPassListener.prototype.exitScriptBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#module.
+ECMAScriptPassListener.prototype.enterModule = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#module.
+ECMAScriptPassListener.prototype.exitModule = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#moduleBody.
+ECMAScriptPassListener.prototype.enterModuleBody = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#moduleBody.
+ECMAScriptPassListener.prototype.exitModuleBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#moduleItemList.
+ECMAScriptPassListener.prototype.enterModuleItemList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#moduleItemList.
+ECMAScriptPassListener.prototype.exitModuleItemList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#moduleItem.
+ECMAScriptPassListener.prototype.enterModuleItem = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#moduleItem.
+ECMAScriptPassListener.prototype.exitModuleItem = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#moduleSpecifier.
+ECMAScriptPassListener.prototype.enterModuleSpecifier = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#moduleSpecifier.
+ECMAScriptPassListener.prototype.exitModuleSpecifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#importedBinding.
+ECMAScriptPassListener.prototype.enterImportedBinding = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#importedBinding.
+ECMAScriptPassListener.prototype.exitImportedBinding = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#exportDeclaration.
+ECMAScriptPassListener.prototype.enterExportDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#exportDeclaration.
+ECMAScriptPassListener.prototype.exitExportDeclaration = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#templateLiteral.
 ECMAScriptPassListener.prototype.enterTemplateLiteral = function(ctx) {
 };
