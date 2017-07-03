@@ -1208,6 +1208,15 @@ ECMAScriptPassListener.prototype.exitPropertySetParameterList = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#templateLiteral.
+ECMAScriptPassListener.prototype.enterTemplateLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#templateLiteral.
+ECMAScriptPassListener.prototype.exitTemplateLiteral = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#reservedWord.
 ECMAScriptPassListener.prototype.enterReservedWord = function(ctx) {
 };

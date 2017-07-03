@@ -55,8 +55,8 @@ memberExpression
 : primaryExpression
 | memberExpression OpenBracket expression_In CloseBracket
 | memberExpression Dot identifierName
-/*| memberExpression templateLiteral
-| superProperty
+| memberExpression templateLiteral
+/*| superProperty
 | metaProperty*/
 | New memberExpression arguments
 ;
