@@ -51,7 +51,7 @@ conciseBody
 : OpenBrace functionBody CloseBrace
 | assignmentExpression
 ;
-/*conciseBody_In
+conciseBody_In
 : OpenBrace functionBody CloseBrace
 | assignmentExpression_In
-;*/
+;

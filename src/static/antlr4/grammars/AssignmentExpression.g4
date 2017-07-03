@@ -177,7 +177,7 @@ assignmentExpression_In
 | assignmentExpression_In Or assignmentExpression_In                      # logicalORExpression_In
 | assignmentExpression_In QuestionMark assignmentExpression_In
   Colon assignmentExpression_In                                           # conditionalExpression_In
-| arrowParameters FatArrow conciseBody                                    # arrowFunction
+| arrowParameters FatArrow conciseBody_In                                 # arrowFunction_In
 /*| asyncArrowFunction*/
 | leftHandSideExpression Assign assignmentExpression_In                   # assignExpression_In
 | leftHandSideExpression assignmentOperator assignmentExpression_In       # assignmentOperatorExpression_In

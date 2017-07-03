@@ -452,6 +452,15 @@ ECMAScriptPassListener.prototype.exitBitwiseANDExpression_In = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#arrowFunction_In.
+ECMAScriptPassListener.prototype.enterArrowFunction_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#arrowFunction_In.
+ECMAScriptPassListener.prototype.exitArrowFunction_In = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#updateExpression_In.
 ECMAScriptPassListener.prototype.enterUpdateExpression_In = function(ctx) {
 };
@@ -521,15 +530,6 @@ ECMAScriptPassListener.prototype.enterAssignExpression_In = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#assignExpression_In.
 ECMAScriptPassListener.prototype.exitAssignExpression_In = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptPassParser#arrowFunction.
-ECMAScriptPassListener.prototype.enterArrowFunction = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptPassParser#arrowFunction.
-ECMAScriptPassListener.prototype.exitArrowFunction = function(ctx) {
 };
 
 
@@ -1214,6 +1214,15 @@ ECMAScriptPassListener.prototype.enterConciseBody = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#conciseBody.
 ECMAScriptPassListener.prototype.exitConciseBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#conciseBody_In.
+ECMAScriptPassListener.prototype.enterConciseBody_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#conciseBody_In.
+ECMAScriptPassListener.prototype.exitConciseBody_In = function(ctx) {
 };
 
 

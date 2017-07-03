@@ -82,6 +82,12 @@ export class TranslatorPass extends ECMAScriptPassListener {
     }
   }
 
+  exitArrowFunction_In (ctx) {
+    if (debug) {
+      console.log('>>ArrowFunction_In:', ctx.getText());
+    }
+  }
+
   exitExpression_In (ctx) {
     if (debug) {
       console.log('>>Expression_In:', ctx.getText());
