@@ -4,8 +4,10 @@ grammar FunctionBody;
 
 // FunctionBody[Yield, Await]:
 //    FunctionStatementList[?Yield, ?Await]
+// FunctionStatementList[Yield, Await]:
+//    StatementList[?Yield, ?Await, +Return][opt]
 functionBody
-: functionStatementList
+: {this.enterFunctionBody()} statementList? {this.exitFunctionBody()}
 ;
 functionBody_Yield
 : functionStatementList_Yield
@@ -17,11 +19,6 @@ functionBody_Yield_Await
 : functionStatementList_Yield_Await
 ;*/
 
-// FunctionStatementList[Yield, Await]:
-//    StatementList[?Yield, ?Await, +Return][opt]
-functionStatementList
-: statementList_Return?
-;
 functionStatementList_Yield
 : statementList_Yield_Return?
 ;

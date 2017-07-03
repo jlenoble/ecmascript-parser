@@ -41,6 +41,7 @@ statement
 | breakableStatement
 | continueStatement
 | breakStatement
+| {this.canReturn()}? returnStatement
 | withStatement
 | labelledStatement
 | throwStatement
@@ -92,22 +93,6 @@ statement_Yield_Await
 | tryStatement_Yield_Await
 | debuggerStatement
 ;*/
-statement_Return
-: /*blockStatement_Return
-| variableStatement
-| emptyStatement
-| */expressionStatement/*
-| ifStatement_Return
-| breakableStatement_Return
-| continueStatement
-| breakStatement*/
-| returnStatement
-/*| withStatement_Return
-| labelledStatement_Return
-| throwStatement
-| tryStatement_Return
-| debuggerStatement*/
-;
 statement_Yield_Return
 : /*blockStatement_Yield_Return
 | variableStatement_Yield
@@ -172,9 +157,6 @@ statementList_Await
 statementList_Yield_Await
 : statementListItem_Yield_Await+
 ;*/
-statementList_Return
-: statementListItem_Return+
-;
 statementList_Yield_Return
 : statementListItem_Yield_Return+
 ;
@@ -204,10 +186,6 @@ statementListItem_Yield_Await
 : statement_Yield_Await
 | declaration_Yield_Await
 ;*/
-statementListItem_Return
-: declaration
-| statement_Return
-;
 statementListItem_Yield_Return
 : declaration_Yield
 | statement_Yield_Return

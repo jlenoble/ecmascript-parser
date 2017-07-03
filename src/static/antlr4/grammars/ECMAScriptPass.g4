@@ -50,6 +50,20 @@ ECMAScriptPassParser.prototype.isEndOfStatementToken = function (token) {
 ECMAScriptPassParser.prototype.isLineTerminatorEquivalent = function () {
   return this.isEndOfStatementToken(this.getHiddenToken());
 };
+
+ECMAScriptPassParser.prototype.functionLevel = 0;
+
+ECMAScriptPassParser.prototype.enterFunctionBody = function () {
+  this.functionLevel += 1;
+}
+
+ECMAScriptPassParser.prototype.exitFunctionBody = function () {
+  this.functionLevel -= 1;
+}
+
+ECMAScriptPassParser.prototype.canReturn = function () {
+  return this.functionLevel > 0;
+}
 }
 
 file

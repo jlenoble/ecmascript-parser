@@ -1289,15 +1289,6 @@ ECMAScriptPassListener.prototype.exitStatement = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ECMAScriptPassParser#statement_Return.
-ECMAScriptPassListener.prototype.enterStatement_Return = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptPassParser#statement_Return.
-ECMAScriptPassListener.prototype.exitStatement_Return = function(ctx) {
-};
-
-
 // Enter a parse tree produced by ECMAScriptPassParser#statement_Yield_Return.
 ECMAScriptPassListener.prototype.enterStatement_Yield_Return = function(ctx) {
 };
@@ -1316,15 +1307,6 @@ ECMAScriptPassListener.prototype.exitStatementList = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ECMAScriptPassParser#statementList_Return.
-ECMAScriptPassListener.prototype.enterStatementList_Return = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptPassParser#statementList_Return.
-ECMAScriptPassListener.prototype.exitStatementList_Return = function(ctx) {
-};
-
-
 // Enter a parse tree produced by ECMAScriptPassParser#statementList_Yield_Return.
 ECMAScriptPassListener.prototype.enterStatementList_Yield_Return = function(ctx) {
 };
@@ -1340,15 +1322,6 @@ ECMAScriptPassListener.prototype.enterStatementListItem = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#statementListItem.
 ECMAScriptPassListener.prototype.exitStatementListItem = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptPassParser#statementListItem_Return.
-ECMAScriptPassListener.prototype.enterStatementListItem_Return = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptPassParser#statementListItem_Return.
-ECMAScriptPassListener.prototype.exitStatementListItem_Return = function(ctx) {
 };
 
 
@@ -2231,15 +2204,6 @@ ECMAScriptPassListener.prototype.enterFunctionBody_Yield = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#functionBody_Yield.
 ECMAScriptPassListener.prototype.exitFunctionBody_Yield = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptPassParser#functionStatementList.
-ECMAScriptPassListener.prototype.enterFunctionStatementList = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptPassParser#functionStatementList.
-ECMAScriptPassListener.prototype.exitFunctionStatementList = function(ctx) {
 };
 
 
