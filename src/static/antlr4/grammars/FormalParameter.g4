@@ -93,3 +93,23 @@ formalParameter_Await
 formalParameter_Yield_Await
 : bindingElement_Yield_Await
 ;*/
+
+// ArrowParameters[Yield, Await]:
+//    BindingIdentifier[?Yield, ?Await]
+//    CoverParenthesizedExpressionAndArrowParameterList[?Yield, ?Await]
+arrowParameters
+: bindingIdentifier
+| coverParenthesizedExpressionAndArrowParameterList
+;
+/*arrowParameters_Yield
+: bindingIdentifier_Yield
+| coverParenthesizedExpressionAndArrowParameterList_Yield
+;
+arrowParameters_Await
+: bindingIdentifier_Await
+| coverParenthesizedExpressionAndArrowParameterList_Await
+;
+arrowParameters_Yield_Await
+: bindingIdentifier_Yield_Await
+| coverParenthesizedExpressionAndArrowParameterList_Yield_Await
+;*/

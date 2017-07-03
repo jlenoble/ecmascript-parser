@@ -43,3 +43,15 @@ functionStatementList_Yield_Await
 /*asyncFunctionBody
 : functionBody_Await
 ;*/
+
+// ConciseBody[In]:
+//    [lookahead ≠ {] AssignmentExpression[?In, ~Yield, ~Await]
+//    { FunctionBody[~Yield, ~Await] }
+conciseBody
+: OpenBrace functionBody CloseBrace
+| assignmentExpression
+;
+/*conciseBody_In
+: OpenBrace functionBody CloseBrace
+| assignmentExpression_In
+;*/

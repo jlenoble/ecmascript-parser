@@ -524,6 +524,15 @@ ECMAScriptPassListener.prototype.exitAssignExpression_In = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#arrowFunction.
+ECMAScriptPassListener.prototype.enterArrowFunction = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#arrowFunction.
+ECMAScriptPassListener.prototype.exitArrowFunction = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#assignmentOperatorExpression_In.
 ECMAScriptPassListener.prototype.enterAssignmentOperatorExpression_In = function(ctx) {
 };
@@ -1172,6 +1181,15 @@ ECMAScriptPassListener.prototype.exitFormalParameter = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#arrowParameters.
+ECMAScriptPassListener.prototype.enterArrowParameters = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#arrowParameters.
+ECMAScriptPassListener.prototype.exitArrowParameters = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#functionBody.
 ECMAScriptPassListener.prototype.enterFunctionBody = function(ctx) {
 };
@@ -1187,6 +1205,15 @@ ECMAScriptPassListener.prototype.enterFunctionStatementList = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#functionStatementList.
 ECMAScriptPassListener.prototype.exitFunctionStatementList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#conciseBody.
+ECMAScriptPassListener.prototype.enterConciseBody = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#conciseBody.
+ECMAScriptPassListener.prototype.exitConciseBody = function(ctx) {
 };
 
 
