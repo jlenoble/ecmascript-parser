@@ -8,8 +8,8 @@ grammar Declaration;
 //    LexicalDeclaration[+In, ?Yield, ?Await]
 declaration
 : hoistableDeclaration
-| /*classDeclaration
-| */lexicalDeclaration_In
+| classDeclaration
+| lexicalDeclaration_In
 ;
 /*declaration_Yield
 : hoistableDeclaration_Yield

@@ -1181,6 +1181,69 @@ ECMAScriptPassListener.prototype.exitFunctionExpression = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#classDeclaration.
+ECMAScriptPassListener.prototype.enterClassDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#classDeclaration.
+ECMAScriptPassListener.prototype.exitClassDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#classExpression.
+ECMAScriptPassListener.prototype.enterClassExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#classExpression.
+ECMAScriptPassListener.prototype.exitClassExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#classTail.
+ECMAScriptPassListener.prototype.enterClassTail = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#classTail.
+ECMAScriptPassListener.prototype.exitClassTail = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#classHeritage.
+ECMAScriptPassListener.prototype.enterClassHeritage = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#classHeritage.
+ECMAScriptPassListener.prototype.exitClassHeritage = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#classBody.
+ECMAScriptPassListener.prototype.enterClassBody = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#classBody.
+ECMAScriptPassListener.prototype.exitClassBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#classElementList.
+ECMAScriptPassListener.prototype.enterClassElementList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#classElementList.
+ECMAScriptPassListener.prototype.exitClassElementList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#classElement.
+ECMAScriptPassListener.prototype.enterClassElement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#classElement.
+ECMAScriptPassListener.prototype.exitClassElement = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#uniqueFormalParameters.
 ECMAScriptPassListener.prototype.enterUniqueFormalParameters = function(ctx) {
 };
@@ -1421,6 +1484,15 @@ ECMAScriptPassListener.prototype.enterFutureReservedWord = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#futureReservedWord.
 ECMAScriptPassListener.prototype.exitFutureReservedWord = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#miscIdentifier.
+ECMAScriptPassListener.prototype.enterMiscIdentifier = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#miscIdentifier.
+ECMAScriptPassListener.prototype.exitMiscIdentifier = function(ctx) {
 };
 
 

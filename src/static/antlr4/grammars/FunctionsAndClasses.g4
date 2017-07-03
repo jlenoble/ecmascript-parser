@@ -3,6 +3,7 @@
 // A.4 Functions and Classes
 grammar FunctionsAndClasses;
 import
+  Class,
   FormalParameter,
   FunctionBody,
   MethodDefinition;

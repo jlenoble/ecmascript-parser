@@ -120,7 +120,12 @@ Null        : 'null';
 True        : 'true';
 False       : 'false';
 
+miscIdentifier
+: Async | Get | Let | Set | Static
+;
+
 Async       : 'async';
 Get         : 'get';
 Let         : 'let';
 Set         : 'set';
+Static      : 'static';
