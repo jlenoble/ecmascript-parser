@@ -123,8 +123,8 @@ exportDeclaration
 | Export exportClause fromClause SemiColon
 | Export exportClause SemiColon
 | */Export variableStatement
-/*| Export declaration
-| Export Default hoistableDeclaration_Default
+| Export declaration
+/*| Export Default hoistableDeclaration_Default
 | Export Default classDeclaration
 | Export Default assignmentExpression_In SemiColon*/
 ;
