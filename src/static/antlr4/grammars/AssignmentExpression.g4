@@ -120,7 +120,7 @@ assignmentExpression
   expression CloseBracket                     # indexedMemberExpression
 | assignmentExpression Dot identifierName     # dotMemberExpression
 | assignmentExpression templateLiteral        # taggedTemplateExpression
-| New assignmentExpression                    # newMemberExpression
+| New assignmentExpression arguments?         # newMemberExpression
 | assignmentExpression  {!this.isLineTerminatorEquivalent()}?
   (PlusPlus|MinusMinus)                       # updateExpression
 | unaryOperator assignmentExpression          # unaryExpression
@@ -176,7 +176,8 @@ assignmentExpression
 | parenthesizedExpression                     # parenExpression
 ;
 assignmentExpression_In
-: functionExpression                          # funcExpression_In
+: parenthesizedExpression                     # parenExpression_In
+| functionExpression                          # funcExpression_In
 | classExpression                             # clsExpression_In
 | generatorExpression                         # genExpression_In
 | assignmentExpression_In arguments           # argumentsExpression_In
@@ -184,7 +185,7 @@ assignmentExpression_In
   expression_In CloseBracket                  # indexedMemberExpression_In
 | assignmentExpression_In Dot identifierName  # dotMemberExpression_In
 | assignmentExpression_In templateLiteral     # taggedTemplateExpression_In
-| New assignmentExpression_In                 # newMemberExpression_In
+| New assignmentExpression_In arguments?      # newMemberExpression_In
 | assignmentExpression_In  {!this.isLineTerminatorEquivalent()}?
   (PlusPlus|MinusMinus)                       # updateExpression_In
 | unaryOperator assignmentExpression_In       # unaryExpression_In
@@ -216,6 +217,7 @@ assignmentExpression_In
   assignmentExpression_In                     # logicalORExpression_In
 | assignmentExpression_In QuestionMark assignmentExpression_In
   Colon assignmentExpression_In               # conditionalExpression_In
+| arrowParameters FatArrow conciseBody_In     # arrowFunction_In
 /*| asyncArrowFunction*/
 | assignmentExpression_In Assign
   assignmentExpression_In                     # assignExpression_In
@@ -223,7 +225,6 @@ assignmentExpression_In
   assignmentExpression_In                     # assignmentOperatorExpression_In
 | {this.canYield()} Yield
   assignmentExpression_In                     # yieldExpression_In
-| arrowParameters FatArrow conciseBody_In     # arrowFunction_In
 | assignmentPattern                           # destructuringExpression_In
 | superProperty                               # superExpression_In
 | metaProperty                                # metaExpression_In
@@ -237,7 +238,6 @@ assignmentExpression_In
 | objectLiteral                               # objectLiteralExpression_In
 | RegularExpressionLiteral                    # regexpExpression_In
 | templateLiteral                             # templateExpression_In
-| parenthesizedExpression                     # parenExpression_In
 ;
 
 unaryOperator

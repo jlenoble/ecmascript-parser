@@ -5,30 +5,15 @@ grammar BindingElement;
 // BindingElementList[Yield, Await]:
 //    BindingElisionElement[?Yield, ?Await]
 //    BindingElementList[?Yield, ?Await] , BindingElisionElement[?Yield, ?Await]
-/*bindingElementList
+bindingElementList
 : bindingElisionElement (Comma bindingElisionElement)*
 ;
-bindingElementList_Yield
-: bindingElisionElement_Yield (Comma bindingElisionElement_Yield)*
-;
-bindingElementList_Await
-: bindingElisionElement_Await (Comma bindingElisionElement_Await)*
-;
-bindingElementList_Yield_Await
-: bindingElisionElement_Yield_Await (Comma bindingElisionElement_Yield_Await)*
-;*/
 
 // BindingElisionElement[Yield, Await]:
 //    Elision[opt] BindingElement[?Yield, ?Await]
-/*bindingElisionElement
+bindingElisionElement
 : elision? bindingElement
 ;
-bindingElisionElement_Await
-: elision? bindingElement_Await
-;
-bindingElisionElement_Yield_Await
-: elision? bindingElement_Yield_Await
-;*/
 
 // BindingElement[Yield, Await]:
 //    SingleNameBinding[?Yield, ?Await]

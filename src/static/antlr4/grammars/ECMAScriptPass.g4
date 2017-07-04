@@ -88,6 +88,6 @@ file
 eos
 : SemiColon
 | {this.isLineTerminatorEquivalent()}?
-| {this._input.LT(1).type === ECMAScriptPassParser.CloseBrace}?
-| {this._input.LT(1).type === ECMAScriptPassParser.EOF}?
+| {this._input.LA(1) === ECMAScriptPassParser.CloseBrace}?
+| {this._input.LA(1) === ECMAScriptPassParser.EOF}?
 ;

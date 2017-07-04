@@ -15,8 +15,7 @@ bindingPattern
 //    { BindingPropertyList[?Yield, ?Await] }
 //    { BindingPropertyList[?Yield, ?Await] , }
 objectBindingPattern
-: OpenBrace CloseBrace
-| OpenBrace bindingPropertyList Comma? CloseBrace
+: OpenBrace (bindingPropertyList Comma?)? CloseBrace
 ;
 
 // ArrayBindingPattern[Yield, Await]:
@@ -26,8 +25,8 @@ objectBindingPattern
 //        BindingRestElement[?Yield, ?Await][opt] ]
 arrayBindingPattern
 : OpenBracket elision? bindingRestElement? CloseBracket
-| OpenBracket bindingPropertyList CloseBracket
-| OpenBracket bindingPropertyList Comma elision? bindingRestElement?
+| OpenBracket bindingElementList CloseBracket
+| OpenBracket bindingElementList Comma elision? bindingRestElement?
   CloseBracket
 ;
 

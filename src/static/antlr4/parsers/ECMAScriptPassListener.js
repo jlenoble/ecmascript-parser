@@ -1307,6 +1307,24 @@ ECMAScriptPassListener.prototype.exitExpressionStatement = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#bindingElementList.
+ECMAScriptPassListener.prototype.enterBindingElementList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#bindingElementList.
+ECMAScriptPassListener.prototype.exitBindingElementList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#bindingElisionElement.
+ECMAScriptPassListener.prototype.enterBindingElisionElement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#bindingElisionElement.
+ECMAScriptPassListener.prototype.exitBindingElisionElement = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#bindingElement.
 ECMAScriptPassListener.prototype.enterBindingElement = function(ctx) {
 };

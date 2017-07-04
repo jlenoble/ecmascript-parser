@@ -8,9 +8,11 @@ const {ECMAScriptPassListener} = require(path.join(base, rel,
 const debug = true;
 
 export class TranslatorPass extends ECMAScriptPassListener {
-  exitFile (ctx) {
+  enterFile (ctx) {
     debugger;
+  }
 
+  exitFile (ctx) {
     if (debug) {
       console.log('>>File:', ctx.getText());
     }
@@ -70,6 +72,12 @@ export class TranslatorPass extends ECMAScriptPassListener {
     }
   }
 
+  exitEmptyStatement (ctx) {
+    if (debug) {
+      console.log('>>EmptyStatement:', ctx.getText());
+    }
+  }
+
   exitNewExpression (ctx) {
     if (debug) {
       console.log('>>NewExpression:', ctx.getText());
@@ -112,9 +120,27 @@ export class TranslatorPass extends ECMAScriptPassListener {
     }
   }
 
+  exitIfStatement (ctx) {
+    if (debug) {
+      console.log('>>IfStatement:', ctx.getText());
+    }
+  }
+
   exitExpressionStatement (ctx) {
     if (debug) {
       console.log('>>ExpressionStatement:', ctx.getText());
+    }
+  }
+
+  exitArgumentsExpression_In (ctx) {
+    if (debug) {
+      console.log('>>ArgumentsExpression_In:', ctx.getText());
+    }
+  }
+
+  exitParenExpression_In (ctx) {
+    if (debug) {
+      console.log('>>ParenExpression_In:', ctx.getText());
     }
   }
 
