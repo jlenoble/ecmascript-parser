@@ -159,7 +159,8 @@ assignmentExpression
   assignmentExpression                        # assignmentOperatorExpression
 | {this.canYield()} Yield
   assignmentExpression                        # yieldExpression
-| arrowParameters FatArrow conciseBody        # arrowFunction
+| arrowParameters FatArrow conciseBody        # fatArrowExpression
+| assignmentPattern                           # destructuringExpression
 | superProperty                               # superExpression
 | metaProperty                                # metaExpression
 | This                                        # thisExpression
@@ -223,6 +224,7 @@ assignmentExpression_In
 | {this.canYield()} Yield
   assignmentExpression_In                     # yieldExpression_In
 | arrowParameters FatArrow conciseBody_In     # arrowFunction_In
+| assignmentPattern                           # destructuringExpression_In
 | superProperty                               # superExpression_In
 | metaProperty                                # metaExpression_In
 | This                                        # thisExpression_In

@@ -3,6 +3,7 @@
 // A.2 Expressions
 grammar Expressions;
 import
+  AssignmentPattern,
   BindingIdentifier,
   PrimaryExpression,
   CoverExpressions,
