@@ -50,7 +50,7 @@ importClause
 : importedDefaultBinding
 | nameSpaceImport
 | namedImports
-/*| importedDefaultBinding Comma nameSpaceImport*/
+| importedDefaultBinding Comma nameSpaceImport
 | importedDefaultBinding Comma namedImports
 ;
 
@@ -123,7 +123,7 @@ exportDeclaration
 | Export exportClause eos
 | Export variableStatement
 | Export declaration
-/*| Export Default hoistableDeclaration_Default*/
+| Export Default hoistableDeclaration_Default
 | Export Default classDeclaration
 | Export Default assignmentExpression_In eos
 ;
@@ -149,6 +149,6 @@ exportsList
 //    IdentifierName as IdentifierName
 exportSpecifier
 : identifierName
-/*| identifierName As identifierName*/
+| identifierName As identifierName
 ;
 

@@ -11,10 +11,10 @@ generatorDeclaration
 : Function Multiply bindingIdentifier OpenParen formalParameters
   CloseParen OpenBrace generatorBody CloseBrace
 ;
-/*generatorDeclaration_Default
-: Function Multiply bindingIdentifier OpenParen formalParameters_Yield CloseParen OpenBrace generatorBody CloseBrace
-| Function Multiply OpenParen formalParameters_Yield CloseParen OpenBrace generatorBody CloseBrace
-;*/
+generatorDeclaration_Default
+: Function Multiply bindingIdentifier? OpenParen formalParameters CloseParen
+  OpenBrace generatorBody CloseBrace
+;
 
 // GeneratorExpression:
 //    function * BindingIdentifier[+Yield, ~Await][opt] (

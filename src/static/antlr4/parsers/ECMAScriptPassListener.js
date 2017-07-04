@@ -1460,6 +1460,15 @@ ECMAScriptPassListener.prototype.exitHoistableDeclaration = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#hoistableDeclaration_Default.
+ECMAScriptPassListener.prototype.enterHoistableDeclaration_Default = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#hoistableDeclaration_Default.
+ECMAScriptPassListener.prototype.exitHoistableDeclaration_Default = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#throwStatement.
 ECMAScriptPassListener.prototype.enterThrowStatement = function(ctx) {
 };
@@ -1721,6 +1730,15 @@ ECMAScriptPassListener.prototype.exitFunctionDeclaration = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#functionDeclaration_Default.
+ECMAScriptPassListener.prototype.enterFunctionDeclaration_Default = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#functionDeclaration_Default.
+ECMAScriptPassListener.prototype.exitFunctionDeclaration_Default = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#functionExpression.
 ECMAScriptPassListener.prototype.enterFunctionExpression = function(ctx) {
 };
@@ -1799,6 +1817,15 @@ ECMAScriptPassListener.prototype.enterGeneratorDeclaration = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#generatorDeclaration.
 ECMAScriptPassListener.prototype.exitGeneratorDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#generatorDeclaration_Default.
+ECMAScriptPassListener.prototype.enterGeneratorDeclaration_Default = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#generatorDeclaration_Default.
+ECMAScriptPassListener.prototype.exitGeneratorDeclaration_Default = function(ctx) {
 };
 
 
