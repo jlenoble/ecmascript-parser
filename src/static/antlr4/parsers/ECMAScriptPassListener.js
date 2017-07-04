@@ -353,6 +353,15 @@ ECMAScriptPassListener.prototype.exitAssignExpression = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#arrowFunction.
+ECMAScriptPassListener.prototype.enterArrowFunction = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#arrowFunction.
+ECMAScriptPassListener.prototype.exitArrowFunction = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#multiplicativeExpression.
 ECMAScriptPassListener.prototype.enterMultiplicativeExpression = function(ctx) {
 };
@@ -1214,15 +1223,6 @@ ECMAScriptPassListener.prototype.enterFunctionDeclaration = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#functionDeclaration.
 ECMAScriptPassListener.prototype.exitFunctionDeclaration = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ECMAScriptPassParser#functionDeclaration_Yield.
-ECMAScriptPassListener.prototype.enterFunctionDeclaration_Yield = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptPassParser#functionDeclaration_Yield.
-ECMAScriptPassListener.prototype.exitFunctionDeclaration_Yield = function(ctx) {
 };
 
 

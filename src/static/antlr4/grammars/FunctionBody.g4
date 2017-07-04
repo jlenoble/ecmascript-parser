@@ -9,19 +9,6 @@ grammar FunctionBody;
 functionBody
 : {this.enterFunctionBody()} statementList? {this.exitFunctionBody()}
 ;
-/*functionBody_Await
-: functionStatementList_Await
-;
-functionBody_Yield_Await
-: functionStatementList_Yield_Await
-;*/
-
-/*functionStatementList_Await
-: statementList_Await_Return?
-;
-functionStatementList_Yield_Await
-: statementList_Yield_Await_Return?
-;*/
 
 // GeneratorBody:
 //    FunctionBody[+Yield, ~Await]

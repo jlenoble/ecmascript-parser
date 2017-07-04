@@ -7,21 +7,9 @@ grammar AssignmentExpression;
 initializer
 : Assign assignmentExpression
 ;
-/*initializer_Await
-: Assign assignmentExpression_Await
-;
-initializer_Yield_Await
-: Assign assignmentExpression_Yield_Await
-;*/
 initializer_In
 : Assign assignmentExpression_In
 ;
-/*initializer_In_Await
-: Assign assignmentExpression_In_Await
-;
-initializer_In_Yield_Await
-: Assign assignmentExpression_In_Yield_Await
-;*/
 
 // UpdateExpression[Yield, Await]:
 //    LeftHandSideExpression[?Yield, ?Await]
@@ -118,32 +106,13 @@ assignmentExpression
 | assignmentExpression Or assignmentExpression                      # logicalORExpression
 | assignmentExpression QuestionMark assignmentExpression
   Colon assignmentExpression                                        # conditionalExpression
-/*| arrowParameters FatArrow conciseBody        # arrowFunction
-| asyncArrowFunction*/
+| arrowParameters FatArrow conciseBody                              # arrowFunction
+/*| asyncArrowFunction*/
 | assignmentExpression Assign assignmentExpression                  # assignExpression
 | assignmentExpression assignmentOperator assignmentExpression      # assignmentOperatorExpression
 | {this.canYield()} Yield assignmentExpression                      # yieldExpression
 | leftHandSideExpression                                            # lhsExpression
 ;
-/*assignmentExpression_Await
-: assignmentExpression_Await QuestionMark assignmentExpression_Await
-  Colon assignmentExpression_Await                                            # conditionalExpression_Await
-| arrowParameters_Await FatArrow conciseBody  # arrowFunction_Await
-| asyncArrowFunction_Await
-| leftHandSideExpression_Await Assign assignmentExpression_Await              # assignExpression_Await
-| leftHandSideExpression_Await assignmentOperator assignmentExpression_Await  # assignmentOperatorExpression_Await
-| leftHandSideExpression_Await                                                # lhsExpression_Await
-;
-assignmentExpression_Yield_Await
-: assignmentExpression_Yield_Await QuestionMark assignmentExpression_Yield_Await
-  Colon assignmentExpression_Yield_Await                                                  # conditionalExpression_Yield_Await
-| Yield Multiply? assignmentExpression_Yield_Await                                        # yieldExpression_Await
-| arrowParameters_Yield_Await FatArrow conciseBody  # arrowFunction_Yield_Await
-| asyncArrowFunction_Yield_Await
-| leftHandSideExpression_Yield_Await Assign assignmentExpression_Yield_Await              # assignExpression_Yield_Await
-| leftHandSideExpression_Yield_Await assignmentOperator assignmentExpression_Yield_Await  # assignmentOperatorExpression_Yield_Await
-| leftHandSideExpression_Yield_Await                                                      # lhsExpression_Yield_Await
-;*/
 assignmentExpression_In
 : generatorExpression                                                     # genExpression_In
 | functionExpression                                                      # funcExpression_In
@@ -172,25 +141,6 @@ assignmentExpression_In
 | {this.canYield()} Yield assignmentExpression_In                         # yieldExpression_In
 | leftHandSideExpression                                                  # lhsExpression_In
 ;
-/*assignmentExpression_In_Await
-: assignmentExpression_In_Await QuestionMark assignmentExpression_In_Await
-  Colon assignmentExpression_In_Await                                             # conditionalExpression_In_Await
-| arrowParameters_Await FatArrow conciseBody_In     # arrowFunction_In_Await
-| asyncArrowFunction_In_Await
-| leftHandSideExpression_Await Assign assignmentExpression_In_Await               # assignExpression_In_Await
-| leftHandSideExpression_Await assignmentOperator assignmentExpression_In_Await   # assignmentOperatorExpression_In_Await
-| leftHandSideExpression_Await                                                    # lhsExpression_In_Await
-;
-assignmentExpression_In_Yield_Await
-: assignmentExpression_In_Yield_Await QuestionMark assignmentExpression_In_Yield_Await
-  Colon assignmentExpression_In_Yield_Await                                                   # conditionalExpression_In_Yield_Await
-| Yield Multiply? assignmentExpression_In_Yield_Await                                         # yieldExpression_In_Await
-| arrowParameters_Yield_Await FatArrow conciseBody_In # arrowFunction_In_Yield_Await
-| asyncArrowFunction_In_Yield_Await
-| leftHandSideExpression_Yield_Await Assign assignmentExpression_In_Yield_Await               # assignExpression_In_Yield_Await
-| leftHandSideExpression_Yield_Await assignmentOperator assignmentExpression_In_Yield_Await   # assignmentOperatorExpression_In_Yield_Await
-| leftHandSideExpression_Yield_Await                                                          # lhsExpression_In_Yield_Await
-;*/
 
 unaryOperator
 : (Delete|Void|Typeof|PlusPlus|MinusMinus|Plus|Minus|BitNot|Not)
