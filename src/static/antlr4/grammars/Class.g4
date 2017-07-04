@@ -13,8 +13,16 @@ classDeclaration
 | Class classTail
 ;*/
 
+// ClassExpression[Yield, Await]:
+//    class BindingIdentifier[?Yield, ?Await][opt]
+//        ClassTail[?Yield, ?Await]
+classExpression
+: Class bindingIdentifier? classTail
+;
+
 // ClassTail[Yield, Await]:
-//    ClassHeritage[?Yield, ?Await][opt] { ClassBody[?Yield, ?Await][opt] }
+//    ClassHeritage[?Yield, ?Await][opt] {
+//        ClassBody[?Yield, ?Await][opt] }
 classTail
 : classHeritage? OpenBrace classBody? CloseBrace
 ;

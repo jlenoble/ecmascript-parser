@@ -10,8 +10,21 @@ import
   MethodDefinition;
 
 // FunctionDeclaration[Yield, Await, Default]:
-// function BindingIdentifier[?Yield, ?Await] ( FormalParameters[~Yield, ~Await] ) { FunctionBody[~Yield, ~Await] }
-// [+Default] function ( FormalParameters[~Yield, ~Await]) { FunctionBody[~Yield, ~Await] }
+//    function BindingIdentifier[?Yield, ?Await] (
+//        FormalParameters[~Yield, ~Await] ) {
+//        FunctionBody[~Yield, ~Await] }
+//    [+Default] function ( FormalParameters[~Yield, ~Await]) {
+//        FunctionBody[~Yield, ~Await] }
 functionDeclaration
-: Function bindingIdentifier OpenParen formalParameters CloseParen OpenBrace functionBody CloseBrace
+: Function bindingIdentifier OpenParen formalParameters CloseParen
+  OpenBrace functionBody CloseBrace
+;
+
+// FunctionExpression:
+//    function BindingIdentifier[~Yield, ~Await][opt] (
+//        FormalParameters[~Yield, ~Await] ) {
+//        FunctionBody[~Yield, ~Await] }
+functionExpression
+: Function bindingIdentifier? OpenParen formalParameters CloseParen
+  OpenBrace functionBody CloseBrace
 ;
