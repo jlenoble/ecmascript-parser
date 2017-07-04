@@ -48,5 +48,5 @@ LineTerminator
 //     <PS>
 //     <CR><LF>
 LineTerminatorSequence
-: ('\r\n'|LineTerminator)
+: ('\r\n'|LineTerminator) -> channel(HIDDEN)
 ;
