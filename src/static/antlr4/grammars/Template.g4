@@ -9,10 +9,6 @@ templateLiteral
 : TemplateHead expression_In templateSpans
 | NoSubstitutionTemplate
 ;
-templateLiteral_Yield
-: TemplateHead expression_In_Yield templateSpans_Yield
-| NoSubstitutionTemplate
-;
 /*templateLiteral_Await
 : NoSubstitutionTemplate
 | TemplateHead expression_In_Await templateSpans_Await
@@ -28,9 +24,6 @@ templateLiteral_Yield_Await
 templateSpans
 : templateMiddleList? TemplateTail
 ;
-templateSpans_Yield
-: templateMiddleList_Yield? TemplateTail
-;
 /*templateSpans_Await
 : TemplateTail
 | templateMiddleList_Await TemplateTail
@@ -45,9 +38,6 @@ templateSpans_Yield_Await
 //    TemplateMiddleList[?Yield, ?Await] TemplateMiddle Expression[+In, ?Yield, ?Await]
 templateMiddleList
 : TemplateMiddle expression_In+
-;
-templateMiddleList_Yield
-: TemplateMiddle expression_In_Yield+
 ;
 /*templateMiddleList_Await
 : TemplateMiddle expression_In_Await+

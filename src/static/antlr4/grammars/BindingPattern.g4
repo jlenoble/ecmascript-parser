@@ -9,10 +9,6 @@ bindingPattern
 : objectBindingPattern
 | arrayBindingPattern
 ;
-bindingPattern_Yield
-: objectBindingPattern_Yield
-| arrayBindingPattern_Yield
-;
 /*bindingPattern_Await
 : objectBindingPattern_Await
 | arrayBindingPattern_Await
@@ -30,11 +26,6 @@ objectBindingPattern
 : OpenBrace CloseBrace
 | OpenBrace bindingPropertyList CloseBrace
 | OpenBrace bindingPropertyList Comma CloseBrace
-;
-objectBindingPattern_Yield
-: OpenBrace CloseBrace
-| OpenBrace bindingPropertyList_Yield CloseBrace
-| OpenBrace bindingPropertyList_Yield Comma CloseBrace
 ;
 /*objectBindingPattern_Await
 : OpenBrace CloseBrace
@@ -56,11 +47,6 @@ arrayBindingPattern
 | OpenBracket bindingPropertyList CloseBracket
 | OpenBracket bindingPropertyList Comma elision? bindingRestElement? CloseBracket
 ;
-arrayBindingPattern_Yield
-: OpenBracket elision? bindingRestElement_Yield? CloseBracket
-| OpenBracket bindingPropertyList_Yield CloseBracket
-| OpenBracket bindingPropertyList_Yield Comma elision? bindingRestElement_Yield? CloseBracket
-;
 /*arrayBindingPattern_Await
 : OpenBracket elision? bindingRestElement_Await? CloseBracket
 | OpenBracket bindingPropertyList_Await CloseBracket
@@ -78,9 +64,6 @@ arrayBindingPattern_Yield_Await
 bindingPropertyList
 : bindingProperty (Comma bindingProperty)*
 ;
-bindingPropertyList_Yield
-: bindingProperty_Yield  (Comma bindingProperty_Yield)*
-;
 /*bindingPropertyList_Await
 : bindingProperty_Await (Comma bindingProperty_Await)*
 ;
@@ -94,10 +77,6 @@ bindingPropertyList_Yield_Await
 bindingProperty
 : singleNameBinding
 | propertyName Colon bindingElement
-;
-bindingProperty_Yield
-: singleNameBinding_Yield
-| propertyName_Yield Colon bindingElement_Yield
 ;
 /*bindingProperty_Await
 : singleNameBinding_Await

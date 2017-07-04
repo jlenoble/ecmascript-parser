@@ -17,14 +17,6 @@ callExpression
 | callExpression Dot identifierName
 /*| callExpression templateLiteral*/
 ;
-callExpression_Yield
-: coverCallExpressionAndAsyncArrowHead_Yield
-/*| superCall_Yield*/
-| callExpression_Yield arguments_Yield
-/*| callExpression_Yield OpenBracket expression_In_Yield CloseBracket*/
-| callExpression_Yield Dot identifierName
-/*| callExpression_Yield templateLiteral_Yield*/
-;
 /*callExpression_Await
 : coverCallExpressionAndAsyncArrowHead_Await
 | superCall_Await
@@ -47,9 +39,6 @@ callExpression_Yield_Await
 /*superCall
 : Super arguments
 ;
-superCall_Yield
-: Super arguments_Yield
-;
 superCall_Await
 : Super arguments_Await
 ;
@@ -64,10 +53,6 @@ superCall_Yield_Await
 arguments
 : OpenParen CloseParen
 | OpenParen argumentList Comma? CloseParen
-;
-arguments_Yield
-: OpenParen CloseParen
-| OpenParen argumentList_Yield Comma? CloseParen
 ;
 /*arguments_Await
 : OpenParen CloseParen
@@ -85,9 +70,6 @@ arguments_Yield_Await
 //    ArgumentList[?Yield, ?Await] , ... AssignmentExpression[+In, ?Yield, ?Await]
 argumentList
 : Spread? assignmentExpression_In (Comma Spread? assignmentExpression_In)*
-;
-argumentList_Yield
-: Spread? assignmentExpression_In_Yield (Comma Spread? assignmentExpression_In_Yield)*
 ;
 /*argumentList_Await
 : Spread? assignmentExpression_In_Await (Comma Spread? assignmentExpression_In_Await)*

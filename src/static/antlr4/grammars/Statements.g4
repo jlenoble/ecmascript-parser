@@ -48,21 +48,7 @@ statement
 | tryStatement
 | debuggerStatement
 ;
-/*statement_Yield
-: blockStatement_Yield
-| variableStatement_Yield
-| emptyStatement
-| expressionStatement_Yield
-| ifStatement_Yield
-| breakableStatement_Yield
-| continueStatement_Yield
-| breakStatement_Yield
-| withStatement_Yield
-| labelledStatement_Yield
-| throwStatement_Yield
-| tryStatement_Yield
-| debuggerStatement
-;
+/*
 statement_Await
 : blockStatement_Await
 | variableStatement_Await
@@ -93,22 +79,6 @@ statement_Yield_Await
 | tryStatement_Yield_Await
 | debuggerStatement
 ;*/
-statement_Yield_Return
-: /*blockStatement_Yield_Return
-| variableStatement_Yield
-| */emptyStatement
-| expressionStatement_Yield/*
-| ifStatement_Yield_Return
-| breakableStatement_Yield_Return
-| continueStatement_Yield
-| breakStatement_Yield*/
-| returnStatement_Yield
-/*| withStatement_Yield_Return
-| labelledStatement_Yield_Return
-| throwStatement_Yield
-| tryStatement_Yield_Return
-| debuggerStatement*/
-;
 /*statement_Await_Return
 : blockStatement_Await_Return
 | variableStatement_Await
@@ -157,9 +127,6 @@ statementList_Await
 statementList_Yield_Await
 : statementListItem_Yield_Await+
 ;*/
-statementList_Yield_Return
-: statementListItem_Yield_Return+
-;
 /*statementList_Await_Return
 : statementListItem_Await_Return+
 ;
@@ -186,10 +153,6 @@ statementListItem_Yield_Await
 : statement_Yield_Await
 | declaration_Yield_Await
 ;*/
-statementListItem_Yield_Return
-: declaration_Yield
-| statement_Yield_Return
-;
 /*statementListItem_Await_Return
 : statement_Await_Return
 | declaration_Await
@@ -211,9 +174,6 @@ emptyStatement
 returnStatement
 : Return expression_In? eos
 ;
-returnStatement_Yield
-: Return expression_In_Yield? eos
-;
 /*returnStatement_Await
 : Return expression_In_Await? eos
 ;
@@ -231,9 +191,6 @@ debuggerStatement
 //    [lookahead ∉ { {, function, async [no LineTerminator here] function, class, let [ }] Expression[+In, ?Yield, ?Await] ;
 expressionStatement
 : expression_In eos
-;
-expressionStatement_Yield
-: expression_In_Yield
 ;
 /*expressionStatement_Await
 : expression_In_Await

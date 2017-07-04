@@ -6,10 +6,7 @@ grammar Generator;
 // function * BindingIdentifier[?Yield, ?Await] ( FormalParameters[+Yield, ~Await] ) { GeneratorBody }
 // [+Default] function * ( FormalParameters[+Yield, ~Await] ) { GeneratorBody }
 generatorDeclaration
-: Function Multiply bindingIdentifier OpenParen formalParameters_Yield CloseParen OpenBrace generatorBody CloseBrace
-;
-generatorDeclaration_Yield
-: Function Multiply bindingIdentifier_Yield OpenParen formalParameters_Yield CloseParen OpenBrace generatorBody CloseBrace
+: Function Multiply bindingIdentifier OpenParen formalParameters CloseParen OpenBrace generatorBody CloseBrace
 ;
 /*generatorDeclaration_Await
 : Function Multiply bindingIdentifier_Await OpenParen formalParameters_Yield CloseParen OpenBrace generatorBody CloseBrace
@@ -37,5 +34,5 @@ generatorDeclaration_Yield_Await_Default
 // GeneratorExpression:
 //    function * BindingIdentifier[+Yield, ~Await][opt] ( FormalParameters[+Yield, ~Await] ) { GeneratorBody }
 generatorExpression
-: Function Multiply bindingIdentifier_Yield? OpenParen formalParameters_Yield CloseParen OpenBrace generatorBody CloseBrace
+: Function Multiply bindingIdentifier? OpenParen formalParameters CloseParen OpenBrace generatorBody CloseBrace
 ;

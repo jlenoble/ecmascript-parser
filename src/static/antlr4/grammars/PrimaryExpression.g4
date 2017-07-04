@@ -27,18 +27,6 @@ primaryExpression
 | templateLiteral
 | coverParenthesizedExpressionAndArrowParameterList
 ;
-primaryExpression_Yield
-: This
-| identifierReference_Yield
-| literal
-| arrayLiteral_Yield
-| objectLiteral_Yield
-| classExpression_Yield
-/*| asyncFunctionExpression
-| RegularExpressionLiteral
-| templateLiteral_Yield*/
-| coverParenthesizedExpressionAndArrowParameterList_Yield
-;
 /*primaryExpression_Await
 : This
 | identifierReference_Await

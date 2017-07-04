@@ -64,6 +64,20 @@ ECMAScriptPassParser.prototype.exitFunctionBody = function () {
 ECMAScriptPassParser.prototype.canReturn = function () {
   return this.functionLevel > 0;
 }
+
+ECMAScriptPassParser.prototype.generatorLevel = 0;
+
+ECMAScriptPassParser.prototype.enterGeneratorBody = function () {
+  this.generatorLevel += 1;
+}
+
+ECMAScriptPassParser.prototype.exitGeneratorBody = function () {
+  this.generatorLevel -= 1;
+}
+
+ECMAScriptPassParser.prototype.canYield = function () {
+  return this.generatorLevel > 0;
+}
 }
 
 file

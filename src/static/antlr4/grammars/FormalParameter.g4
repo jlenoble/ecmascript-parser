@@ -7,9 +7,6 @@ grammar FormalParameter;
 uniqueFormalParameters
 : formalParameters
 ;
-uniqueFormalParameters_Yield
-: formalParameters_Yield
-;
 /*uniqueFormalParameters_Await
 : formalParameters_Await
 ;
@@ -28,12 +25,6 @@ formalParameters
 | functionRestParameter
 | formalParameterList Comma?
 | formalParameterList Comma functionRestParameter
-;
-formalParameters_Yield
-:
-| functionRestParameter_Yield
-| formalParameterList_Yield Comma?
-| formalParameterList_Yield Comma functionRestParameter_Yield
 ;
 /*formalParameters_Await
 :
@@ -54,9 +45,6 @@ formalParameters_Yield_Await
 formalParameterList
 : formalParameter (Comma formalParameter)*
 ;
-formalParameterList_Yield
-: formalParameter_Yield (Comma formalParameter_Yield)*
-;
 /*formalParameterList_Await
 : formalParameter_Await (Comma formalParameter_Await)*
 ;
@@ -69,9 +57,6 @@ formalParameterList_Yield_Await
 functionRestParameter
 : bindingRestElement
 ;
-functionRestParameter_Yield
-: bindingRestElement_Yield
-;
 /*functionRestParameter_Await
 : bindingRestElement_Await
 ;
@@ -83,9 +68,6 @@ functionRestParameter_Yield_Await
 //    BindingElement[?Yield, ?Await]
 formalParameter
 : bindingElement
-;
-formalParameter_Yield
-: bindingElement_Yield
 ;
 /*formalParameter_Await
 : bindingElement_Await
@@ -101,11 +83,7 @@ arrowParameters
 : bindingIdentifier
 | coverParenthesizedExpressionAndArrowParameterList
 ;
-/*arrowParameters_Yield
-: bindingIdentifier_Yield
-| coverParenthesizedExpressionAndArrowParameterList_Yield
-;
-arrowParameters_Await
+/*arrowParameters_Await
 : bindingIdentifier_Await
 | coverParenthesizedExpressionAndArrowParameterList_Await
 ;

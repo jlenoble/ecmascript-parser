@@ -23,9 +23,6 @@ bindingElementList_Yield_Await
 /*bindingElisionElement
 : elision? bindingElement
 ;
-bindingElisionElement_Yield
-: elision? bindingElement_Yield
-;
 bindingElisionElement_Await
 : elision? bindingElement_Await
 ;
@@ -39,10 +36,6 @@ bindingElisionElement_Yield_Await
 bindingElement
 : singleNameBinding
 | bindingPattern initializer_In?
-;
-bindingElement_Yield
-: singleNameBinding_Yield
-| bindingPattern_Yield initializer_In_Yield?
 ;
 /*bindingElement_Await
 : singleNameBinding_Await
@@ -60,10 +53,6 @@ bindingRestElement
 : Spread bindingIdentifier
 /*| Spread bindingPattern*/
 ;
-bindingRestElement_Yield
-: Spread bindingIdentifier_Yield
-/*| Spread bindingPattern_Yield*/
-;
 /*bindingRestElement_Await
 : Spread bindingIdentifier_Await
 | Spread bindingPattern_Await
@@ -77,9 +66,6 @@ bindingRestElement_Yield_Await
 //    BindingIdentifier[?Yield, ?Await] Initializer[+In, ?Yield, ?Await][opt]
 singleNameBinding
 : bindingIdentifier initializer_In?
-;
-singleNameBinding_Yield
-: bindingIdentifier_Yield initializer_In_Yield?
 ;
 /*singleNameBinding_Await
 : bindingIdentifier_Await initializer_In_Await?

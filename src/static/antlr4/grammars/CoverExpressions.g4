@@ -18,14 +18,6 @@ coverParenthesizedExpressionAndArrowParameterList
 | OpenParen expression_In Comma Spread bindingIdentifier CloseParen
 | OpenParen expression_In Comma Spread bindingPattern CloseParen*/
 ;
-coverParenthesizedExpressionAndArrowParameterList_Yield
-: OpenParen expression_In_Yield Comma? CloseParen
-| OpenParen CloseParen
-/*| OpenParen Spread bindingIdentifier_Yield CloseParen
-| OpenParen Spread bindingPattern_Yield CloseParen
-| OpenParen expression_In_Yield Comma Spread bindingIdentifier_Yield CloseParen
-| OpenParen expression_In_Yield Comma Spread bindingPattern_Yield CloseParen
-*/;
 /*coverParenthesizedExpressionAndArrowParameterList_Await
 : OpenParen expression_In_Await Comma? CloseParen
 | OpenParen CloseParen
@@ -66,9 +58,6 @@ parenthesizedExpression_Yield_Await
 //    MemberExpression[?Yield, ?Await] Arguments[?Yield, ?Await]
 coverCallExpressionAndAsyncArrowHead
 : memberExpression arguments
-;
-coverCallExpressionAndAsyncArrowHead_Yield
-: memberExpression_Yield arguments_Yield
 ;
 /*coverCallExpressionAndAsyncArrowHead_Await
 : memberExpression_Await arguments_Await

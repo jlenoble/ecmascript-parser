@@ -7,9 +7,6 @@ grammar AssignmentExpression;
 initializer
 : Assign assignmentExpression
 ;
-initializer_Yield
-: Assign assignmentExpression_Yield
-;
 /*initializer_Await
 : Assign assignmentExpression_Await
 ;
@@ -18,9 +15,6 @@ initializer_Yield_Await
 ;*/
 initializer_In
 : Assign assignmentExpression_In
-;
-initializer_In_Yield
-: Assign assignmentExpression_In_Yield
 ;
 /*initializer_In_Await
 : Assign assignmentExpression_In_Await
@@ -128,33 +122,8 @@ assignmentExpression
 | asyncArrowFunction*/
 | assignmentExpression Assign assignmentExpression                  # assignExpression
 | assignmentExpression assignmentOperator assignmentExpression      # assignmentOperatorExpression
+| {this.canYield()} Yield assignmentExpression                      # yieldExpression
 | leftHandSideExpression                                            # lhsExpression
-;
-assignmentExpression_Yield
-: functionExpression                                                            # funcExpression_Yield
-| assignmentExpression_Yield {!this.isLineTerminatorEquivalent()}?
-  (PlusPlus|MinusMinus)                                                         # updateExpression_Yield
-| unaryOperator assignmentExpression_Yield                                      # unaryExpression_Yield
-| assignmentExpression_Yield Power assignmentExpression_Yield                   # exponentiationExpression_Yield
-| assignmentExpression_Yield multiplicativeOperator assignmentExpression_Yield  # multiplicativeExpression_Yield
-| assignmentExpression_Yield additiveOperator assignmentExpression_Yield        # additiveExpression_Yield
-| assignmentExpression_Yield shiftOperator assignmentExpression_Yield           # shiftExpression_Yield
-| assignmentExpression_Yield relationalOperator assignmentExpression_Yield      # relationalExpression_Yield
-| assignmentExpression_Yield Instanceof assignmentExpression_Yield              # instanceOfExpression_Yield
-| assignmentExpression_Yield equalityOperator assignmentExpression_Yield        # equalityExpression_Yield
-| assignmentExpression_Yield BitAnd assignmentExpression_Yield                  # bitwiseANDExpression_Yield
-| assignmentExpression_Yield BitXor assignmentExpression_Yield                  # bitwiseXORExpression_Yield
-| assignmentExpression_Yield BitOr assignmentExpression_Yield                   # bitwiseORExpression_Yield
-| assignmentExpression_Yield And assignmentExpression_Yield                     # logicalANDExpression_Yield
-| assignmentExpression_Yield Or assignmentExpression_Yield                      # logicalORExpression_Yield
-| assignmentExpression_Yield QuestionMark assignmentExpression_Yield
-  Colon assignmentExpression_Yield                                              # conditionalExpression_Yield
-/*| arrowParameters FatArrow conciseBody        # arrowFunction
-| asyncArrowFunction*/
-| assignmentExpression_Yield Assign assignmentExpression_Yield                  # assignExpression_Yield
-| assignmentExpression_Yield assignmentOperator assignmentExpression_Yield      # assignmentOperatorExpression_Yield
-| Yield assignmentExpression_Yield                                              # yieldExpression
-| leftHandSideExpression                                                        # lhsExpression_Yield
 ;
 /*assignmentExpression_Await
 : assignmentExpression_Await QuestionMark assignmentExpression_Await
@@ -200,35 +169,8 @@ assignmentExpression_In
 /*| asyncArrowFunction*/
 | assignmentExpression_In Assign assignmentExpression_In                  # assignExpression_In
 | assignmentExpression_In assignmentOperator assignmentExpression_In      # assignmentOperatorExpression_In
+| {this.canYield()} Yield assignmentExpression_In                         # yieldExpression_In
 | leftHandSideExpression                                                  # lhsExpression_In
-;
-assignmentExpression_In_Yield
-: generatorExpression                                                                 # genExpression_In_Yield
-| functionExpression                                                                  # funcExpression_In_Yield
-| assignmentExpression_In_Yield {!this.isLineTerminatorEquivalent()}?
-  (PlusPlus|MinusMinus)                                                               # updateExpression_In_Yield
-| unaryOperator assignmentExpression_In_Yield                                         # unaryExpression_In_Yield
-| assignmentExpression_In_Yield Power assignmentExpression_In_Yield                   # exponentiationExpression_In_Yield
-| assignmentExpression_In_Yield multiplicativeOperator assignmentExpression_In_Yield  # multiplicativeExpression_In_Yield
-| assignmentExpression_In_Yield additiveOperator assignmentExpression_In_Yield        # additiveExpression_In_Yield
-| assignmentExpression_In_Yield shiftOperator assignmentExpression_In_Yield           # shiftExpression_In_Yield
-| assignmentExpression_In_Yield relationalOperator assignmentExpression_In_Yield      # relationalExpression_In_Yield
-| assignmentExpression_In_Yield In assignmentExpression_In_Yield                      # inExpression_In_Yield
-| assignmentExpression_In_Yield Instanceof assignmentExpression_In_Yield              # instanceOfExpression_In_Yield
-| assignmentExpression_In_Yield equalityOperator assignmentExpression_In_Yield        # equalityExpression_In_Yield
-| assignmentExpression_In_Yield BitAnd assignmentExpression_In_Yield                  # bitwiseANDExpression_In_Yield
-| assignmentExpression_In_Yield BitXor assignmentExpression_In_Yield                  # bitwiseXORExpression_In_Yield
-| assignmentExpression_In_Yield BitOr assignmentExpression_In_Yield                   # bitwiseORExpression_In_Yield
-| assignmentExpression_In_Yield And assignmentExpression_In_Yield                     # logicalANDExpression_In_Yield
-| assignmentExpression_In_Yield Or assignmentExpression_In_Yield                      # logicalORExpression_In_Yield
-| assignmentExpression_In_Yield QuestionMark assignmentExpression_In_Yield
-  Colon assignmentExpression_In_Yield                                                 # conditionalExpression_In_Yield
-/*| arrowParameters FatArrow conciseBody        # arrowFunction
-| asyncArrowFunction*/
-| assignmentExpression_In_Yield Assign assignmentExpression_In_Yield                  # assignExpression_In_Yield
-| assignmentExpression_In_Yield assignmentOperator assignmentExpression_In_Yield      # assignmentOperatorExpression_In_Yield
-| Yield assignmentExpression_In_Yield                                                 # yieldExpression_In
-| leftHandSideExpression                                                              # lhsExpression_Yield_In
 ;
 /*assignmentExpression_In_Await
 : assignmentExpression_In_Await QuestionMark assignmentExpression_In_Await

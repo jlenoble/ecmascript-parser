@@ -10,10 +10,6 @@ objectLiteral
 : OpenBrace CloseBrace
 | OpenBrace propertyDefinitionList Comma? CloseBrace
 ;
-objectLiteral_Yield
-: OpenBrace CloseBrace
-| OpenBrace propertyDefinitionList_Yield Comma? CloseBrace
-;
 /*objectLiteral_Await
 : OpenBrace CloseBrace
 | OpenBrace propertyDefinitionList_Await Comma? CloseBrace
@@ -28,9 +24,6 @@ objectLiteral_Yield_Await
 //    PropertyDefinitionList[?Yield, ?Await] , PropertyDefinition[?Yield, ?Await]
 propertyDefinitionList
 : propertyDefinition (Comma propertyDefinition)*
-;
-propertyDefinitionList_Yield
-: propertyDefinition_Yield (Comma propertyDefinition_Yield)*
 ;
 /*propertyDefinitionList_Await
 : propertyDefinition_Await (Comma propertyDefinition_Await)*
@@ -49,12 +42,6 @@ propertyDefinition
 /*| coverInitializedName*/
 | propertyName Colon assignmentExpression_In
 | identifierReference
-;
-propertyDefinition_Yield
-: methodDefinition_Yield
-/*| coverInitializedName_Yield*/
-| propertyName_Yield Colon assignmentExpression_In_Yield
-| identifierReference_Yield
 ;
 /*propertyDefinition_Await
 : identifierReference_Await
@@ -75,10 +62,6 @@ propertyDefinition_Yield_Await
 propertyName
 : literalPropertyName
 | computedPropertyName
-;
-propertyName_Yield
-: literalPropertyName
-| computedPropertyName_Yield
 ;
 /*propertyName_Await
 : literalPropertyName
@@ -104,9 +87,6 @@ literalPropertyName
 computedPropertyName
 : assignmentExpression_In
 ;
-computedPropertyName_Yield
-: assignmentExpression_In_Yield
-;
 /*computedPropertyName_Await
 : assignmentExpression_In_Await
 ;
@@ -118,9 +98,6 @@ computedPropertyName_Yield_Await
 //    IdentifierReference[?Yield, ?Await] Initializer[+In, ?Yield, ?Await]
 /*coverInitializedName
 : identifierReference initializer_In
-;
-coverInitializedName_Yield
-: identifierReference_Yield initializer_In_Yield
 ;
 coverInitializedName_Await
 : identifierReference_Await initializer_In_Await
