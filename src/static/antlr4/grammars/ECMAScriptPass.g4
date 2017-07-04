@@ -78,6 +78,16 @@ ECMAScriptPassParser.prototype.exitGeneratorBody = function () {
 ECMAScriptPassParser.prototype.canYield = function () {
   return this.generatorLevel > 0;
 }
+
+ECMAScriptPassParser.prototype.isDoWhileEos = false;
+
+ECMAScriptPassParser.prototype.enableDoWhileEos = function () {
+  this.isDoWhileEos = true;
+}
+
+ECMAScriptPassParser.prototype.disableDoWhileEos = function () {
+  this.isDoWhileEos = false;
+}
 }
 
 file
@@ -87,7 +97,8 @@ file
 
 eos
 : SemiColon
-| {this.isLineTerminatorEquivalent()}?
-| {this._input.LA(1) === ECMAScriptPassParser.CloseBrace}?
-| {this._input.LA(1) === ECMAScriptPassParser.EOF}?
+| {this.isLineTerminatorEquivalent() ||
+  (this._input.LA(1) === ECMAScriptPassParser.CloseBrace) ||
+  this.isDoWhileEos ||
+  (this._input.LA(1) === ECMAScriptPassParser.EOF)}?
 ;

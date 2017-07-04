@@ -15,7 +15,8 @@ grammar IterationStatement;
 //    for ( var ForBinding[?Yield, ?Await] of AssignmentExpression[+In, ?Yield, ?Await] ) Statement[?Yield, ?Await, ?Return]
 //    for ( ForDeclaration[?Yield, ?Await] of AssignmentExpression[+In, ?Yield, ?Await] ) Statement[?Yield, ?Await, ?Return]
 iterationStatement
-: Do statement While OpenParen expression_In CloseParen eos
+: Do statement While OpenParen expression_In CloseParen
+  {this.enableDoWhileEos()} eos {this.disableDoWhileEos()}
 | While OpenParen expression_In CloseParen statement
 | For OpenParen expression? SemiColon expression_In? SemiColon expression_In? CloseParen statement
 | For OpenParen Var variableDeclarationList SemiColon expression_In? SemiColon expression_In? CloseParen statement
