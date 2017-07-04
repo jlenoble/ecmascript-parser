@@ -6,7 +6,7 @@ describe('Testing ECMAScript', function () {
 
   const muter = Muter(process.stderr, 'write'); // eslint-disable-line
 
-  for (let i = 1570; i < 1590 /*1956*/; i++) {
+  for (let i = 1252; i < 1264 /*1956*/; i++) {
     let file;
 
     if (
