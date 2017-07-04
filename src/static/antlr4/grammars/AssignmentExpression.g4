@@ -161,6 +161,7 @@ assignmentExpression
   assignmentExpression                        # yieldExpression
 | arrowParameters FatArrow conciseBody        # fatArrowExpression
 | assignmentPattern                           # destructuringExpression
+| superCall                                   # superExpressionExpression
 | superProperty                               # superExpression
 | metaProperty                                # metaExpression
 | This                                        # thisExpression
@@ -226,6 +227,7 @@ assignmentExpression_In
 | {this.canYield()} Yield
   assignmentExpression_In                     # yieldExpression_In
 | assignmentPattern                           # destructuringExpression_In
+| superCall                                   # superExpressionExpression_In
 | superProperty                               # superExpression_In
 | metaProperty                                # metaExpression_In
 | This                                        # thisExpression_In

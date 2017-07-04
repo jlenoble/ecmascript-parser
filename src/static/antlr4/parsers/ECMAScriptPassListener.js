@@ -686,6 +686,15 @@ ECMAScriptPassListener.prototype.exitMultiplicativeExpression = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#superExpressionExpression.
+ECMAScriptPassListener.prototype.enterSuperExpressionExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#superExpressionExpression.
+ECMAScriptPassListener.prototype.exitSuperExpressionExpression = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#funcExpression.
 ECMAScriptPassListener.prototype.enterFuncExpression = function(ctx) {
 };
@@ -926,6 +935,15 @@ ECMAScriptPassListener.prototype.enterDotMemberExpression_In = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#dotMemberExpression_In.
 ECMAScriptPassListener.prototype.exitDotMemberExpression_In = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#superExpressionExpression_In.
+ECMAScriptPassListener.prototype.enterSuperExpressionExpression_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#superExpressionExpression_In.
+ECMAScriptPassListener.prototype.exitSuperExpressionExpression_In = function(ctx) {
 };
 
 

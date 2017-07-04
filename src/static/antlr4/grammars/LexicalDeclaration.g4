@@ -10,18 +10,6 @@ lexicalDeclaration
 lexicalDeclaration_In
 : letOrConst bindingList_In eos
 ;
-/*lexicalDeclaration_Await
-: letOrConst bindingList_Await eos
-;
-lexicalDeclaration_Yield_Await
-: letOrConst bindingList_Yield_Await eos
-;*/
-/*lexicalDeclaration_In_Await
-: letOrConst bindingList_In_Await eos
-;
-lexicalDeclaration_In_Yield_Await
-: letOrConst bindingList_In_Yield_Await eos
-;*/
 
 // LetOrConst:
 //    let
@@ -40,21 +28,6 @@ bindingList
 bindingList_In
 : lexicalBinding_In (Comma lexicalBinding_In)*
 ;
-/*bindingList_Yield
-: lexicalBinding_Yield (Comma lexicalBinding_Yield)*
-;
-bindingList_Await
-: lexicalBinding_Await (Comma lexicalBinding_Await)*
-;
-bindingList_Yield_Await
-: lexicalBinding_Yield_Await (Comma lexicalBinding_Yield_Await)*
-;*/
-/*bindingList_In_Await
-: lexicalBinding_In_Await (Comma lexicalBinding_In_Await)*
-;
-bindingList_In_Yield_Await
-: lexicalBinding_In_Yield_Await (Comma lexicalBinding_In_Yield_Await)*
-;*/
 
 // LexicalBinding[In, Yield, Await]:
 //    BindingIdentifier[?Yield, ?Await] Initializer[?In, ?Yield, ?Await][opt]
@@ -67,19 +40,3 @@ lexicalBinding_In
 : bindingIdentifier initializer_In?
 | bindingPattern initializer_In
 ;
-/*lexicalBinding_Await
-: bindingIdentifier_Await initializer_Await?
-| bindingPattern_Await initializer_Await
-;
-lexicalBinding_Yield_Await
-: bindingIdentifier_Yield_Await initializer_Yield_Await?
-| bindingPattern_Yield_Await initializer_Yield_Await
-;*/
-/*lexicalBinding_In_Await
-: bindingIdentifier_Await initializer_In_Await?
-| bindingPattern_Await initializer_In_Await
-;
-lexicalBinding_In_Yield_Await
-: bindingIdentifier_Yield_Await initializer_In_Yield_Await?
-| bindingPattern_Yield_Await initializer_In_Yield_Await
-;*/
