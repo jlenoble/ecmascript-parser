@@ -21,40 +21,11 @@ primaryExpression
 | literal
 | arrayLiteral
 | objectLiteral
-| classExpression
 /*| asyncFunctionExpression*/
 | RegularExpressionLiteral
 | templateLiteral
 | coverParenthesizedExpressionAndArrowParameterList
 ;
-/*primaryExpression_Await
-: This
-| identifierReference_Await
-| literal
-| arrayLiteral_Await
-| objectLiteral_Await
-| functionExpression
-| classExpression_Await
-| generatorExpression
-| asyncFunctionExpression
-| RegularExpressionLiteral
-| templateLiteral_Await
-| coverParenthesizedExpressionAndArrowParameterList_Await
-;
-primaryExpression_Yield_Await
-: This
-| identifierReference_Yield_Await
-| literal
-| arrayLiteral_Yield_Await
-| objectLiteral_Yield_Await
-| functionExpression
-| classExpression_Yield_Await
-| generatorExpression
-| asyncFunctionExpression
-| RegularExpressionLiteral
-| templateLiteral_Yield_Await
-| coverParenthesizedExpressionAndArrowParameterList_Yield_Await
-;*/
 
 // Literal:
 //    NullLiteral

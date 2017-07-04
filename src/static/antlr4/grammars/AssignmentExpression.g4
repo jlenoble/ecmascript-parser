@@ -11,6 +11,13 @@ initializer_In
 : Assign assignmentExpression_In
 ;
 
+
+// GeneratorExpression: From Annex B4 - Functions And Classes
+//    function * BindingIdentifier[+Yield, ~Await][opt] ( FormalParameters[+Yield, ~Await] ) { GeneratorBody }
+// FunctionExpression: From Annex B4 - Functions And Classes
+//    function BindingIdentifier[~Yield, ~Await][opt] ( FormalParameters[~Yield, ~Await] ) { FunctionBody[~Yield, ~Await] }
+// ClassExpression[Yield, Await]: From Annex B4 - Functions And Classes
+//    class BindingIdentifier[?Yield, ?Await][opt] ClassTail[?Yield, ?Await]
 // UpdateExpression[Yield, Await]:
 //    LeftHandSideExpression[?Yield, ?Await]
 //    LeftHandSideExpression[?Yield, ?Await] [no LineTerminator here] ++
@@ -88,7 +95,11 @@ initializer_In
 //    LeftHandSideExpression[?Yield, ?Await] = AssignmentExpression[?In, ?Yield, ?Await]
 //    LeftHandSideExpression[?Yield, ?Await] AssignmentOperator AssignmentExpression[?In, ?Yield, ?Await]
 assignmentExpression
-: functionExpression                                                # funcExpression
+: Function Multiply bindingIdentifier? OpenParen formalParameters
+  CloseParen OpenBrace generatorBody CloseBrace                     # generatorExpression
+| Function bindingIdentifier? OpenParen formalParameters CloseParen
+  OpenBrace functionBody CloseBrace                                 # functionExpression
+| Class bindingIdentifier? classTail                                # classExpression
 | assignmentExpression {!this.isLineTerminatorEquivalent()}?
   (PlusPlus|MinusMinus)                                             # updateExpression
 | unaryOperator assignmentExpression                                # unaryExpression
@@ -114,8 +125,11 @@ assignmentExpression
 | leftHandSideExpression                                            # lhsExpression
 ;
 assignmentExpression_In
-: generatorExpression                                                     # genExpression_In
-| functionExpression                                                      # funcExpression_In
+: Function Multiply bindingIdentifier? OpenParen formalParameters
+  CloseParen OpenBrace generatorBody CloseBrace                           # generatorExpression_In
+| Function bindingIdentifier? OpenParen formalParameters CloseParen
+  OpenBrace functionBody CloseBrace                                       # functionExpression_In
+| Class bindingIdentifier? classTail                                      # classExpression_In
 | assignmentExpression_In  {!this.isLineTerminatorEquivalent()}?
   (PlusPlus|MinusMinus)                                                   # updateExpression_In
 | unaryOperator assignmentExpression_In                                   # unaryExpression_In
