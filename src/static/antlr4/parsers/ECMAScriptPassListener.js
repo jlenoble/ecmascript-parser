@@ -236,6 +236,15 @@ ECMAScriptPassListener.prototype.exitCallExpression = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#superCall.
+ECMAScriptPassListener.prototype.enterSuperCall = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#superCall.
+ECMAScriptPassListener.prototype.exitSuperCall = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#arguments.
 ECMAScriptPassListener.prototype.enterArguments = function(ctx) {
 };
@@ -278,6 +287,33 @@ ECMAScriptPassListener.prototype.enterMemberExpression = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#memberExpression.
 ECMAScriptPassListener.prototype.exitMemberExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#superProperty.
+ECMAScriptPassListener.prototype.enterSuperProperty = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#superProperty.
+ECMAScriptPassListener.prototype.exitSuperProperty = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#metaProperty.
+ECMAScriptPassListener.prototype.enterMetaProperty = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#metaProperty.
+ECMAScriptPassListener.prototype.exitMetaProperty = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#newTarget.
+ECMAScriptPassListener.prototype.enterNewTarget = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#newTarget.
+ECMAScriptPassListener.prototype.exitNewTarget = function(ctx) {
 };
 
 
@@ -368,6 +404,15 @@ ECMAScriptPassListener.prototype.enterParenExpression = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#parenExpression.
 ECMAScriptPassListener.prototype.exitParenExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#superExpression.
+ECMAScriptPassListener.prototype.enterSuperExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#superExpression.
+ECMAScriptPassListener.prototype.exitSuperExpression = function(ctx) {
 };
 
 
@@ -521,6 +566,15 @@ ECMAScriptPassListener.prototype.enterObjectLiteralExpression = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptPassParser#objectLiteralExpression.
 ECMAScriptPassListener.prototype.exitObjectLiteralExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#metaExpression.
+ECMAScriptPassListener.prototype.enterMetaExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#metaExpression.
+ECMAScriptPassListener.prototype.exitMetaExpression = function(ctx) {
 };
 
 
@@ -857,6 +911,15 @@ ECMAScriptPassListener.prototype.exitMultiplicativeExpression_In = function(ctx)
 };
 
 
+// Enter a parse tree produced by ECMAScriptPassParser#superExpression_In.
+ECMAScriptPassListener.prototype.enterSuperExpression_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#superExpression_In.
+ECMAScriptPassListener.prototype.exitSuperExpression_In = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptPassParser#objectLiteralExpression_In.
 ECMAScriptPassListener.prototype.enterObjectLiteralExpression_In = function(ctx) {
 };
@@ -962,6 +1025,15 @@ ECMAScriptPassListener.prototype.enterTaggedTemplateExpression_In = function(ctx
 
 // Exit a parse tree produced by ECMAScriptPassParser#taggedTemplateExpression_In.
 ECMAScriptPassListener.prototype.exitTaggedTemplateExpression_In = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptPassParser#metaExpression_In.
+ECMAScriptPassListener.prototype.enterMetaExpression_In = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptPassParser#metaExpression_In.
+ECMAScriptPassListener.prototype.exitMetaExpression_In = function(ctx) {
 };
 
 

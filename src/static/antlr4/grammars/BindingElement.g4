@@ -37,39 +37,17 @@ bindingElement
 : singleNameBinding
 | bindingPattern initializer_In?
 ;
-/*bindingElement_Await
-: singleNameBinding_Await
-| bindingPattern_Await initializer_In_Await?
-;
-bindingElement_Yield_Await
-: singleNameBinding_Yield_Await
-| bindingPattern_Yield_Await initializer_In_Yield_Await?
-;*/
 
 // BindingRestElement[Yield, Await]:
 //    ... BindingIdentifier[?Yield, ?Await]
 //    ... BindingPattern[?Yield, ?Await]
 bindingRestElement
 : Spread bindingIdentifier
-/*| Spread bindingPattern*/
+| Spread bindingPattern
 ;
-/*bindingRestElement_Await
-: Spread bindingIdentifier_Await
-| Spread bindingPattern_Await
-;
-bindingRestElement_Yield_Await
-: Spread bindingIdentifier_Yield_Await
-| Spread bindingPattern_Yield_Await
-;*/
 
 // SingleNameBinding[Yield, Await]:
 //    BindingIdentifier[?Yield, ?Await] Initializer[+In, ?Yield, ?Await][opt]
 singleNameBinding
 : bindingIdentifier initializer_In?
 ;
-/*singleNameBinding_Await
-: bindingIdentifier_Await initializer_In_Await?
-;
-singleNameBinding_Yield_Await
-: bindingIdentifier_Yield_Await initializer_In_Yield_Await?
-;*/

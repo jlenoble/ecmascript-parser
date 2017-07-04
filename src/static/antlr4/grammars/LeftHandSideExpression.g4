@@ -32,7 +32,27 @@ memberExpression
 | memberExpression OpenBracket expression_In CloseBracket
 | memberExpression Dot identifierName
 | memberExpression templateLiteral
-/*| superProperty
-| metaProperty*/
+| superProperty
+| metaProperty
 | New memberExpression arguments
+;
+
+// SuperProperty[Yield, Await]:
+//    super [ Expression[+In, ?Yield, ?Await] ]
+//    super . IdentifierName
+superProperty
+: Super OpenBracket expression_In CloseBracket
+| Super Dot identifierName
+;
+
+// MetaProperty:
+//    NewTarget
+metaProperty
+: newTarget
+;
+
+// NewTarget:
+//    new.target
+newTarget
+: New Dot Target
 ;

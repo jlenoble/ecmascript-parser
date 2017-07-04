@@ -11,40 +11,18 @@ grammar CallExpression;
 //    CallExpression[?Yield, ?Await] TemplateLiteral[?Yield, ?Await]
 callExpression
 : coverCallExpressionAndAsyncArrowHead
-/*| superCall*/
+| superCall
 | callExpression arguments
-/*| callExpression OpenBracket expression_In CloseBracket*/
+| callExpression OpenBracket expression_In CloseBracket
 | callExpression Dot identifierName
-/*| callExpression templateLiteral*/
+| callExpression templateLiteral
 ;
-/*callExpression_Await
-: coverCallExpressionAndAsyncArrowHead_Await
-| superCall_Await
-| callExpression_Await arguments_Await
-| callExpression_Await OpenBracket expression_In_Await CloseBracket
-| callExpression_Await Dot identifierName
-| callExpression_Await templateLiteral_Await
-;
-callExpression_Yield_Await
-: coverCallExpressionAndAsyncArrowHead_Yield_Await
-| superCall_Yield_Await
-| callExpression_Yield_Await arguments_Yield_Await
-| callExpression_Yield_Await OpenBracket expression_In_Yield_Await CloseBracket
-| callExpression_Yield_Await Dot identifierName
-| callExpression_Yield_Await templateLiteral_Yield_Await
-;*/
 
 // SuperCall[Yield, Await]:
 //    super Arguments[?Yield, ?Await]
-/*superCall
+superCall
 : Super arguments
 ;
-superCall_Await
-: Super arguments_Await
-;
-superCall_Yield_Await
-: Super arguments_Yield_Await
-;*/
 
 // Arguments[Yield, Await]:
 //    ( )
@@ -54,14 +32,6 @@ arguments
 : OpenParen CloseParen
 | OpenParen argumentList Comma? CloseParen
 ;
-/*arguments_Await
-: OpenParen CloseParen
-| OpenParen argumentList_Await Comma? CloseParen
-;
-arguments_Yield_Await
-: OpenParen CloseParen
-| OpenParen argumentList_Yield_Await Comma? CloseParen
-;*/
 
 // ArgumentList[Yield, Await]:
 //    AssignmentExpression[+In, ?Yield, ?Await]
@@ -71,9 +41,3 @@ arguments_Yield_Await
 argumentList
 : Spread? assignmentExpression_In (Comma Spread? assignmentExpression_In)*
 ;
-/*argumentList_Await
-: Spread? assignmentExpression_In_Await (Comma Spread? assignmentExpression_In_Await)*
-;
-argumentList_Yield_Await
-: Spread? assignmentExpression_In_Yield_Await (Comma Spread? assignmentExpression_In_Yield_Await)*
-;*/

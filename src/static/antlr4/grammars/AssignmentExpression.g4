@@ -160,6 +160,8 @@ assignmentExpression
 | {this.canYield()} Yield
   assignmentExpression                        # yieldExpression
 | arrowParameters FatArrow conciseBody        # arrowFunction
+| superProperty                               # superExpression
+| metaProperty                                # metaExpression
 | This                                        # thisExpression
 | identifierReference                         # idExpression
 | NullLiteral                                 # nullExpression
@@ -221,6 +223,8 @@ assignmentExpression_In
 | {this.canYield()} Yield
   assignmentExpression_In                     # yieldExpression_In
 | arrowParameters FatArrow conciseBody_In     # arrowFunction_In
+| superProperty                               # superExpression_In
+| metaProperty                                # metaExpression_In
 | This                                        # thisExpression_In
 | identifierReference                         # idExpression_In
 | NullLiteral                                 # nullExpression_In

@@ -9,14 +9,6 @@ bindingPattern
 : objectBindingPattern
 | arrayBindingPattern
 ;
-/*bindingPattern_Await
-: objectBindingPattern_Await
-| arrayBindingPattern_Await
-;
-bindingPattern_Yield_Await
-: objectBindingPattern_Yield_Await
-| arrayBindingPattern_Yield_Await
-;*/
 
 // ObjectBindingPattern[Yield, Await]:
 //    { }
@@ -24,39 +16,20 @@ bindingPattern_Yield_Await
 //    { BindingPropertyList[?Yield, ?Await] , }
 objectBindingPattern
 : OpenBrace CloseBrace
-| OpenBrace bindingPropertyList CloseBrace
-| OpenBrace bindingPropertyList Comma CloseBrace
+| OpenBrace bindingPropertyList Comma? CloseBrace
 ;
-/*objectBindingPattern_Await
-: OpenBrace CloseBrace
-| OpenBrace bindingPropertyList_Await CloseBrace
-| OpenBrace bindingPropertyList_Await Comma CloseBrace
-;
-objectBindingPattern_Yield_Await
-: OpenBrace CloseBrace
-| OpenBrace bindingPropertyList_Yield_Await CloseBrace
-| OpenBrace bindingPropertyList_Yield_Await Comma CloseBrace
-;*/
 
 // ArrayBindingPattern[Yield, Await]:
 //    [ Elision[opt] BindingRestElement[?Yield, ?Await][opt] ]
 //    [ BindingElementList[?Yield, ?Await] ]
-//    [ BindingElementList[?Yield, ?Await] , Elision[opt] BindingRestElement[?Yield, ?Await][opt] ]
+//    [ BindingElementList[?Yield, ?Await] , Elision[opt]
+//        BindingRestElement[?Yield, ?Await][opt] ]
 arrayBindingPattern
 : OpenBracket elision? bindingRestElement? CloseBracket
 | OpenBracket bindingPropertyList CloseBracket
-| OpenBracket bindingPropertyList Comma elision? bindingRestElement? CloseBracket
+| OpenBracket bindingPropertyList Comma elision? bindingRestElement?
+  CloseBracket
 ;
-/*arrayBindingPattern_Await
-: OpenBracket elision? bindingRestElement_Await? CloseBracket
-| OpenBracket bindingPropertyList_Await CloseBracket
-| OpenBracket bindingPropertyList_Await Comma elision? bindingRestElement_Await? CloseBracket
-;
-arrayBindingPattern_Yield_Await
-: OpenBracket elision? bindingRestElement_Yield_Await? CloseBracket
-| OpenBracket bindingPropertyList_Yield_Await CloseBracket
-| OpenBracket bindingPropertyList_Yield_Await Comma elision? bindingRestElement_Yield_Await? CloseBracket
-;*/
 
 // BindingPropertyList[Yield, Await]:
 //    BindingProperty[?Yield, ?Await]
@@ -64,12 +37,6 @@ arrayBindingPattern_Yield_Await
 bindingPropertyList
 : bindingProperty (Comma bindingProperty)*
 ;
-/*bindingPropertyList_Await
-: bindingProperty_Await (Comma bindingProperty_Await)*
-;
-bindingPropertyList_Yield_Await
-: bindingProperty_Yield_Await (Comma bindingProperty_Yield_Await)*
-;*/
 
 // BindingProperty[Yield, Await]:
 //    SingleNameBinding[?Yield, ?Await]
@@ -78,11 +45,3 @@ bindingProperty
 : singleNameBinding
 | propertyName Colon bindingElement
 ;
-/*bindingProperty_Await
-: singleNameBinding_Await
-| propertyName_Await Colon bindingElement_Await
-;
-bindingProperty_Yield_Await
-: singleNameBinding_Yield_Await
-| propertyName_Yield_Await Colon bindingElement_Yield_Await
-;*/
