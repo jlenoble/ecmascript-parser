@@ -122,12 +122,13 @@ export function* fileGen ({
   moduleIndex,
   skipIndex,
   skip,
+  doSkip,
 }) {
   let m = moduleIndex.next().value;
   let s = skipIndex.next().value;
 
   for (let i of index) {
-    if (skip && i === s) {
+    if (skip && i === s || i === doSkip) {
       s = skipIndex.next().value;
       continue;
     }
@@ -146,7 +147,7 @@ export function* passFile ({end = nPass, start = 0, skip = true}) {
     index: index(start, end),
     moduleIndex: passModuleIndex(),
     skipIndex: passSkipIndex(),
-    start, end, skip,
+    start, end, skip, doSkip: 268,
   });
 }
 

@@ -1,1 +1,5 @@
-Token=1
+InputElementDiv=1
+Token=2
+WhiteSpace=3
+LineTerminator=4
+LineTerminatorSequence=5

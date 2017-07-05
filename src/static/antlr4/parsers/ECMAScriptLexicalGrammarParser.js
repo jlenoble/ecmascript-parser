@@ -5,7 +5,7 @@ var ECMAScriptLexicalGrammarListener = require('./ECMAScriptLexicalGrammarListen
 var grammarFileName = "ECMAScriptLexicalGrammar.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u0003\r\u0004\u0002\t\u0002\u0003\u0002\u0007\u0002\u0006\n\u0002",
+    "\u0003\u0007\r\u0004\u0002\t\u0002\u0003\u0002\u0007\u0002\u0006\n\u0002",
     "\f\u0002\u000e\u0002\t\u000b\u0002\u0003\u0002\u0003\u0002\u0003\u0002",
     "\u0002\u0002\u0003\u0002\u0002\u0002\u0002\f\u0002\u0007\u0003\u0002",
     "\u0002\u0002\u0004\u0006\u0007\u0003\u0002\u0002\u0005\u0004\u0003\u0002",
@@ -23,7 +23,8 @@ var sharedContextCache = new antlr4.PredictionContextCache();
 
 var literalNames = [  ];
 
-var symbolicNames = [ null, "Token" ];
+var symbolicNames = [ null, "InputElementDiv", "Token", "WhiteSpace", "LineTerminator", 
+                      "LineTerminatorSequence" ];
 
 var ruleNames =  [ "file" ];
 
@@ -46,7 +47,11 @@ Object.defineProperty(ECMAScriptLexicalGrammarParser.prototype, "atn", {
 });
 
 ECMAScriptLexicalGrammarParser.EOF = antlr4.Token.EOF;
-ECMAScriptLexicalGrammarParser.Token = 1;
+ECMAScriptLexicalGrammarParser.InputElementDiv = 1;
+ECMAScriptLexicalGrammarParser.Token = 2;
+ECMAScriptLexicalGrammarParser.WhiteSpace = 3;
+ECMAScriptLexicalGrammarParser.LineTerminator = 4;
+ECMAScriptLexicalGrammarParser.LineTerminatorSequence = 5;
 
 ECMAScriptLexicalGrammarParser.RULE_file = 0;
 
@@ -70,14 +75,14 @@ FileContext.prototype.EOF = function() {
     return this.getToken(ECMAScriptLexicalGrammarParser.EOF, 0);
 };
 
-FileContext.prototype.Token = function(i) {
+FileContext.prototype.InputElementDiv = function(i) {
 	if(i===undefined) {
 		i = null;
 	}
     if(i===null) {
-        return this.getTokens(ECMAScriptLexicalGrammarParser.Token);
+        return this.getTokens(ECMAScriptLexicalGrammarParser.InputElementDiv);
     } else {
-        return this.getToken(ECMAScriptLexicalGrammarParser.Token, i);
+        return this.getToken(ECMAScriptLexicalGrammarParser.InputElementDiv, i);
     }
 };
 
@@ -109,9 +114,9 @@ ECMAScriptLexicalGrammarParser.prototype.file = function() {
         this.state = 5;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while(_la===ECMAScriptLexicalGrammarParser.Token) {
+        while(_la===ECMAScriptLexicalGrammarParser.InputElementDiv) {
             this.state = 2;
-            this.match(ECMAScriptLexicalGrammarParser.Token);
+            this.match(ECMAScriptLexicalGrammarParser.InputElementDiv);
             this.state = 7;
             this._errHandler.sync(this);
             _la = this._input.LA(1);

@@ -1,7 +1,20 @@
 grammar ECMAScriptLexicalGrammar;
 
+import WhiteSpace;
+
 file
-: Token* EOF
+: InputElementDiv* EOF
+;
+
+// InputElementDiv::
+//    WhiteSpace
+//    LineTerminator
+//    Comment
+//    CommonToken
+//    DivPunctuator
+//    RightBracePunctuator
+InputElementDiv
+: WhiteSpace
 ;
 
 Token
