@@ -110,7 +110,4 @@ DivPunctuator
 
 // RightBracePunctuator::
 //    }
-// Handled with {this._input.LT(1).type == ECMAScriptParser.CloseBrace}?
-// when it represents an EndOfStatement
-
 CloseBrace                 : '}';
