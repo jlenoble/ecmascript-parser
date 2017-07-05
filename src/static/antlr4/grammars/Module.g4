@@ -6,7 +6,7 @@ grammar Module;
 // Module:
 //    ModuleBody[opt]
 module
-: moduleBody?
+: moduleBody? EOF
 ;
 
 // ModuleBody:

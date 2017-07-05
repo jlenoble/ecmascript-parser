@@ -143,8 +143,7 @@ ECMAScriptPassParser.prototype.isValidExpressionStatement = function () {
 }
 
 file
-: script EOF
-| module EOF
+: (script|module)
 ;
 
 eos

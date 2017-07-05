@@ -6,7 +6,7 @@ const listener = 'TranslatorPass';
 
 makeTest({
   grammar, listener,
-  files: passFile(10),
+  files: passFile(400, 396),
   dir: 'pass',
 });
 

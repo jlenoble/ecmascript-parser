@@ -179,6 +179,7 @@ export function makeTest ({
           translate(`${_dir}/${file}`, {
             grammar,
             listener,
+            rule: file.includes('.module.js') ? 'module' : 'script',
           })
             .on('error', reject)
             .on('finish', () => {

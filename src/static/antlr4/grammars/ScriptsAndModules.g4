@@ -7,7 +7,7 @@ import Module;
 // Script:
 //    ScriptBody[opt]
 script
-: scriptBody?
+: scriptBody? EOF
 ;
 
 // ScriptBody:

@@ -46,7 +46,9 @@ export const translate = (file, options = {}) => {
     .pipe(antlr4({
       grammar: options.grammar || grammar,
       listener: options.listener || listener,
-      parserDir, listenerDir, rule,
+      parserDir: options.parserDir || parserDir,
+      listenerDir: options.listenerDir || listenerDir,
+      rule: options.rule || rule,
     }));
 };
 
