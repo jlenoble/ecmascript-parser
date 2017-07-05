@@ -1,30 +1,30 @@
 import 'babel-polyfill';
 import {makeTest, passFile, earlyFile, failFile} from './helpers';
 
-const grammar = 'ECMAScriptPass';
-const listener = 'TranslatorPass';
+const grammar = 'ECMAScript';
+const listener = 'Translator';
 
 makeTest({
   grammar, listener,
-  files: passFile(400, 396),
+  files: passFile(),
   dir: 'pass',
 });
 
 makeTest({
   grammar, listener,
-  files: passFile(-1),
+  files: passFile(),
   dir: 'pass-explicit',
 });
 
 makeTest({
   grammar, listener,
-  files: earlyFile(-1),
+  files: earlyFile(),
   dir: 'early',
 });
 
 makeTest({
   grammar, listener,
-  files: failFile(-1),
+  files: failFile(),
   dir: 'fail',
-  fail: true,
+  fail: false,
 });

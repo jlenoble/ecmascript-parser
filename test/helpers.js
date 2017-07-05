@@ -79,7 +79,11 @@ function* failModuleIndex () {
     yield i;
   }
 
-  for (let i = 723; i <= 762; i++) {
+  for (let i = 723; i <= 743; i++) {
+    yield i;
+  }
+
+  for (let i = 745; i <= 762; i++) {
     yield i;
   }
 
