@@ -121,12 +121,13 @@ export function* fileGen ({
   index,
   moduleIndex,
   skipIndex,
+  skip,
 }) {
   let m = moduleIndex.next().value;
   let s = skipIndex.next().value;
 
   for (let i of index) {
-    if (i === s) {
+    if (skip && i === s) {
       s = skipIndex.next().value;
       continue;
     }
@@ -140,30 +141,30 @@ export function* fileGen ({
   }
 }
 
-export function* passFile (end = nPass, start = 0) {
+export function* passFile ({end = nPass, start = 0, skip = true}) {
   yield* fileGen({
     index: index(start, end),
     moduleIndex: passModuleIndex(),
     skipIndex: passSkipIndex(),
-    start, end,
+    start, end, skip,
   });
 }
 
-export function* earlyFile (end = nEarly, start = 0) {
+export function* earlyFile ({end = nEarly, start = 0, skip = true}) {
   yield* fileGen({
     index: index(start, end),
     moduleIndex: earlyModuleIndex(),
     skipIndex: earlySkipIndex(),
-    start, end,
+    start, end, skip,
   });
 }
 
-export function* failFile (end = nFail, start = 0) {
+export function* failFile ({end = nFail, start = 0, skip = true}) {
   yield* fileGen({
     index: index(start, end),
     moduleIndex: failModuleIndex(),
     skipIndex: failSkipIndex(),
-    start, end,
+    start, end, skip,
   });
 }
 
