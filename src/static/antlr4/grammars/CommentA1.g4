@@ -5,6 +5,9 @@ lexer grammar CommentA1;
 // Comment::
 //     MultiLineComment
 //     SingleLineComment
+Comment
+: (MultiLineComment|SingleLineComment)
+;
 
 // MultiLineComment::
 //     '/*' MultiLineCommentChars[opt] '*/'
