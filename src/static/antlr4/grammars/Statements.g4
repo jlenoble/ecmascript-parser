@@ -86,5 +86,5 @@ debuggerStatement
 // ExpressionStatement[Yield, Await]:
 //    [lookahead ∉ { {, function, async [no LineTerminator here] function, class, let [ }] Expression[+In, ?Yield, ?Await] ;
 expressionStatement
-: expression_In eos
+: {this.isValidExpressionStatement()}? expression_In eos
 ;

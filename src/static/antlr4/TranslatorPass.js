@@ -123,6 +123,12 @@ export class TranslatorPass extends ECMAScriptPassListener {
   exitIfStatement (ctx) {
     if (debug) {
       console.log('>>IfStatement:', ctx.getText());
+
+      const s1 = ctx.statement(0);
+      const s2 = ctx.statement(1);
+
+      console.log('s1', s1 && s1.getText())
+      console.log('s2', s2 && s2.getText())
     }
   }
 

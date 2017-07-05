@@ -13,7 +13,7 @@ lexer grammar WhiteSpace;
 //     <USP> Other category “Zs”: Any other Unicode “Space_Separator” code point
 // After some Googling and excluding the "line terminators":
 //     <NEL>      U+0085    NEXT LINE
-                  U+180E	  MONGOLIAN VOWEL SEPARATOR
+//                U+180E    MONGOLIAN VOWEL SEPARATOR
 //                U+1680    OGHAM SPACE MARK
 //                U+2000    EN QUAD
 //                U+2001    EM QUAD
