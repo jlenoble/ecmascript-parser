@@ -1,189 +1,30 @@
-import {translate} from '../gulp/parse';
-import Muter, {muted} from 'muter';
+import 'babel-polyfill';
+import {makeTest, passFile, earlyFile, failFile} from './helpers';
 
-describe('Testing ECMAScript', function () {
-  this.timeout(60000); // eslint-disable-line no-invalid-this
+const grammar = 'ECMAScriptPass';
+const listener = 'TranslatorPass';
 
-  const muter = Muter(process.stderr, 'write'); // eslint-disable-line
+makeTest({
+  grammar, listener,
+  files: passFile(10),
+  dir: 'pass',
+});
 
-  for (let i = 0; i < 10 /*1956*/; i++) {
-    let file;
+makeTest({
+  grammar, listener,
+  files: passFile(-1),
+  dir: 'pass-explicit',
+});
 
-    if (
-      i === 397 ||
-      i === 398 ||
-      (i >= 400 && i <= 409) ||
-      (i >= 411 && i <= 420) ||
-      i === 422 ||
-      i === 423 ||
-      i === 523 ||
-      i === 546 ||
-      i === 551 ||
-      (i >= 1051 && i <= 1070) ||
-      (i >= 1116 && i <= 1127) ||
-      i === 1132 ||
-      i === 1333 ||
-      (i >= 1686 && i <= 1695) ||
-      (i >= 1698 && i <= 1701)
-    ) {
-      file = `${i}.module.js`;
-    } else {
-      file = `${i}.script.js`;
-    }
+makeTest({
+  grammar, listener,
+  files: earlyFile(-1),
+  dir: 'early',
+});
 
-    if ([174, 1260, 1261, 1262, 1263, 1264].indexOf(i) !== -1) {
-      continue;
-      // Statement => no function declaration
-      // expressionStatement lookahead => no function expression
-      // These tests shouldn't pass
-    }
-
-    if ([268].indexOf(i) !== -1) {
-      continue; // Should be commented out once all tests pass but ^@ character
-      // breaks Mocha error reporting
-    }
-
-    if ([987, 1049, 1370, 1371, 1425, 1633].indexOf(i) !== -1) {
-      continue; // Tests involve deep nesting and reveal a poor optimization
-    }
-
-    it(`Parsing file pass/${file}`, muted(muter, function () {
-      return new Promise((resolve, reject) => {
-        translate(`node_modules/test262-parser-tests/pass/${file}`, {
-          grammar: 'ECMAScriptPass',
-          listener: 'TranslatorPass',
-        })
-          .on('error', reject)
-          .on('finish', () => {
-            const logs = muter.getLogs();
-            muter.forget();
-
-            if (logs) {
-              reject(new Error(logs));
-            } else {
-              resolve();
-            }
-          });
-      });
-    }));
-  }
-
-  for (let i = 0; i < 10 /*1956*/; i++) {
-    let file;
-
-    if (
-      i === 397 ||
-      i === 398 ||
-      (i >= 400 && i <= 409) ||
-      (i >= 411 && i <= 420) ||
-      i === 422 ||
-      i === 423 ||
-      i === 523 ||
-      i === 546 ||
-      i === 551 ||
-      (i >= 1051 && i <= 1070) ||
-      (i >= 1116 && i <= 1127) ||
-      i === 1132 ||
-      i === 1333 ||
-      (i >= 1686 && i <= 1695) ||
-      (i >= 1698 && i <= 1701)
-    ) {
-      file = `${i}.module.js`;
-    } else {
-      file = `${i}.script.js`;
-    }
-
-    if ([268].indexOf(i) !== -1) {
-      continue; // Should be commented out once all tests pass but ^@ character
-      // breaks Mocha error reporting
-    }
-
-    if ([987, 1049, 1370, 1371, 1425, 1633].indexOf(i) !== -1) {
-      continue; // Tests involve deep nesting and reveal a poor optimization
-    }
-
-    it(`Parsing file pass-explicit/${file}`, muted(muter, function () {
-      return new Promise((resolve, reject) => {
-        translate(`node_modules/test262-parser-tests/pass-explicit/${file}`, {
-          grammar: 'ECMAScriptPass',
-          listener: 'TranslatorPass',
-        })
-          .on('error', reject)
-          .on('finish', () => {
-            const logs = muter.getLogs();
-            muter.forget();
-
-            if (logs) {
-              reject(new Error(logs));
-            } else {
-              resolve();
-            }
-          });
-      });
-    }));
-  }
-
-  for (let i = 0; i < 10 /*648*/; i++) {
-    let file;
-
-    if (false) {
-      file = `${i}.module.js`;
-    } else {
-      file = `${i}.script.js`;
-    }
-
-    it(`Parsing file early/${file}`, muted(muter, function () {
-      return new Promise((resolve, reject) => {
-        translate(`node_modules/test262-parser-tests/early/${file}`, {
-          grammar: 'ECMAScriptPass',
-          listener: 'TranslatorPass',
-        })
-          .on('error', reject)
-          .on('finish', () => {
-            const logs = muter.getLogs();
-            muter.forget();
-
-            if (logs) {
-              reject(new Error(logs));
-            } else {
-              resolve();
-            }
-          });
-      });
-    }));
-  }
-
-  for (let i = 0; i < 10 /*999*/; i++) {
-    let file;
-
-    if (false) {
-      file = `${i}.module.js`;
-    } else {
-      file = `${i}.script.js`;
-    }
-
-    if ([254, 261].indexOf(i) !== -1) {
-      continue; // Tests involve deep nesting and reveal a poor optimization
-    }
-
-    it(`Parsing file fail/${file}`, muted(muter, function () {
-      return new Promise((resolve, reject) => {
-        translate(`node_modules/test262-parser-tests/fail/${file}`, {
-          grammar: 'ECMAScriptPass',
-          listener: 'TranslatorPass',
-        })
-          .on('error', reject)
-          .on('finish', () => {
-            const logs = muter.getLogs();
-            muter.forget();
-
-            if (logs) {
-              resolve(logs);
-            } else {
-              reject(new Error(`Test fail/${file} should have failed`));
-            }
-          });
-      });
-    }));
-  }
+makeTest({
+  grammar, listener,
+  files: failFile(-1),
+  dir: 'fail',
+  fail: true,
 });
