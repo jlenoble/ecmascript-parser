@@ -31,22 +31,3 @@ lexer grammar WhiteSpace;
 WhiteSpace
 : [\t\u000b\u000c\u0020\u00a0\ufeff\u1680\u180e\u2000-\u200a\u202f\u205f\u3000] -> channel(HIDDEN)
 ;
-
-// LineTerminator::
-//     <LF>     U+000A    LINE FEED             &NewLine;
-//     <CR>     U+000D    CARRIAGE RETURN
-//     <LS>     U+2028    LINE SEPARATOR
-//     <PS>     U+2029    PARAGRAPH SEPARATOR
-LineTerminator
-: [\n\r\u2028\u2029] -> channel(HIDDEN)
-;
-
-// LineTerminatorSequence::
-//     <LF>
-//     <CR>[lookahead ≠ <LF>]
-//     <LS>
-//     <PS>
-//     <CR><LF>
-LineTerminatorSequence
-: ('\r\n'|LineTerminator) -> channel(HIDDEN)
-;
