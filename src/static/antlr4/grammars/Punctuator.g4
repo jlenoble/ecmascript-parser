@@ -81,7 +81,7 @@ FatArrow                   : '=>';
 //     = += -= *= %= **= <<= >>= >>>= &= |= ^=
 //     =>
 Punctuator
-: OpenBrace     | OpenParen   | CloseParen      | OpenBracket       | CloseBracket
+: (OpenBrace    | OpenParen   | CloseParen      | OpenBracket       | CloseBracket
 | Dot           | Spread      | SemiColon       | Comma
 | LessThan      | GreaterThan | LessThanEquals  | GreaterThanEquals
 | Equals        | NotEquals   | IdentityEquals  | IdentityNotEquals
@@ -95,7 +95,7 @@ Punctuator
 | Assign        | PlusAssign  | MinusAssign     | MultiplyAssign    | ModuloAssign      | PowerAssign
 | LeftShiftArithmeticAssign   | RightShiftArithmeticAssign          | RightShiftLogicalAssign
 | BitAndAssign  | BitOrAssign | BitXorAssign
-| FatArrow
+| FatArrow)
 ;
 
 Divide                     : '/';
@@ -105,7 +105,7 @@ DivideAssign               : '/=';
 //    /
 //    /=
 DivPunctuator
-: Divide | DivideAssign
+: (Divide|DivideAssign)
 ;
 
 // RightBracePunctuator::
