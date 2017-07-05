@@ -6,8 +6,7 @@ lexer grammar StringLiteralA1;
 //    " DoubleStringCharacters[opt] "
 //    ' SingleStringCharacters[opt] '
 StringLiteral
-: '"' DoubleStringCharacters? '"'
-| '\'' SingleStringCharacters? '\''
+: ('"' DoubleStringCharacters? '"'|'\'' SingleStringCharacters? '\'')
 ;
 
 // DoubleStringCharacters::
@@ -30,9 +29,7 @@ SingleStringCharacters
 //    LineContinuation
 fragment
 DoubleStringCharacter
-: ~["\\\n\r\u2028\u2029]
-| '\\' EscapeSequence
-| LineContinuation
+: (~["\\\n\r\u2028\u2029]|'\\' EscapeSequence|LineContinuation)
 ;
 
 // SingleStringCharacter::
@@ -41,9 +38,7 @@ DoubleStringCharacter
 //    LineContinuation
 fragment
 SingleStringCharacter
-: ~['\\\n\r\u2028\u2029]
-| '\\' EscapeSequence
-| LineContinuation
+: (~['\\\n\r\u2028\u2029]|'\\' EscapeSequence|LineContinuation)
 ;
 
 // LineContinuation::
@@ -60,10 +55,7 @@ LineContinuation
 //    UnicodeEscapeSequence
 fragment
 EscapeSequence
-: CharacterEscapeSequence
-| '0'
-| HexEscapeSequence
-| UnicodeEscapeSequence
+: (CharacterEscapeSequence|'0'|HexEscapeSequence|UnicodeEscapeSequence)
 ;
 
 // CharacterEscapeSequence::
@@ -71,8 +63,7 @@ EscapeSequence
 //     NonEscapeCharacter
 fragment
 CharacterEscapeSequence
-: SingleEscapeCharacter
-| NonEscapeCharacter
+: (SingleEscapeCharacter|NonEscapeCharacter)
 ;
 
 // SingleEscapeCharacter::one of
@@ -96,9 +87,7 @@ NonEscapeCharacter
 //     u
 fragment
 EscapeCharacter
-: SingleEscapeCharacter
-| DecimalDigit
-| [xu]
+: (SingleEscapeCharacter|DecimalDigit|[xu])
 ;
 
 // HexEscapeSequence::
