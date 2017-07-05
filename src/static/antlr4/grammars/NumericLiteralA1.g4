@@ -8,10 +8,7 @@ lexer grammar NumericLiteralA1;
 //    OctalIntegerLiteral
 //    HexIntegerLiteral
 NumericLiteral
-: DecimalLiteral
-| BinaryIntegerLiteral
-| OctalIntegerLiteral
-| HexIntegerLiteral
+: (DecimalLiteral|BinaryIntegerLiteral|OctalIntegerLiteral|HexIntegerLiteral)
 ;
 
 // DecimalLiteral::
@@ -20,9 +17,7 @@ NumericLiteral
 //    DecimalIntegerLiteral ExponentPart[opt]
 fragment
 DecimalLiteral
-: DecimalIntegerLiteral '.' DecimalDigits? ExponentPart?
-| '.' DecimalDigits ExponentPart?
-| DecimalIntegerLiteral ExponentPart?
+: ('.' DecimalDigits|DecimalIntegerLiteral ('.' DecimalDigits?)?) ExponentPart?
 ;
 
 // DecimalIntegerLiteral::
@@ -30,8 +25,7 @@ DecimalLiteral
 //    NonZeroDigit DecimalDigits[opt]
 fragment
 DecimalIntegerLiteral
-: '0'
-| NonZeroDigit DecimalDigits?
+: ('0'|NonZeroDigit DecimalDigits?)
 ;
 
 // DecimalDigits::
@@ -76,17 +70,15 @@ ExponentIndicator
 //    - DecimalDigits
 fragment
 SignedInteger
-: DecimalDigits
-| '+' DecimalDigits
-| '-' DecimalDigits
+: ('+'|'-')? DecimalDigits
 ;
 
 // BinaryIntegerLiteral::
 //    0b BinaryDigits
 //    0B BinaryDigits
+fragment
 BinaryIntegerLiteral
-: '0b' BinaryDigits
-| '0B' BinaryDigits
+: '0' [bB] BinaryDigits
 ;
 
 // BinaryDigits::
@@ -107,9 +99,9 @@ BinaryDigit
 // OctalIntegerLiteral::
 //    0o OctalDigits
 //    0O OctalDigits
+fragment
 OctalIntegerLiteral
-: '0o' OctalDigits
-| '0O' OctalDigits
+: '0' [oO] OctalDigits
 ;
 
 // OctalDigits::
@@ -130,9 +122,9 @@ OctalDigit
 // HexIntegerLiteral::
 //    0x HexDigits
 //    0X HexDigits
+fragment
 HexIntegerLiteral
-: '0x' HexDigits
-| '0X' HexDigits
+: '0' [xX] HexDigits
 ;
 
 // HexDigits::
