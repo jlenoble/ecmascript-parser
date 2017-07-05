@@ -168,9 +168,9 @@ export function* failFile (end = nFail, start = 0) {
 }
 
 export function makeTest ({
-  grammar, listener, dir, files, fail,
+  title, grammar, listener, rule, dir, files, fail,
 }) {
-  describe(`Testing ${grammar}`, function () {
+  describe(title, function () {
     this.timeout(60000); // eslint-disable-line no-invalid-this
 
     const muter = Muter(process.stderr, 'write'); // eslint-disable-line
@@ -178,12 +178,12 @@ export function makeTest ({
       dir);
 
     for (let file of files) {
-      it(`Parsing file ${_dir}/${file}`, muted(muter, function () {
+      it(`file ${dir}/${file}`, muted(muter, function () {
         return new Promise((resolve, reject) => {
           translate(`${_dir}/${file}`, {
             grammar,
             listener,
-            rule: file.includes('.module.js') ? 'module' : 'script',
+            rule: rule || (file.includes('.module.js') ? 'module' : 'script'),
           })
             .on('error', reject)
             .on('finish', () => {
