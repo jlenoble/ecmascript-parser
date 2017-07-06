@@ -15,11 +15,8 @@ lexer grammar NumericLiteralB1;
 // HexIntegerLiteral
 // LegacyOctalIntegerLiteral
 NumericLiteral
-: DecimalLiteral
-| BinaryIntegerLiteral
-| OctalIntegerLiteral
-| HexIntegerLiteral
-| LegacyOctalIntegerLiteral
+: (DecimalLiteral|BinaryIntegerLiteral|OctalIntegerLiteral|HexIntegerLiteral
+  |LegacyOctalIntegerLiteral)
 ;
 
 // LegacyOctalIntegerLiteral::
@@ -36,9 +33,7 @@ LegacyOctalIntegerLiteral
 // NonOctalDecimalIntegerLiteral
 fragment
 DecimalIntegerLiteral
-: '0'
-| NonZeroDigit DecimalDigits?
-| NonOctalDecimalIntegerLiteral
+: ('0'|NonZeroDigit DecimalDigits?|NonOctalDecimalIntegerLiteral)
 ;
 
 // NonOctalDecimalIntegerLiteral::
@@ -47,8 +42,8 @@ DecimalIntegerLiteral
 // NonOctalDecimalIntegerLiteral DecimalDigit
 fragment
 NonOctalDecimalIntegerLiteral
-: '0' NonOctalDigit DecimalDigit*
-| LegacyOctalLikeDecimalIntegerLiteral NonOctalDigit DecimalDigit*
+: ('0' NonOctalDigit DecimalDigit*
+  |LegacyOctalLikeDecimalIntegerLiteral NonOctalDigit DecimalDigit*)
 ;
 
 // LegacyOctalLikeDecimalIntegerLiteral::
