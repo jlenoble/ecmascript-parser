@@ -20,5 +20,41 @@ ECMAScriptLexicalGrammarListener.prototype.exitFile = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#inputElement.
+ECMAScriptLexicalGrammarListener.prototype.enterInputElement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#inputElement.
+ECMAScriptLexicalGrammarListener.prototype.exitInputElement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#commonToken.
+ECMAScriptLexicalGrammarListener.prototype.enterCommonToken = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#commonToken.
+ECMAScriptLexicalGrammarListener.prototype.exitCommonToken = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#punctuator.
+ECMAScriptLexicalGrammarListener.prototype.enterPunctuator = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#punctuator.
+ECMAScriptLexicalGrammarListener.prototype.exitPunctuator = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#divPunctuator.
+ECMAScriptLexicalGrammarListener.prototype.enterDivPunctuator = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#divPunctuator.
+ECMAScriptLexicalGrammarListener.prototype.exitDivPunctuator = function(ctx) {
+};
+
+
 
 exports.ECMAScriptLexicalGrammarListener = ECMAScriptLexicalGrammarListener;

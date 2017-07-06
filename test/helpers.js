@@ -170,7 +170,7 @@ export function* failFile ({end = nFail, start = 0, skip = true}) {
 }
 
 export function makeTest ({
-  title, grammar, listener, rule, dir, files, fail,
+  title, grammar, listener, parserDir, listenerDir, rule, dir, files, fail,
 }) {
   describe(title, function () {
     this.timeout(60000); // eslint-disable-line no-invalid-this
@@ -183,8 +183,7 @@ export function makeTest ({
       it(`file ${dir}/${file}`, muted(muter, function () {
         return new Promise((resolve, reject) => {
           translate(`${_dir}/${file}`, {
-            grammar,
-            listener,
+            grammar, listener, parserDir, listenerDir,
             rule: rule || (file.includes('.module.js') ? 'module' : 'script'),
           })
             .on('error', reject)

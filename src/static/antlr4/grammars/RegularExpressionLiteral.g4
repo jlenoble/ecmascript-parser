@@ -5,7 +5,8 @@ lexer grammar RegularExpressionLiteral;
 // RegularExpressionLiteral::
 //     / RegularExpressionBody / RegularExpressionFlags
 RegularExpressionLiteral
-: '/' RegularExpressionBody '/' RegularExpressionFlags
+: {this.isValidContextForRegExp()}? '/' RegularExpressionBody
+  '/' RegularExpressionFlags
 ;
 
 // RegularExpressionBody::
@@ -24,9 +25,8 @@ RegularExpressionBody
 //     RegularExpressionClass
 fragment
 RegularExpressionFirstChar
-: ~[\n\r\u2028\u2029*\\/[]
-| RegularExpressionBackslashSequence
-| RegularExpressionClass
+: (~[\n\r\u2028\u2029*\\/[]|RegularExpressionBackslashSequence
+  |RegularExpressionClass)
 ;
 
 // RegularExpressionChar::
@@ -35,9 +35,8 @@ RegularExpressionFirstChar
 //     RegularExpressionClass
 fragment
 RegularExpressionChar
-: ~[\n\r\u2028\u2029\\/[]
-| RegularExpressionBackslashSequence
-| RegularExpressionClass
+: (~[\n\r\u2028\u2029\\/[]|RegularExpressionBackslashSequence
+  |RegularExpressionClass)
 ;
 
 // RegularExpressionBackslashSequence::
@@ -69,8 +68,7 @@ RegularExpressionClass
 //     RegularExpressionBackslashSequence
 fragment
 RegularExpressionClassChar
-: ~[\n\r\u2028\u2029\\\]]
-| RegularExpressionBackslashSequence
+: (~[\n\r\u2028\u2029\\\]]|RegularExpressionBackslashSequence)
 ;
 
 // RegularExpressionFlags::
