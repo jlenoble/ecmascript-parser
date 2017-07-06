@@ -1,23 +1,23 @@
 import 'babel-polyfill';
-import {makeTest, passFile, earlyFile, failFile} from './helpers';
+import {makeTest, passFile, earlyFile} from './helpers';
 
 const grammar = 'ECMAScriptLexicalGrammar';
 const listener = 'TranslatorLexicalGrammar';
 const rule = 'file';
 const skip = false;
 
-const runMode = 'pass';
+const runMode = 'all';
 // 'all', 'pass', 'explicit', 'early', 'fail', 'full'
 
 const starts = {
-  pass: 290,
-  explicit: 0,
+  pass: 270,
+  explicit: 270,
   early: 0,
   fail: 0,
 };
 const ends = {
   pass: 300,
-  explicit: -1,
+  explicit: 300,
   early: -1,
   fail: -1,
 };
@@ -52,18 +52,31 @@ const start = test => {
   return +Infinity;
 };
 
+const genPass = function* () {
+  for (let i = 279; i <= 297; i++) {
+    if (i === 282 || i === 293 || i === 295) {
+      continue;
+    }
+    yield i;
+  }
+};
+
+// doSkip: except for 268, they are all ambiguous possible regexp or div
+
 makeTest({
   title: `ECMASCriptLexicalGrammar: Lexing 'pass' tests for`,
   grammar, listener, rule,
-  files: passFile({end: end('pass'), start: start('pass'), skip}),
+  files: passFile({end: end('pass'), start: start('pass'), skip,
+    doSkip: [/* 268 */, 275, ...genPass(), 318, 319, 1791]}),
   dir: 'pass',
 });
 
 makeTest({
   title: `ECMASCriptLexicalGrammar: Lexing 'pass-explicit' tests for`,
   grammar, listener, rule,
-  files: passFile({end: end('explicit'), start: start('explicit'),
-    skip}),
+  files: passFile({end: end('explicit'), start: start('explicit'), skip,
+    doSkip: [118, /* 268 */, 275, ...genPass(), 295, 318, 319, 853, 885,
+      899, 901, 1714, 1791, 1882]}),
   dir: 'pass-explicit',
 });
 
@@ -74,9 +87,13 @@ makeTest({
   dir: 'early',
 });
 
-makeTest({
+
+// Some tests fail for lexical reasons, others for syntactic reasons
+// So skip altogether lexing tests
+
+/* makeTest({
   title: `ECMASCriptLexicalGrammar: Lexing 'fail' tests for`,
   grammar, listener, rule,
   files: failFile({end: end('fail'), start: start('fail'), skip}),
   dir: 'fail',
-});
+}); */

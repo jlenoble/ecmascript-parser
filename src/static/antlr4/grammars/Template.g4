@@ -5,13 +5,13 @@ lexer grammar Template;
 // TemplateHead::
 //    ` TemplateCharacters[opt] ${
 TemplateHead
-: '`' (TemplateCharacter|'{'|'}')*? '${'
+: '`' TemplateCharacter*? '${'
 ;
 
 // TemplateMiddle::
 //    } TemplateCharacters[opt] ${
 TemplateMiddle
-: '}' (TemplateCharacter|'{')*? '${'
+: '}' TemplateCharacter*? '${'
 ;
 
 // TemplateTail::
@@ -37,5 +37,5 @@ NoSubstitutionTemplate
 fragment
 TemplateCharacter
 : ('$'|'\\' EscapeSequence|LineContinuation|LineTerminatorSequence
-  |~[`{}\\$\n\r\u2028\u2029])
+  |~[`\\$\n\r\u2028\u2029])
 ;

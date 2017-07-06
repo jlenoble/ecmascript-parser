@@ -28,7 +28,7 @@ const isValidContextForRegExp = (lastToken, [bbbLast, bbLast, bLast, last],
       isValidContextForRegExp(c, [undefined, a, b, c], Types);
 
   case Types.CloseBrace: case Types.CloseParen:
-    // PROBLEM!!!
+    return; // Ambiguous token, needs syntactic input
 
   default:
     return true;
@@ -60,8 +60,19 @@ class BaseLexer {
   }
 
   isValidContextForRegExp () {
-    return isValidContextForRegExp(this.lastToken, this.lastTokens || [],
-      this.constructor);
+    return isValidContextForRegExp(this.lastToken,
+      this.lastTokens || [], this.constructor);
+  }
+
+  isValidContextForDiv () {
+    const isNotValid = this.isValidContextForRegExp();
+
+    if (isNotValid === undefined) {
+      // Ambiguous token, needs syntactic input
+      return false;
+    }
+
+    return !isNotValid;
   }
 }
 

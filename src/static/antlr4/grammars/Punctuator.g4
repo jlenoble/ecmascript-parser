@@ -67,5 +67,5 @@ BitXorAssign               : '^=';
 
 FatArrow                   : '=>';
 
-Divide                     : {!this.isValidContextForRegExp()}? '/';
-DivideAssign               : {!this.isValidContextForRegExp()}? '/=';
+Divide                     : {this.isValidContextForDiv()}? '/';
+DivideAssign               : {this.isValidContextForDiv()}? '/=';

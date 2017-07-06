@@ -128,7 +128,7 @@ export function* fileGen ({
   let s = skipIndex.next().value;
 
   for (let i of index) {
-    if (skip && i === s || i === doSkip) {
+    if (skip && i === s || doSkip.includes(i)) {
       s = skipIndex.next().value;
       continue;
     }
@@ -146,12 +146,13 @@ export function* fileGen ({
   }
 }
 
-export function* passFile ({end = nPass, start = 0, skip = true}) {
+export function* passFile ({end = nPass, start = 0, skip = true,
+  doSkip = [268]}) {
   yield* fileGen({
     index: index(start, end),
     moduleIndex: passModuleIndex(),
     skipIndex: passSkipIndex(),
-    start, end, skip, doSkip: 268,
+    start, end, skip, doSkip,
   });
 }
 
@@ -160,7 +161,7 @@ export function* earlyFile ({end = nEarly, start = 0, skip = true}) {
     index: index(start, end),
     moduleIndex: earlyModuleIndex(),
     skipIndex: earlySkipIndex(),
-    start, end, skip,
+    start, end, skip, doSkip: [],
   });
 }
 
@@ -169,7 +170,7 @@ export function* failFile ({end = nFail, start = 0, skip = true}) {
     index: index(start, end),
     moduleIndex: failModuleIndex(),
     skipIndex: failSkipIndex(),
-    start, end, skip,
+    start, end, skip, doSkip: [],
   });
 }
 
