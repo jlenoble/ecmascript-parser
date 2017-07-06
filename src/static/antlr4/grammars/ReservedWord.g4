@@ -8,10 +8,7 @@ grammar ReservedWord;
 //    NullLiteral
 //    BooleanLiteral
 reservedWord
-: keyword
-| futureReservedWord
-| NullLiteral
-| BooleanLiteral
+: (keyword|futureReservedWord|NullLiteral|BooleanLiteral)
 ;
 
 // Keyword::
@@ -30,7 +27,7 @@ reservedWord
 //     while with
 //     yield
 keyword
-: Await
+: (Await
 | Break
 | Case      | Catch   | Class     | Const       | Continue
 | Debugger  | Default | Delete    | Do
@@ -43,7 +40,7 @@ keyword
 | This      | Throw   | Try       | Typeof
 | Var       | Void
 | While     | With
-| Yield
+| Yield)
 ;
 
 // FutureReservedWord::
@@ -121,7 +118,7 @@ True        : 'true';
 False       : 'false';
 
 miscIdentifier
-: As | Async | From | Get | Let | Of | Set | Static | Target
+: (As | Async | From | Get | Let | Of | Set | Static | Target)
 ;
 
 As          : 'as';

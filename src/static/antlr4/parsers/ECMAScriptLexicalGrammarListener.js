@@ -38,6 +38,15 @@ ECMAScriptLexicalGrammarListener.prototype.exitCommonToken = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#identifierName.
+ECMAScriptLexicalGrammarListener.prototype.enterIdentifierName = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#identifierName.
+ECMAScriptLexicalGrammarListener.prototype.exitIdentifierName = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptLexicalGrammarParser#punctuator.
 ECMAScriptLexicalGrammarListener.prototype.enterPunctuator = function(ctx) {
 };
@@ -80,6 +89,42 @@ ECMAScriptLexicalGrammarListener.prototype.enterTemplateSubstitutionTail = funct
 
 // Exit a parse tree produced by ECMAScriptLexicalGrammarParser#templateSubstitutionTail.
 ECMAScriptLexicalGrammarListener.prototype.exitTemplateSubstitutionTail = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#reservedWord.
+ECMAScriptLexicalGrammarListener.prototype.enterReservedWord = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#reservedWord.
+ECMAScriptLexicalGrammarListener.prototype.exitReservedWord = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#keyword.
+ECMAScriptLexicalGrammarListener.prototype.enterKeyword = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#keyword.
+ECMAScriptLexicalGrammarListener.prototype.exitKeyword = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#futureReservedWord.
+ECMAScriptLexicalGrammarListener.prototype.enterFutureReservedWord = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#futureReservedWord.
+ECMAScriptLexicalGrammarListener.prototype.exitFutureReservedWord = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#miscIdentifier.
+ECMAScriptLexicalGrammarListener.prototype.enterMiscIdentifier = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#miscIdentifier.
+ECMAScriptLexicalGrammarListener.prototype.exitMiscIdentifier = function(ctx) {
 };
 
 

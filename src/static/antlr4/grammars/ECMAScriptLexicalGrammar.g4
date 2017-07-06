@@ -4,6 +4,7 @@ import
   StringLiteralB1,
   Template,
   RegularExpressionLiteral,
+  ReservedWord,
   Punctuator,
   StringLiteralA1,
   UnicodeEscapeSequence,
@@ -66,7 +67,11 @@ inputElement
 //    StringLiteral
 //    Template
 commonToken
-: (IdentifierName|punctuator|NumericLiteral|StringLiteral|template)
+: (identifierName|punctuator|NumericLiteral|StringLiteral|template)
+;
+
+identifierName
+: (IdentifierName|reservedWord|miscIdentifier)
 ;
 
 // Punctuator::
