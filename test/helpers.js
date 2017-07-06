@@ -133,6 +133,10 @@ export function* fileGen ({
       continue;
     }
 
+    while (i > m) {
+      m = moduleIndex.next().value;
+    }
+
     if (i === m) {
       m = moduleIndex.next().value;
       yield i + '.module.js';
