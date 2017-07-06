@@ -13,7 +13,7 @@ export class TranslatorLexicalGrammar extends ECMAScriptLexicalGrammarListener {
   }
   exitFile (ctx) {
     if (debug) {
-      console.log(ctx.getText());
+      console.log('file:', ctx.getText());
     }
   }
 

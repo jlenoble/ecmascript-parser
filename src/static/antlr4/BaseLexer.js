@@ -22,7 +22,7 @@ class BaseLexer {
     const Types = this.constructor;
 
     switch (this.lastToken.type) {
-    case Types.IdentifierName:
+    case Types.IdentifierName: case Types.NumericLiteral:
       return false;
 
     default:

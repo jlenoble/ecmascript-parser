@@ -1,6 +1,7 @@
 grammar ECMAScriptLexicalGrammar;
 
 import
+  Template,
   RegularExpressionLiteral,
   Punctuator,
   StringLiteralA1,
@@ -38,9 +39,23 @@ file
 //    CommonToken
 //    RightBracePunctuator
 //    RegularExpressionLiteral
+// InputElementRegExpOrTemplateTail::
+//    WhiteSpace
+//    LineTerminator
+//    Comment
+//    CommonToken
+//    RegularExpressionLiteral
+//    TemplateSubstitutionTail
+// InputElementTemplateTail::
+//    WhiteSpace
+//    LineTerminator
+//    Comment
+//    CommonToken
+//    DivPunctuator
+//    TemplateSubstitutionTail
 inputElement
-: (WhiteSpace|LineTerminator|Comment|commonToken|divPunctuator|CloseBrace
-  |RegularExpressionLiteral)
+: (WhiteSpace|LineTerminator|Comment|commonToken|divPunctuator
+  |rightBracePunctuator|RegularExpressionLiteral|templateSubstitutionTail)
 ;
 
 // CommonToken::
@@ -50,7 +65,7 @@ inputElement
 //    StringLiteral
 //    Template
 commonToken
-: (IdentifierName|punctuator|NumericLiteral|StringLiteral)
+: (IdentifierName|punctuator|NumericLiteral|StringLiteral|template)
 ;
 
 // Punctuator::
@@ -90,4 +105,24 @@ punctuator
 //    /=
 divPunctuator
 : (Divide|DivideAssign)
+;
+
+// RightBracePunctuator::
+//    }
+rightBracePunctuator
+: CloseBrace
+;
+
+// Template::
+//    NoSubstitutionTemplate
+//    TemplateHead
+template
+: (NoSubstitutionTemplate|TemplateHead)
+;
+
+// TemplateSubstitutionTail::
+//    TemplateMiddle
+//    TemplateTail
+templateSubstitutionTail
+: (TemplateMiddle|TemplateTail)
 ;

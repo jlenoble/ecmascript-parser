@@ -3,6 +3,7 @@
 lexer grammar Punctuator;
 
 OpenBrace                  : '{';
+CloseBrace                 : '}';
 OpenParen                  : '(';
 CloseParen                 : ')';
 OpenBracket                : '[';
@@ -68,7 +69,3 @@ FatArrow                   : '=>';
 
 Divide                     : {!this.isValidContextForRegExp()}? '/';
 DivideAssign               : {!this.isValidContextForRegExp()}? '/=';
-
-// RightBracePunctuator::
-//    }
-CloseBrace                 : '}';

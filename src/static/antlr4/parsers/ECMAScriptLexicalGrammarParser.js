@@ -5,34 +5,40 @@ var ECMAScriptLexicalGrammarListener = require('./ECMAScriptLexicalGrammarListen
 var grammarFileName = "ECMAScriptLexicalGrammar.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003?(\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t\u0004",
-    "\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0003\u0002\u0007\u0002\u000e",
-    "\n\u0002\f\u0002\u000e\u0002\u0011\u000b\u0002\u0003\u0002\u0003\u0002",
+    "\u0003C6\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t\u0004",
+    "\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004\b",
+    "\t\b\u0004\t\t\t\u0003\u0002\u0007\u0002\u0014\n\u0002\f\u0002\u000e",
+    "\u0002\u0017\u000b\u0002\u0003\u0002\u0003\u0002\u0003\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
-    "\u0003\u0003\u0005\u0003\u001c\n\u0003\u0003\u0004\u0003\u0004\u0003",
-    "\u0004\u0003\u0004\u0005\u0004\"\n\u0004\u0003\u0005\u0003\u0005\u0003",
-    "\u0006\u0003\u0006\u0003\u0006\u0002\u0002\u0007\u0002\u0004\u0006\b",
-    "\n\u0002\u0004\u0003\u0002\u00044\u0003\u000256\u0002,\u0002\u000f\u0003",
-    "\u0002\u0002\u0002\u0004\u001b\u0003\u0002\u0002\u0002\u0006!\u0003",
-    "\u0002\u0002\u0002\b#\u0003\u0002\u0002\u0002\n%\u0003\u0002\u0002\u0002",
-    "\f\u000e\u0005\u0004\u0003\u0002\r\f\u0003\u0002\u0002\u0002\u000e\u0011",
-    "\u0003\u0002\u0002\u0002\u000f\r\u0003\u0002\u0002\u0002\u000f\u0010",
-    "\u0003\u0002\u0002\u0002\u0010\u0012\u0003\u0002\u0002\u0002\u0011\u000f",
-    "\u0003\u0002\u0002\u0002\u0012\u0013\u0007\u0002\u0002\u0003\u0013\u0003",
-    "\u0003\u0002\u0002\u0002\u0014\u001c\u0007?\u0002\u0002\u0015\u001c",
-    "\u0007>\u0002\u0002\u0016\u001c\u0007;\u0002\u0002\u0017\u001c\u0005",
-    "\u0006\u0004\u0002\u0018\u001c\u0005\n\u0006\u0002\u0019\u001c\u0007",
-    "7\u0002\u0002\u001a\u001c\u0007\u0003\u0002\u0002\u001b\u0014\u0003",
-    "\u0002\u0002\u0002\u001b\u0015\u0003\u0002\u0002\u0002\u001b\u0016\u0003",
-    "\u0002\u0002\u0002\u001b\u0017\u0003\u0002\u0002\u0002\u001b\u0018\u0003",
-    "\u0002\u0002\u0002\u001b\u0019\u0003\u0002\u0002\u0002\u001b\u001a\u0003",
-    "\u0002\u0002\u0002\u001c\u0005\u0003\u0002\u0002\u0002\u001d\"\u0007",
-    ":\u0002\u0002\u001e\"\u0005\b\u0005\u0002\u001f\"\u00079\u0002\u0002",
-    " \"\u00078\u0002\u0002!\u001d\u0003\u0002\u0002\u0002!\u001e\u0003\u0002",
-    "\u0002\u0002!\u001f\u0003\u0002\u0002\u0002! \u0003\u0002\u0002\u0002",
-    "\"\u0007\u0003\u0002\u0002\u0002#$\t\u0002\u0002\u0002$\t\u0003\u0002",
-    "\u0002\u0002%&\t\u0003\u0002\u0002&\u000b\u0003\u0002\u0002\u0002\u0005",
-    "\u000f\u001b!"].join("");
+    "\u0005\u0003#\n\u0003\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004",
+    "\u0003\u0004\u0005\u0004*\n\u0004\u0003\u0005\u0003\u0005\u0003\u0006",
+    "\u0003\u0006\u0003\u0007\u0003\u0007\u0003\b\u0003\b\u0003\t\u0003\t",
+    "\u0003\t\u0002\u0002\n\u0002\u0004\u0006\b\n\f\u000e\u0010\u0002\u0006",
+    "\u0004\u0002\b\b\n9\u0003\u0002:;\u0004\u0002\u0003\u0003\u0006\u0006",
+    "\u0003\u0002\u0004\u0005\u00029\u0002\u0015\u0003\u0002\u0002\u0002",
+    "\u0004\"\u0003\u0002\u0002\u0002\u0006)\u0003\u0002\u0002\u0002\b+\u0003",
+    "\u0002\u0002\u0002\n-\u0003\u0002\u0002\u0002\f/\u0003\u0002\u0002\u0002",
+    "\u000e1\u0003\u0002\u0002\u0002\u00103\u0003\u0002\u0002\u0002\u0012",
+    "\u0014\u0005\u0004\u0003\u0002\u0013\u0012\u0003\u0002\u0002\u0002\u0014",
+    "\u0017\u0003\u0002\u0002\u0002\u0015\u0013\u0003\u0002\u0002\u0002\u0015",
+    "\u0016\u0003\u0002\u0002\u0002\u0016\u0018\u0003\u0002\u0002\u0002\u0017",
+    "\u0015\u0003\u0002\u0002\u0002\u0018\u0019\u0007\u0002\u0002\u0003\u0019",
+    "\u0003\u0003\u0002\u0002\u0002\u001a#\u0007C\u0002\u0002\u001b#\u0007",
+    "B\u0002\u0002\u001c#\u0007?\u0002\u0002\u001d#\u0005\u0006\u0004\u0002",
+    "\u001e#\u0005\n\u0006\u0002\u001f#\u0005\f\u0007\u0002 #\u0007\u0007",
+    "\u0002\u0002!#\u0005\u0010\t\u0002\"\u001a\u0003\u0002\u0002\u0002\"",
+    "\u001b\u0003\u0002\u0002\u0002\"\u001c\u0003\u0002\u0002\u0002\"\u001d",
+    "\u0003\u0002\u0002\u0002\"\u001e\u0003\u0002\u0002\u0002\"\u001f\u0003",
+    "\u0002\u0002\u0002\" \u0003\u0002\u0002\u0002\"!\u0003\u0002\u0002\u0002",
+    "#\u0005\u0003\u0002\u0002\u0002$*\u0007>\u0002\u0002%*\u0005\b\u0005",
+    "\u0002&*\u0007=\u0002\u0002\'*\u0007<\u0002\u0002(*\u0005\u000e\b\u0002",
+    ")$\u0003\u0002\u0002\u0002)%\u0003\u0002\u0002\u0002)&\u0003\u0002\u0002",
+    "\u0002)\'\u0003\u0002\u0002\u0002)(\u0003\u0002\u0002\u0002*\u0007\u0003",
+    "\u0002\u0002\u0002+,\t\u0002\u0002\u0002,\t\u0003\u0002\u0002\u0002",
+    "-.\t\u0003\u0002\u0002.\u000b\u0003\u0002\u0002\u0002/0\u0007\t\u0002",
+    "\u00020\r\u0003\u0002\u0002\u000212\t\u0004\u0002\u00022\u000f\u0003",
+    "\u0002\u0002\u000234\t\u0005\u0002\u00024\u0011\u0003\u0002\u0002\u0002",
+    "\u0005\u0015\")"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -41,34 +47,36 @@ var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new a
 
 var sharedContextCache = new antlr4.PredictionContextCache();
 
-var literalNames = [ null, null, "'{'", "'('", "')'", "'['", "']'", "'.'", 
-                     "'...'", "';'", "','", "'<'", "'>'", "'<='", "'>='", 
-                     "'=='", "'!='", "'==='", "'!=='", "'+'", "'-'", "'*'", 
-                     "'%'", "'**'", "'++'", "'--'", "'<<'", "'>>'", "'>>>'", 
-                     "'&'", "'|'", "'^'", "'!'", "'~'", "'&&'", "'||'", 
-                     "'?'", "':'", "'='", "'+='", "'-='", "'*='", "'%='", 
-                     "'**='", "'<<='", "'>>='", "'>>>='", "'&='", "'|='", 
-                     "'^='", "'=>'", null, null, "'}'" ];
+var literalNames = [ null, null, null, null, null, null, "'{'", "'}'", "'('", 
+                     "')'", "'['", "']'", "'.'", "'...'", "';'", "','", 
+                     "'<'", "'>'", "'<='", "'>='", "'=='", "'!='", "'==='", 
+                     "'!=='", "'+'", "'-'", "'*'", "'%'", "'**'", "'++'", 
+                     "'--'", "'<<'", "'>>'", "'>>>'", "'&'", "'|'", "'^'", 
+                     "'!'", "'~'", "'&&'", "'||'", "'?'", "':'", "'='", 
+                     "'+='", "'-='", "'*='", "'%='", "'**='", "'<<='", "'>>='", 
+                     "'>>>='", "'&='", "'|='", "'^='", "'=>'" ];
 
-var symbolicNames = [ null, "RegularExpressionLiteral", "OpenBrace", "OpenParen", 
-                      "CloseParen", "OpenBracket", "CloseBracket", "Dot", 
-                      "Spread", "SemiColon", "Comma", "LessThan", "GreaterThan", 
-                      "LessThanEquals", "GreaterThanEquals", "Equals", "NotEquals", 
-                      "IdentityEquals", "IdentityNotEquals", "Plus", "Minus", 
-                      "Multiply", "Modulo", "Power", "PlusPlus", "MinusMinus", 
-                      "LeftShiftArithmetic", "RightShiftArithmetic", "RightShiftLogical", 
-                      "BitAnd", "BitOr", "BitXor", "Not", "BitNot", "And", 
-                      "Or", "QuestionMark", "Colon", "Assign", "PlusAssign", 
-                      "MinusAssign", "MultiplyAssign", "ModuloAssign", "PowerAssign", 
-                      "LeftShiftArithmeticAssign", "RightShiftArithmeticAssign", 
-                      "RightShiftLogicalAssign", "BitAndAssign", "BitOrAssign", 
-                      "BitXorAssign", "FatArrow", "Divide", "DivideAssign", 
-                      "CloseBrace", "StringLiteral", "NumericLiteral", "IdentifierName", 
-                      "Comment", "MultiLineComment", "SingleLineComment", 
+var symbolicNames = [ null, "TemplateHead", "TemplateMiddle", "TemplateTail", 
+                      "NoSubstitutionTemplate", "RegularExpressionLiteral", 
+                      "OpenBrace", "CloseBrace", "OpenParen", "CloseParen", 
+                      "OpenBracket", "CloseBracket", "Dot", "Spread", "SemiColon", 
+                      "Comma", "LessThan", "GreaterThan", "LessThanEquals", 
+                      "GreaterThanEquals", "Equals", "NotEquals", "IdentityEquals", 
+                      "IdentityNotEquals", "Plus", "Minus", "Multiply", 
+                      "Modulo", "Power", "PlusPlus", "MinusMinus", "LeftShiftArithmetic", 
+                      "RightShiftArithmetic", "RightShiftLogical", "BitAnd", 
+                      "BitOr", "BitXor", "Not", "BitNot", "And", "Or", "QuestionMark", 
+                      "Colon", "Assign", "PlusAssign", "MinusAssign", "MultiplyAssign", 
+                      "ModuloAssign", "PowerAssign", "LeftShiftArithmeticAssign", 
+                      "RightShiftArithmeticAssign", "RightShiftLogicalAssign", 
+                      "BitAndAssign", "BitOrAssign", "BitXorAssign", "FatArrow", 
+                      "Divide", "DivideAssign", "StringLiteral", "NumericLiteral", 
+                      "IdentifierName", "Comment", "MultiLineComment", "SingleLineComment", 
                       "LineTerminator", "WhiteSpace" ];
 
 var ruleNames =  [ "file", "inputElement", "commonToken", "punctuator", 
-                   "divPunctuator" ];
+                   "divPunctuator", "rightBracePunctuator", "template", 
+                   "templateSubstitutionTail" ];
 
 function ECMAScriptLexicalGrammarParser (input) {
 	antlr4.Parser.call(this, input);
@@ -89,73 +97,80 @@ Object.defineProperty(ECMAScriptLexicalGrammarParser.prototype, "atn", {
 });
 
 ECMAScriptLexicalGrammarParser.EOF = antlr4.Token.EOF;
-ECMAScriptLexicalGrammarParser.RegularExpressionLiteral = 1;
-ECMAScriptLexicalGrammarParser.OpenBrace = 2;
-ECMAScriptLexicalGrammarParser.OpenParen = 3;
-ECMAScriptLexicalGrammarParser.CloseParen = 4;
-ECMAScriptLexicalGrammarParser.OpenBracket = 5;
-ECMAScriptLexicalGrammarParser.CloseBracket = 6;
-ECMAScriptLexicalGrammarParser.Dot = 7;
-ECMAScriptLexicalGrammarParser.Spread = 8;
-ECMAScriptLexicalGrammarParser.SemiColon = 9;
-ECMAScriptLexicalGrammarParser.Comma = 10;
-ECMAScriptLexicalGrammarParser.LessThan = 11;
-ECMAScriptLexicalGrammarParser.GreaterThan = 12;
-ECMAScriptLexicalGrammarParser.LessThanEquals = 13;
-ECMAScriptLexicalGrammarParser.GreaterThanEquals = 14;
-ECMAScriptLexicalGrammarParser.Equals = 15;
-ECMAScriptLexicalGrammarParser.NotEquals = 16;
-ECMAScriptLexicalGrammarParser.IdentityEquals = 17;
-ECMAScriptLexicalGrammarParser.IdentityNotEquals = 18;
-ECMAScriptLexicalGrammarParser.Plus = 19;
-ECMAScriptLexicalGrammarParser.Minus = 20;
-ECMAScriptLexicalGrammarParser.Multiply = 21;
-ECMAScriptLexicalGrammarParser.Modulo = 22;
-ECMAScriptLexicalGrammarParser.Power = 23;
-ECMAScriptLexicalGrammarParser.PlusPlus = 24;
-ECMAScriptLexicalGrammarParser.MinusMinus = 25;
-ECMAScriptLexicalGrammarParser.LeftShiftArithmetic = 26;
-ECMAScriptLexicalGrammarParser.RightShiftArithmetic = 27;
-ECMAScriptLexicalGrammarParser.RightShiftLogical = 28;
-ECMAScriptLexicalGrammarParser.BitAnd = 29;
-ECMAScriptLexicalGrammarParser.BitOr = 30;
-ECMAScriptLexicalGrammarParser.BitXor = 31;
-ECMAScriptLexicalGrammarParser.Not = 32;
-ECMAScriptLexicalGrammarParser.BitNot = 33;
-ECMAScriptLexicalGrammarParser.And = 34;
-ECMAScriptLexicalGrammarParser.Or = 35;
-ECMAScriptLexicalGrammarParser.QuestionMark = 36;
-ECMAScriptLexicalGrammarParser.Colon = 37;
-ECMAScriptLexicalGrammarParser.Assign = 38;
-ECMAScriptLexicalGrammarParser.PlusAssign = 39;
-ECMAScriptLexicalGrammarParser.MinusAssign = 40;
-ECMAScriptLexicalGrammarParser.MultiplyAssign = 41;
-ECMAScriptLexicalGrammarParser.ModuloAssign = 42;
-ECMAScriptLexicalGrammarParser.PowerAssign = 43;
-ECMAScriptLexicalGrammarParser.LeftShiftArithmeticAssign = 44;
-ECMAScriptLexicalGrammarParser.RightShiftArithmeticAssign = 45;
-ECMAScriptLexicalGrammarParser.RightShiftLogicalAssign = 46;
-ECMAScriptLexicalGrammarParser.BitAndAssign = 47;
-ECMAScriptLexicalGrammarParser.BitOrAssign = 48;
-ECMAScriptLexicalGrammarParser.BitXorAssign = 49;
-ECMAScriptLexicalGrammarParser.FatArrow = 50;
-ECMAScriptLexicalGrammarParser.Divide = 51;
-ECMAScriptLexicalGrammarParser.DivideAssign = 52;
-ECMAScriptLexicalGrammarParser.CloseBrace = 53;
-ECMAScriptLexicalGrammarParser.StringLiteral = 54;
-ECMAScriptLexicalGrammarParser.NumericLiteral = 55;
-ECMAScriptLexicalGrammarParser.IdentifierName = 56;
-ECMAScriptLexicalGrammarParser.Comment = 57;
-ECMAScriptLexicalGrammarParser.MultiLineComment = 58;
-ECMAScriptLexicalGrammarParser.SingleLineComment = 59;
-ECMAScriptLexicalGrammarParser.LineTerminator = 60;
-ECMAScriptLexicalGrammarParser.WhiteSpace = 61;
+ECMAScriptLexicalGrammarParser.TemplateHead = 1;
+ECMAScriptLexicalGrammarParser.TemplateMiddle = 2;
+ECMAScriptLexicalGrammarParser.TemplateTail = 3;
+ECMAScriptLexicalGrammarParser.NoSubstitutionTemplate = 4;
+ECMAScriptLexicalGrammarParser.RegularExpressionLiteral = 5;
+ECMAScriptLexicalGrammarParser.OpenBrace = 6;
+ECMAScriptLexicalGrammarParser.CloseBrace = 7;
+ECMAScriptLexicalGrammarParser.OpenParen = 8;
+ECMAScriptLexicalGrammarParser.CloseParen = 9;
+ECMAScriptLexicalGrammarParser.OpenBracket = 10;
+ECMAScriptLexicalGrammarParser.CloseBracket = 11;
+ECMAScriptLexicalGrammarParser.Dot = 12;
+ECMAScriptLexicalGrammarParser.Spread = 13;
+ECMAScriptLexicalGrammarParser.SemiColon = 14;
+ECMAScriptLexicalGrammarParser.Comma = 15;
+ECMAScriptLexicalGrammarParser.LessThan = 16;
+ECMAScriptLexicalGrammarParser.GreaterThan = 17;
+ECMAScriptLexicalGrammarParser.LessThanEquals = 18;
+ECMAScriptLexicalGrammarParser.GreaterThanEquals = 19;
+ECMAScriptLexicalGrammarParser.Equals = 20;
+ECMAScriptLexicalGrammarParser.NotEquals = 21;
+ECMAScriptLexicalGrammarParser.IdentityEquals = 22;
+ECMAScriptLexicalGrammarParser.IdentityNotEquals = 23;
+ECMAScriptLexicalGrammarParser.Plus = 24;
+ECMAScriptLexicalGrammarParser.Minus = 25;
+ECMAScriptLexicalGrammarParser.Multiply = 26;
+ECMAScriptLexicalGrammarParser.Modulo = 27;
+ECMAScriptLexicalGrammarParser.Power = 28;
+ECMAScriptLexicalGrammarParser.PlusPlus = 29;
+ECMAScriptLexicalGrammarParser.MinusMinus = 30;
+ECMAScriptLexicalGrammarParser.LeftShiftArithmetic = 31;
+ECMAScriptLexicalGrammarParser.RightShiftArithmetic = 32;
+ECMAScriptLexicalGrammarParser.RightShiftLogical = 33;
+ECMAScriptLexicalGrammarParser.BitAnd = 34;
+ECMAScriptLexicalGrammarParser.BitOr = 35;
+ECMAScriptLexicalGrammarParser.BitXor = 36;
+ECMAScriptLexicalGrammarParser.Not = 37;
+ECMAScriptLexicalGrammarParser.BitNot = 38;
+ECMAScriptLexicalGrammarParser.And = 39;
+ECMAScriptLexicalGrammarParser.Or = 40;
+ECMAScriptLexicalGrammarParser.QuestionMark = 41;
+ECMAScriptLexicalGrammarParser.Colon = 42;
+ECMAScriptLexicalGrammarParser.Assign = 43;
+ECMAScriptLexicalGrammarParser.PlusAssign = 44;
+ECMAScriptLexicalGrammarParser.MinusAssign = 45;
+ECMAScriptLexicalGrammarParser.MultiplyAssign = 46;
+ECMAScriptLexicalGrammarParser.ModuloAssign = 47;
+ECMAScriptLexicalGrammarParser.PowerAssign = 48;
+ECMAScriptLexicalGrammarParser.LeftShiftArithmeticAssign = 49;
+ECMAScriptLexicalGrammarParser.RightShiftArithmeticAssign = 50;
+ECMAScriptLexicalGrammarParser.RightShiftLogicalAssign = 51;
+ECMAScriptLexicalGrammarParser.BitAndAssign = 52;
+ECMAScriptLexicalGrammarParser.BitOrAssign = 53;
+ECMAScriptLexicalGrammarParser.BitXorAssign = 54;
+ECMAScriptLexicalGrammarParser.FatArrow = 55;
+ECMAScriptLexicalGrammarParser.Divide = 56;
+ECMAScriptLexicalGrammarParser.DivideAssign = 57;
+ECMAScriptLexicalGrammarParser.StringLiteral = 58;
+ECMAScriptLexicalGrammarParser.NumericLiteral = 59;
+ECMAScriptLexicalGrammarParser.IdentifierName = 60;
+ECMAScriptLexicalGrammarParser.Comment = 61;
+ECMAScriptLexicalGrammarParser.MultiLineComment = 62;
+ECMAScriptLexicalGrammarParser.SingleLineComment = 63;
+ECMAScriptLexicalGrammarParser.LineTerminator = 64;
+ECMAScriptLexicalGrammarParser.WhiteSpace = 65;
 
 ECMAScriptLexicalGrammarParser.RULE_file = 0;
 ECMAScriptLexicalGrammarParser.RULE_inputElement = 1;
 ECMAScriptLexicalGrammarParser.RULE_commonToken = 2;
 ECMAScriptLexicalGrammarParser.RULE_punctuator = 3;
 ECMAScriptLexicalGrammarParser.RULE_divPunctuator = 4;
+ECMAScriptLexicalGrammarParser.RULE_rightBracePunctuator = 5;
+ECMAScriptLexicalGrammarParser.RULE_template = 6;
+ECMAScriptLexicalGrammarParser.RULE_templateSubstitutionTail = 7;
 
 function FileContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -212,17 +227,17 @@ ECMAScriptLexicalGrammarParser.prototype.file = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 13;
+        this.state = 19;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ECMAScriptLexicalGrammarParser.RegularExpressionLiteral) | (1 << ECMAScriptLexicalGrammarParser.OpenBrace) | (1 << ECMAScriptLexicalGrammarParser.OpenParen) | (1 << ECMAScriptLexicalGrammarParser.CloseParen) | (1 << ECMAScriptLexicalGrammarParser.OpenBracket) | (1 << ECMAScriptLexicalGrammarParser.CloseBracket) | (1 << ECMAScriptLexicalGrammarParser.Dot) | (1 << ECMAScriptLexicalGrammarParser.Spread) | (1 << ECMAScriptLexicalGrammarParser.SemiColon) | (1 << ECMAScriptLexicalGrammarParser.Comma) | (1 << ECMAScriptLexicalGrammarParser.LessThan) | (1 << ECMAScriptLexicalGrammarParser.GreaterThan) | (1 << ECMAScriptLexicalGrammarParser.LessThanEquals) | (1 << ECMAScriptLexicalGrammarParser.GreaterThanEquals) | (1 << ECMAScriptLexicalGrammarParser.Equals) | (1 << ECMAScriptLexicalGrammarParser.NotEquals) | (1 << ECMAScriptLexicalGrammarParser.IdentityEquals) | (1 << ECMAScriptLexicalGrammarParser.IdentityNotEquals) | (1 << ECMAScriptLexicalGrammarParser.Plus) | (1 << ECMAScriptLexicalGrammarParser.Minus) | (1 << ECMAScriptLexicalGrammarParser.Multiply) | (1 << ECMAScriptLexicalGrammarParser.Modulo) | (1 << ECMAScriptLexicalGrammarParser.Power) | (1 << ECMAScriptLexicalGrammarParser.PlusPlus) | (1 << ECMAScriptLexicalGrammarParser.MinusMinus) | (1 << ECMAScriptLexicalGrammarParser.LeftShiftArithmetic) | (1 << ECMAScriptLexicalGrammarParser.RightShiftArithmetic) | (1 << ECMAScriptLexicalGrammarParser.RightShiftLogical) | (1 << ECMAScriptLexicalGrammarParser.BitAnd) | (1 << ECMAScriptLexicalGrammarParser.BitOr) | (1 << ECMAScriptLexicalGrammarParser.BitXor))) !== 0) || ((((_la - 32)) & ~0x1f) == 0 && ((1 << (_la - 32)) & ((1 << (ECMAScriptLexicalGrammarParser.Not - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitNot - 32)) | (1 << (ECMAScriptLexicalGrammarParser.And - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Or - 32)) | (1 << (ECMAScriptLexicalGrammarParser.QuestionMark - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Colon - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Assign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.PlusAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.MinusAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.MultiplyAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.ModuloAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.PowerAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.LeftShiftArithmeticAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.RightShiftArithmeticAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.RightShiftLogicalAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitAndAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitOrAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitXorAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.FatArrow - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Divide - 32)) | (1 << (ECMAScriptLexicalGrammarParser.DivideAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.CloseBrace - 32)) | (1 << (ECMAScriptLexicalGrammarParser.StringLiteral - 32)) | (1 << (ECMAScriptLexicalGrammarParser.NumericLiteral - 32)) | (1 << (ECMAScriptLexicalGrammarParser.IdentifierName - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Comment - 32)) | (1 << (ECMAScriptLexicalGrammarParser.LineTerminator - 32)) | (1 << (ECMAScriptLexicalGrammarParser.WhiteSpace - 32)))) !== 0)) {
-            this.state = 10;
+        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ECMAScriptLexicalGrammarParser.TemplateHead) | (1 << ECMAScriptLexicalGrammarParser.TemplateMiddle) | (1 << ECMAScriptLexicalGrammarParser.TemplateTail) | (1 << ECMAScriptLexicalGrammarParser.NoSubstitutionTemplate) | (1 << ECMAScriptLexicalGrammarParser.RegularExpressionLiteral) | (1 << ECMAScriptLexicalGrammarParser.OpenBrace) | (1 << ECMAScriptLexicalGrammarParser.CloseBrace) | (1 << ECMAScriptLexicalGrammarParser.OpenParen) | (1 << ECMAScriptLexicalGrammarParser.CloseParen) | (1 << ECMAScriptLexicalGrammarParser.OpenBracket) | (1 << ECMAScriptLexicalGrammarParser.CloseBracket) | (1 << ECMAScriptLexicalGrammarParser.Dot) | (1 << ECMAScriptLexicalGrammarParser.Spread) | (1 << ECMAScriptLexicalGrammarParser.SemiColon) | (1 << ECMAScriptLexicalGrammarParser.Comma) | (1 << ECMAScriptLexicalGrammarParser.LessThan) | (1 << ECMAScriptLexicalGrammarParser.GreaterThan) | (1 << ECMAScriptLexicalGrammarParser.LessThanEquals) | (1 << ECMAScriptLexicalGrammarParser.GreaterThanEquals) | (1 << ECMAScriptLexicalGrammarParser.Equals) | (1 << ECMAScriptLexicalGrammarParser.NotEquals) | (1 << ECMAScriptLexicalGrammarParser.IdentityEquals) | (1 << ECMAScriptLexicalGrammarParser.IdentityNotEquals) | (1 << ECMAScriptLexicalGrammarParser.Plus) | (1 << ECMAScriptLexicalGrammarParser.Minus) | (1 << ECMAScriptLexicalGrammarParser.Multiply) | (1 << ECMAScriptLexicalGrammarParser.Modulo) | (1 << ECMAScriptLexicalGrammarParser.Power) | (1 << ECMAScriptLexicalGrammarParser.PlusPlus) | (1 << ECMAScriptLexicalGrammarParser.MinusMinus) | (1 << ECMAScriptLexicalGrammarParser.LeftShiftArithmetic))) !== 0) || ((((_la - 32)) & ~0x1f) == 0 && ((1 << (_la - 32)) & ((1 << (ECMAScriptLexicalGrammarParser.RightShiftArithmetic - 32)) | (1 << (ECMAScriptLexicalGrammarParser.RightShiftLogical - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitAnd - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitOr - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitXor - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Not - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitNot - 32)) | (1 << (ECMAScriptLexicalGrammarParser.And - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Or - 32)) | (1 << (ECMAScriptLexicalGrammarParser.QuestionMark - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Colon - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Assign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.PlusAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.MinusAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.MultiplyAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.ModuloAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.PowerAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.LeftShiftArithmeticAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.RightShiftArithmeticAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.RightShiftLogicalAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitAndAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitOrAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitXorAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.FatArrow - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Divide - 32)) | (1 << (ECMAScriptLexicalGrammarParser.DivideAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.StringLiteral - 32)) | (1 << (ECMAScriptLexicalGrammarParser.NumericLiteral - 32)) | (1 << (ECMAScriptLexicalGrammarParser.IdentifierName - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Comment - 32)))) !== 0) || _la===ECMAScriptLexicalGrammarParser.LineTerminator || _la===ECMAScriptLexicalGrammarParser.WhiteSpace) {
+            this.state = 16;
             this.inputElement();
-            this.state = 15;
+            this.state = 21;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         }
-        this.state = 16;
+        this.state = 22;
         this.match(ECMAScriptLexicalGrammarParser.EOF);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -274,12 +289,16 @@ InputElementContext.prototype.divPunctuator = function() {
     return this.getTypedRuleContext(DivPunctuatorContext,0);
 };
 
-InputElementContext.prototype.CloseBrace = function() {
-    return this.getToken(ECMAScriptLexicalGrammarParser.CloseBrace, 0);
+InputElementContext.prototype.rightBracePunctuator = function() {
+    return this.getTypedRuleContext(RightBracePunctuatorContext,0);
 };
 
 InputElementContext.prototype.RegularExpressionLiteral = function() {
     return this.getToken(ECMAScriptLexicalGrammarParser.RegularExpressionLiteral, 0);
+};
+
+InputElementContext.prototype.templateSubstitutionTail = function() {
+    return this.getTypedRuleContext(TemplateSubstitutionTailContext,0);
 };
 
 InputElementContext.prototype.enterRule = function(listener) {
@@ -305,21 +324,23 @@ ECMAScriptLexicalGrammarParser.prototype.inputElement = function() {
     this.enterRule(localctx, 2, ECMAScriptLexicalGrammarParser.RULE_inputElement);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 25;
+        this.state = 32;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ECMAScriptLexicalGrammarParser.WhiteSpace:
-            this.state = 18;
+            this.state = 24;
             this.match(ECMAScriptLexicalGrammarParser.WhiteSpace);
             break;
         case ECMAScriptLexicalGrammarParser.LineTerminator:
-            this.state = 19;
+            this.state = 25;
             this.match(ECMAScriptLexicalGrammarParser.LineTerminator);
             break;
         case ECMAScriptLexicalGrammarParser.Comment:
-            this.state = 20;
+            this.state = 26;
             this.match(ECMAScriptLexicalGrammarParser.Comment);
             break;
+        case ECMAScriptLexicalGrammarParser.TemplateHead:
+        case ECMAScriptLexicalGrammarParser.NoSubstitutionTemplate:
         case ECMAScriptLexicalGrammarParser.OpenBrace:
         case ECMAScriptLexicalGrammarParser.OpenParen:
         case ECMAScriptLexicalGrammarParser.CloseParen:
@@ -372,21 +393,26 @@ ECMAScriptLexicalGrammarParser.prototype.inputElement = function() {
         case ECMAScriptLexicalGrammarParser.StringLiteral:
         case ECMAScriptLexicalGrammarParser.NumericLiteral:
         case ECMAScriptLexicalGrammarParser.IdentifierName:
-            this.state = 21;
+            this.state = 27;
             this.commonToken();
             break;
         case ECMAScriptLexicalGrammarParser.Divide:
         case ECMAScriptLexicalGrammarParser.DivideAssign:
-            this.state = 22;
+            this.state = 28;
             this.divPunctuator();
             break;
         case ECMAScriptLexicalGrammarParser.CloseBrace:
-            this.state = 23;
-            this.match(ECMAScriptLexicalGrammarParser.CloseBrace);
+            this.state = 29;
+            this.rightBracePunctuator();
             break;
         case ECMAScriptLexicalGrammarParser.RegularExpressionLiteral:
-            this.state = 24;
+            this.state = 30;
             this.match(ECMAScriptLexicalGrammarParser.RegularExpressionLiteral);
+            break;
+        case ECMAScriptLexicalGrammarParser.TemplateMiddle:
+        case ECMAScriptLexicalGrammarParser.TemplateTail:
+            this.state = 31;
+            this.templateSubstitutionTail();
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);
@@ -437,6 +463,10 @@ CommonTokenContext.prototype.StringLiteral = function() {
     return this.getToken(ECMAScriptLexicalGrammarParser.StringLiteral, 0);
 };
 
+CommonTokenContext.prototype.template = function() {
+    return this.getTypedRuleContext(TemplateContext,0);
+};
+
 CommonTokenContext.prototype.enterRule = function(listener) {
     if(listener instanceof ECMAScriptLexicalGrammarListener ) {
         listener.enterCommonToken(this);
@@ -460,11 +490,11 @@ ECMAScriptLexicalGrammarParser.prototype.commonToken = function() {
     this.enterRule(localctx, 4, ECMAScriptLexicalGrammarParser.RULE_commonToken);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 31;
+        this.state = 39;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ECMAScriptLexicalGrammarParser.IdentifierName:
-            this.state = 27;
+            this.state = 34;
             this.match(ECMAScriptLexicalGrammarParser.IdentifierName);
             break;
         case ECMAScriptLexicalGrammarParser.OpenBrace:
@@ -516,16 +546,21 @@ ECMAScriptLexicalGrammarParser.prototype.commonToken = function() {
         case ECMAScriptLexicalGrammarParser.BitOrAssign:
         case ECMAScriptLexicalGrammarParser.BitXorAssign:
         case ECMAScriptLexicalGrammarParser.FatArrow:
-            this.state = 28;
+            this.state = 35;
             this.punctuator();
             break;
         case ECMAScriptLexicalGrammarParser.NumericLiteral:
-            this.state = 29;
+            this.state = 36;
             this.match(ECMAScriptLexicalGrammarParser.NumericLiteral);
             break;
         case ECMAScriptLexicalGrammarParser.StringLiteral:
-            this.state = 30;
+            this.state = 37;
             this.match(ECMAScriptLexicalGrammarParser.StringLiteral);
+            break;
+        case ECMAScriptLexicalGrammarParser.TemplateHead:
+        case ECMAScriptLexicalGrammarParser.NoSubstitutionTemplate:
+            this.state = 38;
+            this.template();
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);
@@ -780,9 +815,9 @@ ECMAScriptLexicalGrammarParser.prototype.punctuator = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 33;
+        this.state = 41;
         _la = this._input.LA(1);
-        if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ECMAScriptLexicalGrammarParser.OpenBrace) | (1 << ECMAScriptLexicalGrammarParser.OpenParen) | (1 << ECMAScriptLexicalGrammarParser.CloseParen) | (1 << ECMAScriptLexicalGrammarParser.OpenBracket) | (1 << ECMAScriptLexicalGrammarParser.CloseBracket) | (1 << ECMAScriptLexicalGrammarParser.Dot) | (1 << ECMAScriptLexicalGrammarParser.Spread) | (1 << ECMAScriptLexicalGrammarParser.SemiColon) | (1 << ECMAScriptLexicalGrammarParser.Comma) | (1 << ECMAScriptLexicalGrammarParser.LessThan) | (1 << ECMAScriptLexicalGrammarParser.GreaterThan) | (1 << ECMAScriptLexicalGrammarParser.LessThanEquals) | (1 << ECMAScriptLexicalGrammarParser.GreaterThanEquals) | (1 << ECMAScriptLexicalGrammarParser.Equals) | (1 << ECMAScriptLexicalGrammarParser.NotEquals) | (1 << ECMAScriptLexicalGrammarParser.IdentityEquals) | (1 << ECMAScriptLexicalGrammarParser.IdentityNotEquals) | (1 << ECMAScriptLexicalGrammarParser.Plus) | (1 << ECMAScriptLexicalGrammarParser.Minus) | (1 << ECMAScriptLexicalGrammarParser.Multiply) | (1 << ECMAScriptLexicalGrammarParser.Modulo) | (1 << ECMAScriptLexicalGrammarParser.Power) | (1 << ECMAScriptLexicalGrammarParser.PlusPlus) | (1 << ECMAScriptLexicalGrammarParser.MinusMinus) | (1 << ECMAScriptLexicalGrammarParser.LeftShiftArithmetic) | (1 << ECMAScriptLexicalGrammarParser.RightShiftArithmetic) | (1 << ECMAScriptLexicalGrammarParser.RightShiftLogical) | (1 << ECMAScriptLexicalGrammarParser.BitAnd) | (1 << ECMAScriptLexicalGrammarParser.BitOr) | (1 << ECMAScriptLexicalGrammarParser.BitXor))) !== 0) || ((((_la - 32)) & ~0x1f) == 0 && ((1 << (_la - 32)) & ((1 << (ECMAScriptLexicalGrammarParser.Not - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitNot - 32)) | (1 << (ECMAScriptLexicalGrammarParser.And - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Or - 32)) | (1 << (ECMAScriptLexicalGrammarParser.QuestionMark - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Colon - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Assign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.PlusAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.MinusAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.MultiplyAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.ModuloAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.PowerAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.LeftShiftArithmeticAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.RightShiftArithmeticAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.RightShiftLogicalAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitAndAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitOrAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitXorAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.FatArrow - 32)))) !== 0))) {
+        if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ECMAScriptLexicalGrammarParser.OpenBrace) | (1 << ECMAScriptLexicalGrammarParser.OpenParen) | (1 << ECMAScriptLexicalGrammarParser.CloseParen) | (1 << ECMAScriptLexicalGrammarParser.OpenBracket) | (1 << ECMAScriptLexicalGrammarParser.CloseBracket) | (1 << ECMAScriptLexicalGrammarParser.Dot) | (1 << ECMAScriptLexicalGrammarParser.Spread) | (1 << ECMAScriptLexicalGrammarParser.SemiColon) | (1 << ECMAScriptLexicalGrammarParser.Comma) | (1 << ECMAScriptLexicalGrammarParser.LessThan) | (1 << ECMAScriptLexicalGrammarParser.GreaterThan) | (1 << ECMAScriptLexicalGrammarParser.LessThanEquals) | (1 << ECMAScriptLexicalGrammarParser.GreaterThanEquals) | (1 << ECMAScriptLexicalGrammarParser.Equals) | (1 << ECMAScriptLexicalGrammarParser.NotEquals) | (1 << ECMAScriptLexicalGrammarParser.IdentityEquals) | (1 << ECMAScriptLexicalGrammarParser.IdentityNotEquals) | (1 << ECMAScriptLexicalGrammarParser.Plus) | (1 << ECMAScriptLexicalGrammarParser.Minus) | (1 << ECMAScriptLexicalGrammarParser.Multiply) | (1 << ECMAScriptLexicalGrammarParser.Modulo) | (1 << ECMAScriptLexicalGrammarParser.Power) | (1 << ECMAScriptLexicalGrammarParser.PlusPlus) | (1 << ECMAScriptLexicalGrammarParser.MinusMinus) | (1 << ECMAScriptLexicalGrammarParser.LeftShiftArithmetic))) !== 0) || ((((_la - 32)) & ~0x1f) == 0 && ((1 << (_la - 32)) & ((1 << (ECMAScriptLexicalGrammarParser.RightShiftArithmetic - 32)) | (1 << (ECMAScriptLexicalGrammarParser.RightShiftLogical - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitAnd - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitOr - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitXor - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Not - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitNot - 32)) | (1 << (ECMAScriptLexicalGrammarParser.And - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Or - 32)) | (1 << (ECMAScriptLexicalGrammarParser.QuestionMark - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Colon - 32)) | (1 << (ECMAScriptLexicalGrammarParser.Assign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.PlusAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.MinusAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.MultiplyAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.ModuloAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.PowerAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.LeftShiftArithmeticAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.RightShiftArithmeticAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.RightShiftLogicalAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitAndAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitOrAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.BitXorAssign - 32)) | (1 << (ECMAScriptLexicalGrammarParser.FatArrow - 32)))) !== 0))) {
         this._errHandler.recoverInline(this);
         }
         else {
@@ -851,9 +886,210 @@ ECMAScriptLexicalGrammarParser.prototype.divPunctuator = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 35;
+        this.state = 43;
         _la = this._input.LA(1);
         if(!(_la===ECMAScriptLexicalGrammarParser.Divide || _la===ECMAScriptLexicalGrammarParser.DivideAssign)) {
+        this._errHandler.recoverInline(this);
+        }
+        else {
+        	this._errHandler.reportMatch(this);
+            this.consume();
+        }
+    } catch (re) {
+    	if(re instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = re;
+	        this._errHandler.reportError(this, re);
+	        this._errHandler.recover(this, re);
+	    } else {
+	    	throw re;
+	    }
+    } finally {
+        this.exitRule();
+    }
+    return localctx;
+};
+
+function RightBracePunctuatorContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = ECMAScriptLexicalGrammarParser.RULE_rightBracePunctuator;
+    return this;
+}
+
+RightBracePunctuatorContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+RightBracePunctuatorContext.prototype.constructor = RightBracePunctuatorContext;
+
+RightBracePunctuatorContext.prototype.CloseBrace = function() {
+    return this.getToken(ECMAScriptLexicalGrammarParser.CloseBrace, 0);
+};
+
+RightBracePunctuatorContext.prototype.enterRule = function(listener) {
+    if(listener instanceof ECMAScriptLexicalGrammarListener ) {
+        listener.enterRightBracePunctuator(this);
+	}
+};
+
+RightBracePunctuatorContext.prototype.exitRule = function(listener) {
+    if(listener instanceof ECMAScriptLexicalGrammarListener ) {
+        listener.exitRightBracePunctuator(this);
+	}
+};
+
+
+
+
+ECMAScriptLexicalGrammarParser.RightBracePunctuatorContext = RightBracePunctuatorContext;
+
+ECMAScriptLexicalGrammarParser.prototype.rightBracePunctuator = function() {
+
+    var localctx = new RightBracePunctuatorContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 10, ECMAScriptLexicalGrammarParser.RULE_rightBracePunctuator);
+    try {
+        this.enterOuterAlt(localctx, 1);
+        this.state = 45;
+        this.match(ECMAScriptLexicalGrammarParser.CloseBrace);
+    } catch (re) {
+    	if(re instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = re;
+	        this._errHandler.reportError(this, re);
+	        this._errHandler.recover(this, re);
+	    } else {
+	    	throw re;
+	    }
+    } finally {
+        this.exitRule();
+    }
+    return localctx;
+};
+
+function TemplateContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = ECMAScriptLexicalGrammarParser.RULE_template;
+    return this;
+}
+
+TemplateContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+TemplateContext.prototype.constructor = TemplateContext;
+
+TemplateContext.prototype.NoSubstitutionTemplate = function() {
+    return this.getToken(ECMAScriptLexicalGrammarParser.NoSubstitutionTemplate, 0);
+};
+
+TemplateContext.prototype.TemplateHead = function() {
+    return this.getToken(ECMAScriptLexicalGrammarParser.TemplateHead, 0);
+};
+
+TemplateContext.prototype.enterRule = function(listener) {
+    if(listener instanceof ECMAScriptLexicalGrammarListener ) {
+        listener.enterTemplate(this);
+	}
+};
+
+TemplateContext.prototype.exitRule = function(listener) {
+    if(listener instanceof ECMAScriptLexicalGrammarListener ) {
+        listener.exitTemplate(this);
+	}
+};
+
+
+
+
+ECMAScriptLexicalGrammarParser.TemplateContext = TemplateContext;
+
+ECMAScriptLexicalGrammarParser.prototype.template = function() {
+
+    var localctx = new TemplateContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 12, ECMAScriptLexicalGrammarParser.RULE_template);
+    var _la = 0; // Token type
+    try {
+        this.enterOuterAlt(localctx, 1);
+        this.state = 47;
+        _la = this._input.LA(1);
+        if(!(_la===ECMAScriptLexicalGrammarParser.TemplateHead || _la===ECMAScriptLexicalGrammarParser.NoSubstitutionTemplate)) {
+        this._errHandler.recoverInline(this);
+        }
+        else {
+        	this._errHandler.reportMatch(this);
+            this.consume();
+        }
+    } catch (re) {
+    	if(re instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = re;
+	        this._errHandler.reportError(this, re);
+	        this._errHandler.recover(this, re);
+	    } else {
+	    	throw re;
+	    }
+    } finally {
+        this.exitRule();
+    }
+    return localctx;
+};
+
+function TemplateSubstitutionTailContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = ECMAScriptLexicalGrammarParser.RULE_templateSubstitutionTail;
+    return this;
+}
+
+TemplateSubstitutionTailContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+TemplateSubstitutionTailContext.prototype.constructor = TemplateSubstitutionTailContext;
+
+TemplateSubstitutionTailContext.prototype.TemplateMiddle = function() {
+    return this.getToken(ECMAScriptLexicalGrammarParser.TemplateMiddle, 0);
+};
+
+TemplateSubstitutionTailContext.prototype.TemplateTail = function() {
+    return this.getToken(ECMAScriptLexicalGrammarParser.TemplateTail, 0);
+};
+
+TemplateSubstitutionTailContext.prototype.enterRule = function(listener) {
+    if(listener instanceof ECMAScriptLexicalGrammarListener ) {
+        listener.enterTemplateSubstitutionTail(this);
+	}
+};
+
+TemplateSubstitutionTailContext.prototype.exitRule = function(listener) {
+    if(listener instanceof ECMAScriptLexicalGrammarListener ) {
+        listener.exitTemplateSubstitutionTail(this);
+	}
+};
+
+
+
+
+ECMAScriptLexicalGrammarParser.TemplateSubstitutionTailContext = TemplateSubstitutionTailContext;
+
+ECMAScriptLexicalGrammarParser.prototype.templateSubstitutionTail = function() {
+
+    var localctx = new TemplateSubstitutionTailContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 14, ECMAScriptLexicalGrammarParser.RULE_templateSubstitutionTail);
+    var _la = 0; // Token type
+    try {
+        this.enterOuterAlt(localctx, 1);
+        this.state = 49;
+        _la = this._input.LA(1);
+        if(!(_la===ECMAScriptLexicalGrammarParser.TemplateMiddle || _la===ECMAScriptLexicalGrammarParser.TemplateTail)) {
         this._errHandler.recoverInline(this);
         }
         else {

@@ -56,5 +56,32 @@ ECMAScriptLexicalGrammarListener.prototype.exitDivPunctuator = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#rightBracePunctuator.
+ECMAScriptLexicalGrammarListener.prototype.enterRightBracePunctuator = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#rightBracePunctuator.
+ECMAScriptLexicalGrammarListener.prototype.exitRightBracePunctuator = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#template.
+ECMAScriptLexicalGrammarListener.prototype.enterTemplate = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#template.
+ECMAScriptLexicalGrammarListener.prototype.exitTemplate = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptLexicalGrammarParser#templateSubstitutionTail.
+ECMAScriptLexicalGrammarListener.prototype.enterTemplateSubstitutionTail = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptLexicalGrammarParser#templateSubstitutionTail.
+ECMAScriptLexicalGrammarListener.prototype.exitTemplateSubstitutionTail = function(ctx) {
+};
+
+
 
 exports.ECMAScriptLexicalGrammarListener = ECMAScriptLexicalGrammarListener;
