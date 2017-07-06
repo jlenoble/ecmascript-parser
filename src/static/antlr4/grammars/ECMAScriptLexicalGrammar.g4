@@ -1,6 +1,7 @@
 grammar ECMAScriptLexicalGrammar;
 
 import
+  StringLiteralB1,
   Template,
   RegularExpressionLiteral,
   Punctuator,

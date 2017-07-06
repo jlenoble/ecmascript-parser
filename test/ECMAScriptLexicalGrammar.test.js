@@ -6,50 +6,50 @@ const listener = 'TranslatorLexicalGrammar';
 const rule = 'file';
 const skip = false;
 
-const runMode = 'pass'; // 'all' (default), 'none', 'pass',
-// 'pass-explicit', 'early', 'fail'
+const runMode = 'fullpass';
+// 'all', 'pass', 'explicit', 'early', 'fail', 'full'
 
 const starts = {
-  pass: 1685,
+  pass: 31,
+  explicit: 0,
   early: 0,
   fail: 0,
 };
 const ends = {
-  pass: 1701,
+  pass: 31,
+  explicit: -1,
   early: -1,
   fail: -1,
 };
 
+const parseRunMode = mode => {
+  const all = mode.includes('all');
+
+  return {
+    full: all || mode.includes('full'),
+    pass: all || mode.includes('pass'),
+    early: all || mode.includes('early'),
+    fail: all || mode.includes('fail'),
+    explicit: all || mode.includes('explicit'),
+  };
+};
+
+const options = parseRunMode(runMode);
+
 const end = test => {
-  switch (runMode) {
-  case 'none':
-    return -1;
-
-  case 'pass': case 'early': case 'fail':
-    return (test === runMode) ? ends[test] : -1;
-
-  case 'pass-explicit':
-    return (test === 'pass') ? ends[test] : -1;
-
-  case 'all': default:
-    return;
+  if (options[test]) {
+    return options['full'] ? undefined : ends[test];
   }
+
+  return -1;
 };
 
 const start = test => {
-  switch (runMode) {
-  case 'none':
-    return +Infinity;
-
-  case 'pass': case 'early': case 'fail':
-    return (test === runMode) ? starts[test] : +Infinity;
-
-  case 'pass-explicit':
-    return (test === 'pass') ? starts[test] : +Infinity;
-
-  case 'all': default:
-    return 0;
+  if (options[test]) {
+    return options['full'] ? 0 : starts[test];
   }
+
+  return +Infinity;
 };
 
 makeTest({
@@ -62,7 +62,7 @@ makeTest({
 makeTest({
   title: `ECMASCriptLexicalGrammar: Lexing 'pass-explicit' tests for`,
   grammar, listener, rule,
-  files: passFile({end: end('pass-explicit'), start: start('pass-explicit'),
+  files: passFile({end: end('explicit'), start: start('explicit'),
     skip}),
   dir: 'pass-explicit',
 });

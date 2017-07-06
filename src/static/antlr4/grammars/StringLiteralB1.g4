@@ -3,7 +3,8 @@
 lexer grammar StringLiteralB1;
 
 // B.1.2 String Literals
-// The syntax and semantics of 11.8.4 is extended as follows except that this extension is not allowed for strict mode code:
+// The syntax and semantics of 11.8.4 is extended as follows except that this
+// extension is not allowed for strict mode code:
 
 // Syntax
 
@@ -14,10 +15,8 @@ lexer grammar StringLiteralB1;
 //    UnicodeEscapeSequence
 fragment
 EscapeSequence
-: CharacterEscapeSequence
-| LegacyOctalEscapeSequence
-| HexEscapeSequence
-| UnicodeEscapeSequence
+: (CharacterEscapeSequence|LegacyOctalEscapeSequence|HexEscapeSequence
+  |UnicodeEscapeSequence)
 ;
 
 // LegacyOctalEscapeSequence::
@@ -27,10 +26,8 @@ EscapeSequence
 //    ZeroToThree OctalDigit OctalDigit
 fragment
 LegacyOctalEscapeSequence
-: OctalDigit
-| ZeroToThree OctalDigit
-| FourToSeven OctalDigit
-| ZeroToThree OctalDigit OctalDigit
+: (OctalDigit|ZeroToThree OctalDigit|FourToSeven OctalDigit
+  |ZeroToThree OctalDigit OctalDigit)
 ;
 
 // ZeroToThree::one of
@@ -47,7 +44,8 @@ FourToSeven
 : [4-7]
 ;
 
-// This definition of EscapeSequence is not used in strict mode or when parsing TemplateCharacter.
+// This definition of EscapeSequence is not used in strict mode or when parsing
+// TemplateCharacter.
 
 /*
 B.1.2.1 Static Semantics
