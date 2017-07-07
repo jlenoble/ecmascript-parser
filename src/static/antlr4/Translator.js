@@ -5,7 +5,7 @@ const rel = path.relative(base, 'src/static/antlr4/parsers');
 const {ECMAScriptListener} = require(path.join(base, rel,
   'ECMAScriptListener'));
 
-const debug = false;
+const debug = true;
 
 export class Translator extends ECMAScriptListener {
   enterFile (ctx) {
@@ -20,6 +20,12 @@ export class Translator extends ECMAScriptListener {
   exitStatementItem (ctx) {
     if (debug) {
       console.log('StatementItem:', ctx.getText());
+    }
+  }
+
+  exitExpression (ctx) {
+    if (debug) {
+      console.log('Expression:', ctx.getText());
     }
   }
 }

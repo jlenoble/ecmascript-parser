@@ -4,10 +4,20 @@
 grammar ECMAScript;
 import
   AdditionalSyntax,
-  Expressions,
+  // Expressions,
   Statements,
   FunctionsAndClasses,
-  ScriptsAndModules,
+  // ScriptsAndModules,
+  // AssignmentPattern,
+  BindingIdentifier,
+  PrimaryExpression,
+  CoverExpressions,
+  ArrayLiteral,
+  ObjectLiteral,
+  CallExpression,
+  LeftHandSideExpression,
+  // AssignmentExpression,
+  Expression,
   LexicalGrammar;
 
 @parser::members {
@@ -23,8 +33,12 @@ require(path.join(process.cwd(), 'build/src/static/antlr4/BaseLexer'))
 }
 
 file
-: (script|module)
+: statementList EOF
 ;
+
+/* file
+: (script|module)
+;*/
 
 eos
 : SemiColon

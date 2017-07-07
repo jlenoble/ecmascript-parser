@@ -6,17 +6,17 @@ const listener = 'Translator';
 const rule = 'file';
 const skip = false;
 
-const runMode = 'explicit';
+const runMode = 'passexplicit';
 // 'all', 'pass', 'explicit', 'early', 'fail', 'full'
 
 const starts = {
-  pass: 1841,
+  pass: 981,
   explicit: 924,
   early: 0,
   fail: 0,
 };
 const ends = {
-  pass: 1842,
+  pass: 987,
   explicit: 924,
   early: -1,
 };

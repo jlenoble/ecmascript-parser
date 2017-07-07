@@ -11,12 +11,11 @@ grammar CoverExpressions;
 //    ( Expression[+In, ?Yield, ?Await] , ... BindingIdentifier[?Yield, ?Await] )
 //    ( Expression[+In, ?Yield, ?Await] , ... BindingPattern[?Yield, ?Await] )
 coverParenthesizedExpressionAndArrowParameterList
-: OpenParen expression_In Comma? CloseParen
-| OpenParen CloseParen
-| OpenParen Spread bindingIdentifier CloseParen
-| OpenParen Spread bindingPattern CloseParen
-| OpenParen expression_In Comma Spread bindingIdentifier CloseParen
-| OpenParen expression_In Comma Spread bindingPattern CloseParen
+: OpenParen (expressionList Comma?)? CloseParen
+// | OpenParen Spread bindingIdentifier CloseParen
+// | OpenParen Spread bindingPattern CloseParen
+| OpenParen expressionList Comma Spread bindingIdentifier CloseParen
+// | OpenParen expressionList Comma Spread bindingPattern CloseParen
 ;
 
 //    When processing an instance of the production PrimaryExpression:
@@ -25,15 +24,15 @@ coverParenthesizedExpressionAndArrowParameterList
 // following grammar:
 // ParenthesizedExpression[Yield, Await]:
 //    ( Expression[+In, ?Yield, ?Await] )
-parenthesizedExpression
-: OpenParen primaryExpression CloseParen
-;
+/* parenthesizedExpression
+: OpenParen expressionList CloseParen
+;*/
 
 // CoverCallExpressionAndAsyncArrowHead[Yield, Await]:
 //    MemberExpression[?Yield, ?Await] Arguments[?Yield, ?Await]
-coverCallExpressionAndAsyncArrowHead
+/* coverCallExpressionAndAsyncArrowHead
 : memberExpression arguments
-;
+;*/
 
 // When processing an instance of the production CallExpression:CoverCallExpressionAndAsyncArrowHead the interpretation of CoverCallExpressionAndAsyncArrowHead is refined using the following grammar:
 // CallMemberExpression[Yield, Await]:

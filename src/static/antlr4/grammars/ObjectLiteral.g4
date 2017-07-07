@@ -6,9 +6,9 @@ grammar ObjectLiteral;
 //    { }
 //    { PropertyDefinitionList[?Yield, ?Await] }
 //    { PropertyDefinitionList[?Yield, ?Await] , }
-objectLiteral
+/* objectLiteral
 : OpenBrace (propertyDefinitionList Comma?)? CloseBrace
-;
+;*/
 
 // PropertyDefinitionList[Yield, Await]:
 //    PropertyDefinition[?Yield, ?Await]
@@ -24,8 +24,8 @@ propertyDefinitionList
 //    MethodDefinition[?Yield, ?Await]
 propertyDefinition
 : methodDefinition
-/*| coverInitializedName*/
-| propertyName Colon assignmentExpression_In
+| coverInitializedName
+| propertyName Colon expression
 | identifierReference
 ;
 
@@ -34,7 +34,7 @@ propertyDefinition
 //    ComputedPropertyName[?Yield, ?Await]
 propertyName
 : literalPropertyName
-| computedPropertyName
+// | computedPropertyName
 ;
 
 // LiteralPropertyName:
@@ -42,20 +42,17 @@ propertyName
 //    StringLiteral
 //    NumericLiteral
 literalPropertyName
-: identifierName
-| StringLiteral
-| NumericLiteral
+: (identifierName|StringLiteral|NumericLiteral)
 ;
 
 // ComputedPropertyName[Yield, Await]:
 //    [AssignmentExpression[+In, ?Yield, ?Await]]
-computedPropertyName
+/* computedPropertyName
 : assignmentExpression_In
-;
+;*/
 
 // CoverInitializedName[Yield, Await]:
 //    IdentifierReference[?Yield, ?Await] Initializer[+In, ?Yield, ?Await]
-/*coverInitializedName
-: identifierReference initializer_In
+coverInitializedName
+: identifierReference initializer
 ;
-*/

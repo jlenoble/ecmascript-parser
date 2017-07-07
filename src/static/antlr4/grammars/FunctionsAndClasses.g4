@@ -3,8 +3,8 @@
 // A.4 Functions and Classes
 grammar FunctionsAndClasses;
 import
-  Class,
-  Generator,
+  // Class,
+  // Generator,
   FormalParameter,
   FunctionBody,
   MethodDefinition;
@@ -15,20 +15,20 @@ import
 //        FunctionBody[~Yield, ~Await] }
 //    [+Default] function ( FormalParameters[~Yield, ~Await]) {
 //        FunctionBody[~Yield, ~Await] }
-functionDeclaration
+/* functionDeclaration
 : Function bindingIdentifier OpenParen formalParameters CloseParen
   OpenBrace functionBody CloseBrace
 ;
 functionDeclaration_Default
 : Function bindingIdentifier? OpenParen formalParameters CloseParen
   OpenBrace functionBody CloseBrace
-;
+;*/
 
 // FunctionExpression:
 //    function BindingIdentifier[~Yield, ~Await][opt] (
 //        FormalParameters[~Yield, ~Await] ) {
 //        FunctionBody[~Yield, ~Await] }
-functionExpression
+/* functionExpression
 : Function bindingIdentifier? OpenParen formalParameters CloseParen
   OpenBrace functionBody CloseBrace
-;
+;*/

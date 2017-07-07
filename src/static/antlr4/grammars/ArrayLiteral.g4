@@ -7,60 +7,28 @@ grammar ArrayLiteral;
 //    [ ElementList[?Yield, ?Await] ]
 //    [ ElementList[?Yield, ?Await] , Elision[opt] ]
 arrayLiteral
-: OpenBracket elision? CloseBracket
-| OpenBracket elementList CloseBracket
-| OpenBracket elementList Comma elision? CloseBracket
+: OpenBracket Comma* (Spread? expression (Comma+ Spread? expression)*)?
+  Comma* CloseBracket
 ;
-/*arrayLiteral_Await
-: OpenBracket elision? CloseBracket
-| OpenBracket elementList_Await CloseBracket
-| OpenBracket elementList_Await Comma elision? CloseBracket
-;
-arrayLiteral_Yield_Await
-: OpenBracket elision? CloseBracket
-| OpenBracket elementList_Yield_Await CloseBracket
-| OpenBracket elementList_Yield_Await Comma elision? CloseBracket
-;*/
 
 // ElementList[Yield, Await]:
 //    Elision[opt] AssignmentExpression[+In, ?Yield, ?Await]
 //    Elision[opt] SpreadElement[?Yield, ?Await]
 //    ElementList[?Yield, ?Await] , Elision[opt] AssignmentExpression[+In, ?Yield, ?Await]
 //    ElementList[?Yield, ?Await] , Elision[opt] SpreadElement[?Yield, ?Await]
-elementList
-: elision? assignmentExpression_In
-| elision? spreadElement
-| elementList Comma elision? assignmentExpression_In
-| elementList Comma elision? spreadElement
-;
-/*elementList_Await
-: elision? assignmentExpression_In_Await
-| elision? spreadElement_Await
-| elementList_Await Comma elision? assignmentExpression_In_Await
-| elementList_Await Comma elision? spreadElement_Await
-;
-elementList_Yield_Await
-: elision? assignmentExpression_In_Yield_Await
-| elision? spreadElement_Yield_Await
-| elementList_Yield_Await Comma elision? assignmentExpression_In_Yield_Await
-| elementList_Yield_Await Comma elision? spreadElement_Yield_Await
+/* elementList
+: Comma* Spread? expression (Comma+ Spread? expression)*
 ;*/
 
 // Elision:
 //    ,
 //    Elision ,
-elision
+/* elision
 : Comma+
-;
+;*/
 
 // SpreadElement[Yield, Await]:
 //    ... AssignmentExpression[+In, ?Yield, ?Await]
-spreadElement
-: Spread assignmentExpression_In
-;
-/*spreadElement_Await
-: Spread assignmentExpression_In_Await
-;
-spreadElement_Yield_Await
-: Spread assignmentExpression_In_Yield_Await
+/* spreadElement
+: Spread expression
 ;*/

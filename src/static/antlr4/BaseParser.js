@@ -52,6 +52,10 @@ purposes of parsing by the syntactic grammar.
     return this.isEndOfStatementToken(this.getHiddenToken());
   }
 
+  noLineTerminatorHere () {
+    return !this.isEndOfStatementToken(this.getHiddenToken());
+  }
+
   enterFunctionBody () {
     this.functionLevel += 1;
   }
@@ -139,8 +143,8 @@ There are three basic rules of semicolon insertion:
   }
 
   isValidExpressionStatement () {
-    return (this._input.LA(1) !== Types.OpenBrace) && // eslint-disable-line
-      (this._input.LA(1) !== Types.Function); // eslint-disable-line
+    const type = this._input.LA(1); // eslint-disable-line new-cap
+    return type !== Types.OpenBrace && type !== Types.Function;
   }
 }
 

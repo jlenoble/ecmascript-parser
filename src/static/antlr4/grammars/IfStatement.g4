@@ -6,5 +6,5 @@ grammar IfStatement;
 //    if ( Expression[+In, ?Yield, ?Await] ) Statement[?Yield, ?Await, ?Return] else Statement[?Yield, ?Await, ?Return]
 //    if ( Expression[+In, ?Yield, ?Await] ) Statement[?Yield, ?Await, ?Return]
 ifStatement
-: If OpenParen expression_In CloseParen statement (Else statement)?
+: If OpenParen expressionList CloseParen statement (Else statement)?
 ;

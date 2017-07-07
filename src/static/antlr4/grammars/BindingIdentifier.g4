@@ -8,20 +8,9 @@ grammar BindingIdentifier;
 //    [~Await] await *
 identifierReference
 : identifier
-| Yield
-| Await Multiply
+| {!this.canYield()}? Yield
+// | Await Multiply
 ;
-identifierReference_Yield
-: identifier
-| Await Multiply
-;
-/*identifierReference_Await
-: identifier
-| Yield
-;
-identifierReference_Yield_Await
-: identifier
-;*/
 
 // BindingIdentifier[Yield, Await]:
 //    Identifier
@@ -35,20 +24,9 @@ identifierReference_Yield_Await
 //   await 0;
 bindingIdentifier
 : identifier
-| Yield
-| Await
+| {!this.canYield()}? Yield
+// | Await
 ;
-bindingIdentifier_Yield
-: identifier
-| Await
-;
-/*bindingIdentifier_Await
-: identifier
-| Yield
-;
-bindingIdentifier_Yield_Await
-: identifier
-;*/
 
 // Identifier:
 //    IdentifierName but not ReservedWord

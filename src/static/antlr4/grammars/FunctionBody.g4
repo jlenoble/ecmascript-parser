@@ -12,9 +12,9 @@ functionBody
 
 // GeneratorBody:
 //    FunctionBody[+Yield, ~Await]
-generatorBody
+/* generatorBody
 : {this.enterGeneratorBody()} functionBody {this.exitGeneratorBody()}
-;
+;*/
 
 // AsyncFunctionBody:
 //    FunctionBody[~Yield, +Await]
@@ -27,9 +27,5 @@ generatorBody
 //    { FunctionBody[~Yield, ~Await] }
 conciseBody
 : OpenBrace functionBody CloseBrace
-| assignmentExpression
-;
-conciseBody_In
-: OpenBrace functionBody CloseBrace
-| assignmentExpression_In
+| expression
 ;

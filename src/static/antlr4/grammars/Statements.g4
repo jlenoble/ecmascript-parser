@@ -4,17 +4,17 @@
 grammar Statements;
 import
   BindingElement,
-  BindingPattern,
-  LexicalDeclaration,
-  Declaration,
-  TryStatement,
-  WithStatement,
-  LabelledStatement,
-  SwitchStatement,
-  IterationStatement,
+  // BindingPattern,
+  // LexicalDeclaration,
+  // Declaration,
+  // TryStatement,
+  // WithStatement,
+  // LabelledStatement,
+  // SwitchStatement,
+  // IterationStatement,
   IfStatement,
-  BreakableStatement,
-  BlockStatement,
+  // BreakableStatement,
+  // BlockStatement,
   VariableStatement;
 
 // Statement[Yield, Await, Return]:
@@ -33,20 +33,20 @@ import
 //    TryStatement[?Yield, ?Await, ?Return]
 //    DebuggerStatement
 statement
-: blockStatement
-| variableStatement
-| emptyStatement
+: /* blockStatement
+| */variableStatement
+// | emptyStatement
 | expressionStatement
 | ifStatement
-| breakableStatement
-| continueStatement
-| breakStatement
+// | breakableStatement
+// | continueStatement
+// | breakStatement
 | {this.canReturn()}? returnStatement
-| withStatement
-| labelledStatement
-| throwStatement
-| tryStatement
-| debuggerStatement
+// | withStatement
+// | labelledStatement
+// | throwStatement
+// | tryStatement
+// | debuggerStatement
 ;
 
 // StatementList[Yield, Await, Return]:
@@ -60,8 +60,8 @@ statementList
 //    Statement[?Yield, ?Await, ?Return]
 //    Declaration[?Yield, ?Await]
 statementListItem
-: declaration
-| statement
+: /* declaration
+| */statement
 ;
 
 // EmptyStatement:
@@ -74,7 +74,7 @@ emptyStatement
 //    return ;
 //    return [no LineTerminator here] Expression[+In, ?Yield, ?Await] ;
 returnStatement
-: Return expression_In? eos
+: Return {this.noLineTerminatorHere()}? expression? eos
 ;
 
 // DebuggerStatement:
@@ -84,7 +84,8 @@ debuggerStatement
 ;
 
 // ExpressionStatement[Yield, Await]:
-//    [lookahead ∉ { {, function, async [no LineTerminator here] function, class, let [ }] Expression[+In, ?Yield, ?Await] ;
+//    [lookahead ∉ { {, function, async [no LineTerminator here] function,
+//        class, let [ }] Expression[+In, ?Yield, ?Await] ;
 expressionStatement
-: {this.isValidExpressionStatement()}? expression_In eos
+: {this.isValidExpressionStatement()}? expressionList eos
 ;

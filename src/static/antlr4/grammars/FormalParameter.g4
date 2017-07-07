@@ -16,9 +16,9 @@ uniqueFormalParameters
 //    FormalParameterList[?Yield, ?Await] , FunctionRestParameter[?Yield, ?Await]
 formalParameters
 :
-| functionRestParameter
-| formalParameterList Comma?
-| formalParameterList Comma functionRestParameter
+// | functionRestParameter
+// | formalParameterList Comma?
+// | formalParameterList Comma functionRestParameter
 ;
 
 // FormalParameterList[Yield, Await]:

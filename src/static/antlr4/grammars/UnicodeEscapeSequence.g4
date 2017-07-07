@@ -7,8 +7,7 @@ lexer grammar UnicodeEscapeSequence;
 //     'u{' HexDigits '}'
 fragment
 UnicodeEscapeSequence
-: 'u' Hex4Digits
-| 'u{' HexDigits '}'
+: ('u' Hex4Digits|'u{' HexDigits '}')
 ;
 
 // Hex4Digits::

@@ -10,27 +10,26 @@ grammar CallExpression;
 //    CallExpression[?Yield, ?Await] . IdentifierName
 //    CallExpression[?Yield, ?Await] TemplateLiteral[?Yield, ?Await]
 callExpression
-: coverCallExpressionAndAsyncArrowHead
-| superCall
-| callExpression arguments
-| callExpression OpenBracket expression_In CloseBracket
-| callExpression Dot identifierName
-| callExpression templateLiteral
+: // coverCallExpressionAndAsyncArrowHead
+// | superCall
+// | callExpression arguments
+// | callExpression OpenBracket expressionList CloseBracket
+// | callExpression Dot identifierName
+// | callExpression templateLiteral
 ;
 
 // SuperCall[Yield, Await]:
 //    super Arguments[?Yield, ?Await]
-superCall
+/* superCall
 : Super arguments
-;
+;*/
 
 // Arguments[Yield, Await]:
 //    ( )
 //    ( ArgumentList[?Yield, ?Await] )
 //    ( ArgumentList[?Yield, ?Await] , )
 arguments
-: OpenParen CloseParen
-| OpenParen argumentList Comma? CloseParen
+: OpenParen (argumentList Comma?)? CloseParen
 ;
 
 // ArgumentList[Yield, Await]:
@@ -39,5 +38,5 @@ arguments
 //    ArgumentList[?Yield, ?Await] , AssignmentExpression[+In, ?Yield, ?Await]
 //    ArgumentList[?Yield, ?Await] , ... AssignmentExpression[+In, ?Yield, ?Await]
 argumentList
-: Spread? assignmentExpression_In (Comma Spread? assignmentExpression_In)*
+: Spread? expressionList (Comma Spread expressionList)*
 ;

@@ -5,22 +5,22 @@ grammar BindingElement;
 // BindingElementList[Yield, Await]:
 //    BindingElisionElement[?Yield, ?Await]
 //    BindingElementList[?Yield, ?Await] , BindingElisionElement[?Yield, ?Await]
-bindingElementList
+/* bindingElementList
 : bindingElisionElement (Comma bindingElisionElement)*
-;
+;*/
 
 // BindingElisionElement[Yield, Await]:
 //    Elision[opt] BindingElement[?Yield, ?Await]
-bindingElisionElement
+/* bindingElisionElement
 : elision? bindingElement
-;
+;*/
 
 // BindingElement[Yield, Await]:
 //    SingleNameBinding[?Yield, ?Await]
 //    BindingPattern[?Yield, ?Await] Initializer[+In, ?Yield, ?Await][opt]
 bindingElement
 : singleNameBinding
-| bindingPattern initializer_In?
+// | bindingPattern initializer
 ;
 
 // BindingRestElement[Yield, Await]:
@@ -28,11 +28,11 @@ bindingElement
 //    ... BindingPattern[?Yield, ?Await]
 bindingRestElement
 : Spread bindingIdentifier
-| Spread bindingPattern
+// | Spread bindingPattern
 ;
 
 // SingleNameBinding[Yield, Await]:
 //    BindingIdentifier[?Yield, ?Await] Initializer[+In, ?Yield, ?Await][opt]
 singleNameBinding
-: bindingIdentifier initializer_In?
+: bindingIdentifier // initializer_In?
 ;
