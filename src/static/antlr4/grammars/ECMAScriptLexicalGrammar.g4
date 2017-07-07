@@ -1,5 +1,7 @@
-grammar ECMAScriptLexicalGrammar;
+/* Source: ECMAScript® 2018 Language Specification - Annex A-1 */
 
+// A.1 Lexical Grammar
+grammar ECMAScriptLexicalGrammar;
 import
   StringLiteralB1,
   Template,

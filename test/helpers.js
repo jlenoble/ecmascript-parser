@@ -178,7 +178,7 @@ export function makeTest ({
   title, grammar, listener, parserDir, listenerDir, rule, dir, files, fail,
 }) {
   describe(title, function () {
-    this.timeout(60000); // eslint-disable-line no-invalid-this
+    this.timeout(3600000); // eslint-disable-line no-invalid-this
 
     const muter = Muter(process.stderr, 'write'); // eslint-disable-line
     const _dir = path.join(process.cwd(), 'node_modules/test262-parser-tests/',

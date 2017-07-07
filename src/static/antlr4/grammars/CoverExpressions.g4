@@ -26,7 +26,7 @@ coverParenthesizedExpressionAndArrowParameterList
 // ParenthesizedExpression[Yield, Await]:
 //    ( Expression[+In, ?Yield, ?Await] )
 parenthesizedExpression
-: OpenParen expression_In CloseParen
+: OpenParen primaryExpression CloseParen
 ;
 
 // CoverCallExpressionAndAsyncArrowHead[Yield, Await]:

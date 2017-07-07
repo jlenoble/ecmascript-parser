@@ -18,7 +18,7 @@ const grammarGlob = [
 ];
 const dataGlob = [
   'src/static/data/**/*.*',
-  'src/static/antlr4/parsers/ECMAScript*Parser.js',
+  'src/static/antlr4/parsers/ECMAScriptParser.js',
 ];
 
 export const watch = done => {

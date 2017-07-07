@@ -12,7 +12,8 @@ import
   NumericLiteralA1,
   IdentifierName,
   CommentA1,
-  WhiteSpace;
+  WhiteSpace,
+  LineTerminator;
 
 // TemplateLiteral[Yield, Await]:
 //    NoSubstitutionTemplate
@@ -33,4 +34,8 @@ templateSpans
 //    TemplateMiddleList[?Yield, ?Await] TemplateMiddle Expression[+In, ?Yield, ?Await]
 templateMiddleList
 : TemplateMiddle expression+
+;
+
+identifierName
+: (IdentifierName|reservedWord|miscIdentifier)
 ;

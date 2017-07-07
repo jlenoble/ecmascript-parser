@@ -6,18 +6,18 @@ const listener = 'TranslatorLexicalGrammar';
 const rule = 'file';
 const skip = false;
 
-const runMode = 'all';
+const runMode = 'pass';
 // 'all', 'pass', 'explicit', 'early', 'fail', 'full'
 
 const starts = {
-  pass: 270,
-  explicit: 270,
+  pass: 0,
+  explicit: 0,
   early: 0,
   fail: 0,
 };
 const ends = {
-  pass: 300,
-  explicit: 300,
+  pass: -1,
+  explicit: -1,
   early: -1,
   fail: -1,
 };

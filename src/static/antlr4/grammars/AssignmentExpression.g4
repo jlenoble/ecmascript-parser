@@ -112,7 +112,8 @@ initializer_In
 //    ArrowParameters[?Yield, ?Await] [no LineTerminator here] =>
 //        ConciseBody[?In]
 assignmentExpression
-: functionExpression                          # funcExpression
+: parenthesizedExpression                     # parenExpression
+| functionExpression                          # funcExpression
 | classExpression                             # clsExpression
 | generatorExpression                         # genExpression
 | assignmentExpression arguments              # argumentsExpression
@@ -174,7 +175,7 @@ assignmentExpression
 | objectLiteral                               # objectLiteralExpression
 | RegularExpressionLiteral                    # regexpExpression
 | templateLiteral                             # templateExpression
-| parenthesizedExpression                     # parenExpression
+| coverParenthesizedExpressionAndArrowParameterList # coverExpression
 ;
 assignmentExpression_In
 : parenthesizedExpression                     # parenExpression_In
@@ -240,6 +241,7 @@ assignmentExpression_In
 | objectLiteral                               # objectLiteralExpression_In
 | RegularExpressionLiteral                    # regexpExpression_In
 | templateLiteral                             # templateExpression_In
+| coverParenthesizedExpressionAndArrowParameterList # coverExpression_In
 ;
 
 unaryOperator
