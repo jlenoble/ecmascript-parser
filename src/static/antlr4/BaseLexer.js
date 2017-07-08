@@ -42,10 +42,12 @@ class BaseLexer {
     const next = nextToken.call(this);
     const Types = this.constructor;
     const type = next.type;
+    if (!this.lastTokens) {
+      this.lastTokens = [undefined, undefined, undefined, undefined];
+    }
 
     if (type !== Types.WhiteSpace) {
-      const [, a, b, c] = this.lastTokens || [undefined, undefined, undefined,
-        undefined];
+      const [, a, b, c] = this.lastTokens;
 
       if (!c || c.type !== type || type !== Types.LineTerminator) {
         this.lastTokens = [a, b, c, next];
@@ -73,6 +75,10 @@ class BaseLexer {
     }
 
     return !isNotValid;
+  }
+
+  isStartOfFile () {
+    return !this.lastTokens;
   }
 }
 

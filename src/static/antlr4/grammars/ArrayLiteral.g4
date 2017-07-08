@@ -7,8 +7,8 @@ grammar ArrayLiteral;
 //    [ ElementList[?Yield, ?Await] ]
 //    [ ElementList[?Yield, ?Await] , Elision[opt] ]
 arrayLiteral
-: OpenBracket Comma* (Spread? expression (Comma+ Spread? expression)*)?
-  Comma* CloseBracket
+: OpenBracket elision? ((expression|spreadElement)
+  (elision (expression|spreadElement))*)? elision? CloseBracket
 ;
 
 // ElementList[Yield, Await]:
@@ -17,18 +17,19 @@ arrayLiteral
 //    ElementList[?Yield, ?Await] , Elision[opt] AssignmentExpression[+In, ?Yield, ?Await]
 //    ElementList[?Yield, ?Await] , Elision[opt] SpreadElement[?Yield, ?Await]
 /* elementList
-: Comma* Spread? expression (Comma+ Spread? expression)*
+: Comma* Spread? (expression|spreadElement) (Comma+ Spread?
+  (expression|spreadElement))*
 ;*/
 
 // Elision:
 //    ,
 //    Elision ,
-/* elision
+elision
 : Comma+
-;*/
+;
 
 // SpreadElement[Yield, Await]:
 //    ... AssignmentExpression[+In, ?Yield, ?Await]
-/* spreadElement
+spreadElement
 : Spread expression
-;*/
+;

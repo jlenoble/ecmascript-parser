@@ -11,7 +11,7 @@ import
   UnicodeEscapeSequence,
   NumericLiteralA1,
   IdentifierName,
-  // CommentA1,
+  CommentA1,
   WhiteSpace,
   LineTerminator;
 

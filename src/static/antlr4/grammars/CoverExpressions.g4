@@ -12,7 +12,7 @@ grammar CoverExpressions;
 //    ( Expression[+In, ?Yield, ?Await] , ... BindingPattern[?Yield, ?Await] )
 coverParenthesizedExpressionAndArrowParameterList
 : OpenParen (expressionList Comma?)? CloseParen
-// | OpenParen Spread bindingIdentifier CloseParen
+| OpenParen Spread bindingIdentifier CloseParen
 // | OpenParen Spread bindingPattern CloseParen
 | OpenParen expressionList Comma Spread bindingIdentifier CloseParen
 // | OpenParen expressionList Comma Spread bindingPattern CloseParen

@@ -34,7 +34,7 @@ propertyDefinition
 //    ComputedPropertyName[?Yield, ?Await]
 propertyName
 : literalPropertyName
-// | computedPropertyName
+| computedPropertyName
 ;
 
 // LiteralPropertyName:
@@ -47,9 +47,9 @@ literalPropertyName
 
 // ComputedPropertyName[Yield, Await]:
 //    [AssignmentExpression[+In, ?Yield, ?Await]]
-/* computedPropertyName
-: assignmentExpression_In
-;*/
+computedPropertyName
+: expression
+;
 
 // CoverInitializedName[Yield, Await]:
 //    IdentifierReference[?Yield, ?Await] Initializer[+In, ?Yield, ?Await]

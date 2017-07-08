@@ -19,6 +19,6 @@ variableDeclarationList
 //    BindingIdentifier[?Yield, ?Await] Initializer[?In, ?Yield, ?Await][opt]
 //    BindingPattern[?Yield, ?Await] Initializer[?In, ?Yield, ?Await]
 variableDeclaration
-: bindingIdentifier // initializer?
-// | bindingPattern initializer
+: bindingIdentifier initializer?
+| bindingPattern initializer
 ;

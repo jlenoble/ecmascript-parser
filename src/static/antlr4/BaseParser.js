@@ -3,7 +3,7 @@ import antlr4 from 'antlr4';
 let Types;
 
 class BaseParser {
-  getHiddenToken () {
+  getEOSToken () {
     const previousTokenIndex = antlr4.Parser.prototype.getCurrentToken
       .call(this).tokenIndex - 1;
     const previousToken = this._input.get(previousTokenIndex);
@@ -49,11 +49,11 @@ purposes of parsing by the syntactic grammar.
   }
 
   isLineTerminatorEquivalent () {
-    return this.isEndOfStatementToken(this.getHiddenToken());
+    return this.isEndOfStatementToken(this.getEOSToken());
   }
 
   noLineTerminatorHere () {
-    return !this.isEndOfStatementToken(this.getHiddenToken());
+    return !this.isEndOfStatementToken(this.getEOSToken());
   }
 
   enterFunctionBody () {

@@ -3,6 +3,6 @@
 // B.1 Additional Syntax
 lexer grammar AdditionalSyntax;
 import
-  // CommentB1,
+  CommentB1,
   // StringLiteralB1,
   NumericLiteralB1;

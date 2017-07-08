@@ -10,14 +10,14 @@ const runMode = 'passexplicit';
 // 'all', 'pass', 'explicit', 'early', 'fail', 'full'
 
 const starts = {
-  pass: 981,
+  pass: 924,
   explicit: 924,
   early: 0,
   fail: 0,
 };
 const ends = {
-  pass: 987,
-  explicit: 924,
+  pass: 924,
+  explicit: -1,
   early: -1,
 };
 

@@ -17,9 +17,15 @@ export class Translator extends ECMAScriptListener {
     }
   }
 
-  exitStatementItem (ctx) {
+  exitDeclaration (ctx) {
     if (debug) {
-      console.log('StatementItem:', ctx.getText());
+      console.log('Declaration:', ctx.getText());
+    }
+  }
+
+  exitStatement (ctx) {
+    if (debug) {
+      console.log('Statement:', ctx.getText());
     }
   }
 
