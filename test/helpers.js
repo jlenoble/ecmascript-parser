@@ -97,18 +97,17 @@ function* passSkipIndex () {
 
   yield 268; // ^@ character breaks Mocha error reporting
 
-  yield* [987, 1049]; // Hanging due to very deep nesting
+  // yield* [987, 1049]; // Hanging due to very deep nesting
 
   yield* [1260, 1261, 1262, 1263, 1264]; // invalid ifStatement
 
-  yield* [1370, 1371, 1425, 1633]; // Hanging due to very deep nesting
+  // yield* [1370, 1371, 1425, 1633]; // Hanging due to very deep nesting
 }
 
-function* earlySkipIndex () {
-}
+function* earlySkipIndex () {}
 
 function* failSkipIndex () {
-  yield* [254, 261]; // Hanging due to very deep nesting
+  // yield* [254, 261]; // Hanging due to very deep nesting
 }
 
 function* index (start, end) {
@@ -173,6 +172,18 @@ export function* failFile ({end = nFail, start = 0, skip = true}) {
     start, end, skip, doSkip: [],
   });
 }
+
+export const parseRunMode = mode => {
+  const all = mode.includes('all');
+
+  return {
+    full: all || mode.includes('full'),
+    pass: all || mode.includes('pass'),
+    early: all || mode.includes('early'),
+    fail: all || mode.includes('fail'),
+    explicit: all || mode.includes('explicit'),
+  };
+};
 
 export function makeTest ({
   title, grammar, listener, parserDir, listenerDir, rule, dir, files, fail,

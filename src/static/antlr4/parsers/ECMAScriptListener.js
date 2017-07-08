@@ -407,6 +407,15 @@ ECMAScriptListener.prototype.exitBreakableStatement = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptParser#continueStatement.
+ECMAScriptListener.prototype.enterContinueStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#continueStatement.
+ECMAScriptListener.prototype.exitContinueStatement = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptParser#breakStatement.
 ECMAScriptListener.prototype.enterBreakStatement = function(ctx) {
 };
@@ -467,6 +476,69 @@ ECMAScriptListener.prototype.enterFunctionDeclaration = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptParser#functionDeclaration.
 ECMAScriptListener.prototype.exitFunctionDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#classDeclaration.
+ECMAScriptListener.prototype.enterClassDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#classDeclaration.
+ECMAScriptListener.prototype.exitClassDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#classTail.
+ECMAScriptListener.prototype.enterClassTail = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#classTail.
+ECMAScriptListener.prototype.exitClassTail = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#classHeritage.
+ECMAScriptListener.prototype.enterClassHeritage = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#classHeritage.
+ECMAScriptListener.prototype.exitClassHeritage = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#classBody.
+ECMAScriptListener.prototype.enterClassBody = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#classBody.
+ECMAScriptListener.prototype.exitClassBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#classElementList.
+ECMAScriptListener.prototype.enterClassElementList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#classElementList.
+ECMAScriptListener.prototype.exitClassElementList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#classElement.
+ECMAScriptListener.prototype.enterClassElement = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#classElement.
+ECMAScriptListener.prototype.exitClassElement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#generatorDeclaration.
+ECMAScriptListener.prototype.enterGeneratorDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#generatorDeclaration.
+ECMAScriptListener.prototype.exitGeneratorDeclaration = function(ctx) {
 };
 
 
@@ -533,6 +605,15 @@ ECMAScriptListener.prototype.exitFunctionBody = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptParser#generatorBody.
+ECMAScriptListener.prototype.enterGeneratorBody = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#generatorBody.
+ECMAScriptListener.prototype.exitGeneratorBody = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptParser#conciseBody.
 ECMAScriptListener.prototype.enterConciseBody = function(ctx) {
 };
@@ -557,6 +638,195 @@ ECMAScriptListener.prototype.enterPropertySetParameterList = function(ctx) {
 
 // Exit a parse tree produced by ECMAScriptParser#propertySetParameterList.
 ECMAScriptListener.prototype.exitPropertySetParameterList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#generatorMethod.
+ECMAScriptListener.prototype.enterGeneratorMethod = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#generatorMethod.
+ECMAScriptListener.prototype.exitGeneratorMethod = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#script.
+ECMAScriptListener.prototype.enterScript = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#script.
+ECMAScriptListener.prototype.exitScript = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#scriptBody.
+ECMAScriptListener.prototype.enterScriptBody = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#scriptBody.
+ECMAScriptListener.prototype.exitScriptBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#module.
+ECMAScriptListener.prototype.enterModule = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#module.
+ECMAScriptListener.prototype.exitModule = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#moduleBody.
+ECMAScriptListener.prototype.enterModuleBody = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#moduleBody.
+ECMAScriptListener.prototype.exitModuleBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#moduleItemList.
+ECMAScriptListener.prototype.enterModuleItemList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#moduleItemList.
+ECMAScriptListener.prototype.exitModuleItemList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#moduleItem.
+ECMAScriptListener.prototype.enterModuleItem = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#moduleItem.
+ECMAScriptListener.prototype.exitModuleItem = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#importDeclaration.
+ECMAScriptListener.prototype.enterImportDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#importDeclaration.
+ECMAScriptListener.prototype.exitImportDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#importClause.
+ECMAScriptListener.prototype.enterImportClause = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#importClause.
+ECMAScriptListener.prototype.exitImportClause = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#importedDefaultBinding.
+ECMAScriptListener.prototype.enterImportedDefaultBinding = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#importedDefaultBinding.
+ECMAScriptListener.prototype.exitImportedDefaultBinding = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#nameSpaceImport.
+ECMAScriptListener.prototype.enterNameSpaceImport = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#nameSpaceImport.
+ECMAScriptListener.prototype.exitNameSpaceImport = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#namedImports.
+ECMAScriptListener.prototype.enterNamedImports = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#namedImports.
+ECMAScriptListener.prototype.exitNamedImports = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#fromClause.
+ECMAScriptListener.prototype.enterFromClause = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#fromClause.
+ECMAScriptListener.prototype.exitFromClause = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#importsList.
+ECMAScriptListener.prototype.enterImportsList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#importsList.
+ECMAScriptListener.prototype.exitImportsList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#importSpecifier.
+ECMAScriptListener.prototype.enterImportSpecifier = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#importSpecifier.
+ECMAScriptListener.prototype.exitImportSpecifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#moduleSpecifier.
+ECMAScriptListener.prototype.enterModuleSpecifier = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#moduleSpecifier.
+ECMAScriptListener.prototype.exitModuleSpecifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#importedBinding.
+ECMAScriptListener.prototype.enterImportedBinding = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#importedBinding.
+ECMAScriptListener.prototype.exitImportedBinding = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#exportDeclaration.
+ECMAScriptListener.prototype.enterExportDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#exportDeclaration.
+ECMAScriptListener.prototype.exitExportDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#exportClause.
+ECMAScriptListener.prototype.enterExportClause = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#exportClause.
+ECMAScriptListener.prototype.exitExportClause = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#exportsList.
+ECMAScriptListener.prototype.enterExportsList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#exportsList.
+ECMAScriptListener.prototype.exitExportsList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#exportSpecifier.
+ECMAScriptListener.prototype.enterExportSpecifier = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#exportSpecifier.
+ECMAScriptListener.prototype.exitExportSpecifier = function(ctx) {
 };
 
 

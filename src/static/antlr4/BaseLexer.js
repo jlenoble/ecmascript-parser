@@ -49,7 +49,7 @@ class BaseLexer {
     if (type !== Types.WhiteSpace) {
       const [, a, b, c] = this.lastTokens;
 
-      if (!c || c.type !== type || type !== Types.LineTerminator) {
+      if (!c || c.type !== type || type !== Types.EOS) {
         this.lastTokens = [a, b, c, next];
       }
     }

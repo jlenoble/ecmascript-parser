@@ -1,36 +1,25 @@
 import 'babel-polyfill';
-import {makeTest, passFile, earlyFile, failFile} from './helpers';
+import {makeTest, passFile, earlyFile, failFile, parseRunMode} from './helpers';
 
 const grammar = 'ECMAScript';
 const listener = 'Translator';
 const rule = 'file';
-const skip = false;
+const skip = true;
 
-const runMode = 'passexplicit';
+const runMode = 'pass';
 // 'all', 'pass', 'explicit', 'early', 'fail', 'full'
 
 const starts = {
-  pass: 924,
-  explicit: 924,
+  pass: 0,
+  explicit: 0,
   early: 0,
   fail: 0,
 };
 const ends = {
-  pass: 924,
+  pass: 262,
   explicit: -1,
   early: -1,
-};
-
-const parseRunMode = mode => {
-  const all = mode.includes('all');
-
-  return {
-    full: all || mode.includes('full'),
-    pass: all || mode.includes('pass'),
-    early: all || mode.includes('early'),
-    fail: all || mode.includes('fail'),
-    explicit: all || mode.includes('explicit'),
-  };
+  fail: -1,
 };
 
 const options = parseRunMode(runMode);
@@ -73,7 +62,6 @@ makeTest({
   files: earlyFile({end: end('early'), start: start('early'), skip}),
   dir: 'early',
 });
-
 
 makeTest({
   title: `ECMASCript: Lexing 'fail' tests for`,

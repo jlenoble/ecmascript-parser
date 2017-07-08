@@ -4,5 +4,5 @@
 lexer grammar AdditionalSyntax;
 import
   CommentB1,
-  // StringLiteralB1,
+  StringLiteralB1,
   NumericLiteralB1;

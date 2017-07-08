@@ -3,8 +3,8 @@
 // A.4 Functions and Classes
 grammar FunctionsAndClasses;
 import
-  // Class,
-  // Generator,
+  Class,
+  Generator,
   FormalParameter,
   FunctionBody,
   MethodDefinition;

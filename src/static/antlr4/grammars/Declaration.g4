@@ -8,7 +8,7 @@ grammar Declaration;
 //    LexicalDeclaration[+In, ?Yield, ?Await]
 declaration
 : hoistableDeclaration
-// | classDeclaration
+| classDeclaration
 | lexicalDeclaration
 ;
 
@@ -18,6 +18,6 @@ declaration
 //    AsyncFunctionDeclaration[?Yield, ?Await, ?Default]
 hoistableDeclaration
 : functionDeclaration
-// | generatorDeclaration
+| generatorDeclaration
 // | asyncFunctionDeclaration
 ;

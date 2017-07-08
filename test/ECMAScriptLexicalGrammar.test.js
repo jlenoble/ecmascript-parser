@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import {makeTest, passFile, earlyFile} from './helpers';
+import {makeTest, passFile, earlyFile, parseRunMode} from './helpers';
 
 const grammar = 'ECMAScriptLexicalGrammar';
 const listener = 'TranslatorLexicalGrammar';
@@ -7,31 +7,17 @@ const rule = 'file';
 const skip = false;
 
 const runMode = 'pass';
-// 'all', 'pass', 'explicit', 'early', 'fail', 'full'
+// 'all', 'pass', 'explicit', 'early', 'full'
 
 const starts = {
   pass: 0,
   explicit: 0,
   early: 0,
-  fail: 0,
 };
 const ends = {
   pass: -1,
   explicit: -1,
   early: -1,
-  fail: -1,
-};
-
-const parseRunMode = mode => {
-  const all = mode.includes('all');
-
-  return {
-    full: all || mode.includes('full'),
-    pass: all || mode.includes('pass'),
-    early: all || mode.includes('early'),
-    fail: all || mode.includes('fail'),
-    explicit: all || mode.includes('explicit'),
-  };
 };
 
 const options = parseRunMode(runMode);
@@ -86,7 +72,6 @@ makeTest({
   files: earlyFile({end: end('early'), start: start('early'), skip}),
   dir: 'early',
 });
-
 
 // Some tests fail for lexical reasons, others for syntactic reasons
 // So skip altogether lexing tests

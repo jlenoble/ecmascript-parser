@@ -3,11 +3,12 @@
 // A.2 Expressions
 grammar ECMAScript;
 import
+  EOS,
   AdditionalSyntax,
   // Expressions,
   Statements,
   FunctionsAndClasses,
-  // ScriptsAndModules,
+  ScriptsAndModules,
   // AssignmentPattern,
   BindingIdentifier,
   PrimaryExpression,
@@ -33,12 +34,8 @@ require(path.join(process.cwd(), 'build/src/static/antlr4/BaseLexer'))
 }
 
 file
-: statementList? EOF
+: module EOF
 ;
-
-/* file
-: (script|module)
-;*/
 
 eos
 : SemiColon

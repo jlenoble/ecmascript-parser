@@ -106,6 +106,10 @@ expressionList
 //        AssignmentExpression[?In, ?Yield, ?Await]
 //    LeftHandSideExpression[?Yield, ?Await] AssignmentOperator
 //        AssignmentExpression[?In, ?Yield, ?Await]
+// YieldExpression[In, Await]: From Annex B4 - Functions And Classes
+//    yield
+//    yield [no LineTerminator here] AssignmentExpression[?In, +Yield, ?Await]
+//    yield [no LineTerminator here] * AssignmentExpression[?In, +Yield, ?Await]
 // ArrowFunction[In, Yield, Await]: From Annex B4 - Functions And Classes
 //    ArrowParameters[?Yield, ?Await] [no LineTerminator here] =>
 //        ConciseBody[?In]
@@ -120,10 +124,11 @@ expression
 | OpenBrace (propertyDefinitionList Comma?)? CloseBrace
 | Function bindingIdentifier? OpenParen formalParameters CloseParen
   OpenBrace functionBody CloseBrace
-// | classExpression
-// | generatorExpression
+| Class bindingIdentifier? classTail
+| Function Multiply bindingIdentifier? OpenParen formalParameters
+  CloseParen OpenBrace generatorBody CloseBrace
 // | asyncFunctionExpression
-// | RegularExpressionLiteral
+| RegularExpressionLiteral
 // | templateLiteral
 | OpenParen expressionList CloseParen
 | expression arguments
@@ -146,6 +151,8 @@ expression
 | expression Or expression
 | expression QuestionMark expression Colon expression
 | arrowParameters {this.noLineTerminatorHere()}? FatArrow conciseBody
+| {this.canYield()} Yield ({this.noLineTerminatorHere()}?
+  Multiply? expression)?
 | expression Assign expression
 | expression assignmentOperator expression
 ;

@@ -13,15 +13,13 @@ breakableStatement
 // ContinueStatement[Yield, Await]:
 // continue ;
 // continue [no LineTerminator here] LabelIdentifier[?Yield, ?Await] ;
-/* continueStatement
-: Continue labelIdentifier eos
-| Continue eos
-;*/
+continueStatement
+: Continue ({this.noLineTerminatorHere()}? labelIdentifier)? eos
+;
 
 // BreakStatement[Yield, Await]:
 //    break ;
 //    break [no LineTerminator here] LabelIdentifier[?Yield, ?Await] ;
 breakStatement
-: Break {this.noLineTerminatorHere()}? labelIdentifier eos
-| Break eos
+: Break ({this.noLineTerminatorHere()}? labelIdentifier)? eos
 ;

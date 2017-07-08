@@ -39,12 +39,12 @@ statement
 | expressionStatement
 | ifStatement
 | breakableStatement
-// | continueStatement
+| continueStatement
 | breakStatement
 | {this.canReturn()}? returnStatement
 | withStatement
 | labelledStatement
-// | throwStatement
+| throwStatement
 | tryStatement
 | debuggerStatement
 ;

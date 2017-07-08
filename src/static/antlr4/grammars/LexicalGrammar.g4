@@ -4,7 +4,7 @@
 grammar LexicalGrammar;
 import
   // Template,
-  // RegularExpressionLiteral,
+  RegularExpressionLiteral,
   Punctuator,
   ReservedWord,
   StringLiteralA1,
@@ -14,28 +14,6 @@ import
   CommentA1,
   WhiteSpace,
   LineTerminator;
-
-EOS
-: Discard? (LineTerminatorSequence|EOSComment) Discard? -> channel(HIDDEN)
-;
-
-Discard
-: (WhiteSpace|DiscardableComment)+ -> channel(HIDDEN)
-;
-
-fragment
-EOSComment
-: SingleLineHTMLCloseComment
-| MultiLineComment
-;
-
-fragment
-DiscardableComment
-: SingleLineHTMLOpenComment
-| LeadingHTMLCloseComment
-| SingleLineDelimitedComment
-| SingleLineComment
-;
 
 // TemplateLiteral[Yield, Await]:
 //    NoSubstitutionTemplate

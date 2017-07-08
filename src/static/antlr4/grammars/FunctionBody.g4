@@ -12,9 +12,9 @@ functionBody
 
 // GeneratorBody:
 //    FunctionBody[+Yield, ~Await]
-/* generatorBody
+generatorBody
 : {this.enterGeneratorBody()} functionBody {this.exitGeneratorBody()}
-;*/
+;
 
 // AsyncFunctionBody:
 //    FunctionBody[~Yield, +Await]

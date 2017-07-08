@@ -12,7 +12,7 @@ methodDefinition
 : Get propertyName OpenParen CloseParen OpenBrace functionBody CloseBrace
 | Set propertyName OpenParen propertySetParameterList CloseParen OpenBrace functionBody CloseBrace
 | propertyName OpenParen uniqueFormalParameters CloseParen OpenBrace functionBody CloseBrace
-// | generatorMethod
+| generatorMethod
 // | asyncMethod
 ;
 
@@ -24,9 +24,9 @@ propertySetParameterList
 
 // GeneratorMethod[Yield, Await]:
 //    * PropertyName[?Yield, ?Await] ( UniqueFormalParameters[+Yield, ~Await] ) { GeneratorBody }
-/* generatorMethod
+generatorMethod
 : Multiply propertyName OpenParen uniqueFormalParameters CloseParen OpenBrace generatorBody CloseBrace
-;*/
+;
 
 // AsyncMethod[Yield, Await]:
 //    async [no LineTerminator here] PropertyName[?Yield, ?Await] ( UniqueFormalParameters[~Yield, +Await] ) { AsyncFunctionBody }

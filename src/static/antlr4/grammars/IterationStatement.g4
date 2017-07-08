@@ -26,9 +26,9 @@ iterationStatement
 | For OpenParen expression In expressionList CloseParen statement
 | For OpenParen Var forBinding In expressionList CloseParen statement
 | For OpenParen forDeclaration In expressionList CloseParen statement
-// | For OpenParen leftHandSideExpression Of assignmentexpressionList CloseParen statement
-// | For OpenParen Var forBinding Of assignmentexpressionList CloseParen statement
-// | For OpenParen forDeclaration Of assignmentexpressionList CloseParen statement
+| For OpenParen expression Of expressionList CloseParen statement
+| For OpenParen Var forBinding Of expressionList CloseParen statement
+| For OpenParen forDeclaration Of expressionList CloseParen statement
 ;
 
 // ForDeclaration[Yield, Await]:
