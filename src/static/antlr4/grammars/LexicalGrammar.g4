@@ -15,6 +15,28 @@ import
   WhiteSpace,
   LineTerminator;
 
+EOS
+: Discard? (LineTerminatorSequence|EOSComment) Discard? -> channel(HIDDEN)
+;
+
+Discard
+: (WhiteSpace|DiscardableComment)+ -> channel(HIDDEN)
+;
+
+fragment
+EOSComment
+: SingleLineHTMLCloseComment
+| MultiLineComment
+;
+
+fragment
+DiscardableComment
+: SingleLineHTMLOpenComment
+| LeadingHTMLCloseComment
+| SingleLineDelimitedComment
+| SingleLineComment
+;
+
 // TemplateLiteral[Yield, Await]:
 //    NoSubstitutionTemplate
 //    TemplateHead Expression[+In, ?Yield, ?Await] TemplateSpans[?Yield, ?Await]

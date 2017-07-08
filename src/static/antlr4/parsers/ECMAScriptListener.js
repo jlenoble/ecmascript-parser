@@ -677,15 +677,6 @@ ECMAScriptListener.prototype.exitCoverInitializedName = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ECMAScriptParser#callExpression.
-ECMAScriptListener.prototype.enterCallExpression = function(ctx) {
-};
-
-// Exit a parse tree produced by ECMAScriptParser#callExpression.
-ECMAScriptListener.prototype.exitCallExpression = function(ctx) {
-};
-
-
 // Enter a parse tree produced by ECMAScriptParser#arguments.
 ECMAScriptListener.prototype.enterArguments = function(ctx) {
 };

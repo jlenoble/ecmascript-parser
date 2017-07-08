@@ -3,13 +3,15 @@ import antlr4 from 'antlr4';
 let Types;
 
 class BaseParser {
-  getEOSToken () {
-    const previousTokenIndex = antlr4.Parser.prototype.getCurrentToken
-      .call(this).tokenIndex - 1;
-    const previousToken = this._input.get(previousTokenIndex);
+  getHiddenToken () {
+    const token = antlr4.Parser.prototype.getCurrentToken.call(this);
+    let previousToken = this._input.get(token.tokenIndex - 1);
 
-    return (previousToken &&
-      previousToken.channel === antlr4.Lexer.HIDDEN) ? previousToken : null;
+    if (previousToken && previousToken.channel === antlr4.Lexer.HIDDEN) {
+      return previousToken || null;
+    }
+
+    return null;
   }
 
   isEndOfStatementToken (token) {
@@ -34,26 +36,11 @@ purposes of parsing by the syntactic grammar.
       return false;
     }
 
-    const text = token.text;
-    const type = token.type;
-
-    return type === Types.LineTerminator ||
-    (
-      type === Types.MultiLineComment ||
-      type === Types.SingleLineHTMLCloseComment &&
-      text.indexOf('\n') !== -1 ||
-      text.indexOf('\r') !== -1 ||
-      text.indexOf('\u2028') !== -1 ||
-      text.indexOf('\u2029') !== -1
-    );
-  }
-
-  isLineTerminatorEquivalent () {
-    return this.isEndOfStatementToken(this.getEOSToken());
+    return token.type === Types.EOS;
   }
 
   noLineTerminatorHere () {
-    return !this.isEndOfStatementToken(this.getEOSToken());
+    return !this.isEndOfStatementToken(this.getHiddenToken());
   }
 
   enterFunctionBody () {
@@ -88,7 +75,7 @@ purposes of parsing by the syntactic grammar.
     this.isDoWhileEos = false;
   }
 
-  mayInsertSemiColon () {
+  isSemiColonEquivalent () {
     /*
 11.9.1 Rules of Automatic Semicolon Insertion
 
@@ -107,8 +94,10 @@ There are three basic rules of semicolon insertion:
       - The previous token is ) and the inserted semicolon would then be parsed
         as the terminating semicolon of a do-while statement (13.7.2).
     */
-    if (this.isLineTerminatorEquivalent() ||
-      (this._input.LA(1) === Types.CloseBrace) || // eslint-disable-line
+    const la1 = this._input.LA(1); // eslint-disable-line
+
+    if (this.isEndOfStatementToken(this.getHiddenToken()) ||
+      (la1 === Types.CloseBrace) ||
       this.isDoWhileEos) {
       return true;
     }
@@ -120,7 +109,7 @@ There are three basic rules of semicolon insertion:
    then a semicolon is automatically inserted at the end of the input
    stream.
     */
-    if (this._input.LA(1) === Types.EOF) { // eslint-disable-line
+    if (la1 === Types.EOF) { // eslint-disable-line
       return true;
     }
 

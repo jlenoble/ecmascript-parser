@@ -9,14 +9,14 @@ grammar CallExpression;
 //    CallExpression[?Yield, ?Await] [ Expression[+In, ?Yield, ?Await] ]
 //    CallExpression[?Yield, ?Await] . IdentifierName
 //    CallExpression[?Yield, ?Await] TemplateLiteral[?Yield, ?Await]
-callExpression
-: // coverCallExpressionAndAsyncArrowHead
-// | superCall
-// | callExpression arguments
-// | callExpression OpenBracket expressionList CloseBracket
-// | callExpression Dot identifierName
-// | callExpression templateLiteral
-;
+/* callExpression
+: coverCallExpressionAndAsyncArrowHead
+| superCall
+| callExpression arguments
+| callExpression OpenBracket expressionList CloseBracket
+| callExpression Dot identifierName
+| callExpression templateLiteral
+;*/
 
 // SuperCall[Yield, Await]:
 //    super Arguments[?Yield, ?Await]

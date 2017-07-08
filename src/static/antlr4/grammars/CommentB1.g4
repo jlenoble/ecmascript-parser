@@ -16,29 +16,29 @@ lexer grammar CommentB1;
 //    SingleLineDelimitedCommentChars
 MultiLineComment
 : '/*' SingleLineDelimitedCommentChars? LineTerminator .*? '*/'
-  HTMLCloseComment? -> channel(HIDDEN)
+  HTMLCloseComment?
 ;
 
 // SingleLineHTMLOpenComment::
 //    <!-- SingleLineCommentChars[opt]
 SingleLineHTMLOpenComment
-: '<!--' ~[\n\r\u2028\u2029]* -> channel(HIDDEN)
+: '<!--' ~[\n\r\u2028\u2029]*
 ;
 
 // SingleLineHTMLCloseComment::
 //    LineTerminatorSequence HTMLCloseComment
 SingleLineHTMLCloseComment
-: LineTerminatorSequence HTMLCloseComment -> channel(HIDDEN)
+: LineTerminatorSequence HTMLCloseComment
 ;
 
 // SingleLineDelimitedComment::
 //    /* SingleLineDelimitedCommentChars[opt] */
 SingleLineDelimitedComment
-: '/*' ~[\n\r\u2028\u2029]*? '*/' -> channel(HIDDEN)
+: '/*' ~[\n\r\u2028\u2029]*? '*/'
 ;
 
 LeadingHTMLCloseComment
-: {this.isStartOfFile()}? HTMLCloseComment -> channel(HIDDEN)
+: {this.isStartOfFile()}? HTMLCloseComment
 ;
 
 // HTMLCloseComment::

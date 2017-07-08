@@ -42,5 +42,5 @@ file
 
 eos
 : SemiColon
-| {this.mayInsertSemiColon()}?
+| {this.isSemiColonEquivalent()}?
 ;

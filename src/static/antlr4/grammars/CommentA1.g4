@@ -21,9 +21,9 @@ lexer grammar CommentA1;
 //     SourceCharacter but not '*'
 // MultiLineNotForwardSlashOrAsteriskChar::
 //     SourceCharacter but not one of '/' or '*'
-//MultiLineComment
-//: '/*' .*? '*/' -> channel(HIDDEN)
-//;
+MultiLineComment
+: '/*' .*? '*/'
+;
 
 // SingleLineComment::
 //     '//' SingleLineCommentChars[opt]
@@ -32,5 +32,5 @@ lexer grammar CommentA1;
 // SingleLineCommentChar::
 //     SourceCharacter but not LineTerminator
 SingleLineComment
-: '//' ~[\n\r\u2028\u2029]* -> channel(HIDDEN)
+: '//' ~[\n\r\u2028\u2029]*
 ;

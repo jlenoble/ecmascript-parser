@@ -74,7 +74,7 @@ emptyStatement
 //    return ;
 //    return [no LineTerminator here] Expression[+In, ?Yield, ?Await] ;
 returnStatement
-: Return {this.noLineTerminatorHere()}? expressionList? eos
+: Return ({this.noLineTerminatorHere()}? expressionList)? eos
 ;
 
 // DebuggerStatement:
