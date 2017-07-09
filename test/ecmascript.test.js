@@ -1,12 +1,13 @@
 import 'babel-polyfill';
-import {makeTest, passFile, earlyFile, failFile, parseRunMode} from './helpers';
+import {makeTest, passFile, explicitFile, earlyFile, failFile,
+  parseRunMode} from './helpers';
 
 const grammar = 'ECMAScript';
 const listener = 'Translator';
 const rule = 'file';
 const skip = true;
 
-const runMode = 'fullpass';
+const runMode = 'fullfail';
 // 'all', 'pass', 'explicit', 'early', 'fail', 'full'
 
 const starts = {
@@ -52,7 +53,7 @@ makeTest({
 makeTest({
   title: `ECMASCript: Lexing 'pass-explicit' tests for`,
   grammar, listener, rule,
-  files: passFile({end: end('explicit'), start: start('explicit'), skip}),
+  files: explicitFile({end: end('explicit'), start: start('explicit'), skip}),
   dir: 'pass-explicit',
 });
 

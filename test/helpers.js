@@ -117,7 +117,49 @@ function* passSkipIndex () {
   yield 1840; // Context dependent Template
 }
 
-function* earlySkipIndex () {}
+function* explicitSkipIndex () {
+  yield 118; // Context dependent RegExp or Divide
+  yield 174; // invalid ifStatement:
+  // Statement => no function declaration
+  // expressionStatement lookahead => no function expression
+
+  yield 268; // ^@ character breaks Mocha error reporting
+
+  yield* [279, 280, 283, 289, 290, 294, 295,
+     318]; // Context dependent RegExp or Divide
+
+  yield 350; // Context dependent Template
+
+  yield* [853, 885, 899, 901]; // Context dependent RegExp or Divide
+
+  yield 1012; // advanced assignPattern initialization
+  yield 1164; // Context dependent Template
+
+  yield* [1183, 1184]; // yield/functionExpression name edge cases
+
+  // yield* [987, 1049]; // Hanging due to very deep nesting
+  yield* [1260, 1261, 1262, 1263, 1264]; // invalid ifStatement
+  // yield* [1370, 1371]; // Hanging due to very deep nesting
+  yield* [1417, 1418]; // yield/functionExpression name edge cases
+
+  yield 1425; // Hanging due to very deep nesting
+  yield 1529; // .target in utf16
+  yield 1633; // Hanging due to very deep nesting
+
+  yield* [1714, 1791]; // Context dependent RegExp or Divide
+
+  yield 1840; // Context dependent Template
+  yield 1882; // Context dependent RegExp or Divide
+}
+
+function* earlySkipIndex () {
+  yield 90; // advanced assignPattern initialization
+  yield* [111, 112]; // yield/functionExpression name edge cases
+  yield 135; // enum
+  yield* [550, 552, 553]; // invalid ifStatement
+  yield 558; // (...a) missing =>
+  yield 560; // (((...a))) missing =>
+}
 
 function* failSkipIndex () {
   // yield* [254, 261]; // Hanging due to very deep nesting
@@ -168,6 +210,16 @@ export function* passFile ({end = nPass, start = 0, skip = true,
     index: index(start, end),
     moduleIndex: passModuleIndex(),
     skipIndex: passSkipIndex(),
+    start, end, skip, doSkip,
+  });
+}
+
+export function* explicitFile ({end = nPass, start = 0, skip = true,
+  doSkip = [268]}) {
+  yield* fileGen({
+    index: index(start, end),
+    moduleIndex: passModuleIndex(),
+    skipIndex: explicitSkipIndex(),
     start, end, skip, doSkip,
   });
 }
