@@ -61,7 +61,7 @@ assignmentElisionElement
 //    IdentifierReference[?Yield, ?Await] Initializer[+In, ?Yield, ?Await][opt]
 //    PropertyName[?Yield, ?Await] : AssignmentElement[?Yield, ?Await]
 assignmentProperty
-: identifierReference initializer_In?
+: identifierReference initializer?
 | propertyName Colon assignmentElement
 ;
 
@@ -69,7 +69,7 @@ assignmentProperty
 //    DestructuringAssignmentTarget[?Yield, ?Await]
 //        Initializer[+In, ?Yield, ?Await][opt]
 assignmentElement
-: destructuringAssignmentTarget initializer_In?
+: destructuringAssignmentTarget initializer?
 ;
 
 // AssignmentRestElement[Yield, Await]:

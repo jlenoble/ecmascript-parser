@@ -6,9 +6,9 @@ grammar ObjectLiteral;
 //    { }
 //    { PropertyDefinitionList[?Yield, ?Await] }
 //    { PropertyDefinitionList[?Yield, ?Await] , }
-/* objectLiteral
+objectLiteral
 : OpenBrace (propertyDefinitionList Comma?)? CloseBrace
-;*/
+;
 
 // PropertyDefinitionList[Yield, Await]:
 //    PropertyDefinition[?Yield, ?Await]

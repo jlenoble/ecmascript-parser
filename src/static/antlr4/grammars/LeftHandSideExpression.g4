@@ -5,18 +5,18 @@ grammar LeftHandSideExpression;
 // LeftHandSideExpression[Yield, Await]:
 //    NewExpression[?Yield, ?Await]
 //    CallExpression[?Yield, ?Await]
-/* leftHandSideExpression
+leftHandSideExpression
 : newExpression
 // | callExpression
-;*/
+;
 
 // NewExpression[Yield, Await]:
 //    MemberExpression[?Yield, ?Await]
 //    newNewExpression[?Yield, ?Await]
-/* newExpression
+newExpression
 : memberExpression
-// | New newExpression
-;*/
+| New newExpression
+;
 
 // MemberExpression[Yield, Await]:
 //    PrimaryExpression[?Yield, ?Await]
@@ -26,32 +26,32 @@ grammar LeftHandSideExpression;
 //    SuperProperty[?Yield, ?Await]
 //    MetaProperty
 //    new MemberExpression[?Yield, ?Await] Arguments[?Yield, ?Await]
-/* memberExpression
+memberExpression
 : primaryExpression
 | memberExpression OpenBracket expressionList CloseBracket
-// | memberExpression Dot identifierName
-// | memberExpression templateLiteral
-// | superProperty
-// | metaProperty
-// | New memberExpression arguments
-;*/
+| memberExpression Dot identifierName
+| memberExpression templateLiteral
+| superProperty
+| metaProperty
+| New memberExpression arguments
+;
 
 // SuperProperty[Yield, Await]:
 //    super [ Expression[+In, ?Yield, ?Await] ]
 //    super . IdentifierName
-/* superProperty
-: Super OpenBracket expression_In CloseBracket
+superProperty
+: Super OpenBracket expressionList CloseBracket
 | Super Dot identifierName
-;*/
+;
 
 // MetaProperty:
 //    NewTarget
-/* metaProperty
+metaProperty
 : newTarget
-;*/
+;
 
 // NewTarget:
 //    new.target
-/* newTarget
+newTarget
 : New Dot Target
-;*/
+;

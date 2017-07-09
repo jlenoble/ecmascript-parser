@@ -5,20 +5,10 @@ grammar ECMAScript;
 import
   EOS,
   AdditionalSyntax,
-  // Expressions,
+  Expressions,
   Statements,
   FunctionsAndClasses,
   ScriptsAndModules,
-  // AssignmentPattern,
-  BindingIdentifier,
-  PrimaryExpression,
-  CoverExpressions,
-  ArrayLiteral,
-  ObjectLiteral,
-  CallExpression,
-  LeftHandSideExpression,
-  // AssignmentExpression,
-  Expression,
   LexicalGrammar;
 
 @parser::members {

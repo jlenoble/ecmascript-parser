@@ -5,7 +5,7 @@ const rel = path.relative(base, 'src/static/antlr4/parsers');
 const {ECMAScriptListener} = require(path.join(base, rel,
   'ECMAScriptListener'));
 
-const debug = true;
+const debug = false;
 
 export class ECMAScriptTranslator extends ECMAScriptListener {
   enterFile (ctx) {

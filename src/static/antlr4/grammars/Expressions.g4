@@ -1,4 +1,17 @@
+/* Source: ECMAScript® 2018 Language Specification - Annex A-2 */
+
+// A.2 Expressions
 grammar Expression;
+
+import
+  AssignmentPattern,
+  BindingIdentifier,
+  PrimaryExpression,
+  CoverExpressions,
+  ArrayLiteral,
+  ObjectLiteral,
+  CallExpression,
+  LeftHandSideExpression;
 
 // Initializer[In, Yield, Await]:
 //    = AssignmentExpression[?In, ?Yield, ?Await]

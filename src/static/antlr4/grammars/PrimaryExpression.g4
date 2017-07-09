@@ -15,7 +15,7 @@ grammar PrimaryExpression;
 //    RegularExpressionLiteral
 //    TemplateLiteral[?Yield, ?Await]
 //    CoverParenthesizedExpressionAndArrowParameterList[?Yield, ?Await]
-/* primaryExpression
+primaryExpression
 : This
 | identifierReference
 | literal
@@ -25,19 +25,19 @@ grammar PrimaryExpression;
 // | classExpression
 // | generatorExpression
 // | asyncFunctionExpression
-// | RegularExpressionLiteral
-// | templateLiteral
-// | coverParenthesizedExpressionAndArrowParameterList
-;*/
+| RegularExpressionLiteral
+| templateLiteral
+| coverParenthesizedExpressionAndArrowParameterList
+;
 
 // Literal:
 //    NullLiteral
 //    BooleanLiteral
 //    NumericLiteral
 //    StringLiteral
-/* literal
+literal
 : NullLiteral
 | BooleanLiteral
 | NumericLiteral
 | StringLiteral
-;*/
+;
