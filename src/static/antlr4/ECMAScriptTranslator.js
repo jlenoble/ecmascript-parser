@@ -7,7 +7,7 @@ const {ECMAScriptListener} = require(path.join(base, rel,
 
 const debug = true;
 
-export class Translator extends ECMAScriptListener {
+export class ECMAScriptTranslator extends ECMAScriptListener {
   enterFile (ctx) {
     debugger;
   }

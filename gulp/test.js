@@ -13,12 +13,12 @@ export const test = () => {
 };
 
 export const testSingleGrammar = grammar => {
-  const task =  function () {
+  const task = function () {
     return gulp.src(`build/test/${grammar}.test.js`)
       .pipe(mocha());
   };
 
-  Object.defineProperty(task, 'name', {value: `test${grammar}Parser`});
+  Object.defineProperty(task, 'name', {value: `test ${grammar} grammar`});
 
   return task;
 };

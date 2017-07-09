@@ -295,3 +295,58 @@ export function makeTest ({
     }
   });
 }
+
+export function makeAllTests ({grammar, listener, rule, skip = true,
+  runMode, start = {}, end = {}, doSkip = [268]}) {
+  listener || (listener = `${grammar}Translator`); // eslint-disable-line
+
+  const options = parseRunMode(runMode);
+  const _end = test => {
+    if (options[test]) {
+      return options['full'] ? undefined : (typeof end === 'number' && end) ||
+        end[test] || -1;
+    }
+
+    return -1;
+  };
+  const _start = test => {
+    if (options[test]) {
+      return options['full'] ? 0 : (typeof start === 'number' && start) ||
+        start[test] || 0;
+    }
+
+    return +Infinity;
+  };
+
+  // doSkip: except for 268, they are all ambiguous possible regexp or div
+
+  makeTest({
+    title: `${grammar}: Parsing 'pass' tests for`,
+    grammar, listener, rule,
+    files: passFile({end: _end('pass'), start: _start('pass'), skip, doSkip}),
+    dir: 'pass',
+  });
+
+  makeTest({
+    title: `${grammar}: Parsing 'pass-explicit' tests for`,
+    grammar, listener, rule,
+    files: explicitFile({end: _end('explicit'), start: _start('explicit'), skip,
+      doSkip}),
+    dir: 'pass-explicit',
+  });
+
+  makeTest({
+    title: `${grammar}: Lexing 'early' tests for`,
+    grammar, listener, rule,
+    files: earlyFile({end: _end('early'), start: _start('early'), skip}),
+    dir: 'early',
+  });
+
+  makeTest({
+    title: `${grammar}: Parsing 'fail' tests for`,
+    grammar, listener, rule,
+    files: failFile({end: _end('fail'), start: _start('fail'), skip}),
+    dir: 'fail',
+    fail: true,
+  });
+}

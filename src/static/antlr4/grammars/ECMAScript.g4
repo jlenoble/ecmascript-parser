@@ -23,13 +23,13 @@ import
 
 @parser::members {
 var path = require('path');
-require(path.join(process.cwd(), 'build/src/static/antlr4/BaseParser'))
+require(path.join(process.cwd(), 'build/src/static/antlr4/ECMAScriptBaseParser'))
   .addOwnMethodsTo(ECMAScriptParser.prototype);
 }
 
 @lexer::members {
 var path = require('path');
-require(path.join(process.cwd(), 'build/src/static/antlr4/BaseLexer'))
+require(path.join(process.cwd(), 'build/src/static/antlr4/ECMAScriptBaseLexer'))
   .addOwnMethodsTo(ECMAScriptLexer.prototype);
 }
 

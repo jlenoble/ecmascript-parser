@@ -56,7 +56,7 @@ export const makeSingleParser = grammar => {
       }));
   };
 
-  Object.defineProperty(task, 'name', {value: `make${grammar}Parser`});
+  Object.defineProperty(task, 'name', {value: `make ${grammar} grammar`});
 
   return task;
 };
@@ -77,6 +77,22 @@ export const translate = (file, options = {}) => {
       listenerDir: options.listenerDir || listenerDir,
       rule: options.rule || rule,
     }));
+};
+
+export const makeTranslate = grammar => {
+  const task = function (file) {
+    return gulp.src(file, rule)
+      .pipe(antlr4({
+        grammar: rammar,
+        listener: `${grammar}Translator`,
+        parserDir, listenerDir, rule,
+      }));
+  };
+
+  Object.defineProperty(task, 'name', {value: `translate using the grammar ${
+    grammar} and the target ${rule}`});
+
+  return task;
 };
 
 gulp.task('translate', gulp.series(makeParser, fixParser, translate));
