@@ -97,7 +97,8 @@ function* passSkipIndex () {
 
   yield 268; // ^@ character breaks Mocha error reporting
 
-  yield 280; // Context dependent RegExp or Divide
+  yield* [280, 283, 289, 290, 294, 318]; // Context dependent RegExp or Divide
+
   yield 350; // Context dependent Template
   yield 1012; // advanced assignPattern initialization
   yield 1164; // Context dependent Template

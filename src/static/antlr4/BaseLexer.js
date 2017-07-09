@@ -31,7 +31,7 @@ const isPropertyName = (lastTokens, Types) => {
     /[A-Za-z]+/.test(d.text)); // Takes care of all keywords
 };
 
-const isValidContextForRegExp = (lastToken, lastTokens, Types, context) => {
+const isValidContextForRegExp = (lastToken, lastTokens, Types) => {
   /* console.log(lastTokens.map(t => t && t.text).join('|'),
     chalk.blue(context));*/
   if (!lastToken) {
@@ -148,10 +148,6 @@ const isValidContextForRegExp = (lastToken, lastTokens, Types, context) => {
     return true;
 
   default:
-    if (context === 'expressionList') {
-      return false;
-    }
-
     return true;
   }
 };
@@ -179,21 +175,9 @@ class BaseLexer {
     return next;
   }
 
-  pushParserContext (ctx) {
-    this.parserContext.push(ctx);
-  }
-
-  popParserContext () {
-    this.parserContext.pop();
-  }
-
-  getContext () {
-    return this.parserContext[this.parserContext.length - 1];
-  }
-
   isValidContextForRegExp () {
     return isValidContextForRegExp(this.lastToken,
-      this.lastTokens || [], this.constructor, this.getContext());
+      this.lastTokens || [], this.constructor);
   }
 
   isValidContextForDiv () {
@@ -212,8 +196,6 @@ BaseLexer.addOwnMethodsTo = function (proto) {
   for (let key of keys) {
     proto[key] = BaseLexer.prototype[key]; // eslint-disable-line
   }
-
-  proto.parserContext = []; // eslint-disable-line
 };
 
 export default BaseLexer;

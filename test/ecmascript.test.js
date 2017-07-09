@@ -6,7 +6,7 @@ const listener = 'Translator';
 const rule = 'file';
 const skip = true;
 
-const runMode = 'pass';
+const runMode = 'fullpass';
 // 'all', 'pass', 'explicit', 'early', 'fail', 'full'
 
 const starts = {
