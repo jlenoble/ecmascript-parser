@@ -97,11 +97,23 @@ function* passSkipIndex () {
 
   yield 268; // ^@ character breaks Mocha error reporting
 
+  yield 280; // Context dependent RegExp or Divide
+  yield 350; // Context dependent Template
+  yield 1012; // advanced assignPattern initialization
+  yield 1164; // Context dependent Template
+
+  yield* [1183, 1184]; // yield/functionExpression name edge cases
+
   // yield* [987, 1049]; // Hanging due to very deep nesting
-
   yield* [1260, 1261, 1262, 1263, 1264]; // invalid ifStatement
+  // yield* [1370, 1371]; // Hanging due to very deep nesting
+  yield* [1417, 1418]; // yield/functionExpression name edge cases
 
-  // yield* [1370, 1371, 1425, 1633]; // Hanging due to very deep nesting
+  yield 1425; // Hanging due to very deep nesting
+  yield 1529; // .target in utf16
+  yield 1633; // Hanging due to very deep nesting
+  yield 1791; // Context dependent RegExp or Divide
+  yield 1840; // Context dependent Template
 }
 
 function* earlySkipIndex () {}
@@ -127,6 +139,10 @@ export function* fileGen ({
   let s = skipIndex.next().value;
 
   for (let i of index) {
+    while (i > s) {
+      s = skipIndex.next().value;
+    }
+
     if (skip && i === s || doSkip.includes(i)) {
       s = skipIndex.next().value;
       continue;

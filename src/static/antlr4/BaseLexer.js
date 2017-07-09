@@ -1,57 +1,175 @@
 import antlr4 from 'antlr4';
+// import chalk from 'chalk';
 
 const nextToken = antlr4.Lexer.prototype.nextToken;
 const DEFAULT = antlr4.Token.DEFAULT_CHANNEL;
 
-const isValidContextForRegExp = (lastToken, [bbbLast, bbLast, bLast, last],
-  Types) => {
+const isPropertyName = (lastTokens, Types) => {
+  let [a, b, c, d] = lastTokens;
+
+  if (!d || !c) {
+    return false;
+  }
+
+  if (d.type === Types.EOS) {
+    if (!b) {
+      return false;
+    }
+    d = c;
+    c = b;
+    b = a;
+  }
+
+  if (c.type === Types.EOS) {
+    if (!b) {
+      return false;
+    }
+    c = b;
+  }
+
+  return c && d && c.type === Types.Dot && (d.type === Types.IdentifierName ||
+    /[A-Za-z]+/.test(d.text)); // Takes care of all keywords
+};
+
+const isValidContextForRegExp = (lastToken, lastTokens, Types, context) => {
+  /* console.log(lastTokens.map(t => t && t.text).join('|'),
+    chalk.blue(context));*/
   if (!lastToken) {
     return true;
   }
 
+  // First eliminate keywords as properties
+  if (isPropertyName(lastTokens, Types)) {
+    return false;
+  }
+
   switch (lastToken.type) {
-  case Types.IdentifierName: case Types.NumericLiteral:
-  case Types.NullLiteral: case Types.BooleanLiteral: case Types.This:
-  case Types.CloseBracket:
+  case Types.This:
+  case Types.IdentifierName:
+  case Types.NumericLiteral:
+  case Types.NullLiteral:
+  case Types.BooleanLiteral:
     return false;
 
-  case Types.PlusPlus: case Types.MinusMinus:
-    let [a, b, c, d] = [bbbLast, bbLast, bLast, last];
+  case Types.OpenBrace:
+  // case Types.CloseBrace: Ambiguous! go to default
+  case Types.OpenParen:
+  // case Types.CloseParen: Ambiguous! go to default
+  case Types.OpenBracket:
+  case Types.CloseBracket:
 
-    if (d.type === Types.LineTerminator) {
+  case Types.Dot:
+  case Types.Spread:
+  case Types.SemiColon:
+  case Types.Comma:
+
+  case Types.LessThan:
+  case Types.GreaterThan:
+  case Types.LessThanEquals:
+  case Types.GreaterThanEquals:
+
+  case Types.Equals:
+  case Types.NotEquals:
+  case Types.IdentityEquals:
+  case Types.IdentityNotEquals:
+
+  case Types.Plus:
+  case Types.Minus:
+  case Types.Multiply:
+  case Types.Modulo:
+  case Types.Power:
+
+  case Types.LeftShiftArithmetic:
+  case Types.RightShiftArithmetic:
+  case Types.RightShiftLogical:
+
+  case Types.BitAnd:
+  case Types.BitOr:
+  case Types.BitXor:
+
+  case Types.Not:
+  case Types.BitNot:
+
+  case Types.And:
+  case Types.Or:
+
+  case Types.QuestionMark:
+  case Types.Colon:
+
+  case Types.Assign:
+  case Types.PlusAssign:
+  case Types.MinusAssign:
+  case Types.MultiplyAssign:
+  case Types.ModuloAssign:
+  case Types.PowerAssign:
+
+  case Types.LeftShiftArithmeticAssign:
+  case Types.RightShiftArithmeticAssign:
+  case Types.RightShiftLogicalAssign:
+
+  case Types.BitAndAssign:
+  case Types.BitOrAssign:
+  case Types.BitXorAssign:
+
+  case Types.FatArrow:
+
+  case Types.Divide:
+  case Types.DivideAssign:
+    return true;
+
+  case Types.PlusPlus:
+  case Types.MinusMinus:
+    let [a, b, c, d] = lastTokens;
+
+    if (d && d.type === Types.EOS) {
+      // make sure d === lastToken
       d = c;
       c = b;
       b = a;
     }
 
-    return !c || c.type === Types.LineTerminator ||
+    return !c || c.type === Types.EOS ||
       isValidContextForRegExp(c, [undefined, a, b, c], Types);
 
-  case Types.CloseBrace: case Types.CloseParen:
-    return; // Ambiguous token, needs syntactic input
+  case Types.New:
+  case Types.Delete:
+  case Types.Void:
+  case Types.Typeof:
+  case Types.Instanceof:
+  case Types.In:
+  case Types.Do:
+  case Types.Return:
+  case Types.Yield:
+  case Types.Await:
+  case Types.Case:
+  case Types.Throw:
+  case Types.Else:
+    // Here it doesn't matter whether the production is restricted or not
+    return true;
 
   default:
+    if (context === 'expressionList') {
+      return false;
+    }
+
     return true;
   }
 };
 
 class BaseLexer {
   nextToken () {
-    // Record last 3 non WhiteSpace+ tokens, but collapse LineTerminator+ into
-    // a single LineTerminator record
+    // Record last 3 non Discardable tokens
     const next = nextToken.call(this);
     const Types = this.constructor;
     const type = next.type;
-    if (!this.lastTokens) {
+
+    if (this.lastTokens === undefined) {
       this.lastTokens = [undefined, undefined, undefined, undefined];
     }
 
-    if (type !== Types.WhiteSpace) {
+    if (type !== Types.Discard) {
       const [, a, b, c] = this.lastTokens;
-
-      if (!c || c.type !== type || type !== Types.EOS) {
-        this.lastTokens = [a, b, c, next];
-      }
+      this.lastTokens = [a, b, c, next];
     }
 
     if (next.channel === DEFAULT) {
@@ -61,20 +179,25 @@ class BaseLexer {
     return next;
   }
 
+  pushParserContext (ctx) {
+    this.parserContext.push(ctx);
+  }
+
+  popParserContext () {
+    this.parserContext.pop();
+  }
+
+  getContext () {
+    return this.parserContext[this.parserContext.length - 1];
+  }
+
   isValidContextForRegExp () {
     return isValidContextForRegExp(this.lastToken,
-      this.lastTokens || [], this.constructor);
+      this.lastTokens || [], this.constructor, this.getContext());
   }
 
   isValidContextForDiv () {
-    const isNotValid = this.isValidContextForRegExp();
-
-    if (isNotValid === undefined) {
-      // Ambiguous token, needs syntactic input
-      return false;
-    }
-
-    return !isNotValid;
+    return !this.isValidContextForRegExp();
   }
 
   isStartOfFile () {
@@ -89,6 +212,8 @@ BaseLexer.addOwnMethodsTo = function (proto) {
   for (let key of keys) {
     proto[key] = BaseLexer.prototype[key]; // eslint-disable-line
   }
+
+  proto.parserContext = []; // eslint-disable-line
 };
 
 export default BaseLexer;

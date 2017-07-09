@@ -1,7 +1,7 @@
 lexer grammar EOS;
 
 EOS
-: Discard? (LineTerminatorSequence|EOSComment) Discard? -> channel(HIDDEN)
+: Discard? (LineTerminatorSequence|EOSComment)+ Discard? -> channel(HIDDEN)
 ;
 
 Discard

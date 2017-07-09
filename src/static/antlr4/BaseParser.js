@@ -138,6 +138,33 @@ There are three basic rules of semicolon insertion:
 }
 
 BaseParser.addOwnMethodsTo = function (proto) {
+  const original = {};
+
+  Object.keys(proto).filter(key => key === 'expressionList').forEach(key => {
+  // Object.keys(proto).filter(key => key !== 'constructor').forEach(key => {
+    original[key] = proto[key];
+  });
+
+  Object.keys(original).forEach(key => {
+    proto[key] = (function (key) { // eslint-disable-line
+      return function (...args) {
+        this._input.tokenSource.pushParserContext(key);
+        let res;
+
+        try {
+          res = original[key].apply(this, args);
+          this._input.tokenSource.popParserContext();
+        } catch (e) {
+          this._input.tokenSource.popParserContext();
+          e.stack = undefined;
+          throw e;
+        }
+
+        return res;
+      };
+    })(key);
+  });
+
   const keys = Object.getOwnPropertyNames(BaseParser.prototype)
     .filter(f => f !== 'constructor');
 

@@ -3,7 +3,7 @@
 // A.1 Lexical Grammar
 grammar LexicalGrammar;
 import
-  // Template,
+  Template,
   RegularExpressionLiteral,
   Punctuator,
   ReservedWord,
@@ -18,23 +18,23 @@ import
 // TemplateLiteral[Yield, Await]:
 //    NoSubstitutionTemplate
 //    TemplateHead Expression[+In, ?Yield, ?Await] TemplateSpans[?Yield, ?Await]
-/* templateLiteral
+templateLiteral
 : (TemplateHead expression templateSpans|NoSubstitutionTemplate)
-;*/
+;
 
 // TemplateSpans[Yield, Await]:
 //    TemplateTail
 //    TemplateMiddleList[?Yield, ?Await] TemplateTail
-/* templateSpans
+templateSpans
 : templateMiddleList? TemplateTail
-;*/
+;
 
 // TemplateMiddleList[Yield, Await]:
 //    TemplateMiddle Expression[+In, ?Yield, ?Await]
 //    TemplateMiddleList[?Yield, ?Await] TemplateMiddle Expression[+In, ?Yield, ?Await]
-/* templateMiddleList
-: TemplateMiddle expression+
-;*/
+templateMiddleList
+: TemplateMiddle expressionList+
+;
 
 identifierName
 : (IdentifierName|reservedWord|miscIdentifier)

@@ -1055,6 +1055,33 @@ ECMAScriptListener.prototype.exitAssignmentOperator = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ECMAScriptParser#templateLiteral.
+ECMAScriptListener.prototype.enterTemplateLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#templateLiteral.
+ECMAScriptListener.prototype.exitTemplateLiteral = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#templateSpans.
+ECMAScriptListener.prototype.enterTemplateSpans = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#templateSpans.
+ECMAScriptListener.prototype.exitTemplateSpans = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ECMAScriptParser#templateMiddleList.
+ECMAScriptListener.prototype.enterTemplateMiddleList = function(ctx) {
+};
+
+// Exit a parse tree produced by ECMAScriptParser#templateMiddleList.
+ECMAScriptListener.prototype.exitTemplateMiddleList = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ECMAScriptParser#identifierName.
 ECMAScriptListener.prototype.enterIdentifierName = function(ctx) {
 };

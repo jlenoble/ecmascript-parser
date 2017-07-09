@@ -34,7 +34,7 @@ require(path.join(process.cwd(), 'build/src/static/antlr4/BaseLexer'))
 }
 
 file
-: module EOF
+: module
 ;
 
 eos

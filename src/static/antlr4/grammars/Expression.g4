@@ -124,17 +124,21 @@ expression
 | OpenBrace (propertyDefinitionList Comma?)? CloseBrace
 | Function bindingIdentifier? OpenParen formalParameters CloseParen
   OpenBrace functionBody CloseBrace
-| Class bindingIdentifier? classTail
+| Class bindingIdentifier? (Extends expression)?
+  OpenBrace classBody? CloseBrace
 | Function Multiply bindingIdentifier? OpenParen formalParameters
   CloseParen OpenBrace generatorBody CloseBrace
 // | asyncFunctionExpression
 | RegularExpressionLiteral
-// | templateLiteral
-| OpenParen expressionList CloseParen
-| expression arguments
+| templateLiteral
 | expression OpenBracket expressionList CloseBracket
 | expression Dot identifierName
+| expression templateLiteral
+| Super (OpenBracket expressionList CloseBracket|Dot identifierName)
+| New Dot Target
 | New expression arguments?
+| Super arguments
+| expression arguments
 | expression {this.noLineTerminatorHere()}? (PlusPlus|MinusMinus)
 | unaryOperator expression
 | expression multiplicativeOperator expression
@@ -150,7 +154,12 @@ expression
 | expression And expression
 | expression Or expression
 | expression QuestionMark expression Colon expression
-| arrowParameters {this.noLineTerminatorHere()}? FatArrow conciseBody
+| bindingIdentifier {this.noLineTerminatorHere()}? FatArrow conciseBody
+| OpenParen expressionList? (Comma|Comma Spread
+  (bindingIdentifier|bindingPattern))? CloseParen
+  ({this.noLineTerminatorHere()}? FatArrow conciseBody)?
+| OpenParen Spread (bindingIdentifier|bindingPattern) CloseParen
+  {this.noLineTerminatorHere()}? FatArrow conciseBody
 | {this.canYield()} Yield ({this.noLineTerminatorHere()}?
   Multiply? expression)?
 | expression Assign expression

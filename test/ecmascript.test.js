@@ -10,13 +10,13 @@ const runMode = 'pass';
 // 'all', 'pass', 'explicit', 'early', 'fail', 'full'
 
 const starts = {
-  pass: 0,
+  pass: 1370,
   explicit: 0,
   early: 0,
   fail: 0,
 };
 const ends = {
-  pass: 262,
+  pass: 1370,
   explicit: -1,
   early: -1,
   fail: -1,
