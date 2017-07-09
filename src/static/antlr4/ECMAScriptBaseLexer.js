@@ -152,7 +152,7 @@ const isValidContextForRegExp = (lastToken, lastTokens, Types) => {
   }
 };
 
-class BaseLexer {
+class ECMAScriptBaseLexer {
   nextToken () {
     // Record last 3 non Discardable tokens
     const next = nextToken.call(this);
@@ -189,13 +189,13 @@ class BaseLexer {
   }
 }
 
-BaseLexer.addOwnMethodsTo = function (proto) {
-  const keys = Object.getOwnPropertyNames(BaseLexer.prototype)
+ECMAScriptBaseLexer.addOwnMethodsTo = function (proto) {
+  const keys = Object.getOwnPropertyNames(ECMAScriptBaseLexer.prototype)
     .filter(f => f !== 'constructor');
 
   for (let key of keys) {
-    proto[key] = BaseLexer.prototype[key]; // eslint-disable-line
+    proto[key] = ECMAScriptBaseLexer.prototype[key]; // eslint-disable-line
   }
 };
 
-export default BaseLexer;
+export default ECMAScriptBaseLexer;

@@ -2,5 +2,7 @@ import 'babel-polyfill';
 import {makeAllTests} from './helpers';
 
 makeAllTests({
-  grammar: 'ECMAScriptPreprocessor', runMode: 'pass', start: 0, end: -1,
+  parserDir: 'build/src/static/antlr4/parsers',
+  grammar: 'ECMAScriptPreprocessor', rule: 'file',
+  runMode: 'pass', start: 0, end: -1,
 });

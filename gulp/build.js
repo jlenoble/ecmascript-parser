@@ -8,13 +8,13 @@ const allSrcGlob = [
   'src/*.js',
   'src/static/antlr4/*.js',
   'test/*.js',
-  'gulp/**/*.js'
+  'gulp/**/*.js',
 ];
 
 export const build = () => {
   return gulp.src(allSrcGlob, {
     base: process.cwd(),
-    since: gulp.lastRun(build)
+    since: gulp.lastRun(build),
   })
     .pipe(sourcemaps.init())
     .pipe(babel())
@@ -22,4 +22,16 @@ export const build = () => {
     .pipe(gulp.dest(buildDir));
 };
 
+export const copy = () => {
+  return gulp.src([
+    'src/static/antlr4/parsers/*.js',
+    'src/static/antlr4/parsers/*.tokens',
+  ], {
+    base: process.cwd(),
+    since: gulp.lastRun(copy),
+  })
+    .pipe(gulp.dest(buildDir));
+};
+
 gulp.task('build', build);
+gulp.task('copy', copy);

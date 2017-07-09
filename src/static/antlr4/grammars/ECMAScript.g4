@@ -12,15 +12,11 @@ import
   LexicalGrammar;
 
 @parser::members {
-var path = require('path');
-require(path.join(process.cwd(), 'build/src/static/antlr4/ECMAScriptBaseParser'))
-  .addOwnMethodsTo(ECMAScriptParser.prototype);
+require('../helpers').makeParserMembers(ECMAScriptParser.prototype);
 }
 
 @lexer::members {
-var path = require('path');
-require(path.join(process.cwd(), 'build/src/static/antlr4/ECMAScriptBaseLexer'))
-  .addOwnMethodsTo(ECMAScriptLexer.prototype);
+require('../helpers').makeLexerMembers(ECMAScriptLexer.prototype);
 }
 
 file

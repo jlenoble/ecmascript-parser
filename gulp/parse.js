@@ -79,22 +79,6 @@ export const translate = (file, options = {}) => {
     }));
 };
 
-export const makeTranslate = grammar => {
-  const task = function (file) {
-    return gulp.src(file, rule)
-      .pipe(antlr4({
-        grammar: rammar,
-        listener: `${grammar}Translator`,
-        parserDir, listenerDir, rule,
-      }));
-  };
-
-  Object.defineProperty(task, 'name', {value: `translate using the grammar ${
-    grammar} and the target ${rule}`});
-
-  return task;
-};
-
 gulp.task('translate', gulp.series(makeParser, fixParser, translate));
 
 export const parse = translate;

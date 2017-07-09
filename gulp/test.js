@@ -30,6 +30,6 @@ export const debug = () => {
     }));
 };
 
-gulp.task('test', gulp.series(makeParser, fixParser, 'build', test));
+gulp.task('test', gulp.series(makeParser, 'copy', fixParser, 'build', test));
 
-gulp.task('debug', gulp.series(makeParser, fixParser, 'build', debug));
+gulp.task('debug', gulp.series(makeParser, 'copy', fixParser, 'build', debug));

@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import {build} from './build';
+import './build';
 import {test, testSingleGrammar} from './test';
 import {makeSingleParser} from './parse';
 
@@ -17,7 +17,8 @@ const allSrcGlob = [
 ];
 
 const allBuildGlob = [
-  'build/src/*.js',
+  'build/src/**/*.js',
+  `!build/${antlr4Dir}/parsers/**/*.js`,
   'build/test/**/*.js',
 ].concat(grammars.map(grammar => {
   return `!build/test/${grammar}.test.js`;
@@ -45,7 +46,7 @@ grammars.forEach(grammar => {
 });
 
 export const watch = done => {
-  gulp.watch(allSrcGlob, build);
+  gulp.watch(allSrcGlob, gulp.parallel('build', 'copy'));
   gulp.watch(allBuildGlob, test);
 
   grammars.forEach(grammar => {

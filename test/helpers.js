@@ -268,8 +268,8 @@ export function makeTest ({
       it(`file ${dir}/${file}`, muted(muter, function () {
         return new Promise((resolve, reject) => {
           translate(`${_dir}/${file}`, {
-            grammar, listener, parserDir, listenerDir,
-            rule: rule || (file.includes('.module.js') ? 'module' : 'script'),
+            grammar, parserDir, listenerDir, rule,
+            listener: `${grammar}Translator`,
           })
             .on('error', reject)
             .on('finish', () => {
@@ -296,7 +296,7 @@ export function makeTest ({
   });
 }
 
-export function makeAllTests ({grammar, listener, rule, skip = true,
+export function makeAllTests ({grammar, parserDir, listener, rule, skip = true,
   runMode, start = {}, end = {}, doSkip = [268]}) {
   listener || (listener = `${grammar}Translator`); // eslint-disable-line
 
@@ -322,7 +322,7 @@ export function makeAllTests ({grammar, listener, rule, skip = true,
 
   makeTest({
     title: `${grammar}: Parsing 'pass' tests for`,
-    grammar, listener, rule,
+    grammar, parserDir, listener, rule,
     files: passFile({end: _end('pass'), start: _start('pass'), skip, doSkip}),
     dir: 'pass',
   });
@@ -337,14 +337,14 @@ export function makeAllTests ({grammar, listener, rule, skip = true,
 
   makeTest({
     title: `${grammar}: Lexing 'early' tests for`,
-    grammar, listener, rule,
+    grammar, parserDir, listener, rule,
     files: earlyFile({end: _end('early'), start: _start('early'), skip}),
     dir: 'early',
   });
 
   makeTest({
     title: `${grammar}: Parsing 'fail' tests for`,
-    grammar, listener, rule,
+    grammar, parserDir, listener, rule,
     files: failFile({end: _end('fail'), start: _start('fail'), skip}),
     dir: 'fail',
     fail: true,

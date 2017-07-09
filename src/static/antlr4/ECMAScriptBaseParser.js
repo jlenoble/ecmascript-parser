@@ -2,7 +2,7 @@ import antlr4 from 'antlr4';
 
 let Types;
 
-class BaseParser {
+class ECMAScriptBaseParser {
   getHiddenToken () {
     const token = antlr4.Parser.prototype.getCurrentToken.call(this);
     let previousToken = this._input.get(token.tokenIndex - 1);
@@ -137,12 +137,12 @@ There are three basic rules of semicolon insertion:
   }
 }
 
-BaseParser.addOwnMethodsTo = function (proto) {
-  const keys = Object.getOwnPropertyNames(BaseParser.prototype)
+ECMAScriptBaseParser.addOwnMethodsTo = function (proto) {
+  const keys = Object.getOwnPropertyNames(ECMAScriptBaseParser.prototype)
     .filter(f => f !== 'constructor');
 
   for (let key of keys) {
-    proto[key] = BaseParser.prototype[key]; // eslint-disable-line
+    proto[key] = ECMAScriptBaseParser.prototype[key]; // eslint-disable-line
   }
 
   proto.functionLevel = 0; // eslint-disable-line
@@ -152,4 +152,4 @@ BaseParser.addOwnMethodsTo = function (proto) {
   Types = Object.assign({}, proto.constructor);
 };
 
-export default BaseParser;
+export default ECMAScriptBaseParser;
