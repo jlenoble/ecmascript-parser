@@ -303,16 +303,16 @@ export function makeAllTests ({grammar, parserDir, listener, rule, skip = true,
   const options = parseRunMode(runMode);
   const _end = test => {
     if (options[test]) {
-      return options['full'] ? undefined : (typeof end === 'number' && end) ||
-        end[test] || -1;
+      return options['full'] ? undefined : typeof end === 'number' ? end :
+        typeof end[test] === 'number' ? end[test] : -1;
     }
 
     return -1;
   };
   const _start = test => {
     if (options[test]) {
-      return options['full'] ? 0 : (typeof start === 'number' && start) ||
-        start[test] || 0;
+      return options['full'] ? undefined : typeof start === 'number' ? start :
+        typeof start[test] === 'number' ? start[test] : -1;
     }
 
     return +Infinity;
