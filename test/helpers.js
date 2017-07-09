@@ -126,7 +126,7 @@ function* explicitSkipIndex () {
   yield 268; // ^@ character breaks Mocha error reporting
 
   yield* [279, 280, 283, 289, 290, 294, 295,
-     318]; // Context dependent RegExp or Divide
+    318]; // Context dependent RegExp or Divide
 
   yield 350; // Context dependent Template
 
