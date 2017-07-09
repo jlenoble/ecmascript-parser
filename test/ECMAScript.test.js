@@ -20,7 +20,7 @@ const ends = {
   pass: 1370,
   explicit: -1,
   early: -1,
-  fail: 30,
+  fail: 0,
 };
 
 const options = parseRunMode(runMode);

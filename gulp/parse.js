@@ -2,6 +2,8 @@ import gulp from 'gulp';
 import antlr4 from 'gulp-antlr4';
 // import replace from 'gulp-replace';
 
+const antlr4Dir = 'src/static/antlr4';
+
 const grammarGlob = [
   'src/static/antlr4/grammars/ECMAScript*.g4',
 ];
@@ -34,6 +36,31 @@ export const makeParser = () => {
     }));
 };
 
+export const makeSingleParser = grammar => {
+  const task = function () {
+    if (require && require.cache) {
+      // Remove parser files from Babel cache
+      Object.keys(require.cache).filter(key => {
+        return key.includes(parserDir) ||
+          key.includes(listenerDir);
+      }).forEach(key => {
+        delete require.cache[key];
+      });
+    }
+
+    return gulp.src(`${antlr4Dir}/grammars/${grammar}.g4`)
+      .pipe(antlr4({
+        listener: true,
+        parserDir,
+        visitor: false,
+      }));
+  };
+
+  Object.defineProperty(task, 'name', {value: `make${grammar}Parser`});
+
+  return task;
+};
+
 export const fixParser = done => {
   /* return gulp.src(parserGlob, {since: gulp.lastRun(fixParser)})
     .pipe(replace(/ECMAScript/g, 'ECMAScriptParser'))
@@ -44,11 +71,11 @@ export const fixParser = done => {
 export const translate = (file, options = {}) => {
   return gulp.src(file || dataGlob)
     .pipe(antlr4({
-      grammar: options.grammar || grammar,
-      listener: options.listener || listener,
-      parserDir: options.parserDir || parserDir,
-      listenerDir: options.listenerDir || listenerDir,
-      rule: options.rule || rule,
+      grammar: options.grammar || grammar,
+      listener: options.listener || listener,
+      parserDir: options.parserDir || parserDir,
+      listenerDir: options.listenerDir || listenerDir,
+      rule: options.rule || rule,
     }));
 };
 
@@ -56,4 +83,4 @@ gulp.task('translate', gulp.series(makeParser, fixParser, translate));
 
 export const parse = translate;
 
-gulp.task('parse', gulp.series(/*makeParser, fixParser, */translate));
+gulp.task('parse', gulp.series(/* makeParser, fixParser, */translate));

@@ -12,6 +12,17 @@ export const test = () => {
     .pipe(mocha());
 };
 
+export const testSingleGrammar = grammar => {
+  const task =  function () {
+    return gulp.src(`build/test/${grammar}.test.js`)
+      .pipe(mocha());
+  };
+
+  Object.defineProperty(task, 'name', {value: `test${grammar}Parser`});
+
+  return task;
+};
+
 export const debug = () => {
   return gulp.src(testGlob)
     .pipe(mocha({
