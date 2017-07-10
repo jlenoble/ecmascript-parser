@@ -1,11 +1,11 @@
 import gulp from 'gulp';
 import mocha from 'gulp-mocha';
-import _debug from 'gulp-debug';
-import {noop} from 'gulp-util'
+import debug from 'gulp-debug';
+import {noop} from 'gulp-util';
 import './build';
 import {makeParser} from './parse';
 
-const debug = _debug; // noop
+const debugStream = process.env.DEBUG ? debug : noop;
 
 const testGlob = [
   'build/test/**/*.test.js',
@@ -13,14 +13,14 @@ const testGlob = [
 
 export const test = () => {
   return gulp.src(testGlob)
-    .pipe(debug())
+    .pipe(debugStream())
     .pipe(mocha());
 };
 
 export const testSingleParser = grammar => {
   const task = function () {
     return gulp.src(`build/test/${grammar}.test.js`)
-      .pipe(debug())
+      .pipe(debugStream())
       .pipe(mocha());
   };
 

@@ -1,10 +1,10 @@
 import gulp from 'gulp';
 import babel from 'gulp-babel';
-import _debug from 'gulp-debug';
-import {noop} from 'gulp-util'
+import debug from 'gulp-debug';
+import {noop} from 'gulp-util';
 import sourcemaps from 'gulp-sourcemaps';
 
-const debug = _debug; // noop
+const debugStream = process.env.DEBUG ? debug : noop;
 
 const buildDir = 'build';
 const allSrcGlob = [
@@ -19,7 +19,7 @@ export const build = () => {
     base: process.cwd(),
     since: gulp.lastRun(build),
   })
-    .pipe(debug())
+    .pipe(debugStream())
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(sourcemaps.write())
@@ -34,7 +34,7 @@ export const copy = () => {
     base: process.cwd(),
     since: gulp.lastRun(copy),
   })
-    .pipe(debug())
+    .pipe(debugStream())
     .pipe(gulp.dest(buildDir));
 };
 

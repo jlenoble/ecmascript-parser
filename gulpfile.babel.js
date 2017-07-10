@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import {usePlumbedGulpSrc} from 'plumb-gulp';
 import autoreload from 'autoreload-gulp';
+import {argv} from 'yargs';
 
 import './gulp/build';
 import './gulp/clean';
@@ -15,5 +16,9 @@ import './gulp/parse';
 import './gulp/lint';
 
 usePlumbedGulpSrc();
+
+if (argv.debug) {
+  process.env.DEBUG = true;
+}
 
 gulp.task('default', autoreload('tdd'));

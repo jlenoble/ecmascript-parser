@@ -1,25 +1,5 @@
 import {customizeListener} from './helpers';
 
-const debug = true;
-
-const BaseListener = customizeListener('ECMAScript', {
-  exitDeclaration (ctx) {
-    if (debug) {
-      console.log('Declaration:', ctx.getText());
-    }
-  },
-
-  exitStatement (ctx) {
-    if (debug) {
-      console.log('Statement:', ctx.getText());
-    }
-  },
-
-  exitExpression (ctx) {
-    if (debug) {
-      console.log('Expression:', ctx.getText());
-    }
-  },
-});
+const BaseListener = customizeListener('ECMAScript');
 
 export class ECMAScriptTranslator extends BaseListener {}

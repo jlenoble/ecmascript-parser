@@ -1,4 +1,6 @@
-const debug = true;
+import chalk from 'chalk';
+
+const debug = process.env.DEBUG;
 
 export function customizeListener (grammar, methods = {}) {
   return customize(grammar, 'Listener', methods);
@@ -24,22 +26,31 @@ function customize (grammar, target, methods) {
         }
       },
     },
-    exitFile: {
-      value: function (ctx) {
-        if (debug) {
-          console.log('file:', ctx.getText());
-        }
-      },
-    },
   } : {};
 
   Object.keys(methods).forEach(key => {
-    Object.defineProperty(properties, key, {
+    properties[key] = {
       value: methods[key],
-    });
+    };
   });
 
   Object.defineProperties(Processor.prototype, properties);
+
+  if (debug) {
+    const proto = Processor.prototype;
+    proto.originalMethods = {};
+
+    Object.getOwnPropertyNames(proto).forEach(name => {
+      if (typeof proto[name] === 'function' && proto[name] !== 'constructor' &&
+        /^enter/.test(name)) {
+        proto.originalMethods[name] = proto[name];
+        proto[name] = function (ctx) {
+          console.log(chalk.yellow(`${name}:`), ctx.getText());
+          proto.originalMethods[name].call(this, ctx);
+        };
+      }
+    });
+  }
 
   return Processor;
 }

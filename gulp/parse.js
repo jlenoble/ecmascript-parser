@@ -1,10 +1,10 @@
 import gulp from 'gulp';
 import antlr4 from 'gulp-antlr4';
-import _debug from 'gulp-debug';
-import {noop} from 'gulp-util'
+import debug from 'gulp-debug';
+import {noop} from 'gulp-util';
 // import replace from 'gulp-replace';
 
-const debug = _debug; // noop
+const debugStream = process.env.DEBUG ? debug : noop;
 const antlr4Dir = 'src/static/antlr4';
 
 const grammarGlob = [
@@ -32,7 +32,7 @@ export const makeParser = () => {
   }
 
   return gulp.src(grammarGlob)
-    .pipe(debug())
+    .pipe(debugStream())
     .pipe(antlr4({
       'listener': true,
       'parserDir': 'src/static/antlr4/parsers',
@@ -53,7 +53,7 @@ export const makeSingleParser = grammar => {
     }
 
     return gulp.src(`${antlr4Dir}/grammars/${grammar}.g4`)
-      .pipe(debug())
+      .pipe(debugStream())
       .pipe(antlr4({
         listener: true,
         parserDir,
@@ -68,7 +68,7 @@ export const makeSingleParser = grammar => {
 
 export const translate = (file, options = {}) => {
   return gulp.src(file || dataGlob)
-    .pipe(debug())
+    .pipe(debugStream())
     .pipe(antlr4({
       grammar: options.grammar || grammar,
       listener: options.listener || `${options.grammar ?
