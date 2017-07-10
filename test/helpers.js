@@ -329,7 +329,7 @@ export function makeAllTests ({grammar, parserDir, listener, rule, skip = true,
 
   makeTest({
     title: `${grammar}: Parsing 'pass-explicit' tests for`,
-    grammar, listener, rule,
+    grammar, parserDir, listener, rule,
     files: explicitFile({end: _end('explicit'), start: _start('explicit'), skip,
       doSkip}),
     dir: 'pass-explicit',
