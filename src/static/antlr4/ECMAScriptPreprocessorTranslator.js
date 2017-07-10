@@ -1,22 +1,5 @@
-import path from 'path';
+import {customizeListener} from './helpers';
 
-const base = path.join(process.cwd(), 'build');
-const rel = path.relative(base, 'src/static/antlr4/parsers');
-const {ECMAScriptPreprocessorListener} = require(path.join(base, rel,
-  'ECMAScriptPreprocessorListener'));
+const BaseListener = customizeListener('ECMAScriptPreprocessor');
 
-const debug = true;
-
-export class ECMAScriptPreprocessorTranslator
-  extends ECMAScriptPreprocessorListener {
-  enterFile () {
-    if (debug) {
-      debugger;
-    }
-  }
-  exitFile (ctx) {
-    if (debug) {
-      console.log('File', ctx.getText());
-    }
-  }
-}
+export class ECMAScriptPreprocessorTranslator extends BaseListener {}
