@@ -6,10 +6,24 @@ const base = process.cwd();
 const rel = path.relative(base, 'src/static/antlr4/parsers');
 
 export function customizeListener (grammar, methods = {}) {
-  const listener = `${grammar}Listener`;
-  const Listener = require(path.join(base, rel, listener))[listener];
+  return customize(grammar, 'Listener', methods);
+}
 
-  const properties = {
+export function makeLexerMembers (proto) {
+  const name = proto.constructor.name.replace(/Lexer/, 'BaseLexer');
+  require(`./${name}`).addOwnMethodsTo(proto);
+}
+
+export function makeParserMembers (proto) {
+  const name = proto.constructor.name.replace(/Parser/, 'BaseParser');
+  require(`./${name}`).addOwnMethodsTo(proto);
+}
+
+function customize (grammar, target, methods) {
+  const name = `${grammar}${target}`;
+  const Processor = require(path.join(base, rel, name))[name];
+
+  const properties = target === 'Listener' ? {
     enterFile: {
       value: function (ctx) {
         if (debug) {
@@ -24,7 +38,7 @@ export function customizeListener (grammar, methods = {}) {
         }
       },
     },
-  };
+  } : {};
 
   Object.keys(methods).forEach(key => {
     Object.defineProperty(properties, key, {
@@ -32,17 +46,7 @@ export function customizeListener (grammar, methods = {}) {
     });
   });
 
-  Object.defineProperties(Listener, properties);
+  Object.defineProperties(Processor, properties);
 
-  return Listener;
-}
-
-export function makeLexerMembers (proto) {
-  const name = proto.constructor.name.replace(/Lexer/, 'BaseLexer');
-  require(`./${name}`).addOwnMethodsTo(proto);
-}
-
-export function makeParserMembers (proto) {
-  const name = proto.constructor.name.replace(/Parser/, 'BaseParser');
-  require(`./${name}`).addOwnMethodsTo(proto);
+  return Processor;
 }
