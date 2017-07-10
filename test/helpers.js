@@ -1,6 +1,13 @@
 import {translate} from '../gulp/parse';
 import Muter, {muted} from 'muter';
 import path from 'path';
+import concat from 'gulp-concat';
+import gulp from 'gulp';
+import debug from 'gulp-debug';
+import {noop} from 'gulp-util';
+import wrap from 'gulp-wrap';
+
+const debugStream = process.env.DEBUG ? debug : noop;
 
 const nPass = 1955;
 const nEarly = 647;
@@ -258,7 +265,7 @@ export function makeTest ({
   title, grammar, listener, parserDir, listenerDir, rule, dir, files, fail,
 }) {
   describe(title, function () {
-    this.timeout(3600000); // eslint-disable-line no-invalid-this
+    this.timeout(10000); // eslint-disable-line no-invalid-this
 
     const muter = Muter(process.stderr, 'write'); // eslint-disable-line
     const _dir = path.join(process.cwd(), 'node_modules/test262-parser-tests/',
@@ -296,8 +303,49 @@ export function makeTest ({
   });
 }
 
+export function makeReport ({
+  title, grammar, listener, parserDir, listenerDir, rule, dir, files, fail,
+}) {
+  describe(title, function () {
+    this.timeout(1000000); // eslint-disable-line no-invalid-this
+
+    const muter = Muter(process.stderr, 'write'); // eslint-disable-line
+    const _dir = path.join(process.cwd(), 'node_modules/test262-parser-tests/',
+      dir);
+
+    it(`Report (if any) written to build/${grammar}.${dir}.report`, muted(
+      muter, function () {
+        return new Promise((resolve, reject) => {
+          const glob = [...files].map(file => `${_dir}/${file}`);
+          if (glob.length === 0) {
+            return resolve();
+          }
+
+          translate(glob, {
+            grammar, parserDir, listenerDir, rule,
+            listener: `${grammar}Translator`,
+          })
+            .on('end', resolve)
+            .pipe(debugStream())
+            .pipe(wrap('File <%= file.path %>\n<%= contents %>'))
+            .pipe(concat(`${grammar}.${dir}.report`))
+            .pipe(gulp.dest('build'));
+        });
+      }));
+  });
+}
+
 export function makeAllTests ({grammar, parserDir, listener, rule, skip = true,
   runMode, start = {}, end = {}, doSkip = [268]}) {
+  return makeAll({
+    grammar, parserDir, listener, rule, skip,
+    runMode, start, end, doSkip, make: process.env.DEBUG ? makeReport :
+      makeTest,
+  });
+}
+
+function makeAll ({grammar, parserDir, listener, rule, skip = true,
+  runMode, start = {}, end = {}, doSkip = [268], make}) {
   listener || (listener = `${grammar}Translator`); // eslint-disable-line
 
   const options = parseRunMode(runMode);
@@ -320,30 +368,30 @@ export function makeAllTests ({grammar, parserDir, listener, rule, skip = true,
 
   // doSkip: except for 268, they are all ambiguous possible regexp or div
 
-  makeTest({
-    title: `${grammar}: Parsing 'pass' tests for`,
+  make({
+    title: `${grammar}: Parsing 'pass' tests`,
     grammar, parserDir, listener, rule,
     files: passFile({end: _end('pass'), start: _start('pass'), skip, doSkip}),
     dir: 'pass',
   });
 
-  makeTest({
-    title: `${grammar}: Parsing 'pass-explicit' tests for`,
+  make({
+    title: `${grammar}: Parsing 'pass-explicit' tests`,
     grammar, parserDir, listener, rule,
     files: explicitFile({end: _end('explicit'), start: _start('explicit'), skip,
       doSkip}),
     dir: 'pass-explicit',
   });
 
-  makeTest({
-    title: `${grammar}: Lexing 'early' tests for`,
+  make({
+    title: `${grammar}: Parsing 'early' tests`,
     grammar, parserDir, listener, rule,
     files: earlyFile({end: _end('early'), start: _start('early'), skip}),
     dir: 'early',
   });
 
-  makeTest({
-    title: `${grammar}: Parsing 'fail' tests for`,
+  make({
+    title: `${grammar}: Parsing 'fail' tests`,
     grammar, parserDir, listener, rule,
     files: failFile({end: _end('fail'), start: _start('fail'), skip}),
     dir: 'fail',
