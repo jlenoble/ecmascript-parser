@@ -1,11 +1,11 @@
 grammar ECMAScriptPreprocessor;
 
 @parser::members {
-require('../helpers').makeParserMembers(ECMAScriptPreprocessorParser.prototype);
+require('../helpers').makeMembers(ECMAScriptPreprocessorParser.prototype);
 }
 
 @lexer::members {
-require('../helpers').makeLexerMembers(ECMAScriptPreprocessorLexer.prototype);
+require('../helpers').makeMembers(ECMAScriptPreprocessorLexer.prototype);
 }
 
 file

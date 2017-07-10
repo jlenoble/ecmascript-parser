@@ -12,11 +12,11 @@ import
   LexicalGrammar;
 
 @parser::members {
-require('../helpers').makeParserMembers(ECMAScriptParser.prototype);
+require('../helpers').makeMembers(ECMAScriptParser.prototype);
 }
 
 @lexer::members {
-require('../helpers').makeLexerMembers(ECMAScriptLexer.prototype);
+require('../helpers').makeMembers(ECMAScriptLexer.prototype);
 }
 
 file

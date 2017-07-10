@@ -9,14 +9,12 @@ export function customizeListener (grammar, methods = {}) {
   return customize(grammar, 'Listener', methods);
 }
 
-export function makeLexerMembers (proto) {
-  const name = proto.constructor.name.replace(/Lexer/, 'BaseLexer');
-  require(`./${name}`).addOwnMethodsTo(proto);
-}
-
-export function makeParserMembers (proto) {
-  const name = proto.constructor.name.replace(/Parser/, 'BaseParser');
-  require(`./${name}`).addOwnMethodsTo(proto);
+export function makeMembers (proto) {
+  const name = proto.constructor.name;
+  const n = /Lexer$/.test(name) ? 5 : 6;
+  const processor = name.substring(name.length - n);
+  const file = name.substring(0, name.length - n) + 'Base' + processor;
+  require(`./${file}`).addOwnMethodsTo(proto);
 }
 
 function customize (grammar, target, methods) {
