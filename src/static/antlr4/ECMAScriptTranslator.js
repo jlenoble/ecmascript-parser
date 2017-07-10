@@ -1,5 +1,7 @@
 import {customizeListener} from './helpers';
 
+const debug = true;
+
 const BaseListener = customizeListener('ECMAScript', {
   exitDeclaration (ctx) {
     if (debug) {

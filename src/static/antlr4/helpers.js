@@ -1,9 +1,4 @@
-import path from 'path';
-
 const debug = true;
-
-const base = process.cwd();
-const rel = path.relative(base, 'src/static/antlr4/parsers');
 
 export function customizeListener (grammar, methods = {}) {
   return customize(grammar, 'Listener', methods);
@@ -19,7 +14,7 @@ export function makeMembers (proto) {
 
 function customize (grammar, target, methods) {
   const name = `${grammar}${target}`;
-  const Processor = require(path.join(base, rel, name))[name];
+  const Processor = require(`./parsers/${name}`)[name];
 
   const properties = target === 'Listener' ? {
     enterFile: {
@@ -44,7 +39,7 @@ function customize (grammar, target, methods) {
     });
   });
 
-  Object.defineProperties(Processor, properties);
+  Object.defineProperties(Processor.prototype, properties);
 
   return Processor;
 }
